@@ -1,23 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const SPECLink = () => (
+  <a href="https://docs.specollective.org" target="_blank" className="text-blue-600 font-semibold mr-1">
+    documention
+  </a>
+)
+
+const OpenCollectiveLink = () => (
+  <a href="https://opencollective.com/spec" target="_blank" className="text-blue-600 font-semibold">
+    Open Collective
+  </a>
+)
 
 export default function Home() {
-  const SPECLink = () => (
-    <a href="https://docs.specollective.org" target="_blank" className="text-blue-600 font-semibold mr-1">
-      documention
-    </a>
-  )
-
-  const OpenCollectiveLink = () => (
-    <a href="https://opencollective.com/spec" target="_blank" className="text-blue-600 font-semibold">
-      Open Collective
-    </a>
-  )
-  
   return (
     <>
       <Head>
@@ -47,32 +43,47 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-2 md:px-6 gap-10">
           <div className="text-left mb-10">
             <h2 className="text-2xl"></h2>
-            <p className="text-2xl font-normal mb-6">
-              <b>SPEC</b> is an open learning organization advancing sustainability and social equity through community-engaged research, open collaboration, and service-learning.
+              <p className="text-2xl font-normal mb-6">
+              <b>SPEC</b> is an open learning organization advancing <b>sustainability</b> and <b>social equity</b>{' '}
+              through <b>community-engaged research</b>, <b>open collaboration</b>, and <b>service-learning</b>. We help
+              people upskill through paid work experiences contributing to research and development projects that aim to
+              make a positive impact on the world. SPEC helps organizations adopt sustainable business
+              practices, build equitable and inclusive cultures, and develop innovative solutions.
             </p>
 
-            <p className="text-2xl font-semibold mb-6">
-              🚧 Under construction notice 🚧
-            </p>
-  
             <p className="text-2xl font-normal mb-6">
               We're actively working on rebuilding this website. Please refer to our <SPECLink />
-              site to learn more about us. You can donate to SPEC on our <OpenCollectiveLink /> page.
+              site to learn more about us. Consider making a tax-deductible donation on our <OpenCollectiveLink /> page.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-              <button className="text-2xl p-2 tracking-wider font-medium bg-red-400 text-white rounded-br-lg rounded-tl-lg">
-                Learn More
-              </button>
-              <button className="bg-teal-500 p-2 text-2xl font-medium tracking-wider text-white rounded-br-lg rounded-tl-lg">
+              <a
+                href="https://opencollective.com/spec"
+                className="block bg-teal-500 text-center p-2 text-2xl font-medium tracking-wider text-white rounded-br-lg rounded-tl-lg"
+              >
                 Donate
-              </button>
+              </a>
+              <a
+                href="https://docs.specollective.org"
+                className="block bg-blue-400 text-center text-2xl p-2 tracking-wider font-medium  text-white rounded-br-lg rounded-tl-lg"
+              >
+                Learn More
+              </a>
             </div>
           </div>
           
           <div className="text-left rounded-lg bg-orange-300">
-            <h2 className="text-2xl text-center pt-10 font-semibold">Send us a message</h2>
-            <form className="p-10" autoComplete="off">
+            <h2 className="text-2xl text-left pt-6 px-10 font-semibold">
+              Want to get in touch with us?
+            </h2>
+            <p className="px-10 py-6 text-xl font-normal">
+              We would love to hear from you! Please email us at{' '}
+              <a href="mailto:info@specollective.org" className="text-blue-600 font-semibold">
+                info@specollective.org
+              </a>
+              {' '}or fill out the form below.
+            </p>
+            <form className="px-10" autoComplete="off">
               <div className="mb-4">
                 <label htmlFor="name" className="font-bold text-xl">
                   Full Name
