@@ -2,13 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 const SPECLink = () => (
-  <a href="https://docs.specollective.org" target="_blank" className="text-blue-600 font-semibold mr-1">
+  <a href="https://docs.specollective.org" target="_blank" rel="noreferrer" className="text-blue-600 font-semibold mr-1">
     documention
   </a>
 )
 
 const OpenCollectiveLink = () => (
-  <a href="https://opencollective.com/spec" target="_blank" className="text-blue-600 font-semibold">
+  <a href="https://opencollective.com/spec" target="_blank" rel="noreferrer" className="text-blue-600 font-semibold">
     Open Collective
   </a>
 )
@@ -36,7 +36,7 @@ export default function Home() {
           <h1
             className="text-center md:text-left text-4xl font-semibold col-span-1 md:col-span-9"
           >
-            Sustainable Progress & Equality Collective
+            Sustainable Progress and Equality Collective
           </h1>
         </header>
         
@@ -44,7 +44,7 @@ export default function Home() {
           <div className="text-left">
             <h2 className="text-3xl font-bold mb-6 pt-6">What is SPEC?</h2>
             <p className="text-2xl font-normal">
-              <b>SPEC</b> is an open learning organization advancing <b>sustainability</b> and <b>social equity</b>{' '}
+              We&apos;re is an open learning organization advancing <b>sustainability</b> and <b>social equity</b>{' '}
               through <b>community-engaged research</b>, <b>open collaboration</b>, and <b>service-learning</b>. We help
               people upskill through paid work experiences contributing to R&D projects that aim to
               create positive social impact. SPEC helps organizations adopt sustainable practices, build equitable and
@@ -54,7 +54,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-6 pt-6">🚧 Under construction notice 🚧</h2>
 
             <p className="text-2xl font-normal mb-6">
-              We're actively working on rebuilding this website. Please refer to our <SPECLink />
+              We&apos;re actively working on rebuilding this website. Please refer to our <SPECLink />
               site to learn more about us. Consider making a tax-deductible donation on our <OpenCollectiveLink /> page.
             </p>
 
