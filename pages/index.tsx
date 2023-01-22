@@ -10,11 +10,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex items-center justify-content m-auto p-10 md:w-2/3 lg:h-full xl:w-1/3 xl:h-screen">
+      <main className="flex min-h-screen items-center justify-content px-10 pt-10 md:w-2/3 2xl:w-1/2 m-auto">
         <div className="w-full">
-          <header className="pb-20">
+          <header className="lg:flex lg:items-center pb-10">
             <Image
-              className="md:inline text-center m-auto"
+              className="m-auto lg:m-0 lg:inline text-left"
               src="/spec-logo.svg"
               alt="spec-logo"
               width={120}
@@ -22,7 +22,7 @@ export default function Home() {
               priority
             />
             <h1
-              className="md:inline text-center text-3xl font-medium font-montserrat"
+              className="block text-center lg:text-left text-4xl xl:text-3xl font-medium font-montserrat"
             >
               Sustainable Progress and Equality Collective
             </h1>
@@ -62,12 +62,12 @@ export default function Home() {
           </section>
 
           <section className="bg-spec-yellow py-10 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="col-span-1 text-xl text-center md:text-left md:pl-6 font-montserrat py-2">
+            <div className="grid grid-cols-1 items-center xl:grid-cols-2 gap-0 lg:gap-6">
+              <div className="font-montserrat text-2xl text-center col-span-1 xl:text-center">
                 Want to get involved?
               </div>
 
-              <div className="grid sm:grid-cols-1 md:grid-cols-2 col-span-1 gap-30">
+              <div className="grid grid-cols-1 col-span-1 gap-30 lg:grid-cols-2">
                 <div className="text-center py-2">
                   <a href="https://docs.specollective.org" target="_blank" rel="noreferrer" className="text-xl font-medium mr-1 underline p-2 font-montserrat">
                     DOCUMENTATION
@@ -86,8 +86,8 @@ export default function Home() {
             </div>
           </section>
 
-          <footer className="grid md:grid-cols-2 pt-10 text-center">
-            <section>
+          <footer className="grid md:grid-cols-2 pt-10 text-left md:text-center">
+            <section className="block pb-4">
               Email us:
               <a
                 className="underline pl-2"
@@ -96,7 +96,7 @@ export default function Home() {
                 info@specollective.org
               </a>
             </section>
-            <section className="block text-center pb-10">
+            <section className="block pb-4">
               Follow Us:
               <a
                 href="https://github.com/specollective"
