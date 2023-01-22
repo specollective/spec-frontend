@@ -85,7 +85,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="grid md:grid-cols-2 pt-10 text-left">
+        <footer className="grid md:grid-cols-2 pt-10 text-center">
           <section>
             Email us:
             <a
@@ -95,7 +95,7 @@ export default function Home() {
               info@specollective.org
             </a>
           </section>
-          <section className="text-left">
+          <section className="block text-center">
             Follow Us:
             <a 
               href="https://github.com/specollective"
