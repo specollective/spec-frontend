@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="py-10 px-6 md:px-72 2xl:w-2/3 2xl:m-auto 2xl:items-center 2xl:grid 2xl:place-items-center 2xl:h-screen">
+      <main className="py-10 px-6 sm:px-10 md:px-20 lg:px-72 m-auto">
         <header className="pb-12">
           <Image
             className="md:inline text-center m-auto"
@@ -60,23 +60,23 @@ export default function Home() {
           </p>
         </section>
   
-        <section className="bg-spec-yellow p-6">
+        <section className="bg-spec-yellow py-10 px-4">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="col-span-1 text-xl text-center md:text-left md:pl-6 font-montserrat py-2">
               Want to get involved?
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 col-span-1 gap-4 md:gap-24">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 col-span-1 gap-30">
               <div className="text-center py-2">
                 <a href="https://docs.specollective.org" target="_blank" rel="noreferrer" className="text-xl font-medium mr-1 underline p-2 font-montserrat">
                   DOCUMENTATION
                 </a>
               </div>
 
-              <div>
+              <div className="text-center">
                 <a
                   href="https://opencollective.com/spec"
-                  className="block bg-spec-turquiose text-center py-2 text-2xl font-medium tracking-wider text-white rounded-br-lg rounded-tl-lg font-montserrat"
+                  className="block bg-spec-turquiose text-center p-2 text-2xl font-medium text-white rounded-br-lg rounded-tl-lg font-montserrat w-3/4 m-auto"
                 >
                   DONATE
                 </a>
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className=" grid md:grid-cols-2 pt-10">
+        <footer className="grid md:grid-cols-2 pt-10 text-left">
           <section>
             Email us:
             <a
