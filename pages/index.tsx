@@ -38,7 +38,7 @@ export default function Home() {
             Community-engaged research
           </h3>
           <p className="text-2xl font-montserrat">
-            We engage communities through <b>participatory</b>, <b>action-oriented research</b> to develop <b>community-driven solutions</b>.
+            We engage communities through <b>action-oriented research</b> to develop <b>community-driven solutions</b> to local and global problems.
           </p>
         </section>
         
@@ -47,7 +47,7 @@ export default function Home() {
             Professional service learning
           </h3>
           <p className="text-2xl font-montserrat">
-            We provide <b>paid work experiences</b> contributing to <b>real-world projects</b> that support community building, social equity, and sustainability.
+            We provide <b>paid work experiences</b> that help people learn through service, contributing to <b>real-world social impact projects</b>.
           </p>
         </section>
         
@@ -56,7 +56,7 @@ export default function Home() {
             Open collaborative innovation
           </h3>
           <p className="text-2xl font-montserrat">
-            We collaborate in full transparency and are committed to <b>open source</b> and <b>open access</b> to foster <b>inclusion, learning, and innovation</b>.
+            We are committed to <b>open source and open access</b> and operating transparently to foster <b>inclusion, accessibility, and innovation</b>.
           </p>
         </section>
   
