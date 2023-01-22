@@ -6,7 +6,20 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        spec: {
+          yellow: "#FCD991",
+          turquiose: '#0C9FAA',
+          lightRed: '#F16A6E',
+          black: '#1C1C1C',
+        },
+      },
+      fontFamily: {
+        montserrat: ["Montserrat"],
+        dmserif: ['DM Serif Text'],
+      },
+    },
   },
   plugins: [
     require('tw-elements/dist/plugin'),
