@@ -10,142 +10,140 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex items-center justify-content m-auto p-10 md:w-2/3 lg:h-full xl:w-1/3 xl:h-screen">
-        <div className="w-full">
-          <header className="pb-20">
-            <Image
-              className="md:inline text-center m-auto"
-              src="/spec-logo.svg"
-              alt="spec-logo"
-              width={120}
-              height={120}
-              priority
-            />
-            <h1
-              className="md:inline text-center text-3xl font-medium font-montserrat"
-            >
-              Sustainable Progress and Equality Collective
-            </h1>
-          </header>
-
-          <section className="mb-4">
-            <h2 className="text-4xl font-normal mb-4 font-dmserif text-spec-black">
-              We are a radically transparent learning organization advancing <span className="text-spec-lightRed">sustainability</span> and <span className="text-spec-lightRed">social equity</span> through...
-            </h2>
-          </section>
-
-          <section className="font-dmserif py-4">
-            <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
-              Community-engaged research
-            </h3>
-            <p className="text-2xl font-montserrat">
-              We engage communities through <b>action-oriented research</b> to develop <b>community-driven solutions</b> to local and global problems.
-            </p>
-          </section>
-
-          <section className="font-dmserif py-4">
-            <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
-              Professional service learning
-            </h3>
-            <p className="text-2xl font-montserrat">
-              We provide <b>paid work experiences</b> that help people learn through service, contributing to <b>real-world social impact projects</b>.
-            </p>
-          </section>
-
-          <section className="py-4 mb-10">
-            <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
-              Open collaborative innovation
-            </h3>
-            <p className="text-2xl font-montserrat">
-              We are committed to <b>open source and open access</b> and operating transparently to foster <b>inclusion, accessibility, and innovation</b>.
-            </p>
-          </section>
-
-          <section className="bg-spec-yellow py-10 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="col-span-1 text-xl text-center md:text-left md:pl-6 font-montserrat py-2">
-                Want to get involved?
+      <main className="py-10 px-6 sm:px-10 md:px-20 lg:px-72 m-auto">
+        <header className="pb-12">
+          <Image
+            className="md:inline text-center m-auto"
+            src="/spec-logo.svg"
+            alt="spec-logo"
+            width={120}
+            height={120}
+            priority
+          />
+          <h1
+            className="md:inline text-center text-3xl font-medium font-montserrat"
+          >
+            Sustainable Progress and Equality Collective
+          </h1>
+        </header>
+        
+        <section className="mb-4">
+          <h2 className="text-4xl font-normal mb-4 font-dmserif text-spec-black">
+            We are a radically transparent learning organization advancing <span className="text-spec-lightRed">sustainability</span> and <span className="text-spec-lightRed">social equity</span> through...
+          </h2>
+        </section>
+        
+        <section className="font-dmserif py-4">
+          <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
+            Community-engaged research
+          </h3>
+          <p className="text-2xl font-montserrat">
+            We engage communities through <b>action-oriented research</b> to develop <b>community-driven solutions</b> to local and global problems.
+          </p>
+        </section>
+        
+        <section className="font-dmserif py-4">
+          <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
+            Professional service learning
+          </h3>
+          <p className="text-2xl font-montserrat">
+            We provide <b>paid work experiences</b> that help people learn through service, contributing to <b>real-world social impact projects</b>.
+          </p>
+        </section>
+        
+        <section className="py-4 mb-10">
+          <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
+            Open collaborative innovation
+          </h3>
+          <p className="text-2xl font-montserrat">
+            We are committed to <b>open source and open access</b> and operating transparently to foster <b>inclusion, accessibility, and innovation</b>.
+          </p>
+        </section>
+  
+        <section className="bg-spec-yellow py-10 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="col-span-1 text-xl text-center md:text-left md:pl-6 font-montserrat py-2">
+              Want to get involved?
+            </div>
+            
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 col-span-1 gap-30">
+              <div className="text-center py-2">
+                <a href="https://docs.specollective.org" target="_blank" rel="noreferrer" className="text-xl font-medium mr-1 underline p-2 font-montserrat">
+                  DOCUMENTATION
+                </a>
               </div>
 
-              <div className="grid sm:grid-cols-1 md:grid-cols-2 col-span-1 gap-30">
-                <div className="text-center py-2">
-                  <a href="https://docs.specollective.org" target="_blank" rel="noreferrer" className="text-xl font-medium mr-1 underline p-2 font-montserrat">
-                    DOCUMENTATION
-                  </a>
-                </div>
-
-                <div className="text-center">
-                  <a
-                    href="https://opencollective.com/spec"
-                    className="block bg-spec-turquiose text-center p-2 text-2xl font-medium text-white rounded-br-lg rounded-tl-lg font-montserrat w-3/4 m-auto"
-                  >
-                    DONATE
-                  </a>
-                </div>
+              <div className="text-center">
+                <a
+                  href="https://opencollective.com/spec"
+                  className="block bg-spec-turquiose text-center p-2 text-2xl font-medium text-white rounded-br-lg rounded-tl-lg font-montserrat w-3/4 m-auto"
+                >
+                  DONATE
+                </a>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <footer className="grid md:grid-cols-2 pt-10 text-center">
-            <section>
-              Email us:
-              <a
-                className="underline pl-2"
-                href="mailto:info@specollective.org"
-              >
-                info@specollective.org
-              </a>
-            </section>
-            <section className="block text-center pb-10">
-              Follow Us:
-              <a
-                href="https://github.com/specollective"
-                target="_blank"
-                rel="noreferrer"
-                className="pl-2"
-              >
-                <Image
-                  className="inline"
-                  src="/github-logo.svg"
-                  alt="github-logo"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/specollective"
-                target="_blank"
-                rel="noreferrer"
-                className="pl-2"
-              >
-                <Image
-                  className="inline"
-                  src="/linkedin-logo.svg"
-                  alt="linkedin-logo"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </a>
-              <a
-                href="https://twitter.com/specollective"
-                target="_blank"
-                rel="noreferrer"
-                className="pl-2"
-              >
-                <Image
-                  className="inline"
-                  src="/twitter-logo.svg"
-                  alt="twitter-logo"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </a>
-            </section>
-          </footer>
-        </div>
+        <footer className="grid md:grid-cols-2 pt-10 text-center">
+          <section>
+            Email us:
+            <a
+              className="underline pl-2"
+              href="mailto:info@specollective.org"
+            >
+              info@specollective.org
+            </a>
+          </section>
+          <section className="block text-center">
+            Follow Us:
+            <a 
+              href="https://github.com/specollective"
+              target="_blank"
+              rel="noreferrer"
+              className="pl-2"
+            >
+              <Image
+                className="inline"
+                src="/github-logo.svg"
+                alt="github-logo"
+                width={25}
+                height={25}
+                priority
+              />
+            </a>
+            <a 
+              href="https://www.linkedin.com/company/specollective"
+              target="_blank"
+              rel="noreferrer"
+              className="pl-2"
+            >
+              <Image
+                className="inline"
+                src="/linkedin-logo.svg"
+                alt="linkedin-logo"
+                width={25}
+                height={25}
+                priority
+              />
+            </a>
+            <a 
+              href="https://twitter.com/specollective"
+              target="_blank"
+              rel="noreferrer"
+              className="pl-2"
+            >
+              <Image
+                className="inline"
+                src="/twitter-logo.svg"
+                alt="twitter-logo"
+                width={25}
+                height={25}
+                priority
+              />
+            </a>
+          </section>
+        </footer>
       </main>
     </>
   )
