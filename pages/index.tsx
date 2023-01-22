@@ -29,34 +29,34 @@ export default function Home() {
         
         <section className="mb-4">
           <h2 className="text-4xl font-normal mb-4 font-dmserif text-spec-black">
-            We are a radically transparent learning organization building <span className="text-spec-lightRed">social</span> and <span className="text-spec-lightRed">environmental equity</span> through...
+            We are a radically transparent learning organization advancing <span className="text-spec-lightRed">sustainability</span> and <span className="text-spec-lightRed">social equity</span> through...
           </h2>
         </section>
         
         <section className="font-dmserif py-4">
           <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
-            Engaged Research
+            Community-engaged research
           </h3>
           <p className="text-2xl font-montserrat">
-            We engage organizations and communities through <b>action-oriented research</b> to understand their struggles and support their causes.
+            We engage communities through <b>participatory</b>, <b>action-oriented research</b> to develop <b>community-driven solutions</b>.
           </p>
         </section>
         
         <section className="font-dmserif py-4">
           <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
-            Service Learning
+            Professional service learning
           </h3>
           <p className="text-2xl font-montserrat">
-            We provide <b>paid work experiences</b> that help people upskill and grow their careers serving their communities and the planet.
+            We provide <b>paid work experiences</b> contributing to <b>real-world projects</b> that support community building, social equity, and sustainability.
           </p>
         </section>
         
         <section className="py-4 mb-10">
           <h3 className="text-3xl font-normal mb-2 text-spec-turquiose font-dmserif">
-            Open Collaboration
+            Open collaborative innovation
           </h3>
           <p className="text-2xl font-montserrat">
-            We collaborate in full transparency and are committed to <b>open source</b> and <b>open access</b> to empower others to learn and build on our work.
+            We collaborate in full transparency and are committed to <b>open source</b> and <b>open access</b> to foster <b>inclusion, learning, and innovation</b>.
           </p>
         </section>
   
