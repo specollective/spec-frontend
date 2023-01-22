@@ -56,7 +56,7 @@ export default function Home() {
             Open Collaboration
           </h3>
           <p className="text-2xl font-montserrat">
-            We operate in full transparency and are committed to <b>open source</b> and <b>open access</b> to empower others to build on our work.
+            We collaborate in full transparency and are committed to <b>open source</b> and <b>open access</b> to empower others to learn and build on our work.
           </p>
         </section>
   
