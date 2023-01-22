@@ -47,7 +47,7 @@ export default function Home() {
             Service Learning
           </h3>
           <p className="text-2xl font-montserrat">
-            We provide <b>paid work experiences</b> that help people learn skills and build careers and contribute to positive social impact.
+            We provide <b>paid work experiences</b> that help people upskill and grow their careers serving their communities and the planet.
           </p>
         </section>
         
@@ -62,12 +62,11 @@ export default function Home() {
   
         <section className="bg-spec-yellow p-6">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            
-            <div className="col-span-1 text-xl text-left py-2 pl-8 font-montserrat">
+            <div className="col-span-1 text-xl text-center md:text-left md:pl-6 font-montserrat py-2">
               Want to get involved?
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 col-span-1 gap-20 pr-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 col-span-1 gap-4 md:gap-24">
               <div className="text-center py-2">
                 <a href="https://docs.specollective.org" target="_blank" rel="noreferrer" className="text-xl font-medium mr-1 underline p-2 font-montserrat">
                   DOCUMENTATION
@@ -114,7 +113,7 @@ export default function Home() {
               />
             </a>
             <a 
-              href="https://linkedin/specollective"
+              href="https://www.linkedin.com/company/specollective"
               target="_blank"
               rel="noreferrer"
               className="pl-2"
@@ -123,6 +122,21 @@ export default function Home() {
                 className="inline"
                 src="/linkedin-logo.svg"
                 alt="linkedin-logo"
+                width={25}
+                height={25}
+                priority
+              />
+            </a>
+            <a 
+              href="https://twitter.com/specollective"
+              target="_blank"
+              rel="noreferrer"
+              className="pl-2"
+            >
+              <Image
+                className="inline"
+                src="/twitter-logo.svg"
+                alt="twitter-logo"
                 width={25}
                 height={25}
                 priority
