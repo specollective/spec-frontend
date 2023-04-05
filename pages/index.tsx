@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -21,16 +21,17 @@ export default function Home() {
               height={120}
               priority
             />
-            <h1
-              className="block text-center lg:text-left text-4xl xl:text-3xl font-medium font-montserrat"
-            >
+            <h1 className="block text-center lg:text-left text-4xl xl:text-3xl font-medium font-montserrat">
               Sustainable Progress and Equality Collective
             </h1>
           </header>
 
           <section className="mb-4">
             <h2 className="text-4xl font-normal mb-4 font-dmserif text-spec-black">
-              We are a radically transparent learning organization advancing <span className="text-spec-lightRed">sustainability</span> and <span className="text-spec-lightRed">social equity</span> through...
+              We are a radically transparent learning organization advancing{" "}
+              <span className="text-spec-lightRed">sustainability</span> and{" "}
+              <span className="text-spec-lightRed">social equity</span>{" "}
+              through...
             </h2>
           </section>
 
@@ -39,7 +40,9 @@ export default function Home() {
               Community-engaged research
             </h3>
             <p className="text-2xl font-montserrat">
-              We engage communities through <b>action-oriented research</b> to develop <b>community-driven solutions</b> to local and global problems.
+              We engage communities through <b>action-oriented research</b> to
+              develop <b>community-driven solutions</b> to local and global
+              problems.
             </p>
           </section>
 
@@ -48,7 +51,9 @@ export default function Home() {
               Professional service learning
             </h3>
             <p className="text-2xl font-montserrat">
-              We provide <b>paid work experiences</b> that help people learn through service, contributing to <b>real-world social impact projects</b>.
+              We provide <b>paid work experiences</b> that help people learn
+              through service, contributing to{" "}
+              <b>real-world social impact projects</b>.
             </p>
           </section>
 
@@ -57,7 +62,9 @@ export default function Home() {
               Open collaborative innovation
             </h3>
             <p className="text-2xl font-montserrat">
-              We are committed to <b>open source and open access</b> and operating transparently to foster <b>inclusion, accessibility, and innovation</b>.
+              We are committed to <b>open source and open access</b> and
+              operating transparently to foster{" "}
+              <b>inclusion, accessibility, and innovation</b>.
             </p>
           </section>
 
@@ -69,7 +76,12 @@ export default function Home() {
 
               <div className="grid grid-cols-1 col-span-1 gap-30 lg:grid-cols-2">
                 <div className="text-center py-2">
-                  <a href="https://docs.specollective.org" target="_blank" rel="noreferrer" className="text-xl font-medium mr-1 underline p-2 font-montserrat">
+                  <a
+                    href="https://docs.specollective.org"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xl font-medium mr-1 underline p-2 font-montserrat"
+                  >
                     DOCUMENTATION
                   </a>
                 </div>
@@ -148,5 +160,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
