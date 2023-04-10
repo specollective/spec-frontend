@@ -8,8 +8,6 @@ export default function Hero() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    // justify-end md:justify-end
-    // flex justify-between
     <section className="flex ">
       <div
         id="top"
@@ -23,11 +21,8 @@ export default function Hero() {
           to build websites, hardware, art, and written content.
         </p>
       </div>
-      {/* relative top-1/2 flex h-full w-3/5 md:pl-20 lg:p-0 */}
       <div className="relative top-1/2 h-full w-3/5 md:pl-8 2xl:w-6/12 2xl:p-0">
-        {/* top-1/2 aspect-auto h-auto w-full md:min-h-[50rem] md:min-w-[40rem] */}
         <Image src={training} alt="training-photo" className="float-right" />
-        {/* invisible absolute bottom-0 right-0 ml-auto w-full w-16 -translate-y-1/2 md:visible md:mr-28 md:mb-20 */}
         <button onClick={toTop} className="invisible lg:visible">
           <Image
             src={topButton}
