@@ -5,26 +5,30 @@ import StatBox from './stat-box';
 // 3. alignment on three bottom cards
 export default function ByTheNumbers() {
     return (
-        <div className="w-full grid grid-cols-3 grid-rows-2 grid-flow-col gap-16 justify-items-center items-center p-16  bg-spec-lightTurquiose mt-6">
+        <div className="flex flex-col p-8  justify-center items-center gap-y-3.5 md:w-full md:grid md:grid-cols-3 md:grid-rows-2 md:grid-flow-col md:gap-6 lg:gap-14 md:justify-items-center md:items-center md:p-16  bg-spec-lightTurquiose mt-6
+        ">
+            <div className="block md:hidden text-base font-medium opacity-40 text-black  font-montserrat text-left mr-auto pl-10">
+                <p>BY THE NUMBERS</p>
+            </div>
 
             <StatBox
-                className="row-start-1 col-start-1 row-span-2 my-2 md:my-0  font-normal rounded-md bg-spec-white font-dmserif text-spec-turquiose"
+                className=" border border-spec-turquiose md:text-base md:border-none row-start-1 col-start-1 row-span-2 font-normal rounded-md bg-spec-white font-dmserif text-spec-turquiose "
 
                 height="h-96"
                 width="w-full"
             >
-                <p className='text-8xl font-normal mb-5'>90%</p>
-                <p className='text-black m-6 font-montserrat font-normal leading-7'>
+                <p className='text-7xl md:text-6xl lg:text-8xl'>90%</p>
+                <p className='text-base text-black m-6 font-montserrat font-normal leading-7 md:text lg:text-lg'>
                     of individuals inside the organization come from diverse backgrounds; that might include visible/invisible
                     disabilities, LGBTQ+, women, people of color.
                 </p>
             </StatBox>
 
-            <div className="row-start-1 col-start-2 row-span-2 col-span-2 ">
+            <div className="hidden md:block row-start-1 col-start-2 row-span-2 col-span-2">
                 <StatBox
-                    className='text-left rounded-md font-dmserif text-spec-turquiose'
+                    className='text-left rounded-md font-dmserif text-spec-turquiose '
                     height="h-full"
-                    width="w-2/3"
+                    width="w-full"
                 >
                     <h2 className="text-lg font-medium opacity-40 text-black text-left font-montserrat mb-8">
                         <p>BY THE NUMBERS</p>
@@ -40,32 +44,32 @@ export default function ByTheNumbers() {
                 </StatBox>
             </div>
             <StatBox
-                className="row-start-3 col-start-1 font-normal md:my-0  rounded-md bg-spec-white font-dmserif text-spec-turquiose"
+                className="border border-spec-turquiose md:border-none row-start-3 col-start-1 font-normal  rounded-md bg-spec-white font-dmserif text-spec-turquiose"
 
                 height="h-full"
                 width="w-full"
             >
-                <p className='text-8xl font-normal'>12</p>
-                <p className='text-black m-4 font-montserrat leading-7'>Research Associates (RAs) went through this program</p>
+                <p className='text-7xl md:text-8xl font-normal'>12</p>
+                <p className='text-black m-4 font-montserrat leading-7 text-base md:text-lg'>Research Associates (RAs) went through this program</p>
             </StatBox>
 
             <StatBox
-                className="row-start-3 col-start-2 font-normal md:my-0  rounded-md bg-spec-white font-dmserif text-spec-turquiose"
+                className="border border-spec-turquiose md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-white font-dmserif text-spec-turquiose"
 
                 height="h-full"
                 width="w-full"
             >
-                <p className='text-8xl font-normal'>7</p>
-                <p className='text-black m-4 font-montserrat leading-7'>Research Associates placed at jobs; externally or through SPEC </p>
+                <p className='text-7xl font-normal md:text-8xl'>7</p>
+                <p className='text-black m-4 font-montserrat leading-7 text-base md:text-lg'>Research Associates placed at jobs; externally or through SPEC </p>
             </StatBox>
 
             <StatBox
-                className="row-start-3 col-start-3 my-4 font-normal md:my-0 rounded-md bg-spec-white font-dmserif text-spec-turquiose"
+                className="border border-spec-turquiose md:border-none row-start-3 col-start-3 md:my-4 font-normal  rounded-md bg-spec-white font-dmserif text-spec-turquiose "
                 height="h-full"
                 width="w-full"
             >
-                <p className='text-8xl font-normal'>3</p>
-                <p className='text-black m-4 font-montserrat leading-7'>Client MVP projects successfully shipped</p>
+                <p className='text-7xl font-normal md:text-8xl'>3</p>
+                <p className='text-black m-4 font-montserrat leading-7 text-base md:text-lg'>Client MVP projects successfully shipped</p>
             </StatBox>
         </div>
     );
