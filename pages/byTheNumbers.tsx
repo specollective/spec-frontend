@@ -28,7 +28,7 @@ export default function ByTheNumbers() {
                 <StatBox
                     className='text-left rounded-md font-dmserif text-spec-turquiose '
                     height="h-full"
-                    width="w-full"
+                    width="w-3/5"
                 >
                     <h2 className="text-lg font-medium opacity-40 text-black text-left font-montserrat mb-8">
                         <p>BY THE NUMBERS</p>
