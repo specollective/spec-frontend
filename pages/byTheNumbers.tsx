@@ -1,14 +1,19 @@
 import StatBox from './stat-box';
-// todo:
-// 1. install inter font(tried and failed)
-// 2. card in each grid should be narrower
-// 3. alignment on three bottom cards
+
 export default function ByTheNumbers() {
     return (
         <div className="flex flex-col p-8  justify-center items-center gap-y-3.5 md:w-full md:grid md:grid-cols-3 md:grid-rows-2 md:grid-flow-col md:gap-6 lg:gap-14 md:justify-items-center md:items-center md:p-16  bg-spec-lightTurquiose mt-6
         ">
-            <div className="block md:hidden text-base font-medium opacity-40 text-black  font-montserrat text-left mr-auto pl-10">
-                <p>BY THE NUMBERS</p>
+            <div className="block p-2 md:hidden">
+                <p className='text-base font-medium opacity-40 text-black  font-montserrat text-left mb-4'>BY THE NUMBERS</p>
+
+                <p className='text-left text-black text-2xl font-normal leading-10 mb-8 font-dmserif font-wide antialiased'>
+                    We are striving to <span className='text-teal-700'>create sustainable careers</span> for our contributors.
+                </p>
+                <p className='text-left text-black text-base font-montserrat font-medium leading-7 tracking-5 antialiased'>
+                    SPEC was established based on the core values of sustainability, progress and equality.
+                    These values combined, provide a recipe for building radically sustainable, equitable, transparent organizations.
+                </p>
             </div>
 
             <StatBox
