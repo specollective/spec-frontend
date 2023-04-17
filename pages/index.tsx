@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "./Navbar";
+import GetInvolved from "./GetInvolved";
 
 export default function Home() {
   return (
