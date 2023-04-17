@@ -21,84 +21,105 @@ export default function GetInvolved() {
     },
   ];
 
+  // const getInvolvedCards = getInvolvedCardData.map((cardData) => {
+  //   return (
+  //     <div key={cardData.title} className="w-full p-2 md:w-1/3">
+  //       <div id="sub-card" className="h-full overflow-hidden rounded-lg bg-spec-lightTurquiose shadow-md">
+  //         <h1 className="rounded-tl-3xl py-2 px-3 text-center font-dmserif text-lg lg:text-xl xl:px-8">
+  //           {cardData.title}
+  //         </h1>
+  //         <div className="montserrat h-[12rem] rounded-br-3xl bg-spec-white px-6">
+  //           <p className=" text-sm lg:text-base">{cardData.body}</p>
+  //           <a href={cardData.contactUs} className="underline">
+  //             <p className="text-center text-xs font-semibold lg:text-sm">
+  //               CONTACT US
+  //             </p>
+  //           </a>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // });
+
+  // use if conditional to adjust padding if there is too much text
   const getInvolvedCards = getInvolvedCardData.map((cardData) => {
     return (
-      <div key={cardData.title} className="w-90 m-4">
-        <h1 className="2x:text-3xl rounded-tl-3xl bg-spec-lightTurquiose py-3 px-6 text-center font-dmserif text-xl lg:text-2xl xl:px-16">
-          {cardData.title}
-        </h1>
-        <div className="montserrat rounded-br-3xl bg-spec-white px-5 py-6">
-          <p className="mb-3">{cardData.body}</p>
-          <a href={cardData.contactUs} className="underline">
-            <p className="text-center text-sm font-semibold">CONTACT US</p>
-          </a>
+      <div key={cardData.title} className="p-2 lg:w-1/3">
+        <div className="overflow-hidden rounded-tl-3xl">
+          <h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
+            {cardData.title}
+          </h1>
+          <div className="montserrat h-[12rem] rounded-br-3xl bg-spec-white px-6 py-4">
+            <p className="pb-2 text-sm">{cardData.body}</p>
+            <a
+              href={cardData.contactUs}
+              className="text-center text-xs font-semibold underline"
+            >
+              CONTACT US
+            </a>
+          </div>
         </div>
       </div>
     );
   });
+
   return (
     <div
       id="background"
-      className="invisible bg-spec-sunshine px-40 md:visible"
+      className="invisible bg-spec-sunshine px-40 py-10 lg:visible"
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-evenly">
         <h1
           id="header"
-          className="m-auto py-10 text-center font-dmserif text-4xl 2xl:text-5xl"
+          className="text-center font-dmserif text-2xl lg:text-4xl xl:text-5xl"
         >
           Ready to be a part of something bigger?
         </h1>
-        <div className="m-auto flex-shrink-0">
-          {/* min-w-fit  */}
-          <div
-            id="body-box"
-            className="min-w-96 px-30 flex justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white xl:gap-28"
-          >
-            <div
-              id="body-left-content"
-              className="flex-shrink flex-grow py-20 pl-20"
+        <div
+          id="body-box"
+          className="card-container m-auto mt-10 flex w-11/12 items-center justify-between rounded-tl-3xl rounded-br-3xl bg-spec-white p-16 xl:mt-16"
+        >
+          <div id="body-left-content" className="w-6/12">
+            <h2
+              id="body-left-header"
+              className=" font-dmserif text-4xl xl:text-5xl"
             >
-              <h2 id="body-box-header" className=" font-dmserif text-4xl">
-                Join us in making a difference!
-              </h2>
-              <p
-                id="body-subject"
-                className="montserrat pt-8 text-base font-medium leading-6"
+              Join us in making a difference!
+            </h2>
+            <p
+              id="body-left-text"
+              className="montserrat mt-8 text-sm font-medium leading-6 lg:text-base"
+            >
+              Donate to SPEC today to <br></br> support our mission and impact.
+            </p>
+            <div
+              id="container-for-anchor-button"
+              className="mt-5 flex w-6/12 items-center justify-between"
+            >
+              <a
+                id="learn-more-hyperlink"
+                className="font-montserrat font-semibold tracking-wide underline"
               >
-                Donate to SPEC today to <br></br> support our mission and
-                impact.
-              </p>
-              <div
-                id="container-for-learn-more-and-donate"
-                className="mt-5 flex gap-4 "
+                <p className="text-xs lg:text-sm">LEARN MORE</p>
+              </a>
+              <button
+                id="donate-button"
+                type="button"
+                className="montserrat w-30 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white "
               >
-                <a
-                  id="learn-more-hyperlink"
-                  className="py-2 font-montserrat font-semibold tracking-wide underline"
-                >
-                  LEARN MORE
-                </a>
-                <a
-                  id="donate-button"
-                  href="#"
-                  className="montserrat w-30 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose py-3 px-5 text-center text-base font-semibold tracking-wider text-white"
-                >
-                  DONATE
-                </a>
-              </div>
-            </div>
-            <div id="img" className="flex-shrink-0 pr-20">
-              <Image
-                className="3xl:scale-75 h-full md:scale-100 xl:scale-90"
-                src={donate}
-                alt="donate-image"
-              />
+                DONATE
+              </button>
             </div>
           </div>
+          {/* 3xl:scale-75 h-full md:scale-100 xl:scale-90 */}
+          <div id="body-right-content" className="scale-90">
+            <Image className="" src={donate} alt="donate-image" />
+          </div>
         </div>
-      </div>
-      <div id="sub-cards" className="flex">
-        {getInvolvedCards}
+        {/* </div> */}
+        <div id="sub-cards" className="m-auto mt-6 flex gap-10">
+          {getInvolvedCards}
+        </div>
       </div>
     </div>
   );
