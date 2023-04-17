@@ -23,7 +23,7 @@ export default function GetInvolved() {
 
   const getInvolvedCards = getInvolvedCardData.map((cardData) => {
     return (
-      <div key={cardData.title} className="m-4 w-80">
+      <div key={cardData.title} className="w-90 m-4">
         <h1 className="2x:text-3xl rounded-tl-3xl bg-spec-lightTurquiose py-3 px-6 text-center font-dmserif text-xl lg:text-2xl xl:px-16">
           {cardData.title}
         </h1>
@@ -37,61 +37,68 @@ export default function GetInvolved() {
     );
   });
   return (
-    <div id="background" className="bg-spec-sunshine px-40">
-      <div>
+    <div
+      id="background"
+      className="invisible bg-spec-sunshine px-40 md:visible"
+    >
+      <div className="flex flex-col">
         <h1
           id="header"
-          className="py-10 text-center font-dmserif text-3xl xl:text-4xl 2xl:text-5xl"
+          className="m-auto py-10 text-center font-dmserif text-4xl 2xl:text-5xl"
         >
           Ready to be a part of something bigger?
         </h1>
-        <div
-          id="body-box"
-          className=" m-auto flex w-10/12 justify-between gap-40 rounded-tl-3xl rounded-br-3xl bg-spec-white px-28"
-        >
-          <div id="body-left-content" className=" py-20 ">
-            <h2
-              id="body-box-header"
-              className="font-dmserif text-4xl 2xl:w-3/5"
-            >
-              Join us in making a difference!
-            </h2>
-            <p
-              id="body-subject"
-              className="montserrat pt-8 text-base font-medium leading-6"
-            >
-              Donate to SPEC today to <br></br> support our mission and impact.
-            </p>
+        <div className="m-auto flex-shrink-0">
+          {/* min-w-fit  */}
+          <div
+            id="body-box"
+            className="min-w-96 px-30 flex justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white xl:gap-28"
+          >
             <div
-              id="container-for-learn-more-and-donate"
-              className="mt-5 flex gap-4 "
+              id="body-left-content"
+              className="flex-shrink flex-grow py-20 pl-20"
             >
-              <a
-                id="learn-more-hyperlink"
-                className="py-2 font-montserrat font-semibold tracking-wide underline"
+              <h2 id="body-box-header" className=" font-dmserif text-4xl">
+                Join us in making a difference!
+              </h2>
+              <p
+                id="body-subject"
+                className="montserrat pt-8 text-base font-medium leading-6"
               >
-                LEARN MORE
-              </a>
-              <a
-                id="donate-button"
-                href="#"
-                className="montserrat w-30 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose py-3 px-5 text-center text-base font-semibold tracking-wider text-white"
+                Donate to SPEC today to <br></br> support our mission and
+                impact.
+              </p>
+              <div
+                id="container-for-learn-more-and-donate"
+                className="mt-5 flex gap-4 "
               >
-                DONATE
-              </a>
+                <a
+                  id="learn-more-hyperlink"
+                  className="py-2 font-montserrat font-semibold tracking-wide underline"
+                >
+                  LEARN MORE
+                </a>
+                <a
+                  id="donate-button"
+                  href="#"
+                  className="montserrat w-30 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose py-3 px-5 text-center text-base font-semibold tracking-wider text-white"
+                >
+                  DONATE
+                </a>
+              </div>
+            </div>
+            <div id="img" className="flex-shrink-0 pr-20">
+              <Image
+                className="3xl:scale-75 h-full md:scale-100 xl:scale-90"
+                src={donate}
+                alt="donate-image"
+              />
             </div>
           </div>
-          <div id="img" className="flex-shrink-0">
-            <Image
-              className="3xl:scale-75 my-auto h-full scale-125 md:scale-75 xl:scale-100 2xl:scale-90"
-              src={donate}
-              alt="donate-image"
-            />
-          </div>
         </div>
-        <div id="sub-cards" className="flex">
-          {getInvolvedCards}
-        </div>
+      </div>
+      <div id="sub-cards" className="flex">
+        {getInvolvedCards}
       </div>
     </div>
   );
