@@ -24,7 +24,7 @@ export default function GetInvolved() {
   // use if conditional to adjust padding if there is too much text
   const getInvolvedCards = getInvolvedCardData.map((cardData) => {
     return (
-      <div key={cardData.title} className="p-2 lg:w-1/3">
+      <div key={cardData.title} className="w-1/4 p-2">
         <div className="overflow-hidden rounded-tl-3xl">
           <h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
             {cardData.title}
@@ -44,7 +44,6 @@ export default function GetInvolved() {
   });
 
   const tableContents = [
-    "The impact of your donation makes",
     ["$20", "Funds an hour of RA learning"],
     ["$50", "Introduces a RA to a new skill"],
     ["$100", "-"],
@@ -135,18 +134,37 @@ export default function GetInvolved() {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <table>
-                <tbody>
+              <table className="montserrat">
+                <thead>
                   <tr>
-                    <td>This is a table</td>
+                    <td className=" bg-spec-banana">
+                      The impact of your donation makes
+                    </td>
                   </tr>
+                </thead>
+                <tbody className="">
+                  {tableContents.map((row, index) => {
+                    const isEvenRow = index % 2 === 0;
+                    const rowColor = isEvenRow
+                      ? "bg-spec-lemon"
+                      : "bg-spec-banana";
+                    return (
+                      <tr key={index} className={rowColor}>
+                        {row.map((cell, cellIndex) => (
+                          <td key={cellIndex} className="px-4">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
           )}
         </div>
         {/* </div> */}
-        <div id="sub-cards" className="m-auto mt-6 flex gap-10">
+        <div id="sub-cards" className="m-auto mt-6 flex justify-around">
           {getInvolvedCards}
         </div>
       </div>
