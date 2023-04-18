@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import donate from "../public/DonateImg.svg";
 
@@ -21,26 +21,6 @@ export default function GetInvolved() {
     },
   ];
 
-  // const getInvolvedCards = getInvolvedCardData.map((cardData) => {
-  //   return (
-  //     <div key={cardData.title} className="w-full p-2 md:w-1/3">
-  //       <div id="sub-card" className="h-full overflow-hidden rounded-lg bg-spec-lightTurquiose shadow-md">
-  //         <h1 className="rounded-tl-3xl py-2 px-3 text-center font-dmserif text-lg lg:text-xl xl:px-8">
-  //           {cardData.title}
-  //         </h1>
-  //         <div className="montserrat h-[12rem] rounded-br-3xl bg-spec-white px-6">
-  //           <p className=" text-sm lg:text-base">{cardData.body}</p>
-  //           <a href={cardData.contactUs} className="underline">
-  //             <p className="text-center text-xs font-semibold lg:text-sm">
-  //               CONTACT US
-  //             </p>
-  //           </a>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // });
-
   // use if conditional to adjust padding if there is too much text
   const getInvolvedCards = getInvolvedCardData.map((cardData) => {
     return (
@@ -62,6 +42,28 @@ export default function GetInvolved() {
       </div>
     );
   });
+
+  const tableContents = [
+    "The impact of your donation makes",
+    ["$20", "Funds an hour of RA learning"],
+    ["$50", "Introduces a RA to a new skill"],
+    ["$100", "-"],
+    ["$1000", "Publishes an issue of JoER"],
+    ["$3000", "Funds a RA development project"],
+  ];
+
+  // const donationTable = function showDonationTable() {
+  //   const getInvolvedImage = document.getElementById("donate-image");
+  //   const div = document.createElement("div");
+  //   const sampleText = document.createElement("p");
+  //   const text = document.createTextNode("helloworld");
+  //   sampleText.appendChild(text);
+  //   div.appendChild(sampleText);
+
+  //   return false;
+  // };
+
+  const [donationTable, setDonationTable] = useState("Image");
 
   return (
     <div
@@ -99,6 +101,8 @@ export default function GetInvolved() {
               <a
                 id="learn-more-hyperlink"
                 className="font-montserrat font-semibold tracking-wide underline"
+                href="javascript:void(0)"
+                onClick={() => setDonationTable("table")}
               >
                 <p className="text-xs lg:text-sm">LEARN MORE</p>
               </a>
@@ -112,9 +116,31 @@ export default function GetInvolved() {
             </div>
           </div>
           {/* 3xl:scale-75 h-full md:scale-100 xl:scale-90 */}
-          <div id="body-right-content" className="scale-90">
-            <Image className="" src={donate} alt="donate-image" />
-          </div>
+          {donationTable === "Image" ? (
+            <div id="body-right-content" className="scale-90">
+              <Image
+                id="donate-image"
+                className=""
+                src={donate}
+                alt="donate-image"
+              />
+            </div>
+          ) : (
+            <div id="donation-table">
+              <div className="callout" data-closeable>
+                <button type="button" onClick={() => setDonationTable("Image")}>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>This is a table</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
         {/* </div> */}
         <div id="sub-cards" className="m-auto mt-6 flex gap-10">
@@ -125,14 +151,6 @@ export default function GetInvolved() {
   );
 }
 
-// background styling: color is "sunshine"
-
-// Title - "Ready to be a part of something bigger?"
-// styling: text size (sm, md, lg, xl, 2xl), margin top
-
-// Main Card
-// - Header: "Join us in making a difference!"
-// - Text: "Donate to SPEC today to support our mission and impact"
 // - Learn more hyperlink
 // - When clicked, image should turn into price table w/close button
 // - PRICE TABLE:
@@ -145,31 +163,14 @@ export default function GetInvolved() {
 // - "Donate" button
 // - Image
 
-// styling --> white background, border radius for top left and bottom right of card
-// center elements, use padding
-// heading text size (sm, md, lg, xl, 2xl)
-// body text size (sm, md, lg, xl, 2xl)
-// learn more hyperlink (should trigger image change)
-// donate button (get styling from navbar)
-// insert image, on right. sizing (sm, md, lg, xl, 2xl)
-// price table, make 2 basic rows that will repeat with alternatiing colors
-// color1: "banana" color2: "lemon"
-
-// Sub Cards
-// - Make one component
-// - Make object to map through containing following information (see information in figma)
-// - Title (in "lightTurquiose" background)
-// (styling: text size (sm, md, lg, xl, 2xl))
-// - Body (contains text in white background)
-// styling: text size (sm, md, lg, xl, 2xl)
-// - Contact us hyperlink
-// styling: text size (sm, md, lg, xl, 2xl)
-
 // STYLING MOBILE FIRST
-// carousel, title stays same "read to be a part of something bigger?"
+// carousel, title stays same "ready to be a part of something bigger?"
 // pt 1, 2, 3, 4, 5
 // pt1: body box
 // pt2: price table
 // pt3: subcard 1
 // pt4: subcard 2
 // pt5: subcard 3
+
+// creating price table
+// clicking learn more works

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Hero from "./Hero";
 import Navbar from "./Navbar";
 import GetInvolved from "./GetInvolved";
 
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <Hero />
       <GetInvolved />
       <Head>
         <title>Sustainable Progress and Equality Collective</title>
