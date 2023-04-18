@@ -22,20 +22,20 @@ export default function Footer() {
                     DONATE
                   </a>
                 </div>
-            <div className="items-center mt-10">© 2023 Sustainable Progress and Equality Collective</div> 
+            <div className="hidden lg:block items-center mt-10">© 2023 Sustainable Progress and Equality Collective</div> 
             </div>   
            
         
             <div className="float-right text-lg  mb-4 ">
 
-                  Documentation <br></br><br></br>Journal of Engadged Research <br></br><br></br>Digital Art Gallery<br></br><br></br>
+                   <div className="hidden lg:block">Documentation <br></br><br></br>Journal of Engadged Research <br></br><br></br>Digital Art Gallery<br></br><br></br></div>
                    <div className=" flex flex-row  space-x-4  ">
                   
 
                      <a
                       href="https://github.com/specollective"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener"
                       className="pl-1"
                     >
                       
@@ -55,7 +55,7 @@ export default function Footer() {
                       href="https://www.linkedin.com/company/specollective"
                       aria-label="LinkedIn"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener"
                       className="pl-1"
                     >
                       <Image
@@ -70,7 +70,7 @@ export default function Footer() {
                     <a
                       href="https://www.facebook.com/specollective"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener"
                       className="pl-1"
                     >
                         
@@ -88,7 +88,7 @@ export default function Footer() {
                     <a
                       href="https://twitter.com/specollective"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener"
                       className="pl-1"
                     >
                       <Image
