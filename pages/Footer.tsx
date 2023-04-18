@@ -17,7 +17,7 @@ export default function Footer() {
             <div className="text-center mt-12 px-4">
                   <a
                     href="https://opencollective.com/spec"
-                    className="  block bg-spec-yellow  text-center p-6 text-md font-medium text-black rounded-br-lg rounded-tl-lg font-montserrat h-12 w-28 "
+                    className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-lg rounded-tl-lg font-montserrat h-12 w-28 "
                   >
                     DONATE
                   </a>
@@ -26,7 +26,7 @@ export default function Footer() {
             </div>   
            
         
-            <div className="float-right text-lg bg-white mb-4 ">
+            <div className="float-right text-lg  mb-4 ">
 
                   Documentation <br></br><br></br>Journal of Engadged Research <br></br><br></br>Digital Art Gallery<br></br><br></br>
                    <div className=" flex flex-row  space-x-4  ">
