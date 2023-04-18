@@ -68,7 +68,7 @@ export default function GetInvolved() {
   return (
     <div
       id="background"
-      className="invisible bg-spec-sunshine px-40 py-10 lg:visible"
+      className="invisible shrink bg-spec-sunshine px-40 py-10 lg:visible"
     >
       <div className="flex flex-col justify-evenly">
         <h1
@@ -79,9 +79,9 @@ export default function GetInvolved() {
         </h1>
         <div
           id="body-box"
-          className="card-container m-auto mt-10 flex w-11/12 items-center justify-between rounded-tl-3xl rounded-br-3xl bg-spec-white p-16 xl:mt-16"
+          className="card-container m-auto mt-10 flex w-11/12 max-w-5xl items-center justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white p-16 xl:mt-16"
         >
-          <div id="body-left-content" className="w-6/12">
+          <div id="body-left-content" className="w-5/12 max-w-sm">
             <h2
               id="body-left-header"
               className=" font-dmserif text-4xl xl:text-5xl"
@@ -94,9 +94,10 @@ export default function GetInvolved() {
             >
               Donate to SPEC today to <br></br> support our mission and impact.
             </p>
+
             <div
               id="container-for-anchor-button"
-              className="mt-5 flex w-6/12 items-center justify-between"
+              className="mt-5 flex max-w-[15rem]  items-center justify-between"
             >
               <a
                 id="learn-more-hyperlink"
@@ -104,12 +105,14 @@ export default function GetInvolved() {
                 href="javascript:void(0)"
                 onClick={() => setDonationTable("table")}
               >
-                <p className="text-xs lg:text-sm">LEARN MORE</p>
+                <p className="whitespace-nowrap text-xs lg:text-sm">
+                  LEARN MORE
+                </p>
               </a>
               <button
                 id="donate-button"
                 type="button"
-                className="montserrat w-30 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white "
+                className="montserrat max-w-28 mx-2 w-24 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white"
               >
                 DONATE
               </button>
