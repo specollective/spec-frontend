@@ -8,24 +8,25 @@ import Link from "next/link";
 export default function Footer() {
     return (
 
-        <footer className=" bg-[#0C9FAA] h-80  ">
+        <footer className="bg-[#0C9FAA] h-80">
             
             
-            <div className='max-w-3xl mx-auto  '>
-            <div className="flex-column">
-            <div className="text-center mt-12">
+            {/* <div className='flex-col bg-yellow-600 max-w-3xl mx-auto'> */}
+            <section className="flex p-14 justify-evenly">
+            <div className="flex-row">
+            <div className="text-center mt-12 px-4">
                   <a
                     href="https://opencollective.com/spec"
-                    className="block bg-spec-yellow text-center p-2 text-2xl font-medium text-white rounded-br-lg rounded-tl-lg font-montserrat h-12 w-28 "
+                    className="  block bg-spec-yellow  text-center p-6 text-md font-medium text-black rounded-br-lg rounded-tl-lg font-montserrat h-12 w-28 "
                   >
                     DONATE
                   </a>
                 </div>
-            <div className="flex items-center mt-10">© 2023 Sustainable Progress and Equality Collective</div> 
+            <div className="items-center mt-10">© 2023 Sustainable Progress and Equality Collective</div> 
             </div>   
            
         
-            <div className="  float-right text-lg  mb-4 ">
+            <div className="float-right text-lg bg-white mb-4 ">
 
                   Documentation <br></br><br></br>Journal of Engadged Research <br></br><br></br>Digital Art Gallery<br></br><br></br>
                    <div className=" flex flex-row  space-x-4  ">
@@ -41,7 +42,7 @@ export default function Footer() {
                       
                     
                       <Image
-                        className="flex-row  "
+                        className=" "
                         src={GithubLogo}
                         alt="github-logo"
                         width={35}
@@ -58,7 +59,7 @@ export default function Footer() {
                       className="pl-1"
                     >
                       <Image
-                        className="flex-row "
+                        className=" "
                         src={LinkedinLogo}
                         alt="linkedin-logo"
                         width={35}
@@ -106,7 +107,9 @@ export default function Footer() {
                     </div>
                     
                   </div>
-              </div>     
+                  </section> 
+              {/* </div>   */}
+               
           </footer>
     )}
 
