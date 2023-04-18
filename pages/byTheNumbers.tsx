@@ -22,8 +22,8 @@ export default function ByTheNumbers() {
                 height="h-96"
                 width="w-full"
             >
-                <p className='text-7xl md:text-6xl lg:text-8xl'>90%</p>
-                <p className='text-base text-black m-6 font-montserrat font-normal leading-7 md:text lg:text-lg'>
+                <p className='text-7xl md:text-5xl lg:text-8xl'>90%</p>
+                <p className='text-base text-black m-6 font-montserrat font-normal leading-7 md:text-sm lg:text-lg'>
                     of individuals inside the organization come from diverse backgrounds; that might include visible/invisible
                     disabilities, LGBTQ+, women, people of color.
                 </p>
