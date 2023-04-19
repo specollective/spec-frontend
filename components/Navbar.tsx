@@ -29,9 +29,9 @@ export default function Navbar() {
             </div>
             {displayMenu && <div className='fixed top-0 left-0 h-screen w-screen bg-black opacity-80 z-50 mt-14 md:hidden'>
                 <div className='flex flex-col justify-center items-center font-montserrat'>
-                    <a href='https://docs.specollective.org/introduction/' className='font-semibold text-center bg-white leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4  '>Documentation</a>
+                    <a href='https://docs.specollective.org/introduction/' className='font-semibold text-center bg-white leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4  '>DOCUMENTATION</a>
                     <a href='https://opencollective.com/spec' className='font-semibold text-center bg-white leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4 '>
-                        DONATE</a>
+                        DONATE TO SPEC</a>
                 </div>
             </div>}
             <div className='hidden md:block'>
