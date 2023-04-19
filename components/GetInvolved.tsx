@@ -22,21 +22,34 @@ export default function GetInvolved() {
   ];
 
   // use if conditional to adjust padding if there is too much text
-  const getInvolvedCards = getInvolvedCardData.map((cardData) => {
+  const getInvolvedCards = getInvolvedCardData.map((cardData, index) => {
+    let subcardClasses = "overflow-hidden ";
+
+    if (index === 0) {
+      subcardClasses += "rounded-tl-3xl rounded-br-3xl";
+    } else if (index === 1) {
+      subcardClasses += "rounded-br-3xl";
+    } else if (index === 2) {
+      subcardClasses += "rounded-tr-3xl rounded-bl-3xl";
+    }
     return (
-      <div key={cardData.title} className="w-1/4 p-2">
-        <div className="overflow-hidden rounded-tl-3xl">
+      <div key={cardData.title} className="p-3">
+        <div className={subcardClasses}>
           <h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
             {cardData.title}
           </h1>
-          <div className="montserrat h-[12rem] rounded-br-3xl bg-spec-white px-6 py-4">
-            <p className="pb-2 text-sm">{cardData.body}</p>
-            <a
-              href={cardData.contactUs}
-              className="text-center text-xs font-semibold underline"
-            >
-              CONTACT US
-            </a>
+          <div className="montserrat flex h-48 w-64 flex-col bg-spec-white px-6 py-4 xl:w-72">
+            <div>
+              <p className="text-sm">{cardData.body}</p>
+            </div>
+            <div className="m-auto">
+              <a
+                href={cardData.contactUs}
+                className="bottom-0 text-xs font-semibold underline"
+              >
+                CONTACT US
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +81,7 @@ export default function GetInvolved() {
     <div id="container">
       <div
         id="background"
-        className="collapse shrink bg-spec-sunshine px-40 py-10 lg:visible"
+        className="hidden shrink bg-spec-sunshine px-40 py-10 lg:block"
       >
         <div className="flex flex-col justify-evenly">
           <h1
@@ -79,7 +92,7 @@ export default function GetInvolved() {
           </h1>
           <div
             id="body-box"
-            className="card-container m-auto mt-10 flex w-11/12 max-w-5xl items-center justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white p-16 xl:mt-16"
+            className="card-container w-12/12 m-auto mt-10 flex max-w-5xl items-center justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white p-16 xl:mt-16 xl:w-full"
           >
             <div id="body-left-content" className="w-5/12 max-w-sm">
               <h2
@@ -102,13 +115,11 @@ export default function GetInvolved() {
               >
                 <a
                   id="learn-more-hyperlink"
-                  className="font-montserrat font-semibold tracking-wide underline"
+                  className="montserrat font-semibold tracking-wide underline"
                   href="javascript:void(0)"
                   onClick={() => setDonationTable("table")}
                 >
-                  <p className="whitespace-nowrap text-xs lg:text-sm">
-                    LEARN MORE
-                  </p>
+                  <p className="whitespace-nowrap text-sm">LEARN MORE</p>
                 </a>
                 <button
                   id="donate-button"
@@ -169,20 +180,58 @@ export default function GetInvolved() {
             )}
           </div>
           {/* </div> */}
-          <div id="sub-cards" className="m-auto mt-6 flex justify-around">
+          <div
+            id="sub-cards"
+            className="m-auto mt-6 flex w-11/12 shrink justify-evenly xl:w-10/12"
+          >
             {getInvolvedCards}
           </div>
         </div>
       </div>
-      <div id="mobile" className="sm:visible lg:invisible">
+      <div
+        id="mobile"
+        className="bg-spec-sunshine px-4 py-3 sm:block lg:hidden"
+      >
         <h1 id="mobile-header" className="text-center font-dmserif">
           Ready to be a part of something bigger?
         </h1>
         <div id="mobile-body">
-          <div id="slide1">
-            <p className="montserrat">
-              Donate to SPEC today to support our mission and impact.
-            </p>
+          <div id="slide1" className="flex flex-col bg-spec-white px-6 py-5">
+            <div id="s1-container1" className="flex justify-around">
+              <h2 className="w-2/5 font-dmserif text-2xl">
+                Join us in making a difference!
+              </h2>
+              <Image
+                id="mobile-donate-image"
+                alt="mobile-donate-image"
+                src={donate}
+                className="w-6/12"
+              />
+            </div>
+            <div id="s1-container2" className="mt-7 w-3/5">
+              <p className="montserrat text-sm">
+                Donate to SPEC today to support our mission and impact.
+              </p>
+            </div>
+            <div
+              id="s1-container3"
+              className="mt-7 flex items-center justify-around "
+            >
+              <a
+                className="monteserrat text-xs font-semibold tracking-wide underline"
+                href="javascript:void(0)"
+                onClick={() => setDonationTable("table")}
+              >
+                LEARN MORE
+              </a>
+              <button
+                type="button"
+                id="mobile-donate-button"
+                className="montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-3 py-2 text-center text-sm font-semibold tracking-wider text-white"
+              >
+                DONATE
+              </button>
+            </div>
           </div>
         </div>
       </div>
