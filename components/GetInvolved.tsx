@@ -142,32 +142,50 @@ export default function GetInvolved() {
               </div>
             ) : (
               <div id="donation-table">
-                <div className="callout" data-closeable>
+                <div className="flex justify-end" data-closeable>
                   <button
                     type="button"
                     onClick={() => setDonationTable("Image")}
                   >
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true" className="">
+                      &times;
+                    </span>
                   </button>
                 </div>
-                <table className="montserrat">
+                <table className="montserrat h-[14rem] w-full table-auto border-collapse border-spacing-y-6 border border-spec-white text-sm">
                   <thead>
-                    <tr>
-                      <td className=" bg-spec-banana">
-                        The impact of your donation makes
-                      </td>
+                    <tr className="">
+                      <th
+                        className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl border border-spec-white bg-spec-banana font-normal"
+                        colspan="2"
+                      >
+                        The <strong>impact</strong> of your donation makes
+                      </th>
                     </tr>
                   </thead>
-                  <tbody className="">
+                  <tbody className="my-2 space-y-2 ">
                     {tableContents.map((row, index) => {
                       const isEvenRow = index % 2 === 0;
                       const rowColor = isEvenRow
                         ? "bg-spec-lemon"
                         : "bg-spec-banana";
+                      const isLastRow = index === tableContents.length - 1;
                       return (
-                        <tr key={index} className={rowColor}>
+                        <tr
+                          key={index}
+                          className={`${rowColor} border border-spec-white`}
+                        >
                           {row.map((cell, cellIndex) => (
-                            <td key={cellIndex} className="px-4">
+                            <td
+                              key={cellIndex}
+                              className={`px-4 ${
+                                isLastRow && cellIndex ? "rounded-br-3xl" : ""
+                              } ${
+                                cellIndex === 0 && isLastRow
+                                  ? "rounded-bl-3xl"
+                                  : ""
+                              } ${cellIndex ? "text-right" : ""}`}
+                            >
                               {cell}
                             </td>
                           ))}
