@@ -1,13 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-<<<<<<< HEAD
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 
-=======
-import Navbar from "../components/Navbar";
- 
->>>>>>> 45dfa534c195a1bd948b26d1c8f58611f241998b
 export default function Home() {
   return (
     <>
@@ -110,7 +103,7 @@ export default function Home() {
           
         </div>
       </main>
-      <Footer />
+      
     </>
   );
 }
