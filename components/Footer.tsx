@@ -11,7 +11,7 @@ export default function Footer() {
         <footer className="bg-[#0C9FAA] h-80">
             
             
-            {/* <div className='flex-col bg-yellow-600 max-w-3xl mx-auto'> */}
+           
             <section className="flex p-14 justify-evenly">
             <div className="flex-row">
             <div className="text-center mt-12 px-4">
@@ -108,7 +108,7 @@ export default function Footer() {
                     
                   </div>
                   </section> 
-              {/* </div>   */}
+              
                
           </footer>
     )}
