@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import donate from "../public/DonateImg.svg";
+import GetInvolveCarousel from "./GetInvolvedCarousel";
 
 export default function GetInvolved() {
   const getInvolvedCardData = [
@@ -79,7 +80,7 @@ export default function GetInvolved() {
 
   return (
     <div id="container">
-      <div
+      <section
         id="background"
         className="hidden shrink bg-spec-sunshine px-40 py-10 lg:block"
       >
@@ -157,7 +158,7 @@ export default function GetInvolved() {
                     <tr className="">
                       <th
                         className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl border border-spec-white bg-spec-banana font-normal"
-                        colspan="2"
+                        colSpan={2}
                       >
                         The <strong>impact</strong> of your donation makes
                       </th>
@@ -205,54 +206,10 @@ export default function GetInvolved() {
             {getInvolvedCards}
           </div>
         </div>
-      </div>
-      <div
-        id="mobile"
-        className="bg-spec-sunshine px-4 py-3 sm:block lg:hidden"
-      >
-        <h1 id="mobile-header" className="text-center font-dmserif">
-          Ready to be a part of something bigger?
-        </h1>
-        <div id="mobile-body">
-          <div id="slide1" className="flex flex-col bg-spec-white px-6 py-5">
-            <div id="s1-container1" className="flex justify-around">
-              <h2 className="w-2/5 font-dmserif text-2xl">
-                Join us in making a difference!
-              </h2>
-              <Image
-                id="mobile-donate-image"
-                alt="mobile-donate-image"
-                src={donate}
-                className="w-6/12"
-              />
-            </div>
-            <div id="s1-container2" className="mt-7 w-3/5">
-              <p className="montserrat text-sm">
-                Donate to SPEC today to support our mission and impact.
-              </p>
-            </div>
-            <div
-              id="s1-container3"
-              className="mt-7 flex items-center justify-around "
-            >
-              <a
-                className="monteserrat text-xs font-semibold tracking-wide underline"
-                href="javascript:void(0)"
-                onClick={() => setDonationTable("table")}
-              >
-                LEARN MORE
-              </a>
-              <button
-                type="button"
-                id="mobile-donate-button"
-                className="montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-3 py-2 text-center text-sm font-semibold tracking-wider text-white"
-              >
-                DONATE
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
+      <section id="mobile-carousel">
+        <GetInvolveCarousel />
+      </section>
     </div>
   );
 }

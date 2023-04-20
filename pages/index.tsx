@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import GetInvolved from "../components/GetInvolved";
+// import { Carousel, initTE } from "tw-elements";
+// initTE({ Carousel });
 
 export default function Home() {
   return (
