@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import donate from "../public/DonateImg.svg";
+import { useRouter } from "next/router";
 // import { Carousel, initTE } from "tw-elements";
 // initTE({ Carousel });
 export default function GetInvolveCarousel() {
+	// const router = useRouter();
+	// useEffect(() => {
+	// 	const use = async () => {
+	// 		(await import("tw-elements")).default;
+	// 	};
+	// 	use();
+	// }, []);
 	const [activeSlide, setActiveSlide] = useState(0);
 
 	const handleButtonClick = (index: number): void => {

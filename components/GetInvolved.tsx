@@ -43,7 +43,7 @@ export default function GetInvolved() {
 						<div>
 							<p className="text-sm">{cardData.body}</p>
 						</div>
-						<div className="m-auto">
+						<div className=" flex justify-end m-auto">
 							<a
 								href={cardData.contactUs}
 								className="bottom-0 text-xs font-semibold underline">
