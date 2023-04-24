@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
@@ -8,11 +9,15 @@ import FormDiv from "../components/FormDiv";
 // import GetInvolved from "../components/GetInvolved";
 
 export default function Home() {
+	const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
+		ssr: false,
+	});
+
 	return (
 		<>
 			<Navbar />
 			<Hero />
-			{/* <GetInvolved /> */}
+			<GetInvolved />
 			{/* <ProjectsAccordion/> */}
 			<ByTheNumbers />
 			<FormDiv />
