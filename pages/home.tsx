@@ -7,8 +7,8 @@ import { getIn } from "formik";
 
 import ByTheNumbers from "./byTheNumbers";
 import React from "react";
-import { Carousel, initTE } from "tw-elements";
-initTE({ Carousel });
+
+import dynamic from "next/dynamic";
 
 export default function Home() {
 	return (

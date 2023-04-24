@@ -76,7 +76,7 @@ export default function GetInvolveCarousel() {
 							className="bg-spec-sunshine px-4 py-3 sm:block lg:hidden">
 							<div
 								id="slide1"
-								className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 w-96 rounded-tl-3xl rounded-br-3xl">
+								className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl">
 								{/* relative left-1/4 */}
 								<div
 									id="s1-container1"
