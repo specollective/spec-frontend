@@ -15,7 +15,7 @@ export default function Home() {
       {/* <ProjectsAccordion/> */}
       <ByTheNumbers />
       <FormDiv />
-
+      {/* <Testimonials/> */}
       
       <Footer />
 
