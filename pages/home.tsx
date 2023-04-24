@@ -1,22 +1,22 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import GetInvolved from "../components/GetInvolved";
-
 import Footer from "../components/Footer";
-import { getIn } from "formik";
-
-import ByTheNumbers from "./byTheNumbers";
+import ByTheNumbers from "../components/byTheNumbers";
 import React from "react";
-
-import dynamic from "next/dynamic";
+import FormDiv from "../components/FormDiv";
+// import ProjectsAccordion from "../components/ProjectsAccordian";
+// import GetInvolved from "../components/GetInvolved";
 
 export default function Home() {
 	return (
 		<>
 			<Navbar />
-			<ByTheNumbers />
 			<Hero />
-			<GetInvolved />
+			{/* <GetInvolved /> */}
+			{/* <ProjectsAccordion/> */}
+			<ByTheNumbers />
+			<FormDiv />
+
 			<Footer />
 		</>
 	);

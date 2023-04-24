@@ -1,4 +1,4 @@
-import StatBox from './stat-box';
+import StatBox from '../pages/stat-box';
 
 export default function ByTheNumbers() {
     return (
