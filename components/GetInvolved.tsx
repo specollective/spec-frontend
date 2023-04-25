@@ -390,41 +390,7 @@ export default function GetInvolved() {
 									)}
 								</div>
 							</div>
-							{/* <div
-						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-						data-te-carousel-item>
-						<div
-							id="mobile-carousel-slide2"
-							className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl">
-							<div id="slide2-container1" className="md:pb-8">
-								<h2>hello world</h2>
-							</div>
-						</div>
-					</div> */}
 							{getInvolvedSlides}
-							{/* <div
-						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-						data-te-carousel-item>
-						<img
-							src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-							className="block w-full"
-							alt="Exotic Fruits"
-						/>
-					</div>
-					<div
-						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-						data-te-carousel-item>
-						<p>hello world</p>
-					</div>
-					<div
-						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-						data-te-carousel-item>
-						<img
-							src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-							className="block w-full"
-							alt="slide4"
-						/>
-					</div> */}
 						</div>
 					</div>
 				</div>
