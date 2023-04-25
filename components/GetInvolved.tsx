@@ -65,18 +65,18 @@ export default function GetInvolved() {
 			<div
 				className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
 				data-te-carousel-item>
-				<div className="w-full h-full md:w-1/3">
+				<div className="w-full h-full">
 					<div
 						key={slideData.title}
-						className="m-auto flex md:w-6/12 flex-col mt-3 px-4 md:px-5">
-						<h1 className="rounded-tl-3xl bg-spec-lightTurquiose py-8 text-center font-dmserif text-2xl font-bold">
+						className="m-auto flex md:w-10/12 flex-col mt-3 px-4 md:px-5">
+						<h1 className="rounded-tl-3xl bg-spec-lightTurquiose py-8 text-center font-dmserif text-2xl font-bold md:text-3xl">
 							{slideData.title}
 						</h1>
-						<div className="bg-spec-white rounded-br-3xl ">
-							<p className="text-lg px-12 mt-8 font-montserrat mb-10">
+						<div className="md:py-4 bg-spec-white rounded-br-3xl ">
+							<p className="md:text-2xl text-lg px-12 mt-8 font-montserrat md:px-40 mb-10">
 								{slideData.body}
 							</p>
-							<div className="flex justify-center mb-4">
+							<div className="flex justify-center mb-4 md:mb-4">
 								<a
 									href={slideData.contactUs}
 									className="underline font-montserrat">
