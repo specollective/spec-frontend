@@ -28,3 +28,9 @@ jobs:
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IGNORE_GITIGNORED_FILES: true
+      
+      - name: Run nextjs lint
+        env:
+          CI: true
+        run: npm run lint
+        
