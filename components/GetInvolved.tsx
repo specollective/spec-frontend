@@ -144,7 +144,10 @@ export default function GetInvolved() {
 								<button
 									id="donate-button"
 									type="button"
-									className="montserrat max-w-28 mx-2 w-24 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white">
+									className="montserrat max-w-28 mx-2 w-24 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white"
+									onClick={() => {
+										location.href = "https://opencollective.com/spec";
+									}}>
 									DONATE
 								</button>
 							</div>
@@ -318,7 +321,10 @@ export default function GetInvolved() {
 												<button
 													type="button"
 													id="mobile-donate-button"
-													className="font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-lg font-semibold tracking-wider text-white">
+													className="font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-lg font-semibold tracking-wider text-white"
+													onClick={() => {
+														location.href = "https://opencollective.com/spec";
+													}}>
 													DONATE
 												</button>
 											</div>
