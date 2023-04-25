@@ -101,10 +101,6 @@ export default function GetInvolved() {
 	// MOBILE CAROUSEL
 	const [activeSlide, setActiveSlide] = useState(0);
 
-	const handleButtonClick = (index: number): void => {
-		setActiveSlide(index);
-	};
-
 	const [donationTable, setDonationTable] = useState("Image");
 	const [currentSlide, setCurrentSlide] = useState("slide1");
 
@@ -153,7 +149,6 @@ export default function GetInvolved() {
 								</button>
 							</div>
 						</div>
-						{/* 3xl:scale-75 h-full md:scale-100 xl:scale-90 */}
 						{donationTable === "Image" ? (
 							<div id="body-right-content" className="scale-90">
 								<Image
@@ -287,13 +282,11 @@ export default function GetInvolved() {
 								<div
 									id="slide1"
 									className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl">
-									{/* relative left-1/4 */}
 									{currentSlide === "slide1" ? (
 										<div>
 											<div
 												id="s1-container1"
 												className="flex justify-evenly md:pb-8 md:justify-center">
-												{/* absolute top-1/2 right-14 md:left-11 md:text-3xl -translate-x-32 -translate-y-28 font-dmserif  transform w-40 text-2xl mt-16 */}
 												<h2 className="font-dmserif w-40 text-3xl my-auto">
 													Join us in making a difference!
 												</h2>
