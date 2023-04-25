@@ -172,11 +172,11 @@ export default function GetInvolved() {
 										</span>
 									</button>
 								</div>
-								<table className="montserrat h-[14rem] w-full table-auto border-collapse border-spacing-y-6 border text-sm">
+								<table className="montserrat h-[14rem] w-full table-auto border-collapse text-sm">
 									<thead>
 										<tr className="">
 											<th
-												className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl border bg-spec-banana font-normal"
+												className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl bg-spec-banana font-normal"
 												colSpan={2}>
 												The <strong>impact</strong> of your donation makes
 											</th>
@@ -190,7 +190,7 @@ export default function GetInvolved() {
 												: "bg-spec-banana";
 											const isLastRow = index === tableContents.length - 1;
 											return (
-												<tr key={index} className={`${rowColor} border`}>
+												<tr key={index} className={`${rowColor} `}>
 													{row.map((cell, cellIndex) => (
 														<td
 															key={cellIndex}
@@ -362,7 +362,7 @@ export default function GetInvolved() {
 														return (
 															<tr
 																key={index}
-																className={`${rowColor} border border-spec-white`}>
+																className={`${rowColor}  border-spec-white`}>
 																{row.map((cell, cellIndex) => (
 																	<td
 																		key={cellIndex}
