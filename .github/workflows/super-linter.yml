@@ -27,7 +27,7 @@ jobs:
           IGNORE_GITIGNORED_FILES: true
   run-nextjs-lint:
     runs-on: ubuntu-latest
-     steps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Use Node.js 12.x
