@@ -8,7 +8,7 @@ export default function GetInvolved() {
 	useEffect(() => {
 		initTE({ Carousel });
 	}, []);
-	const getInvolvedCardData = [
+	const getInvolvedData = [
 		{
 			title: "Work with us",
 			body: "Join the SPEC team, where you can contribute to something meaningful and make a real impact",
@@ -27,7 +27,7 @@ export default function GetInvolved() {
 	];
 
 	// use if conditional to adjust padding if there is too much text
-	const getInvolvedCards = getInvolvedCardData.map((cardData, index) => {
+	const getInvolvedCards = getInvolvedData.map((cardData, index) => {
 		let subcardClasses = "overflow-hidden ";
 
 		if (index === 0) {
@@ -55,6 +55,24 @@ export default function GetInvolved() {
 							</a>
 						</div>
 					</div>
+				</div>
+			</div>
+		);
+	});
+
+	const getInvolvedSlides = getInvolvedData.map((slideData) => {
+		return (
+			<div
+				className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+				data-te-carousel-item>
+				<div
+					key={slideData.title}
+					className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl">
+					<h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
+						{slideData.title}
+					</h1>
+					<p>{slideData.body}</p>
+					<p>{slideData.contactUs}</p>
 				</div>
 			</div>
 		);
@@ -356,13 +374,15 @@ export default function GetInvolved() {
 					<div
 						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
 						data-te-carousel-item>
-						<img
-							src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-							className="block w-full"
-							alt="Camera"
-						/>
+						<div
+							id="mobile-carousel-slide2"
+							className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl">
+							<div id="slide2-container1" className="md:pb-8">
+								<h2>hello world</h2>
+							</div>
+						</div>
 					</div>
-					<div
+					{/* <div
 						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
 						data-te-carousel-item>
 						<img
@@ -384,11 +404,11 @@ export default function GetInvolved() {
 							className="block w-full"
 							alt="slide4"
 						/>
-					</div>
+					</div> */}
+
+					{getInvolvedSlides}
 				</div>
 			</div>
-
-			<section id="mobile-carousel" className="sm:block lg:hidden"></section>
 		</div>
 	);
 }
