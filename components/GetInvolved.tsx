@@ -229,7 +229,8 @@ export default function GetInvolved() {
 							activeSlide === 0 ? "spec-turquiose" : "spec-white"
 						} bg-clip-padding p-0 -indent-[999px] duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none rounded-full`}
 						aria-current="true"
-						aria-label="Slide 1"></button>
+						aria-label="Slide 1"
+						onClick={() => setActiveSlide(0)}></button>
 					<button
 						type="button"
 						data-te-target="#carouselExampleIndicators"
@@ -237,7 +238,8 @@ export default function GetInvolved() {
 						className={`mx-[3px] box-content h-2.5 w-2.5 flex-initial cursor-pointer border border-solid border-black bg-${
 							activeSlide === 1 ? "spec-turquiose" : "spec-white"
 						} bg-clip-padding p-0 -indent-[999px]transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none rounded-full`}
-						aria-label="Slide 2"></button>
+						aria-label="Slide 2"
+						onClick={() => setActiveSlide(1)}></button>
 					<button
 						type="button"
 						data-te-target="#carouselExampleIndicators"
@@ -245,7 +247,8 @@ export default function GetInvolved() {
 						className={`mx-[3px] box-content h-2.5 w-2.5 flex-initial cursor-pointer border border-solid border-black bg-${
 							activeSlide === 2 ? "spec-turquiose" : "spec-white"
 						} bg-clip-padding p-0 -indent-[999px]transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none rounded-full`}
-						aria-label="Slide 3"></button>
+						aria-label="Slide 3"
+						onClick={() => setActiveSlide(2)}></button>
 					<button
 						type="button"
 						data-te-target="#carouselExampleIndicators"
@@ -253,15 +256,8 @@ export default function GetInvolved() {
 						className={`mx-[3px] box-content h-2.5 w-2.5 flex-initial cursor-pointer border border-solid border-black bg-${
 							activeSlide === 3 ? "spec-turquiose" : "spec-white"
 						} bg-clip-padding p-0 -indent-[999px]transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none rounded-full`}
-						aria-label="Slide 3"></button>
-					<button
-						type="button"
-						data-te-target="#carouselExampleIndicators"
-						data-te-slide-to="4"
-						className={`mx-[3px] box-content h-2.5 w-2.5 flex-initial cursor-pointer border border-solid border-black bg-${
-							activeSlide === 4 ? "spec-turquiose" : "spec-white"
-						} bg-clip-padding p-0 -indent-[999px]transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none rounded-full`}
-						aria-label="Slide 3"></button>
+						aria-label="Slide 4"
+						onClick={() => setActiveSlide(3)}></button>
 				</div>
 
 				<div className="bg-spec-sunshine px-5 pt-5 pb-14 relative w-full overflow-hidden after:clear-both after:block after:content-['']">
@@ -371,7 +367,7 @@ export default function GetInvolved() {
 							)}
 						</div>
 					</div>
-					<div
+					{/* <div
 						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
 						data-te-carousel-item>
 						<div
@@ -381,7 +377,8 @@ export default function GetInvolved() {
 								<h2>hello world</h2>
 							</div>
 						</div>
-					</div>
+					</div> */}
+					{getInvolvedSlides}
 					{/* <div
 						className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
 						data-te-carousel-item>
@@ -405,8 +402,6 @@ export default function GetInvolved() {
 							alt="slide4"
 						/>
 					</div> */}
-
-					{getInvolvedSlides}
 				</div>
 			</div>
 		</div>
