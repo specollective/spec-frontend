@@ -209,7 +209,6 @@ export default function GetInvolved() {
 							</div>
 						)}
 					</div>
-					{/* </div> */}
 					<div
 						id="sub-cards"
 						className="m-auto max-w-4xl mt-6 flex 2xl:w-9/12 w-11/12 shrink justify-evenly xl:w-10/12">
@@ -224,7 +223,6 @@ export default function GetInvolved() {
 					data-te-carousel-init
 					data-te-carousel-slide
 					data-te-interval="false">
-					{/* absolute px-4 pb-6 inset-x-0 -bottom-4 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0" */}
 					<div
 						className="absolute px-4 pb-6 inset-x-0 -bottom-4 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
 						data-te-carousel-indicators>
@@ -271,7 +269,7 @@ export default function GetInvolved() {
 					<div className="bg-spec-sunshine px-5 pt-5 pb-14 relative w-full overflow-hidden after:clear-both after:block after:content-['']">
 						<h1
 							id="mobile-header"
-							className="m-auto text-2xl font-dmserif  mt-3 w-2/3 md:w-2/3 md:text-3xl text-center">
+							className="m-auto text-2xl font-dmserif  my-3 w-2/3 md:w-2/3 md:text-3xl text-center">
 							Ready to be a part of something bigger?
 						</h1>
 						<div>
