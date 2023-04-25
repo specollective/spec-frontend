@@ -9,15 +9,15 @@ import FormDiv from "../components/FormDiv";
 // import GetInvolved from "../components/GetInvolved";
 
 export default function Home() {
-	const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
-		ssr: false,
-	});
+	// const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
+	// 	ssr: false,
+	// });
 
 	return (
 		<>
 			<Navbar />
 			<Hero />
-			<GetInvolved />
+			{/* <GetInvolved /> */}
 			{/* <ProjectsAccordion/> */}
 			<ByTheNumbers />
 			<FormDiv />
