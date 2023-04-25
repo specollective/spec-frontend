@@ -38,7 +38,7 @@ export default function GetInvolved() {
 			subcardClasses += "rounded-tr-3xl rounded-bl-3xl";
 		}
 		return (
-			<div key={cardData.title} className="p-3">
+			<div key={index} className="p-3">
 				<div className={subcardClasses}>
 					<h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
 						{cardData.title}
@@ -60,16 +60,19 @@ export default function GetInvolved() {
 		);
 	});
 
-	const getInvolvedSlides = getInvolvedData.map((slideData) => {
+	const getInvolvedSlides = getInvolvedData.map((slideData, index) => {
 		return (
 			<div
+				key={index}
 				className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
 				data-te-carousel-item>
 				<div className="w-full h-full">
 					<div
 						key={slideData.title}
 						className="m-auto flex md:w-10/12 flex-col mt-3 px-4 md:px-5">
-						<h1 className="rounded-tl-3xl bg-spec-lightTurquiose py-8 text-center font-dmserif text-2xl font-bold md:text-3xl">
+						<h1
+							key={slideData.title}
+							className="rounded-tl-3xl bg-spec-lightTurquiose py-8 text-center font-dmserif text-2xl font-bold md:text-3xl">
 							{slideData.title}
 						</h1>
 						<div className="md:py-4 bg-spec-white rounded-br-3xl ">
