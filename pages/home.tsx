@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ByTheNumbers from "../components/byTheNumbers";
 import React from "react";
 import FormDiv from "../components/FormDiv";
+import Mission from "../components/Mission";
 // import ProjectsAccordion from "../components/ProjectsAccordian";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
 			<Navbar />
 			<Hero />
 			<GetInvolved />
+			<Mission />
 			{/* <ProjectsAccordion/> */}
 			<ByTheNumbers />
 			<FormDiv />
