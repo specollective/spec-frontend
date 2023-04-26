@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen items-center justify-content px-10 pt-10 md:w-full 2xl:w-1/2 m-auto">
+      <main className="flex min-h-screen items-center justify-content px-10 pt-10 md:w-2/3 2xl:w-1/2 m-auto">
         <div className="w-full">
           <header className="lg:flex lg:items-center pb-10">
             <Image
@@ -23,7 +23,9 @@ export default function Home() {
               height={120}
               priority
             />
-            <h1 className="block text-center lg:text-left text-4xl xl:text-3xl font-medium font-montserrat">
+            <h1
+              className="block text-center lg:text-left text-4xl xl:text-3xl font-medium font-montserrat"
+            >
               Sustainable Progress and Equality Collective
             </h1>
           </header>
@@ -99,12 +101,68 @@ export default function Home() {
               </div>
             </div>
           </section>
-          
-         
-          
+
+          <footer className="grid md:grid-cols-2 pt-10 text-left md:text-center">
+            <section className="block pb-4">
+              Email us:
+              <a
+                className="underline pl-2"
+                href="mailto:info@specollective.org"
+              >
+                info@specollective.org
+              </a>
+            </section>
+            <section className="block pb-4">
+              Follow Us:
+              <a
+                href="https://github.com/specollective"
+                target="_blank"
+                rel="noreferrer"
+                className="pl-2"
+              >
+                <Image
+                  className="inline"
+                  src="/github-logo.svg"
+                  alt="github-logo"
+                  width={25}
+                  height={25}
+                  priority
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/specollective"
+                target="_blank"
+                rel="noreferrer"
+                className="pl-2"
+              >
+                <Image
+                  className="inline"
+                  src="/linkedin-logo.svg"
+                  alt="linkedin-logo"
+                  width={25}
+                  height={25}
+                  priority
+                />
+              </a>
+              <a
+                href="https://twitter.com/specollective"
+                target="_blank"
+                rel="noreferrer"
+                className="pl-2"
+              >
+                <Image
+                  className="inline"
+                  src="/twitter-logo.svg"
+                  alt="twitter-logo"
+                  width={25}
+                  height={25}
+                  priority
+                />
+              </a>
+            </section>
+          </footer>
         </div>
       </main>
-      
     </>
   );
 }
