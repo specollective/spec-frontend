@@ -25,7 +25,7 @@ export default function Projects() {
 				</div>
 				<div id="right-container" className="w-7/12">
 					<Image
-						className="float-right scale-100 pl-10 ml-10"
+						className="float-right scale-125 pl-10 ml-10"
 						src={projectsImage}
 						alt="Interacting with web browsers"
 					/>
