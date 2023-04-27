@@ -69,7 +69,7 @@ function ProjectsAccordion({ projectsData }) {
                   {toggleBtn(index)}
                 </button>
               </div>
-              <BreakLine color="spec-teal-600" lineWidth="full" />
+              <BreakLine color="" lineWidth="full" />
             </div>
             {
               <section className={isClicked === index ? "block" : "hidden"}>

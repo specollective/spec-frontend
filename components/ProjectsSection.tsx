@@ -1,6 +1,6 @@
 import ProjectsAccordion from './ProjectsAccordian';
-import raExperience from '../public/TrainingImg.svg';
-import digitalGallerySnap from '../public/ProjectsImg.svg';
+import raExperience from '../public/RA.svg';
+import digitalGallerySnap from '../public/GalleryImage.svg';
 import joERSnap from '../public/JoER 1.png';
 
 
@@ -15,7 +15,7 @@ function ProjectsSection() {
 				alt: 'journal-of-engaged-research-image',
 				url: joERSnap,
 			},
-			linkLine: 'View Project Details >>',
+			linkLine: 'Visit the Journal >>',
 			link: '',
 		},
 		{
@@ -27,20 +27,20 @@ function ProjectsSection() {
 				alt: 'digital-art-galleries-image',
 				url: digitalGallerySnap,
 			},
-			linkLine: 'View Project Details >>',
+			linkLine: 'Visit the Gallery >>',
 			link: '',
 		},
 		{
 			id: 3,
-			name: 'Digital Expressions Gallery',
-			tag: 'Digital Expressions of Mass Incarceration Online Gallery',
-			info: 'Incarceration can be a particularly traumatizing experience for LGBTQ+ individuals. Studies of prison art programs suggest that artistic activities have several benefits for prisoner rehabilitation and institutional management. This gallery of work by LGBTQ+ incarcerated artists was produced during the CAREP/SPEC partnership in collaboration with advocacy group ABO Comix.',
+			name: 'The RA Experience',
+			tag: '',
+			info: `SPEC's RAs make valuable contributions to real-world projects while advancing their careers. There are many opportunities available to RAs, such as: contributing to open-source software and hardware projects, conducting research and data analysis to support SPEC initiatives, writing journal articles, and assisting with fundraising through marketing strategies, social media content creation, and grant proposal writing.`,
 			pic: {
-				alt: 'digital-gallery-image',
-				url: digitalGallerySnap,
+				alt: 'ra-experience-image',
+				url: raExperience,
 			},
-			linkLine: 'Visit the Gallery >>',
-			link: 'https://medium.com/journal-of-engaged-research/expressions/home',
+			linkLine: '',
+			link: '',
 		},
 
 
