@@ -1,24 +1,24 @@
 
 import React, {useState, useEffect} from "react";
 import { Carousel, initTE } from "tw-elements";
-
 import Image from "next/image";
 import Yoline from "../public/yoline.png"
   
 export default function Testimonials() {
-//   useEffect(() => {
-//     initTE({ Carousel });
-// }, []);
-  const testimonialData = [{profileImage:"../public/yoline.png", quoteBox:"Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit, .", name:"YOLINE BANERJEE"}, {profileImage:"", quoteBox:"Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit, .", name:"ILIA DE LEON"}, {profileImage:"", quoteBox:"Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit, .", name:"YOLINE BANERJEE"}]
+  
+  useEffect(() => {
+    initTE({ Carousel });
+}, []);
+  const testimonialData = [{profileImage:"", quoteBox:"Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit, .", name:"YOLINE BANERJEE"}, {profileImage:"", quoteBox:"Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit, .", name:"ILIA DE LEON"}, {profileImage:"", quoteBox:"Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit, .", name:"YOLINE BANERJEE"}]
 
   const [activeSlide, setActiveSlide] = useState(0);
 
   const testimoinalCards = testimonialData.map((testimonialCard, index)=>{{
     return(
-      // <div key={index}
-      // className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
-      // data-te-carousel-item> 
-      //   <div className="w-full h-full">
+      <div key={index}
+      className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
+      data-te-carousel-item> 
+        <div className="w-full h-full">
 
         <div id="borderBox" className="border-solid border-spec-turquiose border-8 py-8 my-8 font-montserrat text-base text-center w-1/3">
 
