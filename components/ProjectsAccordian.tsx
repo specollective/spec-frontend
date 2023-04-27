@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import BreakLine from './BreakLine';
-import downArrow from '../public/arrow_down.svg';
-import upArrow from '../public/arrow_up.svg';
-import rightArrow from '../public/arrow_right.svg';
+import downArrow from '../public/ProjectArrow.svg';
+import upArrow from '../public/up-arrow.svg';
+// import rightArrow from '../public/arrow_right.svg';
+import ProjectsSection from './ProjectsSection';
+import projectsData from './ProjectsSection';
 import Link from 'next/link';
 
 interface ProjectProps  { 
     project?: string;
 }
 
-function ProjectsDisplay({ project }:ProjectProps) {
+function ProjectsDisplay({ project }) {
 
 	return (
 		 <div className="border border-spec-yellow-600 mb-2">
@@ -22,7 +24,7 @@ function ProjectsDisplay({ project }:ProjectProps) {
 					<div className="text-lg"> {project.info} </div>
 					<div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
 						<Link href={project.link}>
-		 					<a>{project.linkLine}</a>
+		 					{project.linkLine}
 		 				</Link>
 					</div>
 				</div>
@@ -51,7 +53,7 @@ function ProjectsAccordion({ projectsData }) {
 
 	return (
     <section className="py-14 md:py-30">
-      {projectsData.map((project, index) => (
+      {projectsData?.map((project, index) => (
         <div key={`${project.name}-${index}`}>
           <section className="hidden lg:block">
             <div className="cursor-pointer" onClick={() => showProject(index)}>
@@ -81,10 +83,11 @@ function ProjectsAccordion({ projectsData }) {
               <h3 className="text-2xl text-whte-600">{project.name}</h3>
               <a
                 href={project.link}
+                rel="noreferrer"
                 target="_blank"
                 className="h-[40px] w-[40px]"
               >
-                <Image alt="right-arrow" src={rightArrow} />
+                {/* <Image alt="right-arrow" src={rightArrow} /> */}
               </a>
             </div>
             <BreakLine color="spec-teal-600" lineWidth="full" />

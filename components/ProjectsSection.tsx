@@ -16,7 +16,7 @@ function ProjectsSection() {
 				url: joERSnap,
 			},
 			linkLine: 'View Project Details >>',
-			link: '/joERSnap',
+			link: '',
 		},
 		{
 			id: 2,
@@ -28,7 +28,7 @@ function ProjectsSection() {
 				url: digitalGallerySnap,
 			},
 			linkLine: 'View Project Details >>',
-			link: '/digital-gallery-snap',
+			link: '',
 		},
 		{
 			id: 3,
@@ -49,7 +49,7 @@ function ProjectsSection() {
 
 	return (
 		<div className="bg-spec-black-600 font-Poppins p-10 md:p-20 md:w-4/5 lg:w-3/4 xl:w-2/3 2xl:w-1/2 md:m-auto">
-			<h2 className="text-6xl md:text-10xl font-bold mb-10 text-center">Projects</h2>
+			
 			<ProjectsAccordion projectsData={projectsData} />
 		</div>
 	);
