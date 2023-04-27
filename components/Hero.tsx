@@ -17,8 +17,9 @@ export default function Hero() {
 						Paid training to promote equity and progress
 					</h1>
 					<p className="mt-2 w-8/12 font-montserrat text-xs text-spec-turquiose md:mt-5 md:w-4/5 md:text-base lg:mt-8 lg:text-xl xl:text-2xl 2xl:text-3xl">
-						SPEC provides paid learning opportunities by partnering with clients
-						to build websites, hardware, art, and written content.
+						Through partnerships with clients, SPEC offers paid learning
+						opportunities in website development, hardware creation, art, and
+						writing.
 					</p>
 				</div>
 				<div className="relative top-1/2 inline h-full w-3/5 md:pl-8 2xl:w-6/12">
