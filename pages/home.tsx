@@ -12,6 +12,9 @@ export default function Home() {
 	const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
 		ssr: false,
 	});
+	const Testimonials = dynamic(() => import("../components/Testimonials"), {
+		ssr: false,
+	});
 	return (
 		<>
 			<Navbar />
@@ -21,7 +24,7 @@ export default function Home() {
 			{/* <ProjectsAccordion/> */}
 			<ByTheNumbers />
 			<FormDiv />
-			{/* <Testimonials/> */}
+			<Testimonials/>
 
 			<Footer />
 
