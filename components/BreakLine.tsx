@@ -1,4 +1,4 @@
-export default function BreakLine({ color="lemon", lineWidth="1/3" , lineHeight="1"}) {
+export default function BreakLine({ color="black ", lineWidth="1/3" , lineHeight="1"}) {
   
   return (
     <hr 

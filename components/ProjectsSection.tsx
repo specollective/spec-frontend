@@ -3,7 +3,6 @@ import raExperience from '../public/RA.svg';
 import digitalGallerySnap from '../public/GalleryImage.svg';
 import joERSnap from '../public/JoER 1.png';
 
-
 function ProjectsSection() {
 	const projectsData = [
 		{
@@ -42,8 +41,6 @@ function ProjectsSection() {
 			linkLine: '',
 			link: '',
 		},
-
-
 
 	];
 

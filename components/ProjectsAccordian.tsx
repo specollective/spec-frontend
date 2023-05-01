@@ -90,7 +90,7 @@ function ProjectsAccordion({ projectsData }) {
                 {/* <Image alt="right-arrow" src={rightArrow} /> */}
               </a>
             </div>
-            <BreakLine color="spec-teal-600" lineWidth="full" />
+            <BreakLine color="black" lineWidth="full" />
           </section>
         </div>
       ))}
