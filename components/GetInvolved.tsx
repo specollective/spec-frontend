@@ -8,6 +8,7 @@ export default function GetInvolved() {
 	useEffect(() => {
 		initTE({ Carousel });
 	}, []);
+
 	const getInvolvedData = [
 		{
 			title: "Work with us",
