@@ -5,6 +5,8 @@ import ByTheNumbers from "../components/byTheNumbers";
 import React from "react";
 import FormDiv from '../components/FormDiv'
 import ProjectsSection from "../components/ProjectsSection";
+import Mission from '../components/Mission'
+// import ProjectsAccordion from "../components/ProjectsAccordian";
 
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProjectsSection />
+      <Mission />
       <ByTheNumbers />
       <FormDiv />
       {/* <Testimonials/> */}
