@@ -19,9 +19,6 @@ export default function Home() {
       <ByTheNumbers />
       <FormDiv />
       {/* <Testimonials/> */}
-      
-      <Footer />
-
 			<Footer />
 		</>
 	);
