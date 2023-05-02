@@ -7,7 +7,7 @@ import FormDiv from '../components/FormDiv'
 import ProjectsSection from "../components/ProjectsSection";
 import Mission from '../components/Mission'
 // import ProjectsAccordion from "../components/ProjectsAccordian";
-
+import Projects from "../components/Projects";
 
 export default function Home() {
   return (
@@ -22,6 +22,7 @@ export default function Home() {
       
       <Footer />
 
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
