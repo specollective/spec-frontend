@@ -65,7 +65,7 @@ export default function Testimonials() {
             data-te-carousel-item
             data-te-carousel-active
           >
-            <div className="block w-full h-60 bg-gray-300">
+            <div className="border-solid border-spec-turquiose border-8 py-8 my-8 font-montserrat text-base text-center w-full">
               Testimonial #1
             </div>
           </div>
