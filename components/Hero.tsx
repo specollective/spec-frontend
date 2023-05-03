@@ -9,8 +9,8 @@ export default function Hero() {
 	};
 	return (
 		<section className="">
-			<div className="flex">
-				<div
+		 <div className="flex">
+			<div
 					id="top"
 					className="w-2/5 pl-8 md:mt-10 md:ml-12 md:pl-10 lg:mt-[6rem]  2xl:w-6/12">
 					<h1 className="mt-3 font-dmserif text-lg md:text-3xl lg:text-5xl xl:text-7xl 2xl:text-8xl">
