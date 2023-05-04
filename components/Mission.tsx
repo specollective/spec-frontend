@@ -29,7 +29,7 @@ export default function Mission() {
                     <h1 className='font-dmserif text-base font-normal leading-8 mb-6 md:text-4xl md:leading-10'>Empower individuals to become globally-minded <span className='text-spec-turquiose'>change agents</span> by helping them learn the <span className='text-spec-turquiose'>essential skills</span> required to build sustainable careers.
                     </h1>
                     <p className='font-montserrat opacity-70 font-medium text-base leading-normal md:text-lg md:leading-7'>
-                        We understand that for many people from underserved communities, they can't give back or help others until they are able to access essential goods and services,
+                        We understand that for many people from underserved communities, they can&apos;t give back or help others until they are able to access essential goods and services,
                         learn professional skills, and achieve physical and financial security.
                     </p>
                 </div>

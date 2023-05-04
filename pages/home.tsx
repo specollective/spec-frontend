@@ -5,8 +5,9 @@ import Footer from "../components/Footer";
 import ByTheNumbers from "../components/byTheNumbers";
 import React from "react";
 import FormDiv from "../components/FormDiv";
+import ProjectsSection from "../components/ProjectsSection";
 import Mission from "../components/Mission";
-// import ProjectsAccordion from "../components/ProjectsAccordian";
+import Projects from "../components/Projects";
 
 export default function Home() {
 	const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
@@ -17,14 +18,12 @@ export default function Home() {
 			<Navbar />
 			<Hero />
 			<GetInvolved />
+			<ProjectsSection />
 			<Mission />
-			{/* <ProjectsAccordion/> */}
+			<Projects />
 			<ByTheNumbers />
 			<FormDiv />
 			{/* <Testimonials/> */}
-
-			<Footer />
-
 			<Footer />
 		</>
 	);
