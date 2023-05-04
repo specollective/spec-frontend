@@ -9,7 +9,7 @@ export default function Hero() {
 	};
 	return (
 		<section className="">
-			<div className="flex justify-end mb-5">
+			<div className="lg:min-h-screen flex justify-end">
 				<div
 					id="top"
 					className="w-1/2 ml-10 mt-4 mb-1 md:ml-20 md:mt-8 md:w-5/12 lg:mt-16 xl:ml-36">
@@ -18,7 +18,7 @@ export default function Hero() {
 					</h1>
 					<p
 						id="browser-text"
-						className="font-montserrat text-spec-turquiose hidden lg:block text-2xl font-medium lg:w-8/12 lg:text-2xl xl:text-3xl mt-10 xl:w-8/12 2xl:text-4xl 2xl:w-9/12 2xl:mt-16 2xl:leading-normal">
+						className="font-montserrat text-spec-turquiose hidden lg:block text-2xl font-medium lg:w-8/12 lg:text-2xl xl:text-3xl mt-10 xl:w-8/12 2xl:text-4xl 2xl:w-9/12 2xl:mt-16 2xl:leading-normal 2xl:mb-18">
 						Through partnerships with clients, SPEC offers paid learning
 						opportunities in website development, hardware creation, art, and
 						writing.
@@ -30,7 +30,7 @@ export default function Hero() {
 						to build websites, hardware, art, and written content.
 					</p>
 				</div>
-				<div className="relative w-1/2  lg:min-w-max">
+				<div className="relative w-1/2">
 					<div
 						id="training-img-container"
 						className="absolute inset-0 overflow-hidden ">
