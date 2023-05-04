@@ -45,7 +45,7 @@ export default function Hero() {
 					<Image
 						src={topButton}
 						alt="back-to-top"
-						className="fixed right-10 bottom-28 xl:bottom-32 xl:-translate-y-1/2 scale-125 xl:scale-150"
+						className="fixed right-10 bottom-28 xl:bottom-32 xl:-translate-y-1/2 "
 					/>
 				</button>
 			</div>
