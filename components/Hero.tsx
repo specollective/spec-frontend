@@ -16,7 +16,7 @@ export default function Hero() {
 					// className="w-1/2 pl-8 md:mt-10 md:ml-12 md:pl-10 lg:mt-[6rem]  2xl:w-6/12"
 				>
 					<h1
-						className="font-dmserif text-2xl w-10/12 md:text-5xl md:w-full lg:text-6xl xl:text-7xl lg:w-9/12 2xl:text-8xl 2xl:w-11/12 xl:w-9/12 lg:leading-tight"
+						className="font-dmserif text-2xl w-10/12 md:text-5xl lg:text-6xl xl:text-7xl lg:w-9/12 2xl:text-8xl 2xl:w-11/12 xl:w-9/12 lg:leading-tight"
 						// className="mt-3 font-dmserif text-lg md:text-3xl lg:text-5xl xl:text-7xl 2xl:text-8xl"
 					>
 						Paid training to promote equity and progress
@@ -32,7 +32,7 @@ export default function Hero() {
 					</p>
 					<p
 						id="mobile-text"
-						className="font-medium text-sm block lg:hidden font-montserrat text-spec-turquiose w-10/12 mt-4 md:text-2xl md:w-10/12 md:mt-8 md:leading-8">
+						className="font-medium text-sm block lg:hidden font-montserrat text-spec-turquiose w-10/12 mt-4 md:text-2xl md:w-9/12 md:mt-8 md:leading-8">
 						SPEC provides paid learning opportunities by partnering with clients
 						to build websites, hardware, art, and written content.
 					</p>
