@@ -133,7 +133,6 @@ export default function GetInvolved() {
 								Donate to SPEC today to <br></br> support our mission and
 								impact.
 							</p>
-
 							<div
 								id="container-for-anchor-button"
 								className="mt-5 flex max-w-[15rem]  items-center justify-between">
