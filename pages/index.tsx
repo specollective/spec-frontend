@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import React from "react";
+
 
 export default function Home() {
   return (
@@ -21,7 +23,9 @@ export default function Home() {
               height={120}
               priority
             />
-            <h1 className="block text-center lg:text-left text-4xl xl:text-3xl font-medium font-montserrat">
+            <h1
+              className="block text-center lg:text-left text-4xl xl:text-3xl font-medium font-montserrat"
+            >
               Sustainable Progress and Equality Collective
             </h1>
           </header>

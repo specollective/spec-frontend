@@ -1,4 +1,7 @@
+
 import React, { useState } from 'react';
+
+
 import Image from 'next/image'
 import logo from '../public/spec-logo.svg'
 import menu from '../public/menuSign.svg'
