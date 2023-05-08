@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Carousel, initTE } from "tw-elements";
 import { renderToString } from "react-dom/server";
 import Image from "next/image";
+import Vector from "../public/Vector.png"
 
 export default function Testimonials() {
   useEffect(() => {
@@ -58,21 +59,28 @@ export default function Testimonials() {
 
         {/* <!--Carousel items--> */}
         <div
-          className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+          className="relative items-center w-full overflow-hidden after:clear-both after:block after:content-['']">
           {/* <!--First item--> */}
           <div
-            className=" float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className="float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
             data-te-carousel-active
           >
-            
-            <div className=" border-solid border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-1/2">
-            <img className="  w-20 h-20 items-center object-cover rounded-full border-2 border-indigo-500" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
+             <img className="w-28 h-28  ml-40 mt-39 object-cover rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
+            <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-1/2">
+           
             <blockquote>
-            <svg aria-hidden="true" className="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+            <Image
+              className=" "
+              src={Vector}
+              alt="linkedin-logo"
+              width={35}
+              height={33}
+              priority
+            />
               <p className="text-2xl font-montserrat p-6  text-gray-900 dark:text-black">Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit,</p>
           </blockquote> 
-              <div className=" flex-grow border-t-2 ml-10 w-96 border-spec-sunshine "></div>
+              <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="text-2xl font-bold py-6">EXAMPLE NAME</p>
             </div>
           </div>
@@ -81,8 +89,15 @@ export default function Testimonials() {
             className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
           >
-            <div className="block w-full h-60 bg-gray-300">
-            Testimonial #2
+             <img className="w-28 h-28  ml-40 mt-39 object-cover rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
+            <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-1/2">
+           
+            <blockquote>
+            <svg aria-hidden="true" className="w-10 h-10 text-black dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+              <p className="text-2xl font-montserrat p-6  text-gray-900 dark:text-black">Sagittis viverra integer et mauris, sapien enim. Eget quis congue suspendisse elit. Nisi bibendum nisl diam nulla velit,</p>
+          </blockquote> 
+              <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
+              <p id="name" className="text-2xl font-bold py-6">EXAMPLE NAME</p>
             </div>
           </div>
           {/* <!--Third item--> */}
