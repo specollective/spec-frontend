@@ -7,40 +7,44 @@ import upArrow from '../public/up-arrow.svg';
 import ProjectsSection from './ProjectsSection';
 import projectsData from './ProjectsSection';
 import Link from 'next/link';
-
-interface ProjectProps  { 
-    project?: string;
+interface ProjectProps  {
+  pic: string;
+  info: string;
+  link: string;
 }
 
-function ProjectsDisplay({ project }) {
-
+// TODO: Use interface to define the type of the props
+function ProjectsDisplay({ project } : ({ project: any })) {
 	return (
-		 <div className="border border-spec-yellow-600 mb-2">
-		 <div className="flex justify-between p-10 max-h-[600px]">
-		   <div className="flex basis-1/2 place-self-start self-start p-4">
-		    <Image src={project.pic.url} alt={project.pic.alt} />
+	  <div className="border border-spec-yellow-600 mb-2">
+		  <div className="flex justify-between p-10 max-h-[600px]">
+		    <div className="flex basis-1/2 place-self-start self-start p-4">
+		      <Image src={project.pic.url} alt={project.pic.alt} />
+		    </div>
+
+        <div className="flex flex-col basis-1/2 justify-between p-4">
+          <div className="text-lg">
+            {project.info}
+          </div>
+          <div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
+            <Link href={project.link}>
+              {project.linkLine}
+            </Link>
+          </div>
+        </div>
+	    </div>
 		</div>
-		<div className="flex flex-col basis-1/2 justify-between p-4">
-					<div className="text-lg"> {project.info} </div>
-					<div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
-						<Link href={project.link}>
-		 					{project.linkLine}
-		 				</Link>
-					</div>
-				</div>
-			</div>
-		 </div>
 	);
 }
 
-function ProjectsAccordion({ projectsData }) {
+function ProjectsAccordion({ projectsData } : { projectsData: any }) {
 	const [isClicked, setIsClicked] = useState(null);
 
-	const showProject = index => {
+	const showProject = (index: any) => {
 		setIsClicked(isClicked === index ? null : index);
 	};
 
-	const toggleBtn = index => {
+	const toggleBtn = (index: any) => {
 		const downImage = <Image alt="down-arrow" src={downArrow} />;
 		const upImage = <Image alt="up-arrow" src={upArrow} />;
 
@@ -53,7 +57,7 @@ function ProjectsAccordion({ projectsData }) {
 
 	return (
     <section className="py-14 md:py-30">
-      {projectsData?.map((project, index) => (
+      {projectsData?.map((project: any, index: any) => (
         <div key={`${project.name}-${index}`}>
           <section className="hidden lg:block">
             <div className="cursor-pointer" onClick={() => showProject(index)}>
