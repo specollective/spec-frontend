@@ -2,7 +2,7 @@
 
 ## Describe the issue you are trying to resolve
 
-<!-- Describe the issue and link any relevant documents, designs, and other issues -->
+<!-- Describe the issue and link any relevant documents, designs, other issues, etc  -->
 
 ## Describe the changes you've made to resolve the issue
 
