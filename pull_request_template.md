@@ -12,15 +12,15 @@
 
 <!-- You should have 2 images minimum, for desktop, 4 for mobile and desktop combined -->
 
-### Before:
+### Before
 
-### After:
+### After
 
-# Code Review Checklist
+## Code Review Checklist
 
 <!-- This checklist is for requesters and reviewers  -->
 
-- [ ] Have the package.json or package-lock.json been changed? If so, does description say why?
+- [ ] Have the package.json or package-lock.json been changed? If so, does the pull request description say why?
 - [ ] Has the UI for mobile and desktop been changed, did you test on IphoneXr and desktop views?
 - [ ] Does the UI match the requirements in the ticket and designs in figma; does it pass the visual smell test?
 - [ ] Have TypeScript files been changed, does the TypeScript pass the smell test?
