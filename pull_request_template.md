@@ -23,5 +23,5 @@
 - [ ] Have the package.json or package-lock.json been changed? If so, does description say why?
 - [ ] Has the UI for mobile and desktop been changed, did you test on IphoneXr and desktop views?
 - [ ] Does the UI match the requirements in the ticket and designs in figma; does it pass the visual smell test?
-- [ ] Have Typescript files been changed, does the Typescript pass the smell test?
+- [ ] Have TypeScript files been changed, does the TypeScript pass the smell test?
 - [ ] If you don't feel super confident in your review, did you assign someone more senior to double check?
