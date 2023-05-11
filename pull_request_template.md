@@ -1,21 +1,27 @@
-## Ticket Description
-<-- Copy and paste or write the tickets description here-->
+# Pull Request Process
 
+## Describe the issue you are trying to resolve
 
-## Description of Changes
-<-- Brief description of the changes you made, files you touched, etc -->
+<!-- Describe the issue and link any relevant documents, designs, and other issues -->
 
-## Before and After for UI Updates
-<-- You should have 2 images minimum, for desktop, 4 for mobile and desktop combined -->
+## Describe the changes you've made to resolve the issue
 
-Before:
+<!-- Brief description of the changes you made, files you touched, etc -->
 
-After:
+## Add screenshots of the UI before and after your changes have been made
 
+<!-- You should have 2 images minimum, for desktop, 4 for mobile and desktop combined -->
 
-## For PR Reviewer
-- [ ] Does this file change the yarn.lock, package.json or package-lock.json file? If so, why?
-- [ ] If this pr contains mobile and desktop changes, did you test on IphoneXr and desktop views?
-- [ ] Does this file match the related tickets linked figma file, or does it pass the visual smell test?
-- [ ] If this file contains javascript, does the javascript pass the smell test?
+### Before
+
+### After
+
+## Code Review Checklist
+
+<!-- This checklist is for requesters and reviewers  -->
+
+- [ ] Have the package.json or package-lock.json been changed? If so, does the pull request description say why?
+- [ ] Has the UI for mobile and desktop been changed, did you test on IphoneXr and desktop views?
+- [ ] Does the UI match the requirements in the ticket and designs in figma; does it pass the visual smell test?
+- [ ] Have TypeScript files been changed, does the TypeScript pass the smell test?
 - [ ] If you don't feel super confident in your review, did you assign someone more senior to double check?
