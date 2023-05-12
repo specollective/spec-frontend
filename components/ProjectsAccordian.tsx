@@ -8,11 +8,18 @@ import ProjectsSection from './ProjectsSection';
 import projectsData from './ProjectsSection';
 import Link from 'next/link';
 
+
+
 interface ProjectProps  { 
-    project?: string;
+  link: string;
+  linkLine: string;
+  info: string;
+  pic: string;
+  url: string;
+  alt: string;
 }
 
-function ProjectsDisplay({ project }) {
+function ProjectsDisplay({ project }:{project: ProjectProps}) {
 
 	return (
 		 <div className="border border-spec-yellow-600 mb-2">
@@ -53,7 +60,7 @@ function ProjectsAccordion({ projectsData }) {
 
 	return (
     <section className="py-14 md:py-30">
-      {projectsData?.map((project, index) => (
+      {projectsData?.map((project: ProjectProps, index: null) => (
         <div key={`${project.name}-${index}`}>
           <section className="hidden lg:block">
             <div className="cursor-pointer" onClick={() => showProject(index)}>
