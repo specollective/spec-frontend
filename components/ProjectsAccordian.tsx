@@ -3,62 +3,56 @@ import Image from 'next/image';
 import BreakLine from './BreakLine';
 import downArrow from '../public/ProjectArrow.svg';
 import upArrow from '../public/up-arrow.svg';
-// import rightArrow from '../public/arrow_right.svg';
-import ProjectsSection from './ProjectsSection';
-import projectsData from './ProjectsSection';
 import Link from 'next/link';
 
-
-
-interface ProjectProps  { 
-  link: string;
-  linkLine: string;
-  info: string;
+interface ProjectProps  {
   pic: string;
-  url: string;
-  alt: string;
+  info: string;
+  link: string;
 }
 
-function ProjectsDisplay({ project }:{project: ProjectProps}) {
-
-	return (
-		 <div className="border border-spec-yellow-600 mb-2">
-		 <div className="flex justify-between p-10 max-h-[600px]">
-		   <div className="flex basis-1/2 place-self-start self-start p-4">
-		    <Image src={project.pic.url} alt={project.pic.alt} />
-		</div>
-		<div className="flex flex-col basis-1/2 justify-between p-4">
-					<div className="text-lg"> {project.info} </div>
-					<div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
-						<Link href={project.link}>
-		 					{project.linkLine}
-		 				</Link>
-					</div>
-				</div>
-			</div>
-		 </div>
-	);
+// TODO: Use interfaces for prop definitions
+function ProjectsDisplay({ project } : ({ project: any })) {
+  return (
+    <div className="border border-spec-yellow-600 mb-2">
+      <div className="flex justify-between p-10 max-h-[600px]">
+        <div className="flex basis-1/2 place-self-start self-start p-4">
+          <Image src={project.pic.url} alt={project.pic.alt} />
+        </div>
+        <div className="flex flex-col basis-1/2 justify-between p-4">
+          <div className="text-lg">
+            {project.info}
+          </div>
+          <div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
+            <Link href={project.link}>
+              {project.linkLine}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-function ProjectsAccordion({ projectsData }) {
-	const [isClicked, setIsClicked] = useState(null);
+function ProjectsAccordion({ projectsData } : { projectsData: any }) {
+  const [isClicked, setIsClicked] = useState(null);
 
-	const showProject = index => {
-		setIsClicked(isClicked === index ? null : index);
-	};
+  const showProject = (index: any) => {
+    setIsClicked(isClicked === index ? null : index);
+  };
 
-	const toggleBtn = index => {
-		const downImage = <Image alt="down-arrow" src={downArrow} />;
-		const upImage = <Image alt="up-arrow" src={upArrow} />;
+  const toggleBtn = (index: any) => {
+    const downImage = <Image alt="down-arrow" src={downArrow} />;
+    const upImage = <Image alt="up-arrow" src={upArrow} />;
 
-		if (isClicked === index) {
-			return upImage;
-		} else {
-			return downImage;
-		}
-	};
+    if (isClicked === index) {
+      return upImage;
+    } else {
+      return downImage;
+    }
+  };
 
-	return (
+  return (
     <section className="py-14 md:py-30">
       {projectsData?.map((project: ProjectProps, index: null) => (
         <div key={`${project.name}-${index}`}>
@@ -84,7 +78,6 @@ function ProjectsAccordion({ projectsData }) {
               </section>
             }
           </section>
-
           <section className="visible lg:hidden">
             <div className="flex place-content-between py-2">
               <h3 className="text-2xl text-whte-600">{project.name}</h3>
