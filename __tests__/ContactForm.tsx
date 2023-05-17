@@ -13,22 +13,24 @@ describe('ContactForm', () => {
     expect(contactForm).toBeInTheDocument()
   })
 
-  it('displays validation message on form submit', async () => {
-    const submitButton = screen.getByRole('button', { name: 'Submit' })
+  describe('validations', () => {
+    it('displays validation message on form submit', async () => {
+      const submitButton = screen.getByRole('button', { name: 'Submit' })
 
-    fireEvent.click(submitButton)
+      fireEvent.click(submitButton)
 
-    await waitFor(() => {
-      expect(screen.getByText('Enter email address')).toBeInTheDocument()
+      await waitFor(() => {
+        expect(screen.getByText('Enter email address')).toBeInTheDocument()
+      })
     })
-  })
 
-  xit('displays validation message for name field', async () => {
-    render(<ContactForm />);
-  
-    const nameInput = screen.getByLabelText('Name');
-    const submitButton = screen.getByRole('button', { name: 'Submit' });
-  
-    fireEvent.change(nameInput, { target: { value: 'My full name' } });
+    xit('displays validation message for name field', async () => {
+      render(<ContactForm />);
+
+      const nameInput = screen.getByLabelText('Name');
+      const submitButton = screen.getByRole('button', { name: 'Submit' });
+
+      fireEvent.change(nameInput, { target: { value: 'My full name' } });
+    });
   });
 })
