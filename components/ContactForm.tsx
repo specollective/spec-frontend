@@ -28,7 +28,10 @@ export default function ContactForm() {
             onSubmit={onSubmit}
         >
             {({ errors, touched }) => (
-                <Form className='flex flex-col font-semibold font-montserrat gap-y-2 text-base md:text-lg'>
+                <Form
+                  role="form"
+                  className='flex flex-col font-semibold font-montserrat gap-y-2 text-base md:text-lg'
+                >
                     <label htmlFor="fullName">Full Name:</label>
                     <Field
                         className={`border ${errors.fullName && touched.fullName ? 'border-black bg-gray-300' : 'border-black'} rounded-lg p-2 focus:outline-none focus:border-spec-turquiose focus:ring-spec-turquiose focus:border-2`}
