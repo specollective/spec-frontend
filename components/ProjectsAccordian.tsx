@@ -6,13 +6,19 @@ import upArrow from '../public/up-arrow.svg';
 import Link from 'next/link';
 
 interface ProjectProps  {
-  pic: string;
-  info: string;
   link: string;
+  linkLine: string;
+  tag: string;
+  info: string;
+  pic: {
+    alt: string;
+    url: any;
+  }
+  name: string;
 }
 
 // TODO: Use interfaces for prop definitions
-function ProjectsDisplay({ project } : ({ project: any })) {
+function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   return (
     <div className="border border-spec-yellow-600 mb-2">
       <div className="flex justify-between p-10 max-h-[600px]">
