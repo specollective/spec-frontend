@@ -3,21 +3,21 @@ import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as yup from 'yup';
 
 export default function ContactForm() {
-  const [submit, setSubmit] = React.useState(false)
-  const schema = yup.object().shape({
-      fullName: yup.string().required("Required"),
-      email: yup.string().email().required("Enter email address"),
-      reason: yup
-          .string()
-          .oneOf(["general", "work", "mentor", "partner", "praise", "other"])
-          .required("Required"),
-      message: yup.string().required("Required")
-  })
-  
-  function onSubmit(values: any, { resetForm } : { resetForm: () => void }) {
-    setSubmit(true)
-    resetForm()
-  }
+    const [submit, setSubmit] = React.useState(false)
+    const schema = yup.object().shape({
+        fullName: yup.string().required("Required"),
+        email: yup.string().email().required("Enter email address"),
+        reason: yup
+            .string()
+            .oneOf(["general", "work", "mentor", "partner", "praise", "other"])
+            .required("Required"),
+        message: yup.string().required("Required")
+    })
+
+    function onSubmit(values: any, { resetForm }: { resetForm: () => void }) {
+        setSubmit(true)
+        resetForm()
+    }
 
 
     return (
@@ -34,14 +34,29 @@ export default function ContactForm() {
                 >
                     <label htmlFor="fullName">Full Name:</label>
                     <Field
-                        className={`border ${errors.fullName && touched.fullName ? 'border-black bg-gray-300' : 'border-black'} rounded-lg p-2 focus:outline-none focus:border-spec-turquiose focus:ring-spec-turquiose focus:border-2`}
+                        className={`border ${errors.fullName && touched.fullName ?
+                            'border-black shadow-xl' : 'border-black'} 
+                            rounded-lg p-2 
+                            focus:outline-none
+                            focus:border-spec-turquiose
+                            focus:ring-spec-turquiose
+                            focus:border-2
+                            font-normal`}
                         name="fullName"
                         type="text"
                         placeholder="Full name Last name"
                     />
-                    <label htmlFor="email">Email Address*:</label>
+                    <label htmlFor="email">Email Address:*</label>
                     <Field
-                        className={`border ${errors.email && touched.email ? 'border-pink-500 bg-red-200' : 'border-black'} rounded-lg p-2 focus:outline-none focus:border-spec-turquiose focus:ring-spec-turquiose focus:border-2 focus:bg-white`}
+                        className={`border ${errors.email && touched.email ?
+                            'border-pink-500 bg-red-200' : 'border-black'} 
+                            rounded-lg p-2
+                            focus:outline-none
+                            focus:border-spec-turquiose
+                            focus:ring-spec-turquiose
+                            focus:border-2
+                            focus:bg-white
+                            font-normal`}
                         name="email"
                         type="email"
                         placeholder="hello@emailaddress.com"
@@ -50,7 +65,15 @@ export default function ContactForm() {
                     <label htmlFor="reason">Reason for message:</label>
                     <Field
                         as="select"
-                        className={`border ${errors.reason && touched.reason ? 'border-black bg-gray-300' : 'border-black'} rounded-lg p-2 focus:outline-none focus:border-spec-turquiose focus:ring-spec-turquiose focus:border-2 focus:bg-white`}
+                        className={`border ${errors.reason && touched.reason ?
+                            'border-black shadow-xl' : 'border-black'} 
+                            rounded-lg p-2
+                            focus:outline-none
+                            focus:border-spec-turquiose
+                            focus:ring-spec-turquiose
+                            focus:border-2
+                            focus:bg-white
+                            font-normal`}
                         name="reason"
                         placeholder="Select Reason"
                         rows="8"
@@ -68,7 +91,14 @@ export default function ContactForm() {
                     <Field
                         as='textarea'
                         name="message"
-                        className={`border ${errors.message && touched.message ? 'border-black bg-gray-300' : 'border-black'} rounded-lg focus:outline-none focus:border-spec-turquiose focus:ring-spec-turquiose focus:border-2`}
+                        className={`border ${errors.message && touched.message ?
+                            'border-black bg-gray-300' : 'border-black'} 
+                            rounded-lg
+                            focus:outline-none
+                            focus:border-spec-turquiose
+                            focus:ring-spec-turquiose
+                            focus:border-2
+                            font-normal`}
                         rows="8"
 
                     />
