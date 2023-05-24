@@ -4,15 +4,14 @@ export default function ByTheNumbers() {
     return (
         <div className="flex flex-col p-8  justify-center items-center gap-y-3.5 md:w-full md:grid md:grid-cols-3 md:grid-rows-2 md:grid-flow-col md:gap-6 lg:gap-14 md:justify-items-center md:items-center md:p-16  bg-spec-lightTurquiose mt-6
         ">
-            <div className="block p-2 md:hidden">
+            <div className="block p-2 md:hidden ml-4">
                 <p className='text-base font-medium opacity-40 text-black  font-montserrat text-left mb-4'>BY THE NUMBERS</p>
 
                 <p className='text-left text-black text-2xl font-normal leading-10 mb-8 font-dmserif font-wide antialiased'>
-                    We are striving to <span className='text-teal-700'>create sustainable careers</span> for our contributors.
+                    We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
                 </p>
                 <p className='text-left text-black text-base font-montserrat font-medium leading-7 tracking-5 antialiased'>
-                    SPEC was established based on the core values of sustainability, progress and equality.
-                    These values combined, provide a recipe for building radically sustainable, equitable, transparent organizations.
+                    SPEC was established based on the core values of sustainability, progress and equality, and we believe these combined values are the recipe for building radically sustainable, equitable, and transparent organizations.
                 </p>
             </div>
 
@@ -39,7 +38,7 @@ export default function ByTheNumbers() {
                         <p>BY THE NUMBERS</p>
                     </h2>
                     <p className='text-left text-black text-4xl font-normal leading-10 mb-8 font-dmserif font-wide antialiased'>
-                        We are striving to <span className='text-teal-700'>create sustainable careers</span> for our contributors.
+                        We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
                     </p>
                     <p className='text-left text-black text-lg font-montserrat font-medium leading-7 tracking-5 antialiased'>
                         SPEC was established based on the core values of sustainability, progress and equality.
