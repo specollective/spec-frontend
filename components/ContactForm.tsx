@@ -2,8 +2,34 @@ import React from 'react';
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as yup from 'yup';
 
+const API_URL = 'http://localhost:3005/api/formData';
+
+async function sendContactEmail(contactInfo: any) {
+	let response
+	let json
+	try {
+		response = await fetch(API_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(contactInfo)
+		})
+		json = await response.json();
+	} catch (e) {
+		response = { ok: false }
+		json = {}
+	}
+
+	return {
+		successful: response.ok,
+		json
+	};
+}
+
 export default function ContactForm() {
     const [submit, setSubmit] = React.useState(false)
+    const [failed, setFailed] = React.useState(false)
     const schema = yup.object().shape({
         fullName: yup.string().required("Required"),
         email: yup.string().email().required("Enter email address"),
@@ -14,10 +40,20 @@ export default function ContactForm() {
         message: yup.string().required("Required")
     })
 
-    function onSubmit(values: any, { resetForm }: { resetForm: () => void }) {
-        setSubmit(true)
-        resetForm()
+      async function onSubmit(values: any, { resetForm } : { resetForm: () => void }) {
+		const response = await sendContactEmail(values);
+
+		if (response.successful) {
+			setSubmit(true)
+			resetForm()
+		} else {
+			setFailed(true)
+		}
     }
+    // function onSubmit(values: any, { resetForm }: { resetForm: () => void }) {
+    //     setSubmit(true)
+    //     resetForm()
+    // }
 
 
     return (
