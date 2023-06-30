@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         spec: {
           yellow: '#FCD991',
+          yellow: '#FCD991',
           turquiose: '#0C9FAA',
           lightTurquiose: '#92CDD1',
           lightRed: '#F16A6E',
@@ -27,7 +28,8 @@ module.exports = {
         montserrat: ['Montserrat'],
         dmserif: ['DM Serif Text']
       }
-    }
-  },
+    },
+        
+  },    
   plugins: []
 }
