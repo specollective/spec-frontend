@@ -3,8 +3,10 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{html,js}',
     './node_modules/tw-elements/dist/js/**/*.js'
   ],
+  plugins: [require('tw-elements/dist/plugin')],
   theme: {
     extend: {
       colors: {
@@ -19,7 +21,6 @@ module.exports = {
           lemon: '#FFEECC',
           banana: '#FFF7E5',
           orange: '#FFC692'
-
         }
       },
       fontFamily: {
@@ -27,8 +28,5 @@ module.exports = {
         dmserif: ['DM Serif Text']
       }
     }
-  },
-  plugins: [
-    require('tw-elements/dist/plugin')
-  ]
+  }
 }
