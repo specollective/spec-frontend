@@ -28,5 +28,5 @@ module.exports = {
         dmserif: ['DM Serif Text']
       }
     }  
-  },    
+  }
 }
