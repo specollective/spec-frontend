@@ -27,6 +27,6 @@ module.exports = {
         montserrat: ['Montserrat'],
         dmserif: ['DM Serif Text']
       }
-    }  
+    }
   }
 }
