@@ -8,7 +8,7 @@ import FormDiv from "../components/FormDiv";
 import ProjectsSection from "../components/ProjectsSection";
 import Mission from "../components/Mission";
 import Projects from "../components/Projects";
-// import ProjectsAccordion from "../components/ProjectsAccordian";
+import ProjectsAccordion from "../components/ProjectsAccordian";
 
 export default function Home() {
 	const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
@@ -21,7 +21,7 @@ export default function Home() {
 			<GetInvolved />
 			<Mission />
 			<Projects />
-			{/* <ProjectsAccordion/> */}
+			<ProjectsSection/>
 			<ByTheNumbers />
 			<FormDiv />
 			{/* <Testimonials/> */}
