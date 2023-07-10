@@ -9,7 +9,7 @@ interface ProjectProps  {
   link: string;
   linkLine: string;
   tag: string;
-  info: string;
+  info: any;
   pic: {
     alt: string;
     url: any;
@@ -30,8 +30,8 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
             {project.info}
           </div>
           <div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
-            <Link href={project.link}>
-              {project.linkLine}
+            <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href={project.link}>
+            {project.linkLine}
             </Link>
           </div>
         </div>
