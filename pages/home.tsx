@@ -5,14 +5,17 @@ import Footer from "../components/Footer";
 import ByTheNumbers from "../components/byTheNumbers";
 import React from "react";
 import FormDiv from "../components/FormDiv";
+import ProjectsSection from "../components/ProjectsSection";
 import Mission from "../components/Mission";
-// import ProjectsAccordion from "../components/ProjectsAccordian";
+import Projects from "../components/Projects";
+import ProjectsAccordion from "../components/ProjectsAccordian";
+
 
 const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
 	ssr: false,
 });
 
-const Testimonials = dynamic(() => import("../components/Testimonials"), {
+const Testimonials = dynamic(() => import("../components/Testimonials2"), {
 	ssr: false,
 });
 
@@ -23,10 +26,11 @@ export default function Home() {
 			<Hero />
 			<GetInvolved />
 			<Mission />
-			{/* <ProjectsAccordion/> */}
+			<Projects />
+			<ProjectsSection/>
 			<ByTheNumbers />
-			<FormDiv />
 			<Testimonials />
+			<FormDiv />
 			<Footer />
 		</>
 	);

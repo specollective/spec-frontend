@@ -3,6 +3,7 @@ import { Carousel, initTE } from "tw-elements";
 import { renderToString } from "react-dom/server";
 import Image from "next/image";
 import donate from "../public/DonateImg.svg";
+import DonationTable from "./DonationTable";
 
 export default function GetInvolved() {
 	useEffect(() => {
@@ -12,17 +13,17 @@ export default function GetInvolved() {
 	const getInvolvedData = [
 		{
 			title: "Work with us",
-			body: "Join the SPEC team, where you can contribute to something meaningful and make a real impact",
+			body: "Join the SPEC team, where you can contribute to something meaningful and make a real impact.",
 			contactUs: "#",
 		},
 		{
 			title: "Mentor",
-			body: "Join our mentorship program and give back by sharing your expertise and guiding aspiring professionals on their journey",
+			body: "Become a SPEC mentor to share your expertise and guide aspiring professionals on their jounrey.",
 			contactUs: "#",
 		},
 		{
 			title: "Partner with us",
-			body: "Let's collaborate and create value together by forming a strong partnership between our companies",
+			body: "Let's collaborate and create value together by forming a strong partnership between our companies.",
 			contactUs: "#",
 		},
 	];
@@ -94,13 +95,6 @@ export default function GetInvolved() {
 		);
 	});
 
-	const tableContents = [
-		["$20", "Funds an hour of RA learning"],
-		["$50", "Introduces a RA to a new skill"],
-		["$100", "-"],
-		["$1000", "Publishes an issue of JoER"],
-		["$3000", "Funds a RA development project"],
-	];
 
 	// MOBILE CAROUSEL
 	const [activeSlide, setActiveSlide] = useState(0);
@@ -134,7 +128,6 @@ export default function GetInvolved() {
 								Donate to SPEC today to <br></br> support our mission and
 								impact.
 							</p>
-
 							<div
 								id="container-for-anchor-button"
 								className="mt-5 flex max-w-[15rem]  items-center justify-between">
@@ -175,44 +168,8 @@ export default function GetInvolved() {
 											&times;
 										</span>
 									</button>
-								</div>
-								<table className="montserrat h-[14rem] w-full table-auto border-collapse text-sm">
-									<thead>
-										<tr className="">
-											<th
-												className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl bg-spec-banana font-normal"
-												colSpan={2}>
-												The <strong>impact</strong> of your donation makes
-											</th>
-										</tr>
-									</thead>
-									<tbody className="my-2 space-y-2 ">
-										{tableContents.map((row, index) => {
-											const isEvenRow = index % 2 === 0;
-											const rowColor = isEvenRow
-												? "bg-spec-lemon"
-												: "bg-spec-banana";
-											const isLastRow = index === tableContents.length - 1;
-											return (
-												<tr key={index} className={`${rowColor} `}>
-													{row.map((cell, cellIndex) => (
-														<td
-															key={cellIndex}
-															className={`px-4 ${
-																isLastRow && cellIndex ? "rounded-br-3xl" : ""
-															} ${
-																cellIndex === 0 && isLastRow
-																	? "rounded-bl-3xl"
-																	: ""
-															} ${cellIndex ? "text-right" : ""}`}>
-															{cell}
-														</td>
-													))}
-												</tr>
-											);
-										})}
-									</tbody>
-								</table>
+                  </div>
+                  <DonationTable />
 							</div>
 						)}
 					</div>
@@ -344,49 +301,7 @@ export default function GetInvolved() {
 													</span>
 												</button>
 											</div>
-											<table className="montserrat h-[14rem] w-full table-auto border-collapse border-spacing-y-6  text-xs">
-												<thead>
-													<tr className="">
-														{/* h-[2.5rem] rounded-tr-3xl rounded-tl-3xl border bg-spec-banana font-normal */}
-														<th
-															className="rounded-tr-3xl rounded-tl-3xl bg-spec-banana font-normal py-4 text-sm"
-															colSpan={2}>
-															The <strong>impact</strong> of your donation makes
-														</th>
-													</tr>
-												</thead>
-												<tbody className="my-2 space-y-2 ">
-													{tableContents.map((row, index) => {
-														const isEvenRow = index % 2 === 0;
-														const rowColor = isEvenRow
-															? "bg-spec-lemon"
-															: "bg-spec-banana";
-														const isLastRow =
-															index === tableContents.length - 1;
-														return (
-															<tr
-																key={index}
-																className={`${rowColor}  border-spec-white`}>
-																{row.map((cell, cellIndex) => (
-																	<td
-																		key={cellIndex}
-																		className={`px-4 ${
-																			isLastRow && cellIndex
-																				? "rounded-br-3xl"
-																				: ""
-																		} ${
-																			cellIndex === 0 && isLastRow
-																				? "rounded-bl-3xl"
-																				: ""
-																		} ${cellIndex ? "text-right" : ""}`}>
-																		{cell}
-																	</td>
-																))}
-															</tr>
-														);
-													})}
-												</tbody>
-											</table>
+										<DonationTable />
 										</div>
 									)}
 								</div>
