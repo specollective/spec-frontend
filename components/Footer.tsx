@@ -40,7 +40,7 @@ export default function Footer() {
             rel="noreferrer"
             className="pl-1"
             >
-              <p>Journal of Engadged Research</p>
+              <p>Journal of Engaged Research</p>
             </a>
               <a
             href="https://medium.com/journal-of-engaged-research/expressions/home"
