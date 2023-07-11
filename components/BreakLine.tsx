@@ -1,4 +1,4 @@
-export default function BreakLine({ color="black ", lineWidth="1/3" , lineHeight="1"}) {
+export default function BreakLine({ color="spec-turquoise", lineWidth="1/3" , lineHeight="1"}) {
   
   return (
     <hr 
@@ -7,7 +7,7 @@ export default function BreakLine({ color="black ", lineWidth="1/3" , lineHeight
         mx-auto 
         w-${lineWidth}
         h-${lineHeight}
-        bg-${color}
+        bg-spec-turquiose
         rounded
         border-0
       `}
