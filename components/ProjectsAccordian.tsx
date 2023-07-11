@@ -9,7 +9,7 @@ interface ProjectProps  {
   link: string;
   linkLine: string;
   tag: string;
-  info: string;
+  info: any;
   pic: {
     alt: string;
     url: any;
@@ -30,8 +30,8 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
             {project.info}
           </div>
           <div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
-            <Link href={project.link}>
-              {project.linkLine}
+            <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href={project.link}>
+            {project.linkLine}
             </Link>
           </div>
         </div>
@@ -60,6 +60,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
 
   return (
     <section className="py-14 md:py-30">
+       <BreakLine lineWidth="full" />
       {projectsData?.map((project: ProjectProps, index: null) => (
         <div key={`${project.name}-${index}`}>
           <section className="hidden lg:block">
@@ -76,7 +77,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
                   {toggleBtn(index)}
                 </button>
               </div>
-              <BreakLine color="" lineWidth="full" />
+              <BreakLine lineWidth="full" />
             </div>
             {
               <section className={isClicked === index ? "block" : "hidden"}>
@@ -96,7 +97,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
                 {/* <Image alt="right-arrow" src={rightArrow} /> */}
               </a>
             </div>
-            <BreakLine color="black" lineWidth="full" />
+            <BreakLine lineWidth="full" />
           </section>
         </div>
       ))}
