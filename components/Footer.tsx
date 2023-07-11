@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import SocialMedia from './SocialMedia'
 
 export default function Footer() {
