@@ -10,8 +10,8 @@ function ProjectsSection() {
 		href="https://www.pardeerand.edu/">Pardee RAND Graduate School</Link>
 	const JoERData2 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.pardeerand.edu/">Wabash College</Link>
 	const JoERData3 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.pardeerand.edu/">a CAREP Public Discourse Fellow</Link>
-	const ArtGalleryData1 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.pardeerand.edu/">Studies of prison art programs</Link>
-	const ArtGalleryData2 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.pardeerand.edu/">ABO Comix</Link>
+	const ArtGalleryData1 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.abocomix.com/">Studies of prison art programs</Link>
+	const ArtGalleryData2 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.abocomix.com/">ABO Comix</Link>
 	
 
 	const projectsData = [

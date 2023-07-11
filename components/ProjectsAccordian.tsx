@@ -60,6 +60,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
 
   return (
     <section className="py-14 md:py-30">
+       <BreakLine lineWidth="full" />
       {projectsData?.map((project: ProjectProps, index: null) => (
         <div key={`${project.name}-${index}`}>
           <section className="hidden lg:block">
@@ -96,7 +97,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
                 {/* <Image alt="right-arrow" src={rightArrow} /> */}
               </a>
             </div>
-            <BreakLine color="black" lineWidth="full" />
+            <BreakLine lineWidth="full" />
           </section>
         </div>
       ))}
