@@ -24,13 +24,37 @@ export default function Footer() {
 
       <div className="lg:visible float-right text-lg  mb-4 ">
           <div className="hidden lg:visible lg:block">
-           
-          Documentation <br></br><br></br>
-          Journal of Engadged Research
-          <br></br><br></br>Digital Art Gallery
-            <br></br><br></br>
+          <a
+            href="https://docs.specollective.org/introduction/"
+            aria-label="Documentation"
+            target="_blank"
+            rel="noreferrer"
+            className="pl-1"
+            >
+              <p>Documentation</p>
+            </a>
+              <a
+            href="https://medium.com/journal-of-engaged-research"
+            aria-label="JoER"
+            target="_blank"
+            rel="noreferrer"
+            className="pl-1"
+            >
+              <p>Journal of Engadged Research</p>
+            </a>
+              <a
+            href="https://medium.com/journal-of-engaged-research/expressions/home"
+            aria-label="ArtGallery"
+            target="_blank"
+            rel="noreferrer"
+            className="pl-1"
+            >
+              <p>Digital Art Gallery</p>
+            </a>
+            <br></br>
+              <SocialMedia/>
+           <br></br>
           </div>
-          <SocialMedia/>
       </div>
     </section>
   </footer>
