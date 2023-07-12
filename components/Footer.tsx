@@ -1,97 +1,59 @@
-import FacebookLogo from '../public/facebook-logo.svg'
-import TwitterLogo from '../public/twitter-logo.svg'
-import LinkedinLogo from '../public/linkedin-logo.svg'
-import GithubLogo from '../public/github-logo.svg'
-import Image from 'next/image'
+import SocialMedia from './SocialMedia'
 
 export default function Footer() {
   return (
     <footer className="bg-[#0C9FAA] h-80">
-      <section className="flex p-14 justify-evenly">
+      <section className="flex p-4 justify-evenly">
       <div className="flex-row">
         <div className="text-center mt-12 px-4">
           <a
             href="https://opencollective.com/spec"
-            className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-lg rounded-tl-lg font-montserrat h-12 w-28 "
+            className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-2xl rounded-tl-2xl   hover:text-black hover:bg-white hover:border-spec-turquiose font-montserrat h-12 w-28 "
           >
             DONATE
           </a>
-        </div>
-        <div className="hidden lg:block items-center mt-10">
+          </div>
+          <div className=" lg:hidden content-center mt-10">
+         <SocialMedia/>
+        </div> 
+        <div className=" lg:block items-center mt-10">
           © 2023 Sustainable Progress and Equality Collective
         </div> 
       </div>   
 
-      <div className="float-right text-lg  mb-4 ">
-        <div className="hidden lg:block">
-          Documentation <br></br><br></br>
-          Journal of Engadged Research
-          <br></br><br></br>Digital Art Gallery
-          <br></br><br></br></div>
-          <div className=" flex flex-row  space-x-4 ">
-            <a
-              href="https://github.com/specollective"
-              target="_blank"
-              rel="noreferrer"
-              className="pl-1"
+      <div className="lg:visible float-right text-lg  mb-4 ">
+          <div className="hidden lg:visible lg:block">
+          <a
+            href="https://docs.specollective.org/introduction/"
+            aria-label="Documentation"
+            target="_blank"
+            rel="noreferrer"
+            className="pl-1"
             >
-            <Image
-              className=" "
-              src={GithubLogo}
-              alt="github-logo"
-              width={35}
-              height={33}
-              priority
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/specollective"
-            aria-label="LinkedIn"
+              <p>Documentation</p>
+            </a>
+              <a
+            href="https://medium.com/journal-of-engaged-research"
+            aria-label="JoER"
             target="_blank"
             rel="noreferrer"
             className="pl-1"
-          >
-            <Image
-              className=" "
-              src={LinkedinLogo}
-              alt="linkedin-logo"
-              width={35}
-              height={33}
-              priority
-            />
-          </a>
-          <a
-            href="https://www.facebook.com/specollective"
+            >
+              <p>Journal of Engaged Research</p>
+            </a>
+              <a
+            href="https://medium.com/journal-of-engaged-research/expressions/home"
+            aria-label="ArtGallery"
             target="_blank"
             rel="noreferrer"
             className="pl-1"
-          >    
-            <Image
-              className="float-right"
-              src={FacebookLogo}
-              alt="facebook-logo"
-              width={35}
-              height={33}
-              priority
-            />
-          </a> 
-          <a
-            href="https://twitter.com/specollective"
-            target="_blank"
-            rel="noreferrer"
-            className="pl-1"
-          >
-            <Image
-              className="float-right  "
-              src={TwitterLogo}
-              alt="twitter-logo"
-              width={35}
-              height={33}
-              priority
-              
-            />
-          </a> 
-        </div>    
+            >
+              <p>Digital Art Gallery</p>
+            </a>
+            <br></br>
+              <SocialMedia/>
+           <br></br>
+          </div>
       </div>
     </section>
   </footer>
