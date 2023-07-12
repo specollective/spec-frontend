@@ -101,14 +101,14 @@ export default function Testimonials() {
             <Image
               className=" z-10 float-center w-28 h-28 object-cover rounded-full border-2 border-black"
               src={Yoline}
-              alt=""
+              alt="Yoline"
               priority
             />
             <blockquote>
             <Image
               className=" "
               src={UpQuote}
-              alt="linkedin-logo"
+              alt="UpQuote"
               width={35}
               height={33}
               priority
