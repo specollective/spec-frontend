@@ -135,7 +135,7 @@ export default function Testimonials() {
                 <p className="text-lg font-montserrat font-light italic p-6  text-gray-900 dark:text-black">As an RA for SPEC, I had the opportunity to dive deep into the world of coding and gain valuable skills that have had a lasting impact on my personal and professional growth. But beyond just the technical knowledge, what truly stood out to me was the incredibly supportive and kind community of people at SPEC. I felt welcomed from day one and was always encouraged to ask questions, seek guidance, and push myself to learn more. The experience of working with such a talented and supportive group of individuals has had a profound impact on me, and I&apos;m grateful for the time I spent at SPEC.</p>
                 
             <Image
-              className="mr-10"
+              className="lg:hidden float-right mr-10"
               src={upQuotationMarks}
               alt="upQuote"
               priority
@@ -154,7 +154,7 @@ export default function Testimonials() {
             <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-1/2">
              <div className="flex justify-center">
               <Image
-              className=" z-10 w-28 h-28 flex justify-center -mt-14 rounded-full"
+              className="z-10 w-28 h-28 flex justify-center -mt-14 rounded-full"
               src={Alicia}
               alt="Alicia"
               priority
@@ -170,7 +170,7 @@ export default function Testimonials() {
                 <p className="text-lg font-montserrat font-light italic p-6  text-gray-900 dark:text-black">I joined SPEC during a transitionary period of my life. Being able to work on multiple projects and in various roles all while being mentored helped me identify what my next career choice should be. Now that I have found gainful employment outside of SPEC I am happy to still feel included and connected to the team.</p>
                     
             <Image
-              className="mr-10"
+              className="lg:hidden float-right mr-10"
               src={upQuotationMarks}
               alt="upQuote"
               priority
