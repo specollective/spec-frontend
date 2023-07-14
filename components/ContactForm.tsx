@@ -8,7 +8,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL ||
 interface ContactInfo {
   fullName: string;
   email: string;
-  reason: 'general' | 'work' | 'mentor' | 'partner' | 'praise' | 'other';
+  reason: 'general' | 'work' | 'mentor' | 'partner' | 'praise' | 'other' | '';
   message: string;
 }
 
@@ -51,7 +51,6 @@ const schema = yup.object().shape({
 });
 
 export default function ContactForm() {
-  console.log(API_URL);
   const [submit, setSubmit] = useState(false);
   const [failed, setFailed] = useState(false);
 
