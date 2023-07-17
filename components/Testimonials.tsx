@@ -4,11 +4,11 @@ import { Carousel, initTE } from "tw-elements";
 import Image from "next/image";
 import upQuotationMarks from '../public/upQuotationMarks.svg'
 import downQuotationMarks from '../public/downQuotationMark.svg'
-import Ilia from "../public/testimonials/ilia.svg"
-import Alicia from "../public/testimonials/alicia.svg"
+import Ilia from "../public/testimonials/Ilia.svg"
+import Alicia from "../public/testimonials/Alicia.svg"
 import Yoline from "../public/testimonials/Yoline.svg"
-import Victoria from "../public/testimonials/victoria.svg"
-import Vector from "../public/Vector.png"
+import Victoria from "../public/testimonials/Victoria.svg"
+import { renderToString } from "react-dom/server";
 
 
 export default function Testimonials() {
@@ -18,10 +18,9 @@ export default function Testimonials() {
   
  
   const [activeSlide, setActiveSlide] = useState(0);
-  
-   const weburl = "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80";
+
   return (
-  
+   
     <div className="w-full m-auto p-10">
       <div
         id="carouselTestimonialsIndicators"
@@ -29,6 +28,31 @@ export default function Testimonials() {
         data-te-carousel-init
         data-te-carousel-slide
       >
+          {/* <!--Carousel indicators--> */}
+  <div
+    className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 h-12 flex list-none justify-center p-0"
+    data-te-carousel-indicators>
+    <button
+      type="button"
+      data-te-target="#carouselTestimonialsIndicators"
+      data-te-slide-to="0"
+      data-te-carousel-active
+      className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent rounded-full bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-current="true"
+      aria-label="Slide 1"></button>
+    <button
+      type="button"
+      data-te-target="#carouselTestimonialsIndicators"
+      data-te-slide-to="1"
+      className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparentrounded-md bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 2"></button>
+    <button
+      type="button"
+      data-te-target="#carouselTestimonialsIndicators"
+      data-te-slide-to="2"
+      className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent rounded-md bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 3"></button>
+  </div>
 
         {/* <!--Carousel items--> */}
         <div
@@ -40,7 +64,7 @@ export default function Testimonials() {
             data-te-carousel-active
           >
            
-            <div className="-z-10 border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-1/2">
+            <div className="-z-10 border-solid rounded border-spec-turquiose border-2 py-8  font-montserrat items-center text-base text-center w-3/4 lg:w-1/2">
               <div className="flex justify-center">
               <Image
               className=" z-10 flex justify-center -mt-14 rounded-full"
@@ -51,6 +75,7 @@ export default function Testimonials() {
             </div>
            
             <blockquote>
+             
             <Image
               className="ml-10"
               src={downQuotationMarks}
@@ -182,23 +207,6 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
-
-        {/* <!--Carousel controls - prev item--> */}
-        <button
-          className=" lg:visible absolute bottom-0 left-0 top-0 z-[1] w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-          type="button"
-          data-te-target="#carouselTestimonialsIndicators"
-          data-te-slide="prev">
-         
-        </button>
-        {/* <!--Carousel controls - next item--> */}
-        <button
-          className=" lg:visible absolute bottom-0 right-0 top-0 z-[1] w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-          type="button"
-          data-te-target="#carouselTestimonialsIndicators"
-          data-te-slide="next">
-
-        </button>
       </div>
     </div>
   )

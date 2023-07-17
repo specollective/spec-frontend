@@ -1,11 +1,25 @@
 import SocialMedia from './SocialMedia'
+import Image from 'next/image'
+import upQuotationMarks from '../public/upQuotationMarks.svg'
+import downQuotationMarks from '../public/downQuotationMark.svg'
+import Ilia from "../public/testimonials/Ilia.svg"
+import Alicia from "../public/testimonials/Alicia.svg"
+import Yoline from "../public/testimonials/Yoline.svg"
+import Victoria from "../public/testimonials/Victoria.svg"
+
 
 export default function Footer() {
   return (
     <footer className="bg-[#0C9FAA] h-80">
       <section className="flex p-4 justify-evenly">
+           <Image
+              className=" z-10 flex justify-center -mt-14 rounded-full"
+              src={Victoria}
+              alt="Victoria"
+              priority
+            />
       <div className="flex-row">
-        <div className="text-center mt-12 px-4">
+          <div className="text-center mt-12 px-4"> 
           <a
             href="https://opencollective.com/spec"
             className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-2xl rounded-tl-2xl   hover:text-black hover:bg-white hover:border-spec-turquiose font-montserrat h-12 w-28 "
