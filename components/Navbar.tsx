@@ -61,7 +61,7 @@ export default function Navbar() {
          
             <div className='flex justify-center items-center space-x-8 font-montserrat leading-5 text-lg mb-6'>
                 <a href='https://docs.specollective.org/introduction/' target='_blank' rel="noreferrer" className='font-medium text-center hover:underline hover:font-medium tracking-wide'>Documentation</a>
-                <a href='https://opencollective.com/spec' target='_blank' rel="noreferrer" className='flex  w-44 h-16 items-center justify-center font-semibold  border-spec-turquiose border-4 bg-spec-turquiose tracking-wide py-5 px-16 text-lg text-white rounded-br-3xl rounded-tl-3xl font-montserrat hover:text-black hover:bg-white hover:border-spec-turquiose'>
+                <a href='https://opencollective.com/spec' target='_blank' rel="noreferrer" className='flex  w-40 h-14 items-center justify-center font-semibold  border-spec-turquiose border-4 bg-spec-turquiose tracking-wide py-5 px-16 text-lg text-white rounded-br-3xl rounded-tl-3xl font-montserrat hover:text-black hover:bg-white hover:border-spec-turquiose'>
                     DONATE</a>
 
                 </div>
