@@ -47,7 +47,7 @@ export default function Navbar() {
                             width={40}
                             height={20}
                         />
-                         <p className='md:visible lg:hidden text-2xl leading-9 font-semibold tracking-wider'>SPEC</p>
+                         <p className='md:visible lg:hidden mt-2 text-2xl leading-9 font-semibold tracking-wider'>SPEC</p>
                         <Image
                             className="sm:hidden md:hidden lg:block text-left"
                             src={logo}
