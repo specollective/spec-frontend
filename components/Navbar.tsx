@@ -14,7 +14,7 @@ export default function Navbar() {
     }
     return (
         <div>
-            <div className='flex space-x-2 justify-between items-center border-b border-black px-4 py-3 h-14 md:hidden'>
+            <div className='flex space-x-2 justify-between items-center border-b border-black px-1.5 py-3 h-14 md:hidden'>
                 <div className='flex space-x-2'>
                     <Image
                         src={logo}
@@ -30,7 +30,7 @@ export default function Navbar() {
                 </div>
 
             </div>
-            {displayMenu && <div className='fixed top-0 left-0 h-screen w-screen bg-black opacity-80 z-50 mt-14 md:hidden'>
+            {displayMenu && <div className='fixed top-0 left-0 h-screen w-screen bg-black opacity-100 z-50 mt-14 md:hidden'>
                 <div className='flex flex-col justify-center items-center font-montserrat'>
                     <a href='https://docs.specollective.org/introduction/' target='_blank' rel='noreferrer' className='font-semibold text-center bg-white leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4  '>DOCUMENTATION</a>
                     <a href='https://opencollective.com/spec' target='_blank' rel='noreferrer' className='font-semibold text-center bg-white leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4 '>
@@ -38,9 +38,7 @@ export default function Navbar() {
                 </div>
             </div>}
             <div className='hidden md:block'>
-                <div className='flex justify-between items-center border-b mx-20 mt-10'>
-
-
+                <div className='flex justify-between items-center border-b mx-20 mt-4'>
                     <div className='flex space-x-2 mb-6'>
                         <Image
                             className="sm:hidden md:block lg:hidden text-left mt-2"
@@ -60,8 +58,8 @@ export default function Navbar() {
                     </div>
          
             <div className='flex justify-center items-center space-x-8 font-montserrat leading-5 text-lg mb-6'>
-                <a href='https://docs.specollective.org/introduction/' target='_blank' rel="noreferrer" className='font-medium text-center hover:underline hover:font-semibold tracking-wide'>Documentation</a>
-                <a href='https://opencollective.com/spec' target='_blank' rel="noreferrer" className='font-bold border border-spec-turquiose border-4 bg-spec-turquiose tracking-wide text-center py-5 px-16 text-sm p-4 text-white rounded-br-2xl rounded-tl-2xl font-montserrat w-3/4 hover:text-black hover:bg-white hover:border-spec-turquiose'>
+                <a href='https://docs.specollective.org/introduction/' target='_blank' rel="noreferrer" className='font-medium text-center hover:underline hover:font-medium tracking-wide'>Documentation</a>
+                <a href='https://opencollective.com/spec' target='_blank' rel="noreferrer" className='flex  w-44 h-16 items-center justify-center font-semibold  border-spec-turquiose border-4 bg-spec-turquiose tracking-wide py-5 px-16 text-lg text-white rounded-br-3xl rounded-tl-3xl font-montserrat hover:text-black hover:bg-white hover:border-spec-turquiose'>
                     DONATE</a>
 
                 </div>
