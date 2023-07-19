@@ -47,6 +47,7 @@ export default function Navbar() {
                             width={40}
                             height={20}
                         />
+                         <p className='md:visible lg:hidden text-2xl leading-9 font-semibold tracking-wider'>SPEC</p>
                         <Image
                             className="sm:hidden md:hidden lg:block text-left"
                             src={logo}
@@ -54,7 +55,8 @@ export default function Navbar() {
                             width={60}
                             height={80}
                         />
-                        <p className='text-xs lg:text-2xl leading-9 font-medium pt-2 tracking-wider'>Sustainable Progress & Equality Collective</p>
+                        <p className='md:hidden lg:block text-xs lg:text-2xl leading-9 font-medium pt-2 tracking-wider'>Sustainable Progress & Equality Collective</p>
+                       
                     </div>
          
             <div className='flex justify-center items-center space-x-8 font-montserrat leading-5 text-lg mb-6'>
