@@ -51,7 +51,13 @@ export default function Testimonials() {
       data-te-target="#carouselTestimonialsIndicators"
       data-te-slide-to="2"
       className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent rounded-md bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-      aria-label="Slide 3"></button>
+            aria-label="Slide 3"></button>
+      <button
+      type="button"
+      data-te-target="#carouselTestimonialsIndicators"
+      data-te-slide-to="3"
+      className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent rounded-md bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 4"></button>
   </div>
 
         {/* <!--Carousel items--> */}
