@@ -6,7 +6,7 @@ import projectsImage from "../public/ProjectsImg.svg";
 export default function Projects() {
 	return (
 		<div>
-			<div className="flex flex-col md:flex md:flex-row m-12 md:m-10 pl-6 items-center justify-center ">
+			<div className="flex flex-col-reverse md:flex md:flex-row m-12 md:m-10 pl-6 items-center justify-center ">
 				<div id="container-left" className="md:w-1/2">
 					<h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
 						PROJECTS
