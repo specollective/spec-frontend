@@ -8,20 +8,22 @@ export default function Footer() {
     <footer className="bg-[#0C9FAA] h-80">
       <section className="flex p-4 justify-evenly">
       <div className="flex-row">
-          <div className="text-center mt-12 px-4"> 
+        <div className="text-center mt-12 mx-6 px-4">
           <a
             href="https://opencollective.com/spec"
-            className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-2xl rounded-tl-2xl   hover:text-black hover:bg-white hover:border-spec-turquiose font-montserrat h-12 w-28 "
+            className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-2xl rounded-tl-2xl   hover:text-black hover:bg-white hover:border-spec-yellow hover:border-4 font-montserrat h-12 w-28 "
           >
             DONATE
           </a>
-          </div>
-          <div className=" lg:hidden content-center mt-10">
-         <SocialMedia/>
-        </div> 
-        <div className=" lg:block items-center mt-10">
+          <div className='flex flex-col justify-center'>
+          <div className="flex justify center lg:hidden content-center mt-10 mx-14">
+          <SocialMedia/>
+          </div> 
+          <div className="lg:block font-montserrat items-center mt-10">
           © 2023 Sustainable Progress and Equality Collective
-        </div> 
+          </div> 
+          </div> 
+          </div> 
       </div>   
 
       <div className="lg:visible float-right text-lg  mb-4 ">
@@ -31,7 +33,7 @@ export default function Footer() {
             aria-label="Documentation"
             target="_blank"
             rel="noreferrer"
-            className="pl-1"
+            className="pl-1 font-montserrat"
             >
               <p>Documentation</p>
             </a>
@@ -40,7 +42,7 @@ export default function Footer() {
             aria-label="JoER"
             target="_blank"
             rel="noreferrer"
-            className="pl-1"
+            className="pl-1 font-montserrat"
             >
               <p>Journal of Engaged Research</p>
             </a>
@@ -49,7 +51,7 @@ export default function Footer() {
             aria-label="ArtGallery"
             target="_blank"
             rel="noreferrer"
-            className="pl-1"
+            className="pl-1 font-montserrat"
             >
               <p>Digital Art Gallery</p>
             </a>
