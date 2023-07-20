@@ -1,4 +1,7 @@
 import SocialMedia from './SocialMedia'
+import Image from 'next/image'
+
+
 
 export default function Footer() {
   return (
@@ -6,6 +9,7 @@ export default function Footer() {
       <section className="flex p-4 justify-evenly">
       <div className="flex-row">
         <div className="text-center mt-12 mx-6 px-4">
+
           <a
             href="https://opencollective.com/spec"
             className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-2xl rounded-tl-2xl   hover:text-black hover:bg-white hover:border-spec-yellow hover:border-4 font-montserrat h-12 w-28 "

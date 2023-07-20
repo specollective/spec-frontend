@@ -10,10 +10,16 @@ import Mission from "../components/Mission";
 import Projects from "../components/Projects";
 import ProjectsAccordion from "../components/ProjectsAccordian";
 
+
+const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
+	ssr: false,
+});
+
+const Testimonials = dynamic(() => import("../components/Testimonials"), {
+	ssr: false,
+});
+
 export default function Home() {
-	const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
-		ssr: false,
-	});
 	return (
 		<>
 			<Navbar />
@@ -23,8 +29,8 @@ export default function Home() {
 			<Projects />
 			<ProjectsSection/>
 			<ByTheNumbers />
+			<Testimonials />
 			<FormDiv />
-			{/* <Testimonials/> */}
 			<Footer />
 		</>
 	);
