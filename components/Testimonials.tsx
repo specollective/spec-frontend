@@ -54,13 +54,13 @@ export default function Testimonials() {
             </div>
            
             <blockquote>
-             
+             <DownQuotation/>
+            <p className="text-md md:text-lg font-montserrat font-light italic p-10  text-gray-900 dark:text-black sm:text-ellipsis sm:overflow-hidden">During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it&apos;s mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning</p>
+                     
             <div className="visible md:hidden">
               <UpQuotation/>
             </div> 
-            <p className="text-md md:text-lg font-montserrat font-light italic p-10  text-gray-900 dark:text-black sm:text-ellipsis sm:overflow-hidden">During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it&apos;s mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning</p>
-                
-            <UpQuotation/>
+            
             </blockquote> 
               
               <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
