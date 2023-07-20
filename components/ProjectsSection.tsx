@@ -7,10 +7,10 @@ import Link from 'next/link';
 function ProjectsSection() {
 	const JoERData1 = <Link
 		className="underline text-spec-turquiose hover:text-spec-turquiose"
-		href="https://www.pardeerand.edu/">Pardee RAND Graduate School</Link>
-	const JoERData2 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.pardeerand.edu/">Wabash College</Link>
-	const JoERData3 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.pardeerand.edu/">a CAREP Public Discourse Fellow</Link>
-	const ArtGalleryData1 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.abocomix.com/">Studies of prison art programs</Link>
+		href="https://medium.com/journal-of-engaged-research/opinion-2-91ae401ec41c">Pardee RAND Graduate School</Link>
+	const JoERData2 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://medium.com/journal-of-engaged-research/joer-story-13-c8990640132">Wabash College</Link>
+	const JoERData3 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://medium.com/journal-of-engaged-research/joer-story-12-8aea59525935">a CAREP Public Discourse Fellow</Link>
+	const ArtGalleryData1 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.rand.org/randeurope/research/projects/reduce-reoffending.html">Studies of prison art programs</Link>
 	const ArtGalleryData2 = <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href="https://www.abocomix.com/">ABO Comix</Link>
 	
 

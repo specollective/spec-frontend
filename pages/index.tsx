@@ -11,7 +11,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className="flex min-h-screen items-center justify-content px-10 pt-10 md:w-full 2xl:w-1/2 m-auto">
+			<main className="flex min-h-screen items-center justify-content px-10 pt-10 md:w-2/3 2xl:w-1/2 m-auto">
 				<div className="w-full">
 					<header className="lg:flex lg:items-center pb-10">
 						<Image
