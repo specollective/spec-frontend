@@ -2,15 +2,16 @@ import React from "react";
 import Image from "next/image";
 import projectsImage from "../public/ProjectsImg.svg";
 
+
 export default function Projects() {
 	return (
 		<div>
-			<div className="flex flex-col-reverse md:flex-row items-center justify-center ml-20 ">
-				<div id="container-left" className="md:pr-10 w-10/12 md:w-6/12">
-					<h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
+			<div className="flex flex-col md:flex md:flex-row m-20 pt-12 items-center justify-center ">
+				<div id="container-left" className="md:w-1/2">
+					<h1 className="font-montserrat font-medium text-lg leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
 						PROJECTS
 					</h1>
-					<p className="font-dmserif text-base font-normal leading-8 mb-6 md:text-4xl md:leading-10">
+					<p className="font-dmserif font-normal leading-8 mb-6 text-2xl md:text-4xl md:leading-10">
 						SPEC is organized as an open collective, which
 						<span className="text-spec-turquiose">
 							&nbsp;raises and spends funds transparently&nbsp;
@@ -23,11 +24,12 @@ export default function Projects() {
 						work on these current projects.
 					</p>
 				</div>
-				<div id="right-container" className="w-7/12">
+				<div id="right-container" className="w-1/3">
 					<Image
-						className="float-right scale-125 pl-10 ml-10"
+						className="float-right"
 						src={projectsImage}
 						alt="Interacting with web browsers"
+					
 					/>
 				</div>
 			</div>
