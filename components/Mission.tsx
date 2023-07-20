@@ -33,13 +33,7 @@ export default function Mission() {
                         learn professional skills, and achieve physical and financial security.
                     </p>
                 </div>
-
-
-
-
-
             </div>
-
 
             <div className='flex flex-col md:flex md:flex-row m-20 items-center justify-center '>
                 <div className='md:w-1/3 md:order-last'>
