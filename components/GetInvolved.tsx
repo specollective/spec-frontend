@@ -45,9 +45,9 @@ export default function GetInvolved() {
 					<h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
 						{cardData.title}
 					</h1>
-					<div className="montserrat flex h-48 w-64 flex-col bg-spec-white px-6 py-4 xl:w-72">
+					<div className="font-montserrat flex h-48 w-64 flex-col bg-spec-white px-6 py-4 xl:w-72">
 						<div>
-							<p className="text-sm">{cardData.body}</p>
+							<p className="font-montserrat">{cardData.body}</p>
 						</div>
 						<div className=" flex justify-end m-auto">
 							<a
@@ -124,7 +124,7 @@ export default function GetInvolved() {
 							</h2>
 							<p
 								id="body-left-text"
-								className="montserrat mt-8 text-sm font-medium leading-6 lg:text-base">
+								className="font-montserrat mt-8 text-sm font-medium leading-6 lg:text-base">
 								Donate to SPEC today to <br></br> support our mission and
 								impact.
 							</p>
@@ -133,7 +133,7 @@ export default function GetInvolved() {
 								className="mt-5 flex max-w-[15rem]  items-center justify-between">
 								<a
 									id="learn-more-hyperlink"
-									className="montserrat font-semibold tracking-wide underline"
+									className="font-montserrat font-semibold tracking-wide underline"
 									href="javascript:void(0)"
 									onClick={() => setDonationTable("table")}>
 									<p className="whitespace-nowrap text-sm">LEARN MORE</p>
@@ -141,9 +141,10 @@ export default function GetInvolved() {
 								<button
 									id="donate-button"
 									type="button"
-									className="montserrat max-w-28 mx-2 w-24 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white"
+									className="font-montserrat max-w-28 mx-2 w-40 h-14 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white"
 									onClick={() => {
-										location.href = "https://opencollective.com/spec";
+										const url = "https://opencollective.com/spec";
+    								window.open(url, '_blank');
 									}}>
 									DONATE
 								</button>
@@ -282,9 +283,11 @@ export default function GetInvolved() {
 												<button
 													type="button"
 													id="mobile-donate-button"
+													role="link"
 													className="font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-lg font-semibold tracking-wider text-white"
 													onClick={() => {
-														location.href = "https://opencollective.com/spec";
+														const url = "https://opencollective.com/spec";
+														window.open(url, '_blank');
 													}}>
 													DONATE
 												</button>
