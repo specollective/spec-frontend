@@ -38,32 +38,28 @@ export default function Testimonials() {
           className="flex justify-evenly w-full md:h-104 overflow-hidden after:clear-both after:block after:content-['']">
           {/* <!--First item--> */}
           <div
-            className="flex content-center -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className="flex md:-mr-[80%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
             data-te-carousel-active
           >
-           
-            <div className="-z-10 border-solid rounded border-spec-turquiose border-2 py-8  font-montserrat items-center text-base text-center w-4/5 md:w-1/2">
+            <div className="-z-10 border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-full md:w-1/2">
               <div className="flex justify-center">
               <Image
-              className=" z-10 flex justify-center -mt-14 rounded-full"
+              className="z-10 flex justify-center -mt-14 rounded-full"
               src={Victoria}
               alt="Victoria"
               priority
             />
             </div>
-           
             <blockquote>
              <DownQuotation/>
-            <p className="text-md md:text-lg font-montserrat font-light italic mb-4 p-10  text-gray-900 dark:text-black sm:text-ellipsis sm:overflow-hidden line-clamp-4">During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it&apos;s mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning</p>
-                     
+            <p className="text-md md:text-lg font-montserrat font-light italic mb-4 p-6  text-gray-900 dark:text-black sm:text-ellipsis sm:overflow-hidden line-clamp-4">During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it&apos;s mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning</p>
             <div className="visible md:hidden">
               <UpQuotation/>
             </div> 
             
             </blockquote> 
-              
-              <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
+              <div className=" flex-shrink border-t-2 pt-8 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="content-center text-xl font-medium tracking-widest font-poppins py-6">VICTORIA LO</p>
               {/* <p id="title" className="content-center text-lg font-normal py-6">Research Associate</p> */}
             </div>
@@ -71,14 +67,16 @@ export default function Testimonials() {
 
           {/* <!--Second item--> */}
           <div
-            className="relative float-left -mr-[100%] hidden w-full md:h-104 transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className="relative md:-mr-[80%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
           >
-            <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-1/2">
+      
+
+            <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-full md:w-1/2">
              
             <div className="flex justify-center">
               <Image
-              className=" z-10 w-28 h-28 flex justify-center -mt-14 rounded-full "
+              className="z-10 w-28 h-28 flex justify-center -mt-14 rounded-full "
               src={Ilia}
               alt="Ilia"
               priority
@@ -102,10 +100,11 @@ export default function Testimonials() {
           </div>
           {/* <!--Third item--> */}
           <div
-            className="relative float-left -mr-[100%] hidden w-full md:h-104 transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className="md:-mr-[80%] hidden w-full md:h-104 transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
           >
-            <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center  w-1/2">
+            
+            <div className="-z-10 border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-full md:w-1/2">
              <div className="flex justify-center">
               <Image
               className=" z-10 w-28 h-28 flex justify-center -mt-14 rounded-full"
@@ -131,10 +130,11 @@ export default function Testimonials() {
           </div>
              {/* <!--Fourth item--> */}
           <div
-            className="relative float-left -mr-[100%] hidden w-full md:h-104 transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className="relative hidden float-left md:-mr-[80%] w-full md:h-104 transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
           >
-            <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-1/2">
+      
+            <div className="border-solid rounded border-spec-turquiose border-2 py-8 my-8 font-montserrat items-center text-base text-center w-full md:w-1/2">
              <div className="flex justify-center">
               <Image
               className="z-10 w-28 h-28 flex justify-center -mt-14 rounded-full"
@@ -145,7 +145,6 @@ export default function Testimonials() {
             </div>
             <blockquote>
                 <DownQuotation />
-                {/*write a conditional that will line clamp the paragraph after 5 lines*/}
                 <p className="text-md md:text-lg font-montserrat font-light italic p-6  text-gray-900 dark:text-black line-clamp-4">I joined SPEC during a transitionary period of my life. Being able to work on multiple projects and in various roles all while being mentored helped me identify what my next career choice should be. Now that I have found gainful employment outside of SPEC I am happy to still feel included and connected to the team.</p>
 
               <div className="visible md:hidden">
@@ -161,7 +160,7 @@ export default function Testimonials() {
         </div>
 
     <div
-    className=" absolute -bottom-8 left-0 right-0 z-2 mb-4 h-12 flex list-none justify-center p-0"
+    className=" absolute left-0 right-0 z-2 h-12 flex list-none justify-center p-1.5"
     data-te-carousel-indicators>
     <button
       type="button"
