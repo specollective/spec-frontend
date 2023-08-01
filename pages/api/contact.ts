@@ -7,7 +7,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const body = req.body
 
   // response return 200 status code and json data with body object, fullName, reason, email and message
-  res.status(200).json({
-    data: `${body.firstName} ${body.email} ${body.reason} ${body.message}`
+  res.status(201).json({
+    data: `${body.fullName} ${body.email} ${body.reason} ${body.message}`
   })
 }
