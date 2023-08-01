@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import ContactForm from '../components/ContactForm'
+import ContactForm from 'components/ContactForm'
 import '@testing-library/jest-dom'
 
 describe('ContactForm', () => {
