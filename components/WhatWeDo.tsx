@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import bpImg from '../public/BPImage.svg';
 import ProjectsAccordion from './ProjectsAccordian';
-import whatWeDoData from './constants/whatWeDoData';
+import whatWeDoData from '../constants/what-we-do-data';
 import OurServices from './OurServices';
 
 export default function WhatWeDo() {

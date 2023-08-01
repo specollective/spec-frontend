@@ -1,5 +1,5 @@
 import ProjectsAccordion from './ProjectsAccordian';
-import whatWeDoData from './constants/whatWeDoData';
+import whatWeDoData from '../constants/what-we-do-data';
 
 function ProjectsSection() {
   return (
