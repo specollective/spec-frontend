@@ -27,7 +27,7 @@ export default function HowWeWork() {
             work on these current projects.
           </p>
         </div>
-        <div className="md:w-1/3 md:order-last">
+        <div className="md:w-1/3 md:order-first">
           <Image
             className="m-auto text-left mb-6 hidden md:block md:order-last"
             src={bpImg}

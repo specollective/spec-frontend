@@ -33,10 +33,10 @@ export default function Projects() {
 						alt="Interacting with web browsers"
 					/>
 					<Image
-                        className="m-auto text-left pt-6 mb-6 hidden md:block"
-                        src={projectsImage}
+            className="m-auto text-left pt-6 mb-6 hidden md:block"
+            src={projectsImage}
 						alt="Interacting with web browsers"
-                    />
+          />
 				</div>
 			</div>
 		</div>

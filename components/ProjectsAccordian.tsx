@@ -23,7 +23,7 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
     <div className="border border-spec-yellow-600 mb-2">
       <div className="flex justify-between p-10 max-h-[600px]">
         <div className="flex basis-1/2 place-self-start self-start p-4">
-          <Image src={project.pic.url} alt={project.pic.alt} />
+          <Image src={project.pic.url} alt={project.pic.alt} width="400" height="400" />
         </div>
         <div className="flex flex-col basis-1/2 justify-between p-4">
           <div className="text-lg">
@@ -86,17 +86,11 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
             }
           </section>
           <section className="visible lg:hidden">
-            <div className="flex place-content-between py-2">
-              <h3 className="text-2xl text-whte-600">{project.name}</h3>
-              <a
-                href={project.link}
-                rel="noreferrer"
-                target="_blank"
-                className="h-[40px] w-[40px]"
-              >
-                {/* <Image alt="right-arrow" src={rightArrow} /> */}
-              </a>
+            <div className="">
+              <div className="text-2xl">{project.name}</div>
+              <div className="">{project.tag}</div>
             </div>
+              
             <BreakLine lineWidth="full" />
           </section>
         </div>
