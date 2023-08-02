@@ -26,9 +26,7 @@ export default function Navbar() {
                 </div>
                 <div onClick={toggleMenu}>
                     <Image className='w-9' src={displayMenu ? close : menu} alt={displayMenu ? 'close menu' : 'menu'} />
-
                 </div>
-
             </div>
             {displayMenu && <div className='fixed top-0 left-0 h-screen w-screen bg-black opacity-100 z-50 mt-14 md:hidden'>
                 <div className='flex flex-col justify-center items-center font-montserrat'>

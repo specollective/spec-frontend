@@ -6,7 +6,7 @@ export default function Background() {
   return (
     <section>
       <div className="flex flex-col md:flex md:flex-row m-20 items-center justify-center">
-        <div className="md:w-1/3 md:order-first">
+        <div className="md:w-1/3 md:pl-10 md:order-last">
           <Image
             className="m-auto text-left mb-6 hidden md:block md:order-last"
             src={bpImg}
@@ -22,7 +22,7 @@ export default function Background() {
             height={100}
           />
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 md:order-first">
           <p className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             OUR HISTORY
           </p>

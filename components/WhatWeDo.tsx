@@ -1,15 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import bpImg from '../public/BPImage.svg';
-import ProjectsAccordion from './ProjectsAccordian';
-import whatWeDoData from '../constants/what-we-do-data';
-import OurServices from './OurServices';
 
 export default function WhatWeDo() {
   return (
     <section>
       <div className="flex flex-col md:flex md:flex-row mx-20 items-center justify-center">
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 md:order-first">
           <h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             WHAT WE DO
           </h1>
@@ -37,7 +34,6 @@ export default function WhatWeDo() {
           />
         </div>
       </div>
-      <OurServices />
     </section>
   );
 }
