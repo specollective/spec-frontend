@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, initTE } from "tw-elements";
-import { renderToString } from "react-dom/server";
 import Image from "next/image";
-import donate from "../public/DonateImg.svg";
 import DonationTable from "./DonationTable";
 
 export default function GetInvolved() {
 	useEffect(() => {
 		initTE({ Carousel });
 	}, []);
+
 	const getInvolvedData = [
 		{
 			title: "Work with us",
@@ -153,8 +152,10 @@ export default function GetInvolved() {
 								<Image
 									id="donate-image"
 									className=""
-									src={donate}
+									src="/DonateImg.svg"
 									alt="donate-image"
+									width={500}
+									height={500}
 								/>
 							</div>
 						) : (
@@ -254,8 +255,10 @@ export default function GetInvolved() {
 												<Image
 													id="mobile-donate-image"
 													alt="mobile-donate-image"
-													src={donate}
+													src="/DonateImg.svg"
 													className="w-5/12 md:w-6/12"
+													width={500}
+													height={500}
 												/>
 											</div>
 											<div

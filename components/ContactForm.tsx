@@ -84,7 +84,7 @@ export default function ContactForm() {
               font-normal`}
             name="fullName"
             type="text"
-            placeholder="Full name Last name"
+            placeholder="First name Last name"
           />
 
           <label htmlFor="email">Email Address:*</label>
@@ -133,7 +133,7 @@ export default function ContactForm() {
           <Field
             as="textarea"
             name="message"
-            className={`border ${errors.message && touched.message ? 'border-black bg-gray-300' : 'border-black'} 
+            className={`border ${errors.message && touched.message ? 'border-black' : 'border-black'} 
               rounded-lg
               focus:outline-none
               focus:border-spec-turquoise
