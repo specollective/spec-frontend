@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import ContactForm from 'components/ContactForm'
+import ContactForm from '../../components/ContactForm'
 import '@testing-library/jest-dom'
 
 describe('ContactForm', () => {
@@ -25,12 +25,16 @@ describe('ContactForm', () => {
     })
 
     xit('displays validation message for name field', async () => {
-      render(<ContactForm />);
+      render(<ContactForm />)
 
-      const nameInput = screen.getByLabelText('Name');
-      const submitButton = screen.getByRole('button', { name: 'Submit' });
+      const nameInput = screen.getByLabelText('Name')
+      const submitButton = screen.getByRole('button', { name: 'Submit' })
 
-      fireEvent.change(nameInput, { target: { value: 'My full name' } });
-    });
-  });
+      fireEvent.change(nameInput, { target: { value: 'My full name' } })
+    })
+  })
+
+  xit('makes http request on submit', () => {})
+
+  xit('handles error returned from API', () => {})
 })
