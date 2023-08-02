@@ -1,5 +1,5 @@
 import { createMocks } from 'node-mocks-http';
-import contactFormAPIHandle from 'pages/api/contact';
+import contactFormAPIHandle from '../../../pages/api/contact';
 
 describe('/api/contact', () => {
   it('returns success status', async () => {
