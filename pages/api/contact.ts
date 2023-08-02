@@ -13,6 +13,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (process.env.NODE_ENV === 'development') {
     console.log(process.env.NODE_MAILER_EMAIL)
     console.log(process.env.NODE_MAILER_PASSWORD)
+    console.log(process.env.CONTACT_EMAIL)
   }
 
   // response return 200 status code and json data with body object, fullName, reason, email and message
