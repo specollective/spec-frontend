@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react'
-import HomePage from 'pages/home'
+import HomePage from '../../pages/home'
 import '@testing-library/jest-dom'
 
 describe('HomePage', () => { 
