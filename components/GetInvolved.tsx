@@ -14,17 +14,17 @@ export default function GetInvolved() {
 		{
 			title: "Work with us",
 			body: "Join the SPEC team, where you can contribute to something meaningful and make a real impact.",
-			contactUs: "#",
+			contactUs: "#contact-form",
 		},
 		{
 			title: "Mentor",
-			body: "Become a SPEC mentor to share your expertise and guide aspiring professionals on their jounrey.",
-			contactUs: "#",
+			body: "Become a SPEC mentor to share your expertise and guide aspiring professionals on their journey.",
+			contactUs: "#contact-form",
 		},
 		{
 			title: "Partner with us",
 			body: "Let's collaborate and create value together by forming a strong partnership between our companies.",
-			contactUs: "#",
+			contactUs: "#contact-form",
 		},
 	];
 
@@ -130,14 +130,27 @@ export default function GetInvolved() {
 							</p>
 							<div
 								id="container-for-anchor-button"
-								className="mt-5 flex max-w-[15rem]  items-center justify-between">
-								<a
+								className="mt-5 flex max-w-[15rem] items-center justify-between">
+								<div></div>
+								<p>
+									<a
+										id="learn-more-hyperlink"
+										className="font-montserrat font-semibold tracking-wide underline"
+										href="javascript:void(0)"
+										onClick={() => {
+											const url = "https://docs.specollective.org/introduction/";
+											window.open(url, '_blank');
+										}}>
+										LEARN MORE
+										</a>
+								</p>
+								{/* <a
 									id="learn-more-hyperlink"
 									className="font-montserrat font-semibold tracking-wide underline"
 									href="javascript:void(0)"
 									onClick={() => setDonationTable("table")}>
 									<p className="whitespace-nowrap text-sm">LEARN MORE</p>
-								</a>
+								</a> */}
 								<button
 									id="donate-button"
 									type="button"
@@ -150,7 +163,12 @@ export default function GetInvolved() {
 								</button>
 							</div>
 						</div>
-						{donationTable === "Image" ? (
+						<div id="donation-table">
+								<div className="flex justify-end">
+                  <DonationTable />
+							</div>
+						</div>
+						{/* {donationTable === "Image" ? (
 							<div id="body-right-content" className="scale-90">
 								<Image
 									id="donate-image"
@@ -172,7 +190,7 @@ export default function GetInvolved() {
                   </div>
                   <DonationTable />
 							</div>
-						)}
+						)} */}
 					</div>
 					<div
 						id="sub-cards"
@@ -249,8 +267,10 @@ export default function GetInvolved() {
 										<div>
 											<div
 												id="s1-container1"
-												className="flex justify-evenly md:pb-8 md:justify-center">
-												<h2 className="font-dmserif w-40 text-3xl my-auto">
+												className="flex justify-evenly md:pb-8 md:justify-center"
+												// className="pl-20 mt-8 md:mt-2 w-10/12 md:w-7/12 md:pl-12"
+												> 
+												<h2 className="font-dmserif text-3xl my-auto">
 													Join us in making a difference!
 												</h2>
 												<Image
