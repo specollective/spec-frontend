@@ -10,6 +10,7 @@ import Alicia from "../public/testimonials/Alicia.svg"
 import Yoline from "../public/testimonials/Yoline.svg"
 import Victoria from "../public/testimonials/Victoria.svg"
 import { renderToString } from "react-dom/server";
+import classnames from "classnames";
 
 
 export default function Testimonials() {
@@ -36,9 +37,13 @@ export default function Testimonials() {
   dark:text-black 
   sm:text-ellipsis 
   sm:overflow-hidden 
-  line-clamp-4
   `
-
+  const clamp = `
+  line-clamp-4
+  overflow-hidden
+  text-ellipsis;
+  break-words
+  `
   //create a constant that will hold the tailwind classes for cards in the carousel
 
   const testimonialCardStyle = `
@@ -57,11 +62,7 @@ export default function Testimonials() {
   md:w-1/2
   `
  
-
-
-
   return (
-   
     <div className="w-full m-auto p-10">
       <div
         id="carouselTestimonialsIndicators"
@@ -69,9 +70,7 @@ export default function Testimonials() {
         data-te-carousel-init
         data-te-carousel-slide
       >
-          {/* <!--Carousel indicators--> */}
-
-
+        {/* <!--Carousel indicators--> */}
         {/* <!--Carousel items--> */}
         <div
           className="flex justify-evenly w-full md:h-104 overflow-hidden after:clear-both after:block after:content-['']">
@@ -91,8 +90,12 @@ export default function Testimonials() {
             />
             </div>
             <blockquote>
-             <DownQuotation/>
-            <p className={quoteStyle}>During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it&apos;s mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning</p>
+                <DownQuotation />
+                <p className={classnames("quoteStyle", clamped && "clamp")}>During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it&apos;s mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning</p>
+                {showButton && (
+                <button onClick={handleClick}>Read {clamped ? "more" : "less"}</button>
+                 )}
+                
             <div className="visible md:hidden">
               <UpQuotation/>
             </div> 
@@ -109,10 +112,7 @@ export default function Testimonials() {
             className="relative md:-mr-[80%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
           >
-      
-
             <div className={testimonialCardStyle}>
-             
             <div className="flex justify-center">
               <Image
               className="z-10 w-28 h-28 flex justify-center -mt-14 rounded-full "
