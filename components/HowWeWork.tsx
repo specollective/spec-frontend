@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import bpImg from '../public/BPImage.svg';
+import projectsImg from '../public/ProjectsImg.svg';
 
 export default function HowWeWork() {
   return (
@@ -27,17 +27,17 @@ export default function HowWeWork() {
             work on these current projects.
           </p>
         </div>
-        <div className="md:w-1/3 md:order-first">
+        <div className="md:w-1/2 md:order-last">
           <Image
             className="m-auto text-left mb-6 hidden md:block md:order-last"
-            src={bpImg}
+            src={projectsImg}
             alt="two person talking"
             width={300}
             height={200}
           />
           <Image
             className="m-auto text-left mb-6 block md:hidden"
-            src={bpImg}
+            src={projectsImg}
             alt="people talking"
             width={300}
             height={100}
