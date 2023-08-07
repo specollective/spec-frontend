@@ -11,13 +11,16 @@ export default function WhatWeDo() {
             WHAT WE DO
           </h1>
           <p className="font-dmserif text-base font-normal leading-8 mb-6 md:text-4xl md:leading-10">
-            We are a radically transparent and inclusive community.
+            We are a <span className="text-spec-turquiose">
+              radically transparent
+              and inclusive community.
+            </span>
           </p>
           <p className="font-montserrat opacity-70 font-medium text-base leading-nromal md:text-lg md:leading-7">
             At SPEC, we are dedicated to fostering social impact and driving positive change through our diverse range of programs and services. Our approach centers around engaged research, collaborative mentorship, applied learning, capacity building, and pathways to sustainable careers. Through these initiatives, we empower individuals and organizations to make a meaningful difference in their communities and beyond.
           </p>
         </div>
-        <div className="md:w-1/3 md:order-first">
+        <div className="md:w-1/2 md:order-first">
           <Image
             className="m-auto text-left mb-6 hidden md:block md:order-last"
             src={bpImg}
