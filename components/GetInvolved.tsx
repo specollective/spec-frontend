@@ -110,7 +110,7 @@ export default function GetInvolved() {
 				<div className="flex flex-col justify-evenly">
 					<h1
 						id="header"
-						className="text-center font-dmserif text-2xl lg:text-4xl xl:text-5xl">
+						className="text-center font-dmserif text-3xl lg:text-4xl xl:text-5xl">
 						Ready to be a part of something bigger?
 					</h1>
 					<div
@@ -119,7 +119,7 @@ export default function GetInvolved() {
 						<div id="body-left-content" className="w-5/12 max-w-sm">
 							<h2
 								id="body-left-header"
-								className=" font-dmserif text-4xl xl:text-5xl">
+								className="font-dmserif font-light tracking-wide text-4xl xl:text-5xl">
 								Join us in making a difference!
 							</h2>
 							<p
@@ -131,11 +131,10 @@ export default function GetInvolved() {
 							<div
 								id="container-for-anchor-button"
 								className="mt-5 flex max-w-[15rem] items-center justify-between">
-								<div></div>
 								<p>
 									<a
 										id="learn-more-hyperlink"
-										className="font-montserrat font-semibold tracking-wide underline"
+										className="font-montserrat pr-15 font-semibold tracking-wide underline"
 										href="javascript:void(0)"
 										onClick={() => {
 											const url = "https://docs.specollective.org/introduction/";
@@ -144,13 +143,6 @@ export default function GetInvolved() {
 										LEARN MORE
 										</a>
 								</p>
-								{/* <a
-									id="learn-more-hyperlink"
-									className="font-montserrat font-semibold tracking-wide underline"
-									href="javascript:void(0)"
-									onClick={() => setDonationTable("table")}>
-									<p className="whitespace-nowrap text-sm">LEARN MORE</p>
-								</a> */}
 								<button
 									id="donate-button"
 									type="button"
