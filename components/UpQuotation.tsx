@@ -1,5 +1,5 @@
 import Image from "next/image";
-import upQuotationMarks from "../public/upQuotationMarks.svg";
+import upQuotationMarks from "../public/twitter-logo.svg";
 
 export default function UpQuotation() {
   
@@ -8,8 +8,10 @@ export default function UpQuotation() {
           <Image
               className="ml-10"
               src={upQuotationMarks}
-              alt="Quotation Mark"
-              priority
+        alt="Quotation Mark"
+          width={100}
+          height={100}
+              
             />
   )
 }

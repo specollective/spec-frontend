@@ -8,7 +8,7 @@ import UpQuotation from "./UpQuotation";
 import Ilia from "../public/testimonials/Ilia.svg"
 import Alicia from "../public/testimonials/Alicia.svg"
 import Yoline from "../public/testimonials/Yoline.svg"
-import Victoria from "../public/testimonials/Victoria.svg"
+import Victoria from "../public/Victoria.svg"
 import { renderToString } from "react-dom/server";
 import classnames from "classnames";
 
@@ -72,6 +72,7 @@ export default function Testimonials() {
       >
         {/* <!--Carousel indicators--> */}
         {/* <!--Carousel items--> */}
+
         <div
           className="flex justify-evenly w-full md:h-104 overflow-hidden after:clear-both after:block after:content-['']">
           {/* <!--First item--> */}
@@ -84,8 +85,10 @@ export default function Testimonials() {
               <div className="flex justify-center">
               <Image
               className="z-10 flex justify-center -mt-14 rounded-full"
-              src={Victoria}
-              alt="Victoria"
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+                  alt="Victoria"
+                  height={200}
+                  width={200}
               priority
             />
             </div>
@@ -178,20 +181,19 @@ export default function Testimonials() {
               <Image
               className="z-10 w-28 h-28 flex justify-center -mt-14 rounded-full"
               src={Alicia}
-              alt="Alicia"
-              priority
+                  alt="Alicia"
+                  width={100}
+                  height={100}
                 /> 
             </div>
             <blockquote>
                 <DownQuotation />
                 <p className={quoteStyle}>I joined SPEC during a transitionary period of my life. Being able to work on multiple projects and in various roles all while being mentored helped me identify what my next career choice should be. Now that I have found gainful employment outside of SPEC I am happy to still feel included and connected to the team.</p>
 
-              <div className="visible md:hidden">
-                   <UpQuotation/>
-              </div> 
-           
-          </blockquote> 
-              <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
+            
+            </blockquote> 
+            
+              <div className="flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine"></div>
               <p id="name" className="text-xl font-medium tracking-widest py-6">ALICIA BONG</p>
                {/* <p id="title" className="content-center text-lg font-normal py-6">Research Associate</p> */}
             </div>
@@ -228,7 +230,7 @@ export default function Testimonials() {
       className="mx-[3px] box-content h-[10px] w-[10px] md:h-[10px] md:w-[10px] flex-initial cursor-pointer border-2  border-solid border-black rounded-full bg-white p-0 -indent-[999px]  transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
       aria-label="Slide 4"></button>
   </div>
-      </div>
     </div>
+   </div>
   )
 }
