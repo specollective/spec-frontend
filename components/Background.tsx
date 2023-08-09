@@ -5,7 +5,7 @@ import bpImg from '../public/BPImage.svg';
 export default function Background() {
   return (
     <section>
-      <div className="flex flex-col md:flex md:flex-row mx-20 md:mx-44 items-center justify-center">
+      <div className="flex flex-col md:flex md:flex-row mx-20 my-36 md:mx-44 items-center justify-center">
         <div className="md:w-1/2 md:order-last">
           <Image
             className="m-auto text-left mb-6 hidden md:block md:order-last"

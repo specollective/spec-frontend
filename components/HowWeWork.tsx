@@ -5,7 +5,7 @@ import ProjectsImg from '../public/ProjectsImage.svg';
 export default function HowWeWork() {
   return (
     <section>
-      <div className="flex flex-col md:flex md:flex-row mx-20 md:mx-44 items-center justify-center">
+      <div className="flex flex-col md:flex md:flex-row mx-20 my-36 md:mx-32 lg:mx-44 items-center justify-center">
         <div className="md:w-1/2 md:pl-10">
           <h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             HOW WE WORK
@@ -27,7 +27,7 @@ export default function HowWeWork() {
             work on these current projects.
           </p>
         </div>
-        <div className="md:w-1/2 md:order-last">
+        <div className="md:w-1/2 order-first md:order-last">
           <Image
             className="m-auto text-left mb-6 hidden md:block md:order-last"
             src={ProjectsImg}
