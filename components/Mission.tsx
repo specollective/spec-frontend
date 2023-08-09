@@ -4,7 +4,7 @@ import missionImg from '../public/MissionImg.svg'
 
 export default function Mission() {
   return (
-    <div className='flex flex-col md:flex md:flex-row m-20 items-center justify-center'>
+    <div className='flex flex-col md:flex md:flex-row mx-20 md:mx-44 items-center justify-center'>
       <div className='md:w-1/2 md:pl-10'>
         <p className='font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 
     md:text-lg md:leading-7'>

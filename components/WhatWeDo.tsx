@@ -5,8 +5,8 @@ import TeamImg from '../public/Team.svg';
 export default function WhatWeDo() {
   return (
     <section>
-      <div className="flex flex-col md:flex md:flex-row mx-20 items-center justify-center">
-        <div className="md:w-1/2 md:order-first">
+      <div className="flex flex-col md:flex md:flex-row mx-20 md:mx-44 items-center justify-center">
+        <div className="md:w-1/2 md:order-last">
           <h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             WHAT WE DO
           </h1>
