@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import bpImg from '../public/BPImage.svg';
+import TeamImg from '../public/Team.svg';
 
 export default function WhatWeDo() {
   return (
@@ -22,15 +22,15 @@ export default function WhatWeDo() {
         </div>
         <div className="md:w-1/2 md:order-first">
           <Image
-            className="m-auto text-left mb-6 hidden md:block md:order-last"
-            src={bpImg}
+            className="m-auto text-left mb-6 hidden md:block md:order-first"
+            src={TeamImg}
             alt="two person talking"
             width={350}
             height={250}
           />
           <Image
             className="m-auto text-left mb-6 block md:hidden"
-            src={bpImg}
+            src={TeamImg}
             alt="people talking"
             width={300}
             height={100}
