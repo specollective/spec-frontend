@@ -14,7 +14,7 @@ export default function Navbar() {
     }
     return (
         <div>
-            <div className='flex space-x-2 justify-between items-center border-b border-black px-1.5 py-3 h-14 md:hidden'>
+            <div className='sticky top-0 flex space-x-2 justify-between items-center border-b border-black px-1.5 py-3 h-14 md:hidden'>
                 <div className='flex space-x-2'>
                     <Image
                         src={logo}
@@ -28,10 +28,10 @@ export default function Navbar() {
                     <Image className='w-9' src={displayMenu ? close : menu} alt={displayMenu ? 'close menu' : 'menu'} />
                 </div>
             </div>
-            {displayMenu && <div className='fixed top-0 left-0 h-screen w-screen bg-black opacity-100 z-50 mt-14 md:hidden'>
+            {displayMenu && <div className='sticky top-0 left-0 h-screen w-screen bg-black opacity-75 z-50 mt-14 md:hidden'>
                 <div className='flex flex-col justify-center items-center font-montserrat'>
-                    <a href='https://docs.specollective.org/introduction/' target='_blank' rel='noreferrer' className='font-semibold text-center bg-white leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4  '>DOCUMENTATION</a>
-                    <a href='https://opencollective.com/spec' target='_blank' rel='noreferrer' className='font-semibold text-center bg-white leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4 '>
+                    <a href='https://docs.specollective.org/introduction/' target='_blank' rel='noreferrer' className='font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4  '>DOCUMENTATION</a>
+                    <a href='https://opencollective.com/spec' target='_blank' rel='noreferrer' className='font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4 '>
                         DONATE TO SPEC</a>
                 </div>
             </div>}
