@@ -7,8 +7,8 @@ const handler = async (req, res) => {
         //Do some thing
         await sendMail(
           "TEST",
-          "dontkillme@bunnyfiedlabs.com",
-          "THI IS A TEST FOR MY MEDIUM USERS"
+          "test123@gmail.com",
+          "Hi!"
         );
         res.status(200).send("Success");
         break;
