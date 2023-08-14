@@ -1,3 +1,5 @@
+// Reference: https://javascript.plainenglish.io/sending-emails-with-nodemailer-in-next-js-ccada06abfc9
+
 const nodemailer = require("nodemailer");
 //-----------------------------------------------------------------------------
 export async function sendMail(subject, toEmail, otpText) {

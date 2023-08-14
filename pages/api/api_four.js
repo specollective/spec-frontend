@@ -1,3 +1,5 @@
+// Reference: https://javascript.plainenglish.io/sending-emails-with-nodemailer-in-next-js-ccada06abfc9
+
 import { sendMail } from "../../service/mailService";
 const handler = async (req, res) => {
   try {
