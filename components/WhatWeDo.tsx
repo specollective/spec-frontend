@@ -5,12 +5,12 @@ import TeamImg from '../public/Team.svg';
 export default function WhatWeDo() {
   return (
     <section>
-      <div className="flex flex-col lg:flex lg:flex-row mx-20 my-36 md:mx-32 lg:mx-44 items-center justify-center">
-        <div className="lg:w-1/2 lg:order-last">
+      <div className="flex flex-col lg:flex lg:flex-row mx-20 my-36 md:mx-32 lg:mx-44 lg:px-12 items-center justify-center">
+        <div className="lg:w-1/2 lg:max-w-lg lg:order-last">
           <h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             WHAT WE DO
           </h1>
-          <p className="font-dmserif text-base font-normal leading-8 mb-6 md:text-4xl md:leading-10">
+          <p className="font-dmserif text-2xl font-normal leading-8 mb-6 md:text-4xl md:leading-10">
             We are a <span className="text-spec-turquiose">
               radically transparent
               and inclusive community.

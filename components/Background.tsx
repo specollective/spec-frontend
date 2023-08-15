@@ -5,7 +5,7 @@ import bpImg from '../public/BPImage.svg';
 export default function Background() {
   return (
     <section>
-      <div className="flex flex-col lg:flex lg:flex-row mx-20 my-36 lg:mx-44 items-center justify-center">
+      <div className="flex flex-col lg:flex lg:flex-row mx-20 my-36 lg:mx-44 lg:px-12 items-center justify-center">
         <div className="lg:w-1/2 lg:order-last">
           <Image
             className="m-auto text-left mb-6 hidden lg:block lg:order-last"
@@ -22,7 +22,7 @@ export default function Background() {
             height={100}
           />
         </div>
-        <div className="lg:w-1/2 md:order-last">
+        <div className="lg:w-1/2 lg:max-w-lg lg:pl-10 md:order-last">
           <p className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             OUR HISTORY
           </p>

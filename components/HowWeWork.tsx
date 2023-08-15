@@ -5,12 +5,12 @@ import ProjectsImg from '../public/ProjectsImage.svg';
 export default function HowWeWork() {
   return (
     <section>
-      <div className="flex flex-col lg:flex lg:flex-row mx-20 my-36 md:mx-32 lg:mx-44 items-center justify-center">
-        <div className="lg:w-1/2 lg:pl-10">
+      <div className="flex flex-col lg:flex lg:flex-row mx-20 my-36 md:mx-32 lg:mx-44 lg:px-12 items-center justify-center">
+        <div className="lg:w-1/2 lg:max-w-lg lg:pl-10">
           <h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             HOW WE WORK
           </h1>
-          <p className="font-dmserif text-base font-normal leading-8 mb-6 md:text-4xl md:leading-10">
+          <p className="font-dmserif text-2xl font-normal leading-8 mb-6 md:text-4xl md:leading-10">
             SPEC is organized as an open collective, which
             <span className="text-spec-turquiose">
               &nbsp;raises and spends funds transparently&nbsp;
