@@ -5,24 +5,24 @@ import bpImg from '../public/BPImage.svg';
 export default function Background() {
   return (
     <section>
-      <div className="flex flex-col md:flex md:flex-row mx-20 my-36 md:mx-44 items-center justify-center">
-        <div className="md:w-1/2 md:order-last">
+      <div className="flex flex-col lg:flex lg:flex-row mx-20 my-36 lg:mx-44 items-center justify-center">
+        <div className="lg:w-1/2 lg:order-last">
           <Image
-            className="m-auto text-left mb-6 hidden md:block md:order-last"
+            className="m-auto text-left mb-6 hidden lg:block lg:order-last"
             src={bpImg}
             alt="two person talking"
             width={350}
             height={250}
           />
           <Image
-            className="m-auto text-left mb-6 block md:hidden"
+            className="m-auto text-left mb-6 block lg:hidden"
             src={bpImg}
             alt="people talking"
             width={300}
             height={100}
           />
         </div>
-        <div className="md:w-1/2 md:order-last">
+        <div className="lg:w-1/2 md:order-last">
           <p className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
             OUR HISTORY
           </p>
