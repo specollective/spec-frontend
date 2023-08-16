@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import projectsImage from "../public/ProjectsImg.svg";
+import projectsImage from "../public/ProjectsImage.svg";
 
 
 export default function Projects() {

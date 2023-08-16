@@ -18,12 +18,7 @@ export default function Testimonials() {
 		initTE({ Carousel });
 	}, []);
   
-  const [clamped, setClamped] = useState(true);
-  const [showButton, setShowButton] = useState(true);
-
-  const handleClick = () => setClamped(!clamped);
-  const [activeSlide, setActiveSlide] = useState(0);
-
+ 
   //create a constant that will hold the styles for the p tag in the carousel
 
   const quoteStyle = `
@@ -61,6 +56,40 @@ export default function Testimonials() {
   w-full 
   md:w-1/2
   `
+
+ 
+  useEffect(() => {
+    const hasClamping = (el) => {
+      const { clientHeight, scrollHeight } = el;
+      return clientHeight !== scrollHeight;
+    };
+
+    const checkButtonAvailability = () => {
+      if (containerRef.current) {
+        // Save current state to reapply later if necessary.
+        const hadClampClass = containerRef.current.classList.contains("clamp");
+        // Make sure that CSS clamping is applied if aplicable.
+        if (!hadClampClass) containerRef.current.classList.add("clamp");
+        // Check for clamping and show or hide button accordingly.
+        setShowButton(hasClamping(containerRef.current));
+        // Sync clamping with local state.
+        if (!hadClampClass) containerRef.current.classList.remove("clamp");
+      }
+    };
+
+    const debouncedCheck = lodash.debounce(checkButtonAvailability, 50);
+
+    checkButtonAvailability();
+    window.addEventListener("resize", debouncedCheck);
+
+    return () => {
+      window.removeEventListener("resize", debouncedCheck);
+    };
+  }, [containerRef]);
+
+
+
+   
  
   return (
     <div className="w-full m-auto p-10">
