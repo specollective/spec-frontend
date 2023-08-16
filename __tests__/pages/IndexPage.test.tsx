@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import IndexPage from '../pages/index'
+import IndexPage from '../../pages/index'
 import '@testing-library/jest-dom'
 
 describe('IndexPage', () => { 
