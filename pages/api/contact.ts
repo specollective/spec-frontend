@@ -3,8 +3,6 @@
 import { sendMail } from "../../service/mailService";
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-// set preview data object with name, email, reason and message
-
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
   const body = req.body
   try {
@@ -29,9 +27,15 @@ Message: ${body.message}`
     }
 
   } catch (err) {
-    res.status(400).json({
-      error_code: "api_one",
-      message: err.message,
-    });
+    if (err instanceof Error){
+      res.status(400).json({
+        error_code: "api_one",
+        message: err.message,
+      })
+    }
+    else{
+      console.log('Unexpected error', err);
+    }
+    ;
   }
 };
