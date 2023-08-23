@@ -11,6 +11,9 @@ import Yoline from "../public/testimonials/Yoline.svg"
 import Victoria from "../public/Victoria.svg"
 import { renderToString } from "react-dom/server";
 import classnames from "classnames";
+import exp from "constants";
+import ReadMore from "./ReadMore";
+import { testimonialsData } from "../constants/testimonials-data";
 
 
 export default function Testimonials() {
@@ -18,6 +21,7 @@ export default function Testimonials() {
 		initTE({ Carousel });
 	}, []);
   
+
  
   //create a constant that will hold the styles for the p tag in the carousel
 
@@ -57,40 +61,28 @@ export default function Testimonials() {
   md:w-1/2
   `
 
- 
-  useEffect(() => {
-    const hasClamping = (el) => {
-      const { clientHeight, scrollHeight } = el;
-      return clientHeight !== scrollHeight;
-    };
+  //export props to be passed to the carousel component
+  //the props should include the following: text:string and truncateLength?:number
 
-    const checkButtonAvailability = () => {
-      if (containerRef.current) {
-        // Save current state to reapply later if necessary.
-        const hadClampClass = containerRef.current.classList.contains("clamp");
-        // Make sure that CSS clamping is applied if aplicable.
-        if (!hadClampClass) containerRef.current.classList.add("clamp");
-        // Check for clamping and show or hide button accordingly.
-        setShowButton(hasClamping(containerRef.current));
-        // Sync clamping with local state.
-        if (!hadClampClass) containerRef.current.classList.remove("clamp");
-      }
-    };
-
-    const debouncedCheck = lodash.debounce(checkButtonAvailability, 50);
-
-    checkButtonAvailability();
-    window.addEventListener("resize", debouncedCheck);
-
-    return () => {
-      window.removeEventListener("resize", debouncedCheck);
-    };
-  }, [containerRef]);
+  //  type TestimonialProps = {
+  //   text: string;
+  //   truncateLength?: number;
+  // };
 
 
+  //create a function that truncates the text in the p tage in the carousel
+  //the function should take in two arguments, the text and the number of characters to truncate to in the string
+  //the function should return the truncated string
 
-   
- 
+  // const truncate = (text: string, length: number) => {
+  //   if (text.length <= length) {
+  //     return text;
+  //   }
+  //   return text.slice(0, length) + "...";
+  // };
+  
+
+
   return (
     <div className="w-full m-auto p-10">
       <div
@@ -123,10 +115,7 @@ export default function Testimonials() {
             </div>
             <blockquote>
                 <DownQuotation />
-                <p className={classnames("quoteStyle", clamped && "clamp")}>During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it&apos;s mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning</p>
-                {showButton && (
-                <button onClick={handleClick}>Read {clamped ? "more" : "less"}</button>
-                 )}
+                 <ReadMore description={testimonialsData[0].quote} limit={250}/>    
                 
             <div className="visible md:hidden">
               <UpQuotation/>
