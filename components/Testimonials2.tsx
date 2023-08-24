@@ -5,10 +5,10 @@ import Image from "next/image";
 import upQuotationMarks from '../public/upQuotationMarks.svg'
 import DownQuotation from './DownQuotation'
 import UpQuotation from "./UpQuotation";
-import Ilia from "../public/testimonials/Ilia.svg"
-import Alicia from "../public/testimonials/Alicia.svg"
-import Yoline from "../public/testimonials/Yoline.svg"
-import Victoria from "../public/Victoria.svg"
+// import Ilia from "../public/Ilia.svg"
+// import Alicia from "../public/testimonials/Alicia.svg"
+// import Yoline from "../public/testimonials/Yoline.svg"
+// import Victoria from "../public/Victoria.svg"
 import exp from "constants";
 import ReadMore from "./ReadMore";
 import { testimonialsData } from "../constants/testimonials-data";
@@ -82,10 +82,10 @@ export default function Testimonials() {
               <div className="flex justify-center">
               <Image
               className="z-10 flex justify-center -mt-14 rounded-full"
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+                  src={"/Victoria.svg"}
                   alt="Victoria"
-                  height={200}
-                  width={200}
+                  height={120}
+                  width={120}
               priority
             />
             </div>
@@ -113,16 +113,17 @@ export default function Testimonials() {
             <div className="flex justify-center">
               <Image
               className="z-10 w-28 h-28 flex justify-center -mt-14 rounded-full "
-              src={Ilia}
-              alt="Ilia"
+                  src={"/Ilia.svg"}
+                  alt="Ilia"
+                  height={150}
+                  width={150}
               priority
                 />
             </div>
             
             <blockquote>
              <DownQuotation/>
-                <p className={quoteStyle}>SPEC has been a perfect next step in my UX design journey. It&apos;s such a great space for me to explore the different areas within UX design, to figure out where I excel. On top of discovery within this new field for me, being 100% supported and encouraged to continue learning has been amazing. SPEC is going to change the world, and I am happy to contribute my small piece!
-                </p>
+                   <ReadMore description={testimonialsData[1].quote} limit={250}/> 
 
                 <div className="visible md:hidden">
                     <UpQuotation/>
@@ -144,16 +145,16 @@ export default function Testimonials() {
              <div className="flex justify-center">
               <Image
               className=" z-10 w-28 h-28 flex justify-center -mt-14 rounded-full"
-              src={Yoline}
+                  src={"/Yoline.svg"}
+                  height={150}
+                  width={150}
               alt="Yoline"
               priority
               />  
             </div>
             <blockquote>
                 <DownQuotation />
-                
-                <p className={quoteStyle}>As an RA for SPEC, I had the opportunity to dive deep into the world of coding and gain valuable skills that have had a lasting impact on my personal and professional growth. But beyond just the technical knowledge, what truly stood out to me was the incredibly supportive and kind community of people at SPEC. I felt welcomed from day one and was always encouraged to ask questions, seek guidance, and push myself to learn more. The experience of working with such a talented and supportive group of individuals has had a profound impact on me, and I&apos;m grateful for the time I spent at SPEC.</p>
-                
+                <ReadMore description={testimonialsData[0].quote} limit={250}/> 
               <div className="visible md:hidden">
                 <UpQuotation/>
               </div>
@@ -174,17 +175,15 @@ export default function Testimonials() {
              <div className="flex justify-center">
               <Image
               className="z-10 w-28 h-28 flex justify-center -mt-14 rounded-full"
-              src={Alicia}
+              src={"/Alicia.svg"}
                   alt="Alicia"
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                 /> 
             </div>
             <blockquote>
                 <DownQuotation />
-                <p className={quoteStyle}>I joined SPEC during a transitionary period of my life. Being able to work on multiple projects and in various roles all while being mentored helped me identify what my next career choice should be. Now that I have found gainful employment outside of SPEC I am happy to still feel included and connected to the team.</p>
-
-            
+                <ReadMore description={testimonialsData[0].quote} limit={250}/> 
             </blockquote> 
             
               <div className="flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine"></div>

@@ -15,7 +15,7 @@ const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
 	ssr: false,
 });
 
-const Testimonials = dynamic(() => import("../components/Testimonials"), {
+const Testimonials = dynamic(() => import("../components/Testimonials2"), {
 	ssr: false,
 });
 
