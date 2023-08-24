@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, initTE } from "tw-elements";
-import { renderToString } from "react-dom/server";
 import Image from "next/image";
-import donate from "../public/DonateImg.svg";
 import DonationTable from "./DonationTable";
 
 export default function GetInvolved() {

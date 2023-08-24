@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { tableContents } from './constants/TableContents'
+import { tableContents } from '../constants/table-of-contents'
 
 
 function DonationTable() {
