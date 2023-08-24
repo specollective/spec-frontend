@@ -115,17 +115,17 @@ export default function GetInvolved() {
 					</h1>
 					<div
 						id="body-box"
-						className="card-container max-w-4xl xl:justify-center 2xl:w-9/12 w-12/12 xl:w-11/12 m-auto mt-10 w-full flex items-center justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white p-16 xl:mt-16 xl:w-full">
+						className="card-container max-w-4xl xl:justify-center 2xl:w-9/12 w-12/12 xl:w-11/12 m-auto mt-10 w-full flex items-center justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white py-16 xl:mt-16 xl:w-full">
 						<div id="body-left-content" className="w-5/12 max-w-sm">
 							<h2
 								id="body-left-header"
-								className="font-dmserif font-light tracking-wide text-4xl xl:text-5xl">
+								className="font-dmserif font-light tracking-wide text-4xl xl:text-4xl pr-12">
 								Join us in making a difference!
 							</h2>
 							<p
 								id="body-left-text"
 								className="font-montserrat mt-8 text-sm font-medium leading-6 lg:text-base">
-								Donate to SPEC today to <br></br> support our mission and
+								Donate to SPEC today to support <br></br> our mission and
 								impact.
 							</p>
 							<div
@@ -134,7 +134,7 @@ export default function GetInvolved() {
 								<p>
 									<a
 										id="learn-more-hyperlink"
-										className="font-montserrat pr-15 font-semibold tracking-wide underline"
+										className="font-montserrat text-sm mr-24 text-gray-400 font-semibold tracking-wide underline"
 										href="javascript:void(0)"
 										onClick={() => {
 											const url = "https://docs.specollective.org/introduction/";
@@ -146,7 +146,7 @@ export default function GetInvolved() {
 								<button
 									id="donate-button"
 									type="button"
-									className="font-montserrat max-w-28 mx-2 w-40 h-14 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white"
+									className="font-montserrat w-40 h-12 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center text-xs font-semibold tracking-wider text-white"
 									onClick={() => {
 										const url = "https://opencollective.com/spec";
     								window.open(url, '_blank');
@@ -160,29 +160,6 @@ export default function GetInvolved() {
                   <DonationTable />
 							</div>
 						</div>
-						{/* {donationTable === "Image" ? (
-							<div id="body-right-content" className="scale-90">
-								<Image
-									id="donate-image"
-									className=""
-									src={donate}
-									alt="donate-image"
-								/>
-							</div>
-						) : (
-							<div id="donation-table">
-								<div className="flex justify-end" data-closeable>
-									<button
-										type="button"
-										onClick={() => setDonationTable("Image")}>
-										<span aria-hidden="true" className="">
-											&times;
-										</span>
-									</button>
-                  </div>
-                  <DonationTable />
-							</div>
-						)} */}
 					</div>
 					<div
 						id="sub-cards"
@@ -262,14 +239,16 @@ export default function GetInvolved() {
 												className="flex justify-evenly md:pb-8 md:justify-center"
 												// className="pl-20 mt-8 md:mt-2 w-10/12 md:w-7/12 md:pl-12"
 												> 
-												<h2 className="font-dmserif text-3xl my-auto">
+												<h2 className="font-dmserif text-3xl pl-6">
 													Join us in making a difference!
 												</h2>
 												<Image
 													id="mobile-donate-image"
 													alt="mobile-donate-image"
-													src={donate}
+													src="/DonateImg.svg"
 													className="w-5/12 md:w-6/12"
+													width={500}
+													height={500}
 												/>
 											</div>
 											<div

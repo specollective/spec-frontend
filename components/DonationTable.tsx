@@ -11,7 +11,6 @@ function DonationTable() {
 						<tr className="">
 							<th
 								className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl bg-spec-banana font-normal py-4 text-sm"
-								// className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl border bg-spec-banana font-normal"
 								colSpan={2}>
 								The <strong>impact</strong> of your donation makes
 							</th>
@@ -28,7 +27,7 @@ function DonationTable() {
 							return (
 								<tr
 									key={index}
-									className={`${rowColor}  border-spec-white`}>
+									className={`${rowColor} border-4 border-spec-white`}>
 									{row.map((cell, cellIndex) => (
 										<td
 											key={cellIndex}
@@ -40,7 +39,8 @@ function DonationTable() {
 												cellIndex === 0 && isLastRow
 													? "rounded-bl-3xl"
 													: ""
-											} ${cellIndex ? "text-right" : ""}`}>
+											}
+											${cellIndex ? "text-right" : ""}`}>
 											{cell}
 										</td>
 									))}
