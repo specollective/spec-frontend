@@ -9,7 +9,10 @@ interface ProjectProps  {
   link: string;
   linkLine: string;
   tag: string;
-  info: any;
+  info: {
+    summary: string;
+    list: string[];
+  }
   pic: {
     alt: string;
     url: any;
