@@ -22,12 +22,18 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   return (
     <div className="border border-spec-yellow-600 mb-2">
       <div className="flex justify-between p-10 max-h-[600px]">
-        <div className="flex basis-1/2 place-self-start self-start p-4">
-          <Image src={project.pic.url} alt={project.pic.alt} width="400" height="400" />
-        </div>
         <div className="flex flex-col basis-1/2 justify-between p-4">
           <div className="text-lg">
-            {project.info}
+          {project.info.summary}
+            {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
+            {project.info.list ? (
+              <ul className="list-disc list-inside mt-8">
+                {project.info.list.map((item: any, index: any) => (
+                  <li key={`${item}-${index}`}>{item}</li>
+                ))}
+              </ul>
+            ): null}
+            
           </div>
           <div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
             <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href={project.link}>
