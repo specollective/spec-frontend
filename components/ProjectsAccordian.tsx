@@ -97,10 +97,23 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
           <section className="visible lg:hidden">
             <div className="">
               <div className="text-2xl">{project.name}</div>
-              <div className="">{project.tag}</div>
+              <div className="cursor-pointer" onClick={() => showProject(index)}>
+                 <button
+                  className="row-span-3"
+                  aria-expanded={isClicked === index ? "true" : "false"}
+                >
+                  {toggleBtn(index)}
+                </button>
+               </div>
+              {/* <div className="">{project.tag}</div> */}
             </div>
               
             <BreakLine lineWidth="full" />
+             {
+              <section className={isClicked === index ? "block" : "hidden"}>
+                <ProjectsDisplay project={project} />
+              </section>
+            }
           </section>
         </div>
       ))}
