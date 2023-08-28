@@ -12,17 +12,17 @@ export default function GetInvolved() {
 		{
 			title: "Work with us",
 			body: "Join the SPEC team, where you can contribute to something meaningful and make a real impact.",
-			contactUs: "#",
+			contactUs: "#contact-form",
 		},
 		{
 			title: "Mentor",
-			body: "Become a SPEC mentor to share your expertise and guide aspiring professionals on their jounrey.",
-			contactUs: "#",
+			body: "Become a SPEC mentor to share your expertise and guide aspiring professionals on their journey.",
+			contactUs: "#contact-form",
 		},
 		{
 			title: "Partner with us",
 			body: "Let's collaborate and create value together by forming a strong partnership between our companies.",
-			contactUs: "#",
+			contactUs: "#contact-form",
 		},
 	];
 
@@ -43,9 +43,9 @@ export default function GetInvolved() {
 					<h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
 						{cardData.title}
 					</h1>
-					<div className="montserrat flex h-48 w-64 flex-col bg-spec-white px-6 py-4 xl:w-72">
+					<div className="font-montserrat flex h-48 w-64 flex-col bg-spec-white px-6 py-4 xl:w-72">
 						<div>
-							<p className="text-sm">{cardData.body}</p>
+							<p className="font-montserrat">{cardData.body}</p>
 						</div>
 						<div className=" flex justify-end m-auto">
 							<a
@@ -108,70 +108,56 @@ export default function GetInvolved() {
 				<div className="flex flex-col justify-evenly">
 					<h1
 						id="header"
-						className="text-center font-dmserif text-2xl lg:text-4xl xl:text-5xl">
+						className="text-center font-dmserif text-3xl lg:text-4xl xl:text-5xl">
 						Ready to be a part of something bigger?
 					</h1>
 					<div
 						id="body-box"
-						className="card-container max-w-4xl xl:justify-center 2xl:w-9/12 w-12/12 xl:w-11/12 m-auto mt-10 w-full flex items-center justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white p-16 xl:mt-16 xl:w-full">
+						className="card-container max-w-4xl xl:justify-center 2xl:w-9/12 w-12/12 xl:w-11/12 m-auto mt-10 w-full flex items-center justify-around rounded-tl-3xl rounded-br-3xl bg-spec-white py-16 xl:mt-16 xl:w-full">
 						<div id="body-left-content" className="w-5/12 max-w-sm">
 							<h2
 								id="body-left-header"
-								className=" font-dmserif text-4xl xl:text-5xl">
+								className="font-dmserif font-light tracking-wide text-4xl xl:text-4xl pr-12">
 								Join us in making a difference!
 							</h2>
 							<p
 								id="body-left-text"
-								className="montserrat mt-8 text-sm font-medium leading-6 lg:text-base">
-								Donate to SPEC today to <br></br> support our mission and
+								className="font-montserrat mt-8 text-sm font-medium leading-6 lg:text-base">
+								Donate to SPEC today to support <br></br> our mission and
 								impact.
 							</p>
 							<div
 								id="container-for-anchor-button"
-								className="mt-5 flex max-w-[15rem]  items-center justify-between">
-								<a
-									id="learn-more-hyperlink"
-									className="montserrat font-semibold tracking-wide underline"
-									href="javascript:void(0)"
-									onClick={() => setDonationTable("table")}>
-									<p className="whitespace-nowrap text-sm">LEARN MORE</p>
-								</a>
+								className="mt-5 flex max-w-[15rem] items-center justify-between">
+								<p>
+									<a
+										id="learn-more-hyperlink"
+										className="font-montserrat text-sm mr-24 text-gray-400 font-semibold tracking-wide underline"
+										href="javascript:void(0)"
+										onClick={() => {
+											const url = "https://docs.specollective.org/introduction/";
+											window.open(url, '_blank');
+										}}>
+										LEARN MORE
+										</a>
+								</p>
 								<button
 									id="donate-button"
 									type="button"
-									className="montserrat max-w-28 mx-2 w-24 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-xs font-semibold tracking-wider text-white"
+									className="font-montserrat w-40 h-12 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center text-xs font-semibold tracking-wider text-white"
 									onClick={() => {
-										location.href = "https://opencollective.com/spec";
+										const url = "https://opencollective.com/spec";
+    								window.open(url, '_blank');
 									}}>
 									DONATE
 								</button>
 							</div>
 						</div>
-						{donationTable === "Image" ? (
-							<div id="body-right-content" className="scale-90">
-								<Image
-									id="donate-image"
-									className=""
-									src="/DonateImg.svg"
-									alt="donate-image"
-									width={500}
-									height={500}
-								/>
-							</div>
-						) : (
-							<div id="donation-table">
-								<div className="flex justify-end" data-closeable>
-									<button
-										type="button"
-										onClick={() => setDonationTable("Image")}>
-										<span aria-hidden="true" className="">
-											&times;
-										</span>
-									</button>
-                  </div>
+						<div id="donation-table">
+								<div className="flex justify-end">
                   <DonationTable />
 							</div>
-						)}
+						</div>
 					</div>
 					<div
 						id="sub-cards"
@@ -248,8 +234,10 @@ export default function GetInvolved() {
 										<div>
 											<div
 												id="s1-container1"
-												className="flex justify-evenly md:pb-8 md:justify-center">
-												<h2 className="font-dmserif w-40 text-3xl my-auto">
+												className="flex justify-evenly md:pb-8 md:justify-center"
+												// className="pl-20 mt-8 md:mt-2 w-10/12 md:w-7/12 md:pl-12"
+												> 
+												<h2 className="font-dmserif text-3xl pl-6">
 													Join us in making a difference!
 												</h2>
 												<Image
@@ -284,9 +272,11 @@ export default function GetInvolved() {
 												<button
 													type="button"
 													id="mobile-donate-button"
+													role="link"
 													className="font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-lg font-semibold tracking-wider text-white"
 													onClick={() => {
-														location.href = "https://opencollective.com/spec";
+														const url = "https://opencollective.com/spec";
+														window.open(url, '_blank');
 													}}>
 													DONATE
 												</button>
