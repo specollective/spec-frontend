@@ -25,12 +25,12 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   return (
     <div className=" mb-2">
       <div className="flex justify-between max-h-[600px]">
-        <div className="flex flex-col  justify-between p-4">
-          <div className=" text-sm lg:text-lg">
+        <div className="flex flex-col justify-between p-2">
+          <div className=" text-sm lg:text-lg font-inter">
           {project.info.summary}
             {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
-              <ul className="list-disc mt-8">
+              <ul className="list-disc mt-8 p-2 font-inter">
                 {project.info.list.map((item: any, index: any) => (
                   <li className="mt-2"key={`${item}-${index}`}>{item}</li>
                 ))}
@@ -75,12 +75,12 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
           <section className="hidden lg:block">
             <div className="cursor-pointer" onClick={() => showProject(index)}>
               <div className="grid grid-rows-3 grid-flow-col place-content-between items-end">
-                <h3 className="row-span-2 col-span-1 font-dmserif text-4xl text-whte-600">
+                <h3 className="row-span-1 col-span-1 font-dmserif text-4xl">
                   {project.name}
                 </h3>
                 <p className="col-span-2 font-montserrat">{project.tag}</p>
                 <button
-                  className="row-span-1"
+                  className="col-span-1 row-span-2"
                   aria-expanded={isClicked === index ? "true" : "false"}
                 >
                   {toggleBtn(index)}
@@ -112,7 +112,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
               
              {
               <section className={isClicked === index ? "block" : "hidden"}>
-                 <div className="">{project.tag}</div>
+                 <div className="font-medium font-montserrat">{project.tag}</div>
                 <ProjectsDisplay project={project} />
               </section>
             }
