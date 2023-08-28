@@ -26,7 +26,7 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
     <div className=" mb-2">
       <div className="flex justify-between max-h-[600px]">
         <div className="flex flex-col justify-between p-2">
-          <div className=" text-sm lg:text-lg font-inter">
+          <div className=" text-sm lg:text-lg font-inter font-normal">
           {project.info.summary}
             {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
@@ -78,7 +78,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
                 <h3 className="row-span-1 col-span-1 font-dmserif text-4xl">
                   {project.name}
                 </h3>
-                <p className="col-span-2 font-montserrat">{project.tag}</p>
+                <p className="col-span-2 font-semibold text-lg font-montserrat">{project.tag}</p>
                 <button
                   className="col-span-1 row-span-2"
                   aria-expanded={isClicked === index ? "true" : "false"}
@@ -101,7 +101,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
               <div className="text-xl font-dmserif tracking-wider">{project.name}
               <div className="cursor-pointer float-right" onClick={() => showProject(index)}>
                  <button
-                  className="row-span-3"
+                  className="w-8 h-8"
                   aria-expanded={isClicked === index ? "true" : "false"}
                 >
                   {toggleBtn(index)}
