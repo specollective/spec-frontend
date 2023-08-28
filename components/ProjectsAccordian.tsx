@@ -30,7 +30,7 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
           {project.info.summary}
             {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
-              <ul className="list-disc mt-8 p-2 font-inter">
+              <ul className="list-disc mt-4 p-4 font-inter">
                 {project.info.list.map((item: any, index: any) => (
                   <li className="mt-2"key={`${item}-${index}`}>{item}</li>
                 ))}
