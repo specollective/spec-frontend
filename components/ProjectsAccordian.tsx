@@ -23,16 +23,16 @@ interface ProjectProps  {
 // TODO: Use interfaces for prop definitions
 function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   return (
-    <div className="border border-spec-yellow-600 mb-2">
-      <div className="flex justify-between p-10 max-h-[600px]">
-        <div className="flex flex-col basis-1/2 justify-between p-4">
-          <div className="text-lg">
+    <div className=" mb-2">
+      <div className="flex justify-between max-h-[600px]">
+        <div className="flex flex-col  justify-between p-4">
+          <div className=" text-sm lg:text-lg">
           {project.info.summary}
             {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
-              <ul className="list-disc list-inside mt-8">
+              <ul className="list-disc mt-8">
                 {project.info.list.map((item: any, index: any) => (
-                  <li key={`${item}-${index}`}>{item}</li>
+                  <li className="mt-2"key={`${item}-${index}`}>{item}</li>
                 ))}
               </ul>
             ): null}
@@ -75,46 +75,50 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
           <section className="hidden lg:block">
             <div className="cursor-pointer" onClick={() => showProject(index)}>
               <div className="grid grid-rows-3 grid-flow-col place-content-between items-end">
-                <h3 className="row-span-2 col-span-1 text-4xl text-whte-600">
+                <h3 className="row-span-2 col-span-1 font-dmserif text-4xl text-whte-600">
                   {project.name}
                 </h3>
-                <p className="col-span-2 text-spec-yellow-600">{project.tag}</p>
+                <p className="col-span-2 font-montserrat">{project.tag}</p>
                 <button
-                  className="row-span-3"
+                  className="row-span-1"
                   aria-expanded={isClicked === index ? "true" : "false"}
                 >
                   {toggleBtn(index)}
                 </button>
               </div>
-              <BreakLine lineWidth="full" />
+              {/* <BreakLine lineWidth="full" /> */}
             </div>
             {
               <section className={isClicked === index ? "block" : "hidden"}>
+               
                 <ProjectsDisplay project={project} />
               </section>
             }
+             <BreakLine lineWidth="full" />
           </section>
           <section className="visible lg:hidden">
-            <div className="">
-              <div className="text-2xl">{project.name}</div>
-              <div className="cursor-pointer" onClick={() => showProject(index)}>
+            <div className="flex flex-col">
+              <div className="text-xl font-dmserif tracking-wider">{project.name}
+              <div className="cursor-pointer float-right" onClick={() => showProject(index)}>
                  <button
                   className="row-span-3"
                   aria-expanded={isClicked === index ? "true" : "false"}
                 >
                   {toggleBtn(index)}
-                </button>
-               </div>
-              {/* <div className="">{project.tag}</div> */}
+                  </button> 
+              </div>
+              </div>
             </div>
               
-            <BreakLine lineWidth="full" />
              {
               <section className={isClicked === index ? "block" : "hidden"}>
+                 <div className="">{project.tag}</div>
                 <ProjectsDisplay project={project} />
               </section>
             }
+              <BreakLine lineWidth="full" />
           </section>
+           
         </div>
       ))}
     </section>
