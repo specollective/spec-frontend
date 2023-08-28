@@ -25,8 +25,8 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   return (
     <div className=" mb-2">
       <div className="flex justify-between max-h-[600px]">
-        <div className="flex flex-col justify-between p-2">
-          <div className=" text-sm lg:text-lg font-inter font-normal">
+        <div className="flex flex-col justify-between">
+          <div className=" text-sm lg:text-lg font-inter font-normal mt-4">
           {project.info.summary}
             {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
@@ -112,7 +112,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
               
              {
               <section className={isClicked === index ? "block" : "hidden"}>
-                 <div className="font-medium font-montserrat">{project.tag}</div>
+                 <div className="font-medium font-montserrat mt-8">{project.tag}</div>
                 <ProjectsDisplay project={project} />
               </section>
             }
