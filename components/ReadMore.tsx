@@ -7,33 +7,42 @@ interface ReadMoreProps {
 }
 
 // const ReadMore: ({ description, limit }: ReadMoreProps) => string | JSX.Element
-const ReadMore = ({ description, limit }:ReadMoreProps) => {
+const ReadMore = ({ description, limit }: ReadMoreProps) => {
+  
     const [showAll, setShowAll] = useState(false);
-    return (
-        description.length > limit ? (
+  return (
+    description.length > limit ? (
+      <div>
+        <>
+        {showAll ? (
           <div>
-            {showAll ? (
-              <div>
-                {description}        
-                <button 
-                  onClick={() => setShowAll(false)}
-                  className="text-primary"
-                >
-                  Read Less
-                </button>
-              </div>
-            ) : (
-              <div>
-                {description.substring(0, limit).concat("...")}
-                <button onClick={() => setShowAll(true)} className="text-primary">
-                  Read More
-                </button>
-              </div>
-            )}
+            {description}
+            <button
+              onClick={() => setShowAll(false)}
+              className="text-primary"
+            >
+              Read Less
+            </button>
           </div>
         ) : (
+          <div>
+            {description.substring(0, limit).concat("...")}
+            <button onClick={() => setShowAll(true)} className="text-primary">
+              Read More
+            </button>
+          </div>
+          )}
+          </>
+      </div>
+    
+    ) : (
+        <>
           description
-        )
-    );
+          </>
+    )
+        
+  );
+       
+       
   };
   export default ReadMore;

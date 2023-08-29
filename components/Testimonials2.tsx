@@ -60,6 +60,7 @@ export default function Testimonials() {
   `
 
   return (
+    
     <div className="w-full m-auto p-10">
       <div
         id="carouselTestimonialsIndicators"
@@ -224,6 +225,7 @@ export default function Testimonials() {
       aria-label="Slide 4"></button>
   </div>
     </div>
-   </div>
+      </div>
+    
   )
 }
