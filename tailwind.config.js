@@ -25,7 +25,8 @@ module.exports = {
       },
       fontFamily: {
         montserrat: ['Montserrat'],
-        dmserif: ['DM Serif Text']
+        dmserif: ['DM Serif Text'],
+        poppins: ['Poppins']
       }
     }
   }
