@@ -37,4 +37,12 @@ To run in CI mode to help with debugging Github Action failing
 CI=true npm run lint
 ```
 
+## Updating environment variables
 
+To copy over env variables needed for email functionality
+
+```
+cp .env.sample .env.local
+```
+
+Fill in the variables as needed
