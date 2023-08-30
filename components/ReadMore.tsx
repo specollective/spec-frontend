@@ -13,7 +13,8 @@ const quoteStyle = `
   font-montserrat 
   font-light 
   italic 
-  mb-4 p-6  
+  p-4
+  mx-8
   text-gray-900 
   dark:text-black 
   sm:text-ellipsis 
@@ -35,7 +36,7 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
               </p>
             <button
               onClick={() => setShowAll(false)}
-              className="text-primary"
+              className="text-dmserif mb-4"
             >
               Read Less
             </button>
@@ -46,7 +47,7 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
                        {description.substring(0, limit).concat("...")}
                 </p>
         
-            <button onClick={() => setShowAll(true)} className="text-primary">
+            <button onClick={() => setShowAll(true)} className="text-dmserif mb-4">
               Read More
             </button>
           </div>
