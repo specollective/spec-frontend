@@ -1,4 +1,6 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
+import DownQuotation from './DownQuotation'
+import UpQuotation from "./UpQuotation";
 
 //declare type for description and limit
 interface ReadMoreProps {
@@ -31,9 +33,15 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
         <>
         {showAll ? (
             <div>
+              <div className='flex flex-col mb-4'>
+              <DownQuotation />
               <p className={quoteStyle}>
                  {description}
-              </p>
+                </p>
+                <div className='flex mr-4 justify-end'>
+                  <UpQuotation />
+                  </div>
+                </div>
             <button
               onClick={() => setShowAll(false)}
               className="text-dmserif mb-4"
@@ -43,10 +51,17 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
           </div>
         ) : (
               <div>
+                <div className='flex flex-col mb-4'>
+                <DownQuotation />
                 <p className={quoteStyle}>
                        {description.substring(0, limit).concat("...")}
                 </p>
-        
+                  <div className='flex mr-4 justify-end'>
+                        <UpQuotation />
+                </div>
+
+                </div>
+             
             <button onClick={() => setShowAll(true)} className="text-dmserif mb-4">
               Read More
             </button>

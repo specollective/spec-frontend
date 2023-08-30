@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, initTE } from "tw-elements";
-// import { renderToString } from "react-dom/server";
 import Image from "next/image";
 import DownQuotation from './DownQuotation'
 import UpQuotation from "./UpQuotation";
@@ -15,17 +14,6 @@ export default function Testimonials() {
   
 
  
-  //create a constant that will hold the styles for the p tag in the carousel
-
-  
-  const clamp = `
-  line-clamp-4
-  overflow-hidden
-  text-ellipsis;
-  break-words
-  `
-  //create a constant that will hold the tailwind classes for cards in the carousel
-
   const testimonialCardStyle = `
   -z-10 
   border-solid 
@@ -73,18 +61,11 @@ export default function Testimonials() {
               priority
             />
             </div>
-            <blockquote>
-                <DownQuotation />
-                 <ReadMore className="text-green-400"description={testimonialsData[0].quote} limit={250}/>    
-                
-            <div className="visible md:hidden">
-              <UpQuotation/>
-            </div> 
-            
+            <blockquote className="mb-8">
+                 <ReadMore description={testimonialsData[0].quote} limit={250}/>    
             </blockquote> 
               <div className=" flex-shrink border-t-2 pt-8 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="content-center text-xl font-medium tracking-widest font-poppins">VICTORIA LO</p>
-              {/* <p id="title" className="content-center text-lg font-normal py-6">Research Associate</p> */}
             </div>
           </div>
 
@@ -104,15 +85,8 @@ export default function Testimonials() {
               priority
                 />
             </div>
-            
             <blockquote>
-             <DownQuotation/>
                    <ReadMore description={testimonialsData[1].quote} limit={250}/> 
-
-                <div className="visible md:hidden">
-                    <UpQuotation/>
-                </div>  
-           
             </blockquote> 
               <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="text-xl font-medium tracking-widest py-6">ILIA DE LEON</p>
@@ -124,7 +98,6 @@ export default function Testimonials() {
             className="md:-mr-[80%] hidden w-full md:h-104 transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
           >
-            
             <div className={testimonialCardStyle}>
              <div className="flex justify-center">
               <Image
@@ -137,16 +110,10 @@ export default function Testimonials() {
               />  
             </div>
             <blockquote>
-                <DownQuotation />
                 <ReadMore description={testimonialsData[0].quote} limit={250}/> 
-              <div className="visible md:hidden">
-                <UpQuotation/>
-              </div>
-           
           </blockquote> 
               <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="text-xl font-medium tracking-widest py-6">YOLINE BANERJEE</p>
-               {/* <p id="title" className="content-center text-lg font-normal py-6">Research Associate</p> */}
             </div>
           </div>
              {/* <!--Fourth item--> */}
@@ -154,7 +121,6 @@ export default function Testimonials() {
             className="relative hidden float-left md:-mr-[80%] w-full md:h-104 transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
           >
-      
             <div className={testimonialCardStyle}>
              <div className="flex justify-center">
               <Image
@@ -166,13 +132,11 @@ export default function Testimonials() {
                 /> 
             </div>
             <blockquote>
-                <DownQuotation />
                 <ReadMore description={testimonialsData[0].quote} limit={250}/> 
             </blockquote> 
             
               <div className="flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine"></div>
               <p id="name" className="text-xl font-medium tracking-widest py-6">ALICIA BONG</p>
-               {/* <p id="title" className="content-center text-lg font-normal py-6">Research Associate</p> */}
             </div>
           </div>
         </div>
