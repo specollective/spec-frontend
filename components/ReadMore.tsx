@@ -3,8 +3,22 @@ import React,{useState} from 'react';
 //declare type for description and limit
 interface ReadMoreProps {
     description: string;
-    limit: number;
+  limit: number;
+  className?: string;
 }
+
+const quoteStyle = `
+  text-md 
+  md:text-lg 
+  font-montserrat 
+  font-light 
+  italic 
+  mb-4 p-6  
+  text-gray-900 
+  dark:text-black 
+  sm:text-ellipsis 
+  sm:overflow-hidden 
+  `
 
 // const ReadMore: ({ description, limit }: ReadMoreProps) => string | JSX.Element
 const ReadMore = ({ description, limit }: ReadMoreProps) => {
@@ -15,8 +29,10 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
       <div>
         <>
         {showAll ? (
-          <div>
-            {description}
+            <div>
+              <p className={quoteStyle}>
+                 {description}
+              </p>
             <button
               onClick={() => setShowAll(false)}
               className="text-primary"
@@ -25,8 +41,11 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
             </button>
           </div>
         ) : (
-          <div>
-            {description.substring(0, limit).concat("...")}
+              <div>
+                <p className={quoteStyle}>
+                       {description.substring(0, limit).concat("...")}
+                </p>
+        
             <button onClick={() => setShowAll(true)} className="text-primary">
               Read More
             </button>
@@ -37,7 +56,10 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
     
     ) : (
         <>
-          description
+          
+            description
+            
+       
           </>
     )
         
