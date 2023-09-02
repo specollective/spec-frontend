@@ -110,7 +110,7 @@ export default function Testimonials() {
               />  
             </div>
             <blockquote>
-                <ReadMore description={testimonialsData[0].quote} limit={250}/> 
+                <ReadMore description={testimonialsData[2].quote} limit={250}/> 
           </blockquote> 
               <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="text-xl font-medium tracking-widest py-6">YOLINE BANERJEE</p>
@@ -132,7 +132,7 @@ export default function Testimonials() {
                 /> 
             </div>
             <blockquote>
-                <ReadMore description={testimonialsData[0].quote} limit={250}/> 
+                <ReadMore description={testimonialsData[3].quote} limit={250}/> 
             </blockquote> 
             
               <div className="flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine"></div>
