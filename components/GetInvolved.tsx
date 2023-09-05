@@ -128,7 +128,7 @@ export default function GetInvolved() {
 							</p>
 							<div
 								id="container-for-anchor-button"
-								className="mt-5 flex max-w-[15rem] items-center justify-between">
+								className="mt-5 flex max-w-fit items-center justify-between">
 								<p>
 									<a
 										id="learn-more-hyperlink"
@@ -144,7 +144,7 @@ export default function GetInvolved() {
 								<button
 									id="donate-button"
 									type="button"
-									className="font-montserrat w-40 h-12 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center text-xs font-semibold tracking-wider text-white"
+									className="font-montserrat w-28 h-12 rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center text-xs font-semibold tracking-wider text-white"
 									onClick={() => {
 										const url = "https://opencollective.com/spec";
     								window.open(url, '_blank');
