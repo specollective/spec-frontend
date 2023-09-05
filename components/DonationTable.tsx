@@ -10,7 +10,7 @@ function DonationTable() {
 					<thead>
 						<tr className="">
 							<th
-								className="h-[2.5rem] rounded-tr-3xl rounded-tl-3xl bg-spec-banana font-normal py-4 text-sm"
+								className="h-[2.5rem] bg-spec-banana border-4 border-spec-white rounded-tr-3xl rounded-tl-3xl font-normal py-4 text-sm"
 								colSpan={2}>
 								The <strong>impact</strong> of your donation makes
 							</th>
