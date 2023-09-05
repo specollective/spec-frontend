@@ -53,7 +53,7 @@ export default function Navbar() {
                             width={60}
                             height={80}
                         />
-                        <p className='md:hidden lg:block text-xs lg:text-2xl leading-9 font-medium pt-2 tracking-wider'>Sustainable Progress & Equality Collective</p>
+                        <p className='md:hidden lg:block font-poppins text-xs lg:text-2xl leading-9 font-medium pt-2 tracking-wider'>Sustainable Progress & Equality Collective</p>
                        
                     </div>
          
