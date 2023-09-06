@@ -18,7 +18,7 @@ export default function Hero() {
 					</h1>
 					<p
 						id="browser-text"
-						className="hidden mt-10 md:w-10/12 font-montserrat text-2xl font-medium text-spec-turquiose lg:block  lg:text-2xl xl:text-3xl 2xl:text-4xl 2xl:leading-normal">
+						className="hidden mt-10 w-10/12 font-montserrat text-2xl font-medium text-spec-turquiose lg:block  lg:text-2xl xl:text-3xl 2xl:text-4xl 2xl:leading-normal">
 						Through partnerships with clients, SPEC offers paid learning
 						opportunities in website development, hardware creation, art, and
 						writing.
