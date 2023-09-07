@@ -29,7 +29,26 @@ export default function Testimonials() {
   w-full 
   md:w-1/2
   `
-
+  const buttonClassStyle = `
+  mx-[3px] 
+  box-content
+  h-[10px] 
+  w-[10px] 
+  md:h-[10px] 
+  md:w-[10px] 
+  flex-initial 
+  cursor-pointer 
+  border-2  
+  border-solid 
+  border-black 
+  rounded-full 
+  bg-white p-0 
+  -indent-[999px] 
+  transition-opacity 
+  duration-[600ms] 
+  ease-[cubic-bezier(0.25,0.1,0.25,1.0)] 
+  motion-reduce:transition-none
+  `
   return (
     
     <div className="w-full m-auto p-10">
@@ -149,27 +168,28 @@ export default function Testimonials() {
       data-te-target="#carouselTestimonialsIndicators"
       data-te-slide-to="0"
       data-te-carousel-active
-      className="mx-[3px] box-content h-[10px] w-[10px] md:h-[10px] md:w-[10px] flex-initial cursor-pointer border-2  border-solid border-black rounded-full bg-white p-0 -indent-[999px]  transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      className={buttonClassStyle}
       aria-current="true"
       aria-label="Slide 1"></button>
     <button
       type="button"
       data-te-target="#carouselTestimonialsIndicators"
       data-te-slide-to="1"
-      className="mx-[3px] box-content h-[10px] w-[10px] md:h-[10px] md:w-[10px] flex-initial cursor-pointer border-2  border-solid border-black rounded-full bg-white p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      className={buttonClassStyle}
       aria-label="Slide 2"></button>
     <button
       type="button"
       data-te-target="#carouselTestimonialsIndicators"
       data-te-slide-to="2"
-      className="mx-[3px] box-content h-[10px] w-[10px] md:h-[10px] md:w-[10px] flex-initial cursor-pointer border-2  border-solid border-black rounded-full bg-white p-0 -indent-[999px] transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-            aria-label="Slide 3"></button>
+      className={buttonClassStyle}
+      aria-label="Slide 3"></button>
       <button
       type="button"
       data-te-target="#carouselTestimonialsIndicators"
       data-te-slide-to="3"
-      className="mx-[3px] box-content h-[10px] w-[10px] md:h-[10px] md:w-[10px] flex-initial cursor-pointer border-2  border-solid border-black rounded-full bg-white p-0 -indent-[999px]  transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-      aria-label="Slide 4"></button>
+      className={buttonClassStyle}
+      aria-label="Slide 4">
+      </button>
   </div>
     </div>
       </div>
