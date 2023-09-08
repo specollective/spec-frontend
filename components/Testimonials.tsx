@@ -42,10 +42,10 @@ export default function Testimonials() {
   border-solid 
   border-black
   rounded-full 
-  bg-white 
+  bg-green-600
   p-0 
   -indent-[999px] 
-  opacity-50
+  opacity-20
   transition-opacity 
   duration-[600ms] 
   ease-[cubic-bezier(0.25,0.1,0.25,1.0)] 
