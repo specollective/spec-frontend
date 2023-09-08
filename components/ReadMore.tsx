@@ -34,14 +34,16 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
         {showAll ? (
             <div>
               <div className='flex flex-col mb-4'>
-              <DownQuotation />
-              <p className={quoteStyle}>
-                 {description}
+                <DownQuotation />
+              </div>
+              <div>
+                <p className={quoteStyle}>
+                  {description}
                 </p>
-                <div className='flex mr-4 justify-end'>
-                  <UpQuotation />
-                  </div>
-                </div>
+              </div>
+              <div className='flex mr-4 justify-end'>
+                <UpQuotation />
+              </div>
             <button
               onClick={() => setShowAll(false)}
               className="text-dmserif mb-4"
