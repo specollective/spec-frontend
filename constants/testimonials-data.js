@@ -9,7 +9,7 @@ export const testimonialsData = [
       url: "../public/testimonials/Victoria.svg",
     },
     quote:
-      "During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for it's mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning",
+      "During my time at SPEC, I learned so much about the foundations of software engineering, agile, and open source development. I joined SPEC for its mission to empower individuals to learn as you go and contribute to world-changing initiatives through the open sharing economy. With a small but mighty team, the genuine care that everyone has to do good by people is what keeps me motivated to continue contributing, growing, and learning",
   },
   {
     name: "ILIA DE LEON",
