@@ -65,7 +65,7 @@ export default function Testimonials() {
         >
         {/* <!--Carousel items--> */}
         <div 
-        className="flex justify-around ml-20 md:h-104 p-1.5 w-full overflow-hidden after:clear-both after:block after:content-['']"
+        className="flex justify-evenly md:h-104 p-1.5 w-full overflow-hidden after:clear-both after:block after:content-['']"
         >
           {/* <!--First item--> */}
           <div
