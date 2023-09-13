@@ -36,7 +36,7 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
                 ))}
               </ul>
             ): null}
-            
+
           </div>
           <div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
             <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href={project.link}>
@@ -68,7 +68,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
   };
 
   return (
-    <section className="py-14 md:py-30">
+    <section className="py-4 md:py-30">
        <BreakLine lineWidth="full" />
       {projectsData?.map((project: ProjectProps, index: null) => (
         <div key={`${project.name}-${index}`}>
@@ -90,7 +90,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
             </div>
             {
               <section className={isClicked === index ? "block" : "hidden"}>
-               
+
                 <ProjectsDisplay project={project} />
               </section>
             }
@@ -105,11 +105,11 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
                   aria-expanded={isClicked === index ? "true" : "false"}
                 >
                   {toggleBtn(index)}
-                  </button> 
+                  </button>
               </div>
               </div>
             </div>
-              
+
              {
               <section className={isClicked === index ? "block" : "hidden"}>
                  <div className="font-medium font-montserrat mt-8">{project.tag}</div>
@@ -118,7 +118,7 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
             }
               <BreakLine lineWidth="full" />
           </section>
-           
+
         </div>
       ))}
     </section>
