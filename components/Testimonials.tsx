@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, initTE } from "tw-elements";
 import Image from "next/image";
-import DownQuotation from './DownQuotation'
-import UpQuotation from "./UpQuotation";
 import ReadMore from "./ReadMore";
 import { testimonialsData } from "../constants/testimonials-data";
 
@@ -52,6 +50,17 @@ export default function Testimonials() {
   motion-reduce:transition-none
   `
 
+  const carouselElementStyle = `
+  flex 
+  justify-center 
+  md:-mr-[100%]
+  w-full 
+  hidden 
+  transition-transform 
+  duration-[600ms] 
+  ease-in-out 
+  motion-reduce:transition-none
+  `
   return (
     <div 
     className="w-full m-auto p-10"
@@ -69,7 +78,8 @@ export default function Testimonials() {
         >
           {/* <!--First item--> */}
           <div
-            className="flex justify-center md:-mr-[80%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            // className="flex justify-center md:-mr-[80%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className="flex justify-center md:-mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
             data-te-carousel-active
           >
@@ -93,7 +103,7 @@ export default function Testimonials() {
           </div>
           {/* <!--Second item--> */}
           <div
-            className="flex justify-center md:-mr-[80%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className={carouselElementStyle}
             data-te-carousel-item
           >
             <div className={testimonialCardStyle}>
@@ -110,14 +120,14 @@ export default function Testimonials() {
             <blockquote>
                    <ReadMore description={testimonialsData[1].quote} limit={250}/> 
             </blockquote> 
-              <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
+              <div className="flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="text-xl font-medium tracking-widest py-6">ILIA DE LEON</p>
                {/* <p id="title" className="content-center text-lg font-normal py-6">Research Associate</p> */}
             </div>
           </div>
           {/* <!--Third item--> */}
           <div
-            className="flex justify-center md:-mr-[80%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            className={carouselElementStyle}
             data-te-carousel-item
           >
             <div className={testimonialCardStyle}>
@@ -134,13 +144,13 @@ export default function Testimonials() {
             <blockquote>
                 <ReadMore description={testimonialsData[2].quote} limit={250}/> 
             </blockquote> 
-              <div className=" flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
+              <div className="flex-shrink border-t-2 ml-20 mr-20 w-30 border-spec-sunshine "></div>
               <p id="name" className="text-xl font-medium tracking-widest py-6">YOLINE BANERJEE</p>
             </div>
           </div>
              {/* <!--Fourth item--> */}
           <div
-            className="flex justify-center md:-mr-[80%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none float-left "
+            className={carouselElementStyle}
             data-te-carousel-item
           >
             <div className={testimonialCardStyle}>
