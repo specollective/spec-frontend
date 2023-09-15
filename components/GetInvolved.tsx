@@ -75,7 +75,8 @@ export default function GetInvolved() {
 							className="rounded-tl-3xl bg-spec-lightTurquiose py-8 text-center font-dmserif text-2xl font-bold md:text-3xl">
 							{slideData.title}
 						</h1>
-						<div className="md:py-4 bg-spec-white rounded-br-3xl ">
+						<div className="md:py-4 bg-spec-white rounded-br-3xl "
+						style={{"height": "258px"}}>
 							<p className="md:text-2xl text-lg px-12 mt-8 font-montserrat md:px-40 mb-10">
 								{slideData.body}
 							</p>
@@ -236,8 +237,8 @@ export default function GetInvolved() {
 												id="s1-container1"
 												className="flex justify-evenly md:pb-8 md:justify-center"
 												// className="pl-20 mt-8 md:mt-2 w-10/12 md:w-7/12 md:pl-12"
-												> 
-												<h2 className="font-dmserif text-3xl pl-6">
+												>
+												<h2 className="hidden font-dmserif text-3xl pl-6 lg:block">
 													Join us in making a difference!
 												</h2>
 												<Image
