@@ -43,18 +43,17 @@ export default function GetInvolved() {
 					<h1 className="bg-spec-lightTurquiose py-2 text-center font-dmserif text-lg font-bold">
 						{cardData.title}
 					</h1>
-					<div className="font-montserrat flex h-48 w-64 flex-col bg-spec-white px-6 py-4 xl:w-72">
-						<div>
-							<p className="font-montserrat">{cardData.body}</p>
-						</div>
-						<div className=" flex justify-end m-auto">
-							<a
-								href={cardData.contactUs}
-								className="bottom-0 text-xs font-semibold underline">
-								CONTACT US
-							</a>
-						</div>
-					</div>
+					<div className="font-montserrat flex flex-col h-48 w-64 bg-spec-white px-6 pb-6 pt-4 xl:w-72 relative justify-between">
+    <p className="font-montserrat">{cardData.body}</p>
+    <div className="flex justify-end mt-4 mx-auto">
+        <a
+            href={cardData.contactUs}
+            className="text-xs font-semibold underline">
+            CONTACT US
+        </a>
+    </div>
+</div>
+
 				</div>
 			</div>
 		);
@@ -75,19 +74,16 @@ export default function GetInvolved() {
 							className="rounded-tl-3xl bg-spec-lightTurquiose py-8 text-center font-dmserif text-2xl font-bold md:text-3xl">
 							{slideData.title}
 						</h1>
-						<div className="md:py-4 bg-spec-white rounded-br-3xl "
-						style={{"height": "258px"}}>
-							<p className="md:text-2xl text-lg px-12 mt-8 font-montserrat md:px-40 mb-10">
-								{slideData.body}
-							</p>
-							<div className="flex justify-center mb-4 md:mb-4">
-								<a
-									href={slideData.contactUs}
-									className="underline font-montserrat">
-									CONTACT US
-								</a>
-							</div>
-						</div>
+						<div className="flex flex-col md:py-4 bg-spec-white rounded-br-3xl justify-between" style={{"height": "258px"}}>
+    <p className="md:text-2xl text-lg px-12 mt-8 font-montserrat md:px-40">
+        {slideData.body}
+    </p>
+    <div className="flex justify-center mt-2 mb-2">
+        <a href={slideData.contactUs} className="underline font-montserrat">
+            CONTACT US
+        </a>
+    </div>
+</div>
 					</div>
 				</div>
 			</div>
@@ -238,7 +234,7 @@ export default function GetInvolved() {
 												className="flex justify-evenly md:pb-8 md:justify-center"
 												// className="pl-20 mt-8 md:mt-2 w-10/12 md:w-7/12 md:pl-12"
 												>
-												<h2 className="hidden font-dmserif text-3xl pl-6 lg:block">
+												<h2 className="font-dmserif text-3xl pl-6">
 													Join us in making a difference!
 												</h2>
 												<Image
