@@ -12,6 +12,8 @@ interface ContactInfo {
   message: string;
 }
 
+
+
 interface SendContactEmailResponse {
   successful: boolean;
   json: any;
@@ -75,8 +77,8 @@ export default function ContactForm() {
         <Form role="form" id="contact-form" className="flex flex-col font-semibold font-montserrat gap-y-2 text-base md:text-lg">
           <label htmlFor="fullName">Full Name:</label>
           <Field
-            className={`border ${errors.fullName && touched.fullName ? 'border-black shadow-xl' : 'border-black'} 
-              rounded-lg p-2 
+            className={`border ${errors.fullName && touched.fullName ? 'border-black shadow-xl' : 'border-black'}
+              rounded-lg p-2
               focus:outline-none
               focus:border-spec-turquoise
               focus:ring-spec-turquoise
@@ -89,7 +91,7 @@ export default function ContactForm() {
 
           <label htmlFor="email">Email Address:*</label>
           <Field
-            className={`border ${errors.email && touched.email ? 'border-pink-500 bg-red-200' : 'border-black'} 
+            className={`border ${errors.email && touched.email ? 'border-pink-500 bg-red-200' : 'border-black'}
               rounded-lg p-2
               focus:outline-none
               focus:border-spec-turquoise
@@ -106,17 +108,20 @@ export default function ContactForm() {
           <label htmlFor="reason">Reason for message:</label>
           <Field
             as="select"
-            className={`border ${errors.reason && touched.reason ? 'border-black shadow-xl' : 'border-black'} 
+            className={`border ${errors.reason && touched.reason ? 'border-black shadow-xl' : 'border-black'}
               rounded-lg p-2
               focus:outline-none
               focus:border-spec-turquoise
               focus:ring-spec-turquoise
               focus:border-2
               focus:bg-white
-              font-normal`}
+              bg-white
+              font-normal
+              `}
             name="reason"
             placeholder="Select Reason"
             rows="8"
+            style={{"-webkit-appearance": "none"}}
           >
             <option value="">Select Reason</option>
             <option value="general" className="hover:bg-pink-500 hover:text-white">
@@ -133,7 +138,7 @@ export default function ContactForm() {
           <Field
             as="textarea"
             name="message"
-            className={`border ${errors.message && touched.message ? 'border-black' : 'border-black'} 
+            className={`border ${errors.message && touched.message ? 'border-black' : 'border-black'}
               rounded-lg
               focus:outline-none
               focus:border-spec-turquoise
