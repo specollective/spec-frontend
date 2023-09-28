@@ -1,12 +1,13 @@
-import ProjectsAccordion from './ProjectsAccordian';
+import ServicesAccordion from './ServicesAccordian';
 import whatWeDoData from '../constants/what-we-do-data';
+import HomeSection from './HomeSection';
 
-function ProjectsSection() {
+function OurServicesSection() {
   return (
-    <div className="md:block bg-spec-black-600 font-Poppins md:m-auto px-20 md:px-40">
-      <ProjectsAccordion projectsData={whatWeDoData} />
-    </div>
+    <HomeSection>
+      <ServicesAccordion projectsData={whatWeDoData} />
+    </HomeSection>
   );
 }
 
-export default ProjectsSection;
+export default OurServicesSection;
