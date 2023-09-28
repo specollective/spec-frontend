@@ -29,9 +29,9 @@ export default function Home() {
       <Background />
       <HowWeWork />
       <WhatWeDo />
-			<OurServices />
+      <OurServices />
       <ByTheNumbers />
-			<Testimonials />
+      <Testimonials />
       <FormDiv />
       <Footer />
 		</>

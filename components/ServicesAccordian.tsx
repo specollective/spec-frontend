@@ -20,13 +20,12 @@ interface ProjectProps  {
   name: string;
 }
 
-// TODO: Use interfaces for prop definitions
 function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   return (
-    <div className=" mb-2">
+    <div className="mb-2 mt-4">
       <div className="flex justify-between max-h-[600px]">
         <div className="flex flex-col justify-between">
-          <div className=" text-sm lg:text-lg font-montserrat font-normal mt-4">
+          <div className="text-sm lg:text-lg font-montserrat font-normal">
           {project.info.summary}
             {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
@@ -49,7 +48,7 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   );
 }
 
-function ProjectsAccordion({ projectsData } : { projectsData: any }) {
+function ServicesAccordion({ projectsData } : { projectsData: any }) {
   const [isClicked, setIsClicked] = useState(null);
 
   const showProject = (index: any) => {
@@ -68,61 +67,40 @@ function ProjectsAccordion({ projectsData } : { projectsData: any }) {
   };
 
   return (
-    <section className="py-4 md:py-30">
-       <BreakLine lineWidth="full" />
+    <section className="w-full">
+      <BreakLine lineWidth="full" />
       {projectsData?.map((project: ProjectProps, index: null) => (
-        <div key={`${project.name}-${index}`}>
-          <section className="hidden lg:block">
-            <div className="cursor-pointer" onClick={() => showProject(index)}>
-              <div className="grid grid-rows-3 grid-flow-col place-content-between items-end">
-                <h3 className="row-span-1 col-span-1 font-dmserif text-4xl">
+        <div className="w-full" key={`${project.name}-${index}`}>
+          <div className="cursor-pointer" onClick={() => showProject(index)}>
+            <div className="grid grid-cols-5">
+              <div className="col-span-4">
+                <h3 className="font-dmserif text-2xl md:text-4xl">
                   {project.name}
                 </h3>
-                <p className="col-span-2 font-semibold text-lg font-montserrat">{project.tag}</p>
+                <p className="font-semibold text-lg font-montserrat hidden md:block md:pt-2 md:pb-6">
+                  { project.tag }
+                </p>
+              </div>
+              <div className="col-span-1">
                 <button
-                  className="col-span-1 row-span-2"
+                  className="float-right"
                   aria-expanded={isClicked === index ? "true" : "false"}
                 >
                   {toggleBtn(index)}
                 </button>
               </div>
-              {/* <BreakLine lineWidth="full" /> */}
             </div>
-            {
-              <section className={isClicked === index ? "block" : "hidden"}>
-
-                <ProjectsDisplay project={project} />
-              </section>
-            }
-             <BreakLine lineWidth="full" />
-          </section>
-          <section className="visible lg:hidden">
-            <div className="flex flex-col">
-              <div className="text-xl font-dmserif tracking-wider">{project.name}
-              <div className="cursor-pointer float-right" onClick={() => showProject(index)}>
-                 <button
-                  className="w-8 h-8"
-                  aria-expanded={isClicked === index ? "true" : "false"}
-                >
-                  {toggleBtn(index)}
-                  </button>
-              </div>
-              </div>
-            </div>
-
-             {
-              <section className={isClicked === index ? "block" : "hidden"}>
-                 <div className="font-medium font-montserrat mt-8">{project.tag}</div>
-                <ProjectsDisplay project={project} />
-              </section>
-            }
-              <BreakLine lineWidth="full" />
-          </section>
-
+          </div>
+          {
+            <section className={isClicked === index ? "block" : "hidden"}>
+              <ProjectsDisplay project={project} />
+            </section>
+          }
+          <BreakLine lineWidth="full" />
         </div>
       ))}
     </section>
   );
 }
 
-export default ProjectsAccordion;
+export default ServicesAccordion;
