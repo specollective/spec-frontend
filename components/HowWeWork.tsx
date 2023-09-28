@@ -7,7 +7,7 @@ import SectionColumn from './SectionColumn';
 export default function HowWeWork() {
   return (
     <HomeSection>
-      <SectionColumn orderClasses="order-last lg:order-first">
+      <SectionColumn orderClasses="order-last md:order-first">
         <h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
           HOW WE WORK
         </h1>

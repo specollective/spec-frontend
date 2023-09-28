@@ -5,9 +5,10 @@ import React from 'react'
 
 
 export const tableContents = [
-    ["$20", "Funds an hour of RA learning"],
-		["$50", "Introduces a RA to a new skill"],
-		["$100", "-"],
-		["$1000", "Publishes an issue of JoER"],
-		["$3000", "Funds a RA development project"],
+    ['$20', 'An hour of paid work experience'],
+		['$200', 'A week long project'],
+		['$500', 'A three month project'],
+		['$1500', 'Fully fund a issue of JoER'],
+		['$5000', 'Funds a small development project'],
+		['$15000', 'Funds a larger development project'],
 ]
