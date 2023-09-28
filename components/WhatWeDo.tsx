@@ -7,7 +7,7 @@ import SectionColumn from './SectionColumn';
 export default function WhatWeDo() {
   return (
     <HomeSection>
-      <SectionColumn className="order-first md:order-last">
+      <SectionColumn orderClasses="order-first md:order-last">
         <Image
           className="m-auto text-left mb-6 hidden lg:block"
           src={TeamImg}
