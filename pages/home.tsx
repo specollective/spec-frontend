@@ -4,14 +4,14 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import ByTheNumbers from "../components/byTheNumbers";
 import React from "react";
-import FormDiv from "../components/FormDiv";
+import ContactSection from "../components/Contact/ContactSection";
 import Mission from "../components/Mission";
 import Background from "../components/Background";
 import HowWeWork from "../components/HowWeWork";
 import WhatWeDo from "../components/WhatWeDo";
 import OurServices from "../components/OurServices";
 
-const GetInvolved = dynamic(() => import("../components/GetInvolved"), {
+const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"), {
 	ssr: false,
 });
 
@@ -32,7 +32,7 @@ export default function Home() {
       <OurServices />
       <ByTheNumbers />
       <Testimonials />
-      <FormDiv />
+      <ContactSection />
       <Footer />
 		</>
 	);

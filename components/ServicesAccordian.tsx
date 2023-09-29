@@ -20,13 +20,16 @@ interface ProjectProps  {
   name: string;
 }
 
-function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
+function ServiceRow({ project } : ({ project: ProjectProps })) {
   return (
     <div className="mb-2 mt-4">
       <div className="flex justify-between max-h-[600px]">
         <div className="flex flex-col justify-between">
+          <p className="font-semibold text-lg font-montserrat mb-2 block md:hidden md:pt-2 md:pb-6">
+            { project.tag }
+          </p>
           <div className="text-sm lg:text-lg font-montserrat font-normal">
-          {project.info.summary}
+            {project.info.summary}
             {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
               <ul className="list-disc mt-4 p-4 font-montserrat">
@@ -48,7 +51,7 @@ function ProjectsDisplay({ project } : ({ project: ProjectProps })) {
   );
 }
 
-function ServicesAccordion({ projectsData } : { projectsData: any }) {
+function ServicesAccordion({ services } : { services: any }) {
   const [isClicked, setIsClicked] = useState(null);
 
   const showProject = (index: any) => {
@@ -69,7 +72,7 @@ function ServicesAccordion({ projectsData } : { projectsData: any }) {
   return (
     <section className="w-full">
       <BreakLine lineWidth="full" />
-      {projectsData?.map((project: ProjectProps, index: null) => (
+      {services?.map((project: ProjectProps, index: null) => (
         <div className="w-full" key={`${project.name}-${index}`}>
           <div className="cursor-pointer" onClick={() => showProject(index)}>
             <div className="grid grid-cols-5">
@@ -93,7 +96,7 @@ function ServicesAccordion({ projectsData } : { projectsData: any }) {
           </div>
           {
             <section className={isClicked === index ? "block" : "hidden"}>
-              <ProjectsDisplay project={project} />
+              <ServiceRow project={project} />
             </section>
           }
           <BreakLine lineWidth="full" />

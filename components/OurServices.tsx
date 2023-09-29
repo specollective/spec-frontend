@@ -5,7 +5,7 @@ import HomeSection from './HomeSection';
 function OurServicesSection() {
   return (
     <HomeSection>
-      <ServicesAccordion projectsData={whatWeDoData} />
+      <ServicesAccordion services={whatWeDoData} />
     </HomeSection>
   );
 }
