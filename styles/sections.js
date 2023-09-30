@@ -6,7 +6,7 @@
 // 2xl	1536px	@media (min-width: 1536px) { ... }
 
 const sectionClasses = {
-  container: `flex flex-col lg:flex lg:flex-row mx-12 my-16 md:mx-12 lg:mx-44 lg:px-12 items-center justify-center`,
+  container: 'flex flex-col lg:flex lg:flex-row mx-12 my-16 md:mx-12 lg:mx-44 lg:px-12 items-center justify-center',
   column: 'md:w-1/2 md:max-w-lg md:pl-10',
 }
 
