@@ -12,16 +12,20 @@ import WhatWeDo from "../components/WhatWeDo";
 import OurServices from "../components/OurServices";
 
 const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"), {
-	ssr: false,
+   ssr: false,
+});
+
+const Carousel = dynamic(() => import("../components/Carousel/Carousel"), {
+  ssr: false,
 });
 
 const Testimonials = dynamic(() => import("../components/Testimonials"), {
-	ssr: false,
+   ssr: false,
 });
 
 export default function Home() {
-	return (
-		<>
+  return (
+    <>
       <Navbar />
       <Hero />
       <GetInvolved />
@@ -34,6 +38,6 @@ export default function Home() {
       <Testimonials />
       <ContactSection />
       <Footer />
-		</>
-	);
+    </>
+  );
 }

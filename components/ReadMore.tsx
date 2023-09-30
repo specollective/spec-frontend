@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import DownQuotation from './DownQuotation'
+import DownQuotation from './DownQuotation';
 import UpQuotation from "./UpQuotation";
 
-//declare type for description and limit
+// Declare type for description and limit
 interface ReadMoreProps {
-    description: string;
+  description: string;
   limit: number;
   className?: string;
 }
@@ -21,68 +21,53 @@ const quoteStyle = `
   dark:text-black 
   sm:text-ellipsis 
   sm:overflow-hidden 
-  `
-
-// const ReadMore: ({ description, limit }: ReadMoreProps) => string | JSX.Element
+`
 const ReadMore = ({ description, limit }: ReadMoreProps) => {
-  
-    const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   return (
     description.length > limit ? (
       <div>
         <>
-        {showAll ? (
+          {showAll ? (
+              <div>
+                <div className='flex flex-col mb-4'>
+                  <DownQuotation />
+                </div>
+                <div>
+                  <p className={quoteStyle}>
+                    {description}
+                  </p>
+                </div>
+                <div className='flex mr-4 justify-end'>
+                  <UpQuotation />
+                </div>
+              <button
+                onClick={() => setShowAll(false)}
+                className="text-dmserif mb-4"
+              >
+                Read Less
+              </button>
+            </div>
+          ) : (
             <div>
               <div className='flex flex-col mb-4'>
                 <DownQuotation />
-              </div>
-              <div>
                 <p className={quoteStyle}>
-                  {description}
+                  {description.substring(0, limit).concat("...")}
                 </p>
-              </div>
-              <div className='flex mr-4 justify-end'>
-                <UpQuotation />
-              </div>
-            <button
-              onClick={() => setShowAll(false)}
-              className="text-dmserif mb-4"
-            >
-              Read Less
-            </button>
-          </div>
-        ) : (
-              <div>
-                <div className='flex flex-col mb-4'>
-                <DownQuotation />
-                <p className={quoteStyle}>
-                       {description.substring(0, limit).concat("...")}
-                </p>
-                  <div className='flex mr-4 justify-end'>
-                        <UpQuotation />
+                <div className='flex mr-4 justify-end'>
+                  <UpQuotation />
                 </div>
-
-                </div>
-             
-            <button onClick={() => setShowAll(true)} className="text-dmserif mb-4">
-              Read More
-            </button>
-          </div>
+              </div>
+              <button onClick={() => setShowAll(true)} className="text-dmserif mb-4">
+                Read More
+              </button>
+            </div>
           )}
-          </>
+        </>
       </div>
-    
-    ) : (
-        <>
-          
-            description
-            
-       
-          </>
-    )
-        
+    ) : (<>description</>)
   );
-       
-       
-  };
-  export default ReadMore;
+};
+
+export default ReadMore;

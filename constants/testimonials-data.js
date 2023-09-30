@@ -4,6 +4,7 @@ export const testimonialsData = [
   {
     name: "VICTORIA LO",
     title: "Software Engineer",
+    src: "/Victoria.svg",
     image: {
       alt: "Victoria Headshot",
       url: "../public/testimonials/Victoria.svg",
@@ -14,6 +15,7 @@ export const testimonialsData = [
   {
     name: "ILIA DE LEON",
     title: "Software Engineer",
+    src: "/Ilia.svg",
     image: {
       alt: "Ilia Headshot",
       url: "/public/testimonials/Ilia.svg",
@@ -24,6 +26,7 @@ export const testimonialsData = [
   {
     name: "YOLINE BANERJEE",
     title: "Software Engineer",
+    src: "/Yoline.svg",
     image: {
       alt: "Yoline Headshot",
       url: "/public/testimonials/Yoline.jpg",
@@ -33,7 +36,8 @@ export const testimonialsData = [
   },
   {
     name: "ALICIA BONG",
-    title: "Software Engineer",
+    title: "Project manager",
+    src: "/Alicia.svg",
     image: {
       alt: "Alicia Headshot",
       url: "../public/testimonials/Alicia.jpg",
