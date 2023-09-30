@@ -15,10 +15,6 @@ const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"
    ssr: false,
 });
 
-const Carousel = dynamic(() => import("../components/Carousel/Carousel"), {
-  ssr: false,
-});
-
 const Testimonials = dynamic(() => import("../components/Testimonials"), {
    ssr: false,
 });
