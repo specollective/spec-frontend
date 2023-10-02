@@ -18,8 +18,8 @@ export default function DesktopGetInvolved() {
           </Heading2>
       
           <div className="bg-spec-white mx-auto rounded-tl-3xl rounded-br-3xl px-24 shadow-xl">
-            <div className="flex justify-around py-14">
-              <div className="col-span-1 flex flex-col justify-between">
+            <div className="grid grid-cols-5 py-14">
+              <div className="col-span-2 flex flex-col justify-between">
                 <Heading2 className="pb-2">
                   Join us in making a difference!
                 </Heading2>
@@ -46,13 +46,13 @@ export default function DesktopGetInvolved() {
                 </div>
               </div>
 
-              <div className="col-span-1">
+              <div className="col-span-3">
                 <DonationTable />
               </div>
             </div>
           </div>
 
-          <div className="flex justify-between mt-6">
+          <div className="flex justify-evenly mt-6">
             {getInvolvedData.map((cardData, index) => {
               return <GetInvolvedCard cardData={cardData} index={index} />
             })}

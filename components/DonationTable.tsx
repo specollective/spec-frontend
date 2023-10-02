@@ -3,7 +3,7 @@ import { tableContents } from '../constants/table-of-contents'
 
 function DonationTable() {
   return (
-    <table className="hidden md:block font-montserrat w-full table-auto border-collapse border-spacing-y-6 text-lg">
+    <table className="block col-span-2 hidden md:block font-montserrat w-full table-auto border-collapse border-spacing-y-6 text-lg">
       <thead>
         <tr className="">
           <th
