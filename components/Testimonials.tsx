@@ -3,11 +3,15 @@ import Image from "next/image";
 import ReadMore from "./ReadMore";
 import { testimonialsData } from "../constants/testimonials-data";
 import { ItemContainer } from "./Carousel/CarouselItemContainer";
+import { Paragraph2 } from "./Typography/Paragraph";
+import { Heading3 } from "./Typography/Heading";
+
 
 const Carousel = dynamic(() => import("./Carousel/Carousel"), {
   ssr: false,
 });
 
+import { openDonatePage, openDocumentationPage } from '../utils/window';
 
 const testimonialCardStyle = `
   mx-auto
@@ -63,7 +67,9 @@ function TestimonialItem({ title, body, alt, src, first }: { title: string, body
         <blockquote className="mb-8">
           <ReadMore description={body} limit={250}/>    
         </blockquote>
-        <p id="name" className="content-center text-xl font-medium tracking-widest font-poppins">{title}</p>
+        <Heading3 className="content-center text-xl font-medium tracking-widest font-poppins">
+          {title}
+        </Heading3>
       </div>
     </ItemContainer>
   )

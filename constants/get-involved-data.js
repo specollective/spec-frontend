@@ -6,7 +6,7 @@ export const getInvolvedData = [
   },
   {
     title: "Mentor",
-    body: "Become a SPEC mentor to share your expertise and guide aspiring professionals on their jounrey.",
+    body: "Become a SPEC mentor to share your expertise and guide aspiring professionals on their journey.",
     contactUs: "#",
   },
   {

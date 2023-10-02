@@ -1,40 +1,37 @@
-import React from 'react';
-import Image from 'next/image';
-import ProjectsImg from '../public/ProjectsImage.svg';
-import HomeSection from './HomeSection';
-import SectionColumn from './SectionColumn';
+import React from 'react'
+import HomeSection from './HomeSection'
+import Image from 'next/image'
+import ProjectsImg from '../public/ProjectsImage.svg'
+import SectionColumn from './SectionColumn'
+import { Heading4, Heading2 } from './Typography/Heading'
+import { Paragraph1 } from './Typography/Paragraph'
+
 
 export default function HowWeWork() {
   return (
     <HomeSection>
       <SectionColumn orderClasses="order-last md:order-first">
-        <h1 className="font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4 md:text-lg md:leading-7">
+        <Heading4>
           HOW WE WORK
-        </h1>
-        <p className="font-dmserif text-2xl font-normal leading-8 mb-6 md:text-4xl md:leading-10">
+        </Heading4>
+        <Heading2>
           SPEC is organized as an open collective, which
           <span className="text-spec-turquiose">
             &nbsp;raises and spends funds transparently&nbsp;
           </span>
           to achieve its goals.
-        </p>
-        <p className="font-montserrat opacity-70 font-medium text-base leading-normal md:text-lg md:leading-7">
-          Your donations help Research Associates &#40;RAs&#41; receive
-          mentoring, career training, and professional development as they
-          work on these current projects.
-
-          Your donations help Research Associates &#40;RAs&#41; receive
-          mentoring, career training, and professional development as they
-          work on these current projects.
-        </p>
+        </Heading2>
+        <Paragraph1>
+          Donations to SPEC directly contribute to supporting career development and learning opportunities for our members. We are a 501(c)(3) nonprofit organization, so your donations are tax-deductible.
+        </Paragraph1>
       </SectionColumn>
       <SectionColumn>
         <Image
           className="m-auto text-left mb-6 hidden lg:block lg:order-last"
           src={ProjectsImg}
           alt="two person talking"
-          width={300}
-          height={200}
+          width={250}
+          height={150}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"

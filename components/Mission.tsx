@@ -1,30 +1,33 @@
-import React from 'react';
+import React from 'react'
 import Image from 'next/image'
 import missionImg from '../public/MissionImg.svg'
-import HomeSection from './HomeSection';
-import SectionColumn from './SectionColumn';
+import HomeSection from './HomeSection'
+import SectionColumn from './SectionColumn'
+import { Paragraph1 } from './Typography/Paragraph'
+import { Heading2, Heading3, Heading4 } from './Typography/Heading'
 
 export default function Mission() {
   return (
     <HomeSection>
+      <div id="mission-section" className="relative -top-96"></div>
       <SectionColumn orderClasses="order-last md:order-first">
-        <p className='font-montserrat font-medium text-sm leading-5 opacity-40 tracking-wider mb-4
-    md:text-lg md:leading-7'>
+        <Heading4>
           OUR MISSION
-        </p>
-        <h1 className='font-dmserif text-2xl font-normal leading-8 mb-6 md:text-4xl md:leading-10'> We are on a mission to <span className='text-spec-turquiose'>provide diverse peoples the resources and opportunities </span> essential to learn skills, build careers, and become leaders of sustainable social impact.
-        </h1>
-        <p className='font-montserrat opacity-70 font-medium text-base leading-normal md:text-lg md:leading-7'>
+        </Heading4>
+        <Heading2>
+          We are on a mission to <span className='text-spec-turquiose'>provide diverse peoples the resources and opportunities </span> essential to learn skills, build careers, and become leaders of sustainable social impact.
+        </Heading2>
+        <Paragraph1>
           We  understand that for many people from underserved communities, they can&apos;t give back or help others until they are able to access essential goods and services, learn professional skills, and achieve physical and financial security.
-        </p>
+        </Paragraph1>
       </SectionColumn>
       <SectionColumn>
         <Image
           className="m-auto text-left mb-6 hidden lg:block"
           src={missionImg}
           alt="two people talking"
-          width={300}
-          height={200}
+          width={325}
+          height={225}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"

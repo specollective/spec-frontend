@@ -1,80 +1,83 @@
 import StatBox from '../pages/stat-box';
+import { Heading4, Heading0, Heading2 } from './Typography/Heading';
+import { Paragraph0, Paragraph1, Paragraph2  } from './Typography/Paragraph';
 
 export default function ByTheNumbers() {
-    return (
-        <div className="flex flex-col p-8  justify-center items-center gap-y-3.5 md:w-full md:grid md:grid-cols-3 md:grid-rows-2 md:grid-flow-col md:gap-6 lg:gap-14 md:justify-items-center md:items-center md:p-16  bg-spec-lightTurquiose mt-6
-        ">
-            <div className="block p-2 md:hidden ml-4">
-                <p className='text-base font-medium opacity-40 text-black  font-montserrat text-left mb-4'>BY THE NUMBERS</p>
-
-                <p className='text-left text-black text-2xl font-normal leading-10 mb-8 font-dmserif font-wide antialiased'>
-                    We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
-                </p>
-                <p className='text-left text-black text-base font-montserrat font-medium leading-7 tracking-5 antialiased'>
-                    SPEC was established based on the core values of sustainability, progress and equality, and we believe these combined values are the recipe for building radically sustainable, equitable, and transparent organizations.
-                </p>
-            </div>
-
+  return (
+    <div className="bg-spec-lightTurquiose px-6 md:px-16 py-16">
+      <div className="w-full grid grid-rows-2 gap-6 lg:w-3/4 lg:mx-auto">
+        <div className="grid lg:grid-cols-3 gap-6">
+          <div className="col-span-2 lg:col-span-1 order-last lg:order-first">
             <StatBox
-                className=" border border-spec-turquiose md:text-base md:border-none row-start-1 col-start-1 row-span-2 font-normal rounded-md bg-spec-white font-dmserif text-spec-turquiose "
-
-                height="h-96"
-                width="w-full"
+              className="border border-spec-turquiose md:border-none row-start-3 col-start-1 font-normal rounded-md bg-spec-white"
+              height="h-full"
+              width="w-full"
             >
-                <p className='text-7xl md:text-5xl lg:text-8xl'>$290k</p>
-                <p className='text-base text-black m-6 font-montserrat font-normal leading-7 md:text-sm lg:text-lg'>
-                to date, raised and distributed to Research Associates (RAs) for working on real-world projects,
-                all in full transparency.
-                </p>
+              <Heading0 className="font-dmserif text-spec-turquiose">
+                $290k
+              </Heading0>
+              <Paragraph1 className="text-slate-500">
+                We have distriubted over $290k to our contributors.
+              </Paragraph1>
             </StatBox>
-
-            <div className="hidden md:block row-start-1 col-start-2 row-span-2 col-span-2">
-                <StatBox
-                    className='text-left rounded-md font-dmserif text-spec-turquiose '
-                    height="h-full"
-                    width="w-3/5"
-                >
-                    <h2 className="text-lg font-medium opacity-40 text-black text-left font-montserrat mb-8">
-                        <p>BY THE NUMBERS</p>
-                    </h2>
-                    <p className='text-left text-black text-4xl font-normal leading-10 mb-8 font-dmserif font-wide antialiased'>
-                        We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
-                    </p>
-                    <p className='text-left text-black text-lg font-montserrat font-medium leading-7 tracking-5 antialiased'>
-                        SPEC was established based on the core values of sustainability, progress and equality.
-                        These values combined, provide a recipe for building radically sustainable, equitable, transparent organizations.
-                    </p>
-
-                </StatBox>
-            </div>
-            <StatBox
-                className="border border-spec-turquiose md:border-none row-start-3 col-start-1 font-normal  rounded-md bg-spec-white font-dmserif text-spec-turquiose"
-
-                height="h-full"
-                width="w-full"
-            >
-                <p className='text-7xl md:text-8xl font-normal'>28</p>
-                <p className='text-black m-4 font-montserrat leading-7 text-base md:text-lg'>Research Associates (RAs) were hired by SPEC.</p>
-            </StatBox>
-
-            <StatBox
-                className="border border-spec-turquiose md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-white font-dmserif text-spec-turquiose"
-
-                height="h-full"
-                width="w-full"
-            >
-                <p className='text-7xl font-normal md:text-8xl'>15</p>
-                <p className='text-black m-4 font-montserrat leading-7 text-base md:text-lg'>projects RAs were able to contribute towards.</p>
-            </StatBox>
-
-            <StatBox
-                className="border border-spec-turquiose md:border-none row-start-3 col-start-3 md:my-4 font-normal  rounded-md bg-spec-white font-dmserif text-spec-turquiose "
-                height="h-full"
-                width="w-full"
-            >
-                <p className='text-7xl font-normal md:text-8xl'>7</p>
-                <p className='text-black m-4 font-montserrat leading-7 text-base md:text-lg'>partner organizations, creating opportunities for RAs.</p>
-            </StatBox>
+          </div>
+          <div className="md:col-span-2">
+            <Heading4>
+              BY THE NUMBERS
+            </Heading4>
+            <Heading2>
+              We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
+            </Heading2>
+            <Paragraph1>
+              SPEC was established based on the core values of sustainability, progress and equality, and we believe these combined values are the recipe for building radically sustainable, equitable, and transparent organizations.
+            </Paragraph1>
+          </div>
         </div>
-    );
+        <div className="grid lg:grid-cols-3 gap-6">
+          <div className="col-span-1">
+            <StatBox
+              className="border border-spec-turquiose md:border-none row-start-3 col-start-1 font-normal rounded-md bg-spec-white"
+              height="h-full"
+              width="w-full"
+            >
+              <Heading0 className="font-dmserif text-spec-turquiose">
+                28
+              </Heading0>
+              <Paragraph1 className="text-center">
+                Contributors working...
+              </Paragraph1>
+            </StatBox>
+          </div>
+          <div className="col-span-1">
+            <StatBox
+              className="border border-spec-turquiose md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-white"
+              height="h-full"
+              width="w-full"
+            >
+              <Heading0 className="font-dmserif text-spec-turquiose">
+                15
+              </Heading0>
+              <Paragraph1 className="text-center">
+                projects RAs were able to contribute towards.
+              </Paragraph1>
+            </StatBox>
+          </div>
+          <div className="col-span-1">
+            <StatBox
+              className="border border-spec-turquiose md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-white"
+              height="h-full"
+              width="w-full"
+            >
+              <Heading0 className="font-dmserif text-spec-turquiose">
+                7
+              </Heading0>
+              <Paragraph1 className="text-center">
+                partner projects, that have created opportunities job seekers.
+              </Paragraph1>
+            </StatBox>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -4,9 +4,9 @@ import DesktopGetInvolved from './DesktopGetInvolved';
 
 export default function GetInvolved() {
   return (
-    <div>
+    <>
       <DesktopGetInvolved />
       <MobileGetInvolved />
-    </div>
+    </>
   );
 }
