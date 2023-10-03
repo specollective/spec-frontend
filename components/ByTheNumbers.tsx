@@ -31,7 +31,7 @@ export default function ByTheNumbers() {
                 We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
               </Heading2>
               <Paragraph1>
-                SPEC was established based on the core values of sustainability, progress and equality, and we believe these combined values are the recipe for building radically sustainable, equitable, and transparent organizations.
+                SPEC was established based on the core values of sustainability, progress, and equality, and we believe these combined values are the recipe for building radically sustainable, equitable, and transparent organizations.
               </Paragraph1>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function ByTheNumbers() {
                   7
                 </Heading0>
                 <Paragraph1 className="text-center">
-                  Parnterships and collaborations
+                  Partnerships and collaborations
                 </Paragraph1>
               </StatBox>
             </div>

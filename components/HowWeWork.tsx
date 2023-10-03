@@ -25,7 +25,7 @@ export default function HowWeWork() {
           Donations to SPEC directly contribute to supporting career development and learning opportunities for our members.
         </Paragraph1>
         <Paragraph1>
-          SPEC is fiscally sponsored by the Open Collective Foundation 501(c)(3), enables SPEC to receive tax-deductible donations.
+          SPEC is fiscally sponsored by the Open Collective Foundation 501(c)(3), which enables SPEC to receive tax-deductible donations.
         </Paragraph1>
       </SectionColumn>
       <SectionColumn>
