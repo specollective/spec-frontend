@@ -1,6 +1,6 @@
 import StatBox from '../pages/stat-box'
 import { Heading4, Heading0, Heading2 } from './Typography/Heading'
-import { Paragraph0, Paragraph2  } from './Typography/Paragraph'
+import { Paragraph0, Paragraph1  } from './Typography/Paragraph'
 import HomeSection from './HomeSection'
 
 export default function ByTheNumbers() {
@@ -18,9 +18,9 @@ export default function ByTheNumbers() {
                 <Heading0 className="font-dmserif text-spec-turquiose">
                   $290k
                 </Heading0>
-                <Paragraph2 className="text-slate-500">
-                  We have distriubted over $290k to our contributors.
-                </Paragraph2>
+                <Paragraph1>
+                  Funds transparently raise and distributed
+                </Paragraph1>
               </StatBox>
             </div>
             <div className="md:col-span-2">
@@ -30,9 +30,9 @@ export default function ByTheNumbers() {
               <Heading2>
                 We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
               </Heading2>
-              <Paragraph2>
+              <Paragraph1>
                 SPEC was established based on the core values of sustainability, progress and equality, and we believe these combined values are the recipe for building radically sustainable, equitable, and transparent organizations.
-              </Paragraph2>
+              </Paragraph1>
             </div>
           </div>
           <div className="grid lg:grid-cols-3 gap-6">
@@ -45,9 +45,9 @@ export default function ByTheNumbers() {
                 <Heading0 className="font-dmserif text-spec-turquiose">
                   28
                 </Heading0>
-                <Paragraph2 className="text-center">
-                  Contributors working...
-                </Paragraph2>
+                <Paragraph1 className="text-center">
+                  Successful career placements
+                </Paragraph1>
               </StatBox>
             </div>
             <div className="col-span-1">
@@ -59,9 +59,9 @@ export default function ByTheNumbers() {
                 <Heading0 className="font-dmserif text-spec-turquiose">
                   15
                 </Heading0>
-                <Paragraph2 className="text-center">
-                  projects RAs were able to contribute towards.
-                </Paragraph2>
+                <Paragraph1 className="text-center">
+                  Projects developed and completed
+                </Paragraph1>
               </StatBox>
             </div>
             <div className="col-span-1">
@@ -73,9 +73,9 @@ export default function ByTheNumbers() {
                 <Heading0 className="font-dmserif text-spec-turquiose">
                   7
                 </Heading0>
-                <Paragraph2 className="text-center">
-                  partner projects, that have created opportunities job seekers.
-                </Paragraph2>
+                <Paragraph1 className="text-center">
+                  Parnterships and collaborations
+                </Paragraph1>
               </StatBox>
             </div>
           </div>
