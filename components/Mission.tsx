@@ -14,7 +14,7 @@ export default function Mission() {
         <Heading4>
           OUR MISSION
         </Heading4>
-        <Heading2 className="leading-extra-loose">
+        <Heading2 className="">
           We are on a mission to <span className='text-spec-turquiose'>provide diverse peoples the resources and opportunities </span> essential to learn skills, build careers, and become leaders of sustainable social impact.
         </Heading2>
         <Paragraph1>
