@@ -53,8 +53,8 @@ export default function DesktopGetInvolved() {
                 </div>
               </div>
 
-              <div className="col-span-1">
-                <div className="mx-auto">
+              <div className="col-span-1 ">
+                <div className="w-full">
                   <DonationTable />
                 </div>
               </div>

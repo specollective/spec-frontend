@@ -21,7 +21,7 @@ export default function Mission() {
           We  understand that for many people from underserved communities, they can&apos;t give back or help others until they can access essential goods and services, learn professional skills, and achieve physical and financial security.
         </Paragraph1>
       </SectionColumn>
-      <SectionColumn>
+      <SectionColumn orderClasses="mb-6">
         <Image
           className="m-auto"
           src={missionImg}
