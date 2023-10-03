@@ -14,15 +14,15 @@ export default function Background() {
           className="m-auto text-left mb-6 hidden lg:block lg:order-last float-left"
           src={bpImg}
           alt="two person talking"
-          width={350}
-          height={250}
+          width={400}
+          height={400}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"
           src={bpImg}
           alt="people talking"
-          width={300}
-          height={100}
+          width={400}
+          height={400}
         />
       </SectionColumn>
       <SectionColumn>

@@ -13,7 +13,7 @@ export default function DesktopGetInvolved() {
       <div id="get-involved-section" className="relative -top-64"></div>
       <HomeSection>
         <div className="w-full mx-auto">
-          <Heading2 className="text-center py-8">
+          <Heading2 className="text-center py-12">
             Ready to be a part of something bigger?
           </Heading2>
 
@@ -61,11 +61,11 @@ export default function DesktopGetInvolved() {
             </div>
           </div>
 
-          {/* <div className="flex justify-evenly mt-6">
+          <div className="flex justify-between mt-6 pb-4">
             {getInvolvedData.map((cardData, index) => {
               return <GetInvolvedCard cardData={cardData} index={index} />
             })}
-          </div> */}
+          </div>
         </div>
       </HomeSection>
     </div>

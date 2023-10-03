@@ -14,7 +14,7 @@ export default function Mission() {
         <Heading4>
           OUR MISSION
         </Heading4>
-        <Heading2>
+        <Heading2 className="leading-extra-loose">
           We are on a mission to <span className='text-spec-turquiose'>provide diverse peoples the resources and opportunities </span> essential to learn skills, build careers, and become leaders of sustainable social impact.
         </Heading2>
         <Paragraph1>
@@ -23,19 +23,19 @@ export default function Mission() {
       </SectionColumn>
       <SectionColumn>
         <Image
-          className="m-auto text-left mb-6 hidden lg:block"
+          className="m-auto"
           src={missionImg}
           alt="two people talking"
-          width={325}
-          height={225}
+          width={400}
+          height={400}
         />
-        <Image
+        {/* <Image
           className="m-auto text-left mb-6 block lg:hidden"
           src={missionImg}
           alt="two people talking"
           width={300}
           height={100}
-        />
+        /> */}
       </SectionColumn>
     </HomeSection>
   )

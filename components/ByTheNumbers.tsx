@@ -5,7 +5,7 @@ import HomeSection from './HomeSection'
 
 export default function ByTheNumbers() {
   return (
-    <div className="bg-spec-lightTurquiose px-6 md:px-16 py-16">
+    <div className="bg-spec-lightTurquiose py-16">
       <HomeSection>
         <div className="w-full grid grid-rows-2 gap-6 lg:mx-auto">
           <div className="grid lg:grid-cols-3 gap-6">
@@ -19,7 +19,7 @@ export default function ByTheNumbers() {
                   $290k
                 </Heading0>
                 <Paragraph1>
-                  Funds transparently raise and distributed
+                  Funds raised and distributed to our community
                 </Paragraph1>
               </StatBox>
             </div>

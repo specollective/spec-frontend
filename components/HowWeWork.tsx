@@ -29,15 +29,15 @@ export default function HowWeWork() {
           className="m-auto text-left mb-6 hidden lg:block lg:order-last"
           src={ProjectsImg}
           alt="two person talking"
-          width={250}
-          height={150}
+          width={300}
+          height={300}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"
           src={ProjectsImg}
           alt="people talking"
-          width={300}
-          height={100}
+          width={200}
+          height={200}
         />
       </SectionColumn>
     </HomeSection>

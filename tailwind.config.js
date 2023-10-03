@@ -28,6 +28,10 @@ module.exports = {
         montserrat: ['Montserrat'],
         dmserif: ['DM Serif Text'],
         poppins: ['Poppins']
+      },
+      lineHeight: {
+        'extra-loose': '10.5',
+        '12': '3rem',
       }
     }
   }
