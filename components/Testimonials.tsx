@@ -1,13 +1,16 @@
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import ReadMore from "./ReadMore";
-import { testimonialsData } from "../constants/testimonials-data";
-import { ItemContainer } from "./Carousel/CarouselItemContainer";
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import ReadMore from './ReadMore'
+import { testimonialsData } from '../constants/testimonials-data'
+import { ItemContainer } from './Carousel/CarouselItemContainer'
+import { Heading3 } from './Typography/Heading'
+import HomeSection from './HomeSection'
 
 const Carousel = dynamic(() => import("./Carousel/Carousel"), {
   ssr: false,
 });
 
+import { openDonatePage, openDocumentationPage } from '../utils/window';
 
 const testimonialCardStyle = `
   mx-auto
@@ -63,7 +66,9 @@ function TestimonialItem({ title, body, alt, src, first }: { title: string, body
         <blockquote className="mb-8">
           <ReadMore description={body} limit={250}/>    
         </blockquote>
-        <p id="name" className="content-center text-xl font-medium tracking-widest font-poppins">{title}</p>
+        <Heading3 className="content-center text-xl font-medium tracking-widest font-poppins">
+          {title}
+        </Heading3>
       </div>
     </ItemContainer>
   )
@@ -100,13 +105,13 @@ export default function Testimonials() {
   ]
 
   return (
-    <div className="w-full m-auto p-2">
+    <HomeSection>
       <Carousel
         id="testimonials"
         items={carouselItems}
         indicatorStyles={indicatorStyles}
         itemComponent={TestimonialItem}
       />
-    </div>
+    </HomeSection>
   )
 }

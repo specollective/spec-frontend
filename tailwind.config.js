@@ -20,13 +20,18 @@ module.exports = {
           sunshine: '#FCD991',
           lemon: '#FFEECC',
           banana: '#FFF7E5',
-          orange: '#FFC692'
+          orange: '#FFC692',
+          gray: '#454546',
         }
       },
       fontFamily: {
         montserrat: ['Montserrat'],
         dmserif: ['DM Serif Text'],
         poppins: ['Poppins']
+      },
+      lineHeight: {
+        'extra-loose': '10.5',
+        '12': '3rem',
       }
     }
   }

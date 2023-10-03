@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DownQuotation from './DownQuotation';
 import UpQuotation from "./UpQuotation";
+import { Paragraph2 } from './Typography/Paragraph';
 
 // Declare type for description and limit
 interface ReadMoreProps {
@@ -39,7 +40,7 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
                   </p>
                 </div>
                 <div className='flex mr-4 justify-end'>
-                  <UpQuotation />
+                  <UpQuotation className="" />
                 </div>
               <button
                 onClick={() => setShowAll(false)}
@@ -52,11 +53,12 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
             <div>
               <div className='flex flex-col mb-4'>
                 <DownQuotation />
-                <p className={quoteStyle}>
+                <Paragraph2 className={quoteStyle}>
                   {description.substring(0, limit).concat("...")}
-                </p>
+                </Paragraph2>
+                
                 <div className='flex mr-4 justify-end'>
-                  <UpQuotation />
+                  <UpQuotation className="" />
                 </div>
               </div>
               <button onClick={() => setShowAll(true)} className="text-dmserif mb-4">

@@ -4,6 +4,8 @@ import BreakLine from './BreakLine';
 import downArrow from '../public/ProjectArrow.svg';
 import upArrow from '../public/up-arrow.svg';
 import Link from 'next/link';
+import { Heading2, Subtitle1 } from './Typography/Heading';
+import { Paragraph1, Paragraph2 } from './Typography/Paragraph';
 
 interface ProjectProps  {
   link: string;
@@ -28,22 +30,21 @@ function ServiceRow({ project } : ({ project: ProjectProps })) {
           <p className="font-semibold text-lg font-montserrat mb-2 block md:hidden md:pt-2 md:pb-6">
             { project.tag }
           </p>
-          <div className="text-sm lg:text-lg font-montserrat font-normal">
-            {project.info.summary}
-            {/* //create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
+          <div className="text-sm lg:text-lg">
+            <Paragraph1>
+              {project.info.summary}
+            </Paragraph1>
+            
+            {/* Create a conditional that checks for a value in project.info.list and conditionally renders the list as an unordered list  */}
             {project.info.list ? (
-              <ul className="list-disc mt-4 p-4 font-montserrat">
+              <ul className="list-disc p-4 font-montserrat">
                 {project.info.list.map((item: any, index: any) => (
-                  <li className="mt-2"key={`${item}-${index}`}>{item}</li>
+                  <li className="mt-2" key={`${item}-${index}`}>
+                    <Paragraph1>{item}</Paragraph1>
+                  </li>
                 ))}
               </ul>
             ): null}
-
-          </div>
-          <div className="text-xl text-spec-yellow-600 hover:underline self-end mt-4">
-            <Link className="underline text-spec-turquiose hover:text-spec-turquiose" href={project.link}>
-            {project.linkLine}
-            </Link>
           </div>
         </div>
       </div>
@@ -77,12 +78,12 @@ function ServicesAccordion({ services } : { services: any }) {
           <div className="cursor-pointer" onClick={() => showProject(index)}>
             <div className="grid grid-cols-5">
               <div className="col-span-4">
-                <h3 className="font-dmserif text-2xl md:text-4xl">
+                <Heading2>
                   {project.name}
-                </h3>
-                <p className="font-semibold text-lg font-montserrat hidden md:block md:pt-2 md:pb-6">
-                  { project.tag }
-                </p>
+                </Heading2>
+                <Subtitle1 className="pt-2 hidden md:block">
+                  {project.tag}
+                </Subtitle1>
               </div>
               <div className="col-span-1">
                 <button

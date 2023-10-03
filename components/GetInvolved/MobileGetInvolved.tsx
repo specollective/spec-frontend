@@ -107,7 +107,8 @@ export default function MobileCarousel() {
         <div className="bg-spec-sunshine px-5 pt-5 pb-14 relative w-full overflow-hidden after:clear-both after:block after:content-['']">
           <h1
             id="mobile-header"
-            className="m-auto text-2xl font-dmserif  my-3 w-2/3 md:w-2/3 md:text-3xl text-center">
+            className="mx-auto text-3xl font-dmserif my-3 md:text-3xl text-center"
+          >
             Ready to be a part of something bigger?
           </h1>
           <div>
@@ -118,7 +119,8 @@ export default function MobileCarousel() {
             >
               <div
                 id="slide1"
-                className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl">
+                className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl"
+              >
                 <div>
                   <div
                     id="s1-container1"
@@ -171,6 +173,7 @@ export default function MobileCarousel() {
           </div>
         </div>
       </div>
+      <div id="get-involved-section"></div>
     </section>
   )
 }
