@@ -21,7 +21,11 @@ export default function HowWeWork() {
           to achieve its goals.
         </Heading2>
         <Paragraph1>
-          Donations to SPEC directly contribute to supporting career development and learning opportunities for our members. We are a 501(c)(3) nonprofit organization, so your donations are tax-deductible.
+          We operate as a fully distributed Collective, with members located across the United States.
+          Donations to SPEC directly contribute to supporting career development and learning opportunities for our members.
+        </Paragraph1>
+        <Paragraph1>
+          SPEC is fiscally sponsored by the Open Collective Foundation 501(c)(3), enables SPEC to receive tax-deductible donations.
         </Paragraph1>
       </SectionColumn>
       <SectionColumn>
