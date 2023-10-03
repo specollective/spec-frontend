@@ -63,7 +63,7 @@ export default function DesktopGetInvolved() {
 
           <div className="flex justify-between mt-6 pb-4">
             {getInvolvedData.map((cardData, index) => {
-              return <GetInvolvedCard cardData={cardData} index={index} />
+              return <GetInvolvedCard key={index} cardData={cardData} index={index} />
             })}
           </div>
         </div>
