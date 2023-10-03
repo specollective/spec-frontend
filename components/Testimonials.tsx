@@ -1,11 +1,10 @@
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import ReadMore from "./ReadMore";
-import { testimonialsData } from "../constants/testimonials-data";
-import { ItemContainer } from "./Carousel/CarouselItemContainer";
-import { Paragraph2 } from "./Typography/Paragraph";
-import { Heading3 } from "./Typography/Heading";
-
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import ReadMore from './ReadMore'
+import { testimonialsData } from '../constants/testimonials-data'
+import { ItemContainer } from './Carousel/CarouselItemContainer'
+import { Heading3 } from './Typography/Heading'
+import HomeSection from './HomeSection'
 
 const Carousel = dynamic(() => import("./Carousel/Carousel"), {
   ssr: false,
@@ -106,13 +105,13 @@ export default function Testimonials() {
   ]
 
   return (
-    <div className="w-full m-auto p-2">
+    <HomeSection>
       <Carousel
         id="testimonials"
         items={carouselItems}
         indicatorStyles={indicatorStyles}
         itemComponent={TestimonialItem}
       />
-    </div>
+    </HomeSection>
   )
 }

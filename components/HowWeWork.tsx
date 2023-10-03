@@ -6,7 +6,6 @@ import SectionColumn from './SectionColumn'
 import { Heading4, Heading2 } from './Typography/Heading'
 import { Paragraph1 } from './Typography/Paragraph'
 
-
 export default function HowWeWork() {
   return (
     <HomeSection>

@@ -21,6 +21,7 @@ function CarouselItems({ items, itemComponent }: { items: any[], itemComponent: 
   )
 }
 
+// TODO see if we can use dynamic property data-te-carousel="active" instead of separate components.
 function ActiveButton({ dataTarget, index, item, className }: { index: number, item: any, className: string, dataTarget: string }) {
   return (
     <button

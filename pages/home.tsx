@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import MobileHero from '../components/MobileHero';
 import Footer from '../components/Footer';
-import ByTheNumbers from '../components/byTheNumbers';
+import ByTheNumbers from '../components/ByTheNumbers';
 import React from 'react';
 import ContactSection from '../components/Contact/ContactSection';
 import Mission from '../components/Mission';
@@ -22,7 +22,7 @@ const Testimonials = dynamic(() => import("../components/Testimonials"), {
 
 export default function Home() {
   return (
-    <div className="">
+    <>
       <Navbar />
       <MobileHero
         backgroundImage="https://images.pexels.com/photos/3923721/pexels-photo-3923721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -41,6 +41,6 @@ export default function Home() {
       <Testimonials />
       <ContactSection />
       <Footer />
-    </div>
+    </>
   );
 }

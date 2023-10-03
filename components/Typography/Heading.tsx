@@ -4,7 +4,7 @@ type HeadingProps = {
 }
 
 export function Heading0({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-4xl lg:text-xl 2xl:text-9xl ${className}`;
+  const classes = `font-dmserif text-4xl lg:text-7xl 2xl:text-9xl ${className}`;
   return (
     <h1 className={classes}>
       {children}
@@ -13,7 +13,7 @@ export function Heading0({ children, className = '' }: HeadingProps) {
 }
 
 export function Heading1({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-3xl md:text-5xl 2xl:text-8xl ${className}`;
+  const classes = `font-dmserif text-3xl md:text-4xl 2xl:text-5xl ${className}`;
   return (
     <h1 className={classes}>
       {children}
@@ -31,7 +31,7 @@ export function Subtitle1({ children, className = '' }: HeadingProps) {
 }
 
 export function Heading2({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-xl md:text-4xl 2xl:text-6xl ${className}`;
+  const classes = `font-dmserif text-xl md:text-4xl 2xl:text-3xl ${className}`;
   return (
     <h1 className={classes}>
       {children}
@@ -49,7 +49,7 @@ export function Heading3({ children, className = '' }: HeadingProps) {
 }
 
 export function Heading4({ children, className = '' }: HeadingProps) {
-  const classes = `font-medium opacity-40 text-black tracking-wider font-montserrat text-lg md:text-2xl 2xl:text-3xl ${className} pb-2`;
+  const classes = `font-medium opacity-40 text-black tracking-wider font-montserrat text-lg md:text-xl 2xl:text-3xl ${className} pb-2`;
   return (
     <h1 className={classes}>
       {children}

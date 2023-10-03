@@ -7,7 +7,7 @@ interface ParagraphProps {
 
 export function Paragraph0({ children, className }: ParagraphProps) {
   return (
-    <p className={`font-montserrat text-xl lg:text-2xl 2xl:text-6xl py-2 ${className}`}>
+    <p className={`font-montserrat text-xl lg:text-2xl 2xl:text-4xl py-2 ${className}`}>
       {children}
     </p>
   )
