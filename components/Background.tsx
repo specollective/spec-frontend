@@ -30,7 +30,7 @@ export default function Background() {
           BACKGROUND
         </Heading4>
         <Heading2>
-          SPEC was born out of research from <span className="text-spec-turquiose">The Buffalo Project</span>, a 10-year participatory research project that investigated using cultural data in development of learning programs.
+          SPEC was born out of research from <span className="text-spec-turquiose">The Buffalo Project</span>, a 10-year participatory research project that investigated using cultural data in the development of learning programs.
         </Heading2>
         <Paragraph1>
           This research illustrated that students were not being adequately taught the importance of intercultural competencies. It also demonstrated the efficacy of engaging communities to improve learning program design and delivery.

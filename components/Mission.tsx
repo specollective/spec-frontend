@@ -18,7 +18,7 @@ export default function Mission() {
           We are on a mission to <span className='text-spec-turquiose'>provide diverse peoples the resources and opportunities </span> essential to learn skills, build careers, and become leaders of sustainable social impact.
         </Heading2>
         <Paragraph1>
-          We  understand that for many people from underserved communities, they can&apos;t give back or help others until they are able to access essential goods and services, learn professional skills, and achieve physical and financial security.
+          We  understand that for many people from underserved communities, they can&apos;t give back or help others until they can access essential goods and services, learn professional skills, and achieve physical and financial security.
         </Paragraph1>
       </SectionColumn>
       <SectionColumn>
