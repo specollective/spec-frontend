@@ -4,7 +4,7 @@ type HeadingProps = {
 }
 
 export function Heading0({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-4xl lg:text-7xl 2xl:text-9xl ${className}`;
+  const classes = `font-dmserif text-4xl lg:text-7xl 2xl:text-8xl ${className}`;
   return (
     <h1 className={classes}>
       {children}
