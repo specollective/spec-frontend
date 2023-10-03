@@ -1,17 +1,16 @@
 import React from 'react'
-import { tableContents } from '../constants/table-of-contents'
 
 function DonationTable() {
   return (
-    <table className="hidden md:block font-montserrat w-full table-auto border-collapse border-spacing-y-6 text-lg text-left">
+    <table>
       <thead>
         <tr>
-          <th
-            className="h-[2.5rem] bg-spec-banana border-4 border-spec-white rounded-tr-3xl rounded-tl-3xl font-normal py-2 text-sm text-center"
-            colSpan={2}
+        <th
+          colSpan={2}
+          className="h-[2.5rem] bg-spec-banana border-4 border-spec-white rounded-tr-3xl rounded-tl-3xl text-xl py-2 text-center lg:px-4 xl:px-10 2xl:px-20"
           >
-            How your donation can make an <strong>impact</strong>!
-          </th>
+          <div>How your donation can make an <strong>impact</strong>!</div>
+        </th>
         </tr>
       </thead>
       <tbody>

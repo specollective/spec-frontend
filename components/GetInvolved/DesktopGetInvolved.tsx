@@ -2,7 +2,7 @@ import React from 'react'
 import DonationTable from '../DonationTable'
 import { getInvolvedData } from '../../constants/get-involved-data'
 import { openDocumentationPage, openDonatePage } from '../../utils/window'
-import { Heading2, Heading3 } from '../Typography/Heading'
+import { Heading2, Heading3, Heading1 } from '../Typography/Heading'
 import { Paragraph1 } from '../Typography/Paragraph'
 import GetInvolvedCard from './GetInvolvedCard'
 import HomeSection from '../HomeSection'
@@ -22,9 +22,9 @@ export default function DesktopGetInvolved() {
               <div className="col-span-1">
                 <div className="flex flex-col justify-between h-full">
                   <div className="flex">
-                    <Heading2 className="">
+                    <Heading1 className="">
                       Join us in making a difference!
-                    </Heading2>
+                    </Heading1>
                   </div>
 
                   <div className="flex">
@@ -33,17 +33,17 @@ export default function DesktopGetInvolved() {
                     </Paragraph1>
                   </div>
 
-                  <div className="flex">
-                    <div className="grid grid-cols-2 w-full">
+                  <div className="">
+                    <div className="grid grid-cols-2">
                       <button
-                        className="block col-span-1 font-montserrat w-full h-12 text-left text-base text-gray-400 font-semibold tracking-wide underline"
+                        className="inline-block col-span-1 font-montserrat w-48 h-12 text-left text-base text-gray-400 font-semibold tracking-wide underline"
                         onClick={openDocumentationPage}
                       >
                         LEARN MORE
                       </button>
                       <button
                         type="button"
-                        className="block col-span-1 font-montserrat w-full text-base rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center font-semibold tracking-wider text-white"
+                        className="inline-block col-span-1 font-montserrat w-48 p-4 text-base rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center font-semibold tracking-wider text-white"
                         onClick={openDonatePage}
                       >
                         DONATE
@@ -61,7 +61,7 @@ export default function DesktopGetInvolved() {
             </div>
           </div>
 
-          <div className="flex justify-between mt-6 pb-4">
+          <div className="flex justify-between mt-10 pb-4">
             {getInvolvedData.map((cardData, index) => {
               return <GetInvolvedCard key={index} cardData={cardData} index={index} />
             })}
@@ -71,4 +71,3 @@ export default function DesktopGetInvolved() {
     </div>
   );
 }
-
