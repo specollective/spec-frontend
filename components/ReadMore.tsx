@@ -40,7 +40,7 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
                   </p>
                 </div>
                 <div className='flex mr-4 justify-end'>
-                  <UpQuotation />
+                  <UpQuotation className="" />
                 </div>
               <button
                 onClick={() => setShowAll(false)}
@@ -58,7 +58,7 @@ const ReadMore = ({ description, limit }: ReadMoreProps) => {
                 </Paragraph2>
                 
                 <div className='flex mr-4 justify-end'>
-                  <UpQuotation />
+                  <UpQuotation className="" />
                 </div>
               </div>
               <button onClick={() => setShowAll(true)} className="text-dmserif mb-4">

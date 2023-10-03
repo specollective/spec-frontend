@@ -24,13 +24,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <MobileHero
-        backgroundImage="https://images.pexels.com/photos/3923721/pexels-photo-3923721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        title="Sustainable Progress and Equality Collective"
-        description="SPEC is a community-driven organization dedicated to meeting people where they are and empowering them to learn skills, build careers, and become leaders of sustainable social impact."
-        buttonText="Get Started"
-        onButtonClick={() => console.log('Button Clicked')}
-      />
+      <MobileHero />
       <Mission />
       <Background />
       <HowWeWork />

@@ -1,22 +1,25 @@
-import React from 'react';
-import { Heading1, Heading2, Heading0 } from './Typography/Heading';
-import { Paragraph1, Paragraph0 } from './Typography/Paragraph';
-import Link from 'next/link';
-import HomeSection from './HomeSection';
-interface HeroProps {
-  backgroundImage: string;
-  title: string;
-  description: string;
-  buttonText: string;
-  onButtonClick: () => void;
-}
+import React from 'react'
+import { Heading1, } from './Typography/Heading'
+import { Paragraph0 } from './Typography/Paragraph'
+import Link from 'next/link'
+import HomeSection from './HomeSection'
+import Image from 'next/image'
 
-const MobileHero: React.FC<HeroProps> = ({ backgroundImage, title, description, buttonText, onButtonClick }) => {
+function MobileHero() {
+  const backgroundImage = "https://images.pexels.com/photos/3923721/pexels-photo-3923721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  const title = "Sustainable Progress and Equality Collective"
+  const description = "SPEC is a community-driven organization dedicated to meeting people where they are and empowering them to learn skills, build careers, and become leaders of sustainable social impact."
+
   return (
     <div className="relative flex items-center justify-center text-center h-fit">
-      <HomeSection>
+      <HomeSection className="pb-20">
         {/* Background Image */}
-        <img src={backgroundImage} alt="Hero Background" className="absolute w-full h-full object-cover" />
+        <Image
+          src={backgroundImage}
+          alt="Hero Background"
+          className="absolute w-full h-full object-cover"
+          layout="fill"
+        />
 
         {/* Translucent Overlay */}
         <div className="absolute w-full h-full bg-black opacity-10"></div>

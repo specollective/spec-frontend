@@ -1,7 +1,10 @@
 import Image from "next/image";
+interface UpQuotationProps {
+  className: string;
+}
 
-export default function UpQuotation({ className }) {
-  return (// Image of quotation marks
+export default function UpQuotation({ className }: UpQuotationProps) {
+  return (
     <Image
       className={`flex flex-col-reverse mb-4`}
       src={"/upQuotationMarks.svg"}
