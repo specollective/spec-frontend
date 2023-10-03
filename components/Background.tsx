@@ -27,25 +27,17 @@ export default function Background() {
       </SectionColumn>
       <SectionColumn>
         <Heading4>
-          OUR HISTORY
+          BACKGROUND
         </Heading4>
         <Heading2>
-          Uncovering a Cultural Gap: <span className="text-spec-turquiose">The Buffalo Project’s 10-Year data analysis reveals alarming lack of diversity awareness</span> among students.
+          SPEC was born out of research from <span className="text-spec-turquiose">The Buffalo Project</span>, a 10-year participatory research project that investigated using cultural data in development of learning programs.
         </Heading2>
         <Paragraph1>
-            This illustrates that students  were not being adequately taught the importance of intercultural competencies and cross-cultural communication.
+          This research illustrated that students were not being adequately taught the importance of intercultural competencies. It also demonstrated the efficacy of engaging communities to improve learning program design and delivery.
         </Paragraph1>
         <Paragraph1>
-          The Buffalo Project, led by Dr. Rhianna C. Rogers, worked with community stakeholders and WNY data to engage in a participatory action research study of perceptions of culture in the region.
+        SPEC was founded to expand on this research and provide a platform for students to learn these skills and apply them to real-world projects.
         </Paragraph1>
-        {/* <a
-          href="https://thebuffaloproject.wixsite.com/tbpinternship"
-          target="_blank"
-          rel="noreferrer"
-          className="underline font-montserrat font-medium text-base leading-normal mb-4 md:text-lg md:leading-7"
-        >
-          LEARN MORE ABOUT THE BUFFALO PROJECT
-        </a> */}
       </SectionColumn>
     </HomeSection>
   );
