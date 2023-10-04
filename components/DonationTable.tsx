@@ -15,42 +15,42 @@ function DonationTable() {
       </thead>
       <tbody>
         <tr className="bg-spec-lemon border-4 border-spec-white font-montserrat">
-          <td className="px-2 py-2">
+          <td className="text-center pl-6 px-2 py-2">
             $20
           </td>
-          <td className="px-2 py-2">
+          <td className="pl-6 px-2 py-2">
             Cover a tool or learning resource
           </td>
         </tr>
         <tr className="bg-spec-banana border-4 border-spec-white font-montserrat">
-          <td className="px-2 py-2">
+          <td className="text-center pl-6 px-2 py-2">
             $500
           </td>
-          <td className="px-2 py-2">
+          <td className="pl-6 px-2 py-2">
             Career development stipend
           </td>
         </tr>
         <tr className="bg-spec-lemon border-4 border-spec-white font-montserrat">
-          <td className="px-2 py-2">
+          <td className="text-center pl-6 px-2 py-2">
             $2000
           </td>
-          <td className="px-2 py-2">
+          <td className="pl-6 px-2 py-2">
             Fund a short fellowship
           </td>
         </tr>
         <tr className="bg-spec-banana border-4 border-spec-white font-montserrat">
-          <td className="px-2 py-2">
+          <td className="text-center pl-6 px-2 py-2">
             $5,000
           </td>
-          <td className="px-2 py-2">
+          <td className="pl-6 px-2 py-2">
             Create a community project
           </td>
         </tr>
         <tr className="bg-spec-lemon border-4 border-spec-white font-montserrat">
-          <td className="px-2 py-2 rounded-bl-3xl">
+          <td className="text-center pl-6 px-2 py-2 rounded-bl-3xl">
             $10,000
           </td>
-          <td className="px-2 py-2 rounded-br-3xl">
+          <td className="pl-6 px-2 py-2 rounded-br-3xl">
             Develop a long-term project
           </td>
         </tr>
