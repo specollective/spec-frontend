@@ -1,7 +1,8 @@
+import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Navbar from '../components/Navbar'
-import MobileHero from '../components/MobileHero'
+import MainHero from '../components/MainHero'
 import Footer from '../components/Footer'
 import ByTheNumbers from '../components/ByTheNumbers'
 import React from 'react'
@@ -11,6 +12,8 @@ import Background from '../components/Background'
 import HowWeWork from '../components/HowWeWork'
 import WhatWeDo from '../components/WhatWeDo'
 import OurServices from '../components/OurServices'
+import { createClient} from 'contentful'
+import { HOME_PAGE_DATA } from '../constants/home-page-data'
 
 const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"), {
    ssr: false,
@@ -46,12 +49,17 @@ export function AppHead() {
   )
 }
 
-export default function Home() {
+type HomeProps = {
+  title: string;
+  heroContent: string;
+};
+
+export default function Home({ title, heroContent }: HomeProps) {
   return (
     <>
       <AppHead />
       <Navbar />
-      <MobileHero />
+      <MainHero title={title} content={heroContent} />
       <Mission />
       <Background />
       <HowWeWork />
@@ -64,4 +72,21 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID as string,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+  })
+
+  let data;
+  try {
+    data = await client.getEntry('5MnimUS5Kj9xVEwGV8Av7b')
+  } catch(e) {
+    console.log(e);
+    data = HOME_PAGE_DATA;
+  }
+
+  return { props: data.fields };
 }

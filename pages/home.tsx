@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+
 import Navbar from '../components/Navbar'
-import MobileHero from '../components/MobileHero'
+import MobileHero from '../components/MainHero'
 import Footer from '../components/Footer'
 import ByTheNumbers from '../components/ByTheNumbers'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ContactSection from '../components/Contact/ContactSection'
 import Mission from '../components/Mission'
 import Background from '../components/Background'
@@ -19,6 +20,8 @@ const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"
 const Testimonials = dynamic(() => import("../components/Testimonials"), {
    ssr: false,
 });
+
+// This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token
 
 export function AppHead() {
   return (
