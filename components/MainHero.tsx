@@ -5,10 +5,8 @@ import Link from 'next/link'
 import HomeSection from './HomeSection'
 import Image from 'next/image'
 
-function MobileHero() {
+function MainHero({ title, content }: { title: string; content: string; }) {
   const backgroundImage = "https://images.pexels.com/photos/3923721/pexels-photo-3923721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  const title = "Sustainable Progress and Equality Collective"
-  const description = "SPEC is a community-driven organization dedicated to meeting people where they are and empowering them to learn skills, build careers, and become leaders of sustainable social impact."
 
   return (
     <div className="relative flex items-center justify-center text-center h-fit">
@@ -32,7 +30,7 @@ function MobileHero() {
               {title}
             </Heading1>
             <Paragraph0 className="text-white text-left pt-14 pb-14 w-full">
-              {description}
+              {content}
             </Paragraph0>
             <div className="">
               <Link href="/home/#get-involved-section" className="block font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-sunshine text-center text-lg py-4 tracking-wider text-black w-full md:w-1/3 px-2 font-semibold" scroll={false}>
@@ -46,4 +44,4 @@ function MobileHero() {
   );
 }
 
-export default MobileHero;
+export default MainHero;
