@@ -1,5 +1,4 @@
 import SocialMedia from './SocialMedia'
-import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -15,8 +14,8 @@ export default function Footer() {
           </a>
           <div className='flex flex-col justify-center'>
             <div className="flex justify center lg:hidden content-center mt-10 mx-14">
-              <SocialMedia/>
-            </div> 
+              <SocialMedia />
+            </div>
             <div className="lg:block font-montserrat items-center mt-10">
               © 2023 Sustainable Progress and Equality Collective
             </div> 
