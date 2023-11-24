@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import missionImg from '../public/MissionImg.svg'
 import HomeSection from './HomeSection'
 import SectionColumn from './SectionColumn'
 import { Paragraph1 } from './Typography/Paragraph'
@@ -24,7 +23,7 @@ export default function Mission() {
       <SectionColumn orderClasses="mb-6">
         <Image
           className="m-auto"
-          src={missionImg}
+          src="/MissionImg.svg"
           alt="two people talking"
           width={400}
           height={400}
