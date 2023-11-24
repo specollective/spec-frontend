@@ -6,17 +6,16 @@ import HomeSection from './HomeSection'
 import Image from 'next/image'
 
 function MainHero({ title, content }: { title: string; content: string; }) {
-  const backgroundImage = "https://images.pexels.com/photos/3923721/pexels-photo-3923721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-
   return (
     <div className="relative flex items-center justify-center text-center h-fit">
       <HomeSection className="pb-20">
         {/* Background Image */}
         <Image
-          src={backgroundImage}
+          src="/background.jpeg"
           alt="Hero Background"
           className="absolute w-full h-full object-cover"
-          layout="fill"
+          width={500}
+          height={500}
         />
 
         {/* Translucent Overlay */}
