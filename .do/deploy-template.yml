@@ -1,0 +1,6 @@
+spec:
+  name: spec-frontend
+  services:
+  - name: server
+    features:
+      - buildpack-stack=ubuntu-22
