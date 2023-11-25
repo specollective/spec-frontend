@@ -1,5 +1,4 @@
 import React from 'react';
-import contactImg from '../../public/ContactUsImg.svg'
 import ContactForm from './ContactForm'
 import Image from 'next/image'
 import { Heading2 } from '../Typography/Heading'
@@ -15,14 +14,14 @@ export default function ContactSection() {
             <Heading2>Send us a message.</Heading2>
             <Image
               className="hidden md:block m-auto mt-12"
-              src={contactImg}
+              src="/ContactUsImg.svg"
               alt="contact-image"
               width={300}
               height={300}
             />
             <Image
               className="block md:hidden m-auto mt-8"
-              src={contactImg}
+              src="/ContactUsImg.svg"
               alt="contact-image"
               width={200}
               height={200}
