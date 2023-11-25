@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import BreakLine from './BreakLine';
-import downArrow from '../public/ProjectArrow.svg';
-import upArrow from '../public/up-arrow.svg';
-import Link from 'next/link';
 import { Heading2, Subtitle1 } from './Typography/Heading';
-import { Paragraph1, Paragraph2 } from './Typography/Paragraph';
+import { Paragraph1 } from './Typography/Paragraph';
 
 interface ProjectProps  {
   link: string;
@@ -60,8 +57,18 @@ function ServicesAccordion({ services } : { services: any }) {
   };
 
   const toggleBtn = (index: any) => {
-    const downImage = <Image alt="down-arrow" src={downArrow} />;
-    const upImage = <Image alt="up-arrow" src={upArrow} />;
+    const downImage = <Image
+      alt="down-arrow"
+      src="/ProjectArrow.svg"
+      width={65}
+      height={65}
+    />;
+    const upImage = <Image
+      alt="up-arrow"
+      src="/up-arrow.svg"
+      width={65}
+      height={65}
+    />;
 
     if (isClicked === index) {
       return upImage;
