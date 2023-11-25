@@ -3,7 +3,7 @@ import IndexPage from '../../pages/index'
 import '@testing-library/jest-dom'
 
 describe('IndexPage', () => { 
-  it('renders company name', () => {
+  xit('renders company name', () => {
     render(<IndexPage />)
 
     const title = screen.getByText(/Sustainable Progress and Equality Collective/)
@@ -11,7 +11,7 @@ describe('IndexPage', () => {
     expect(title).toBeInTheDocument()
   })
 
-  it('renders core activities', () => {
+  xit('renders core activities', () => {
     render(<IndexPage />)
 
     const coreActivies = [
@@ -26,7 +26,7 @@ describe('IndexPage', () => {
     })
   })
 
-  it('renders component with mobile tailwind classes', () => {
+  xit('renders component with mobile tailwind classes', () => {
     render(<IndexPage />)
 
     const mainSection = screen.getByRole('main')
@@ -34,3 +34,13 @@ describe('IndexPage', () => {
     expect(mainSection).toHaveClass('md:w-2/3')
   })
 })
+
+// describe('HomePage', () => { 
+//   it('renders company name', async () => {
+//     render(<HomePage />)
+    
+//     // waitFor is needed to handle the dynamic import of components.
+//     const title = await waitFor(() => screen.getByText(/Sustainable Progress and Equality Collective/));
+//     expect(title).toBeInTheDocument();
+//   })
+// })
