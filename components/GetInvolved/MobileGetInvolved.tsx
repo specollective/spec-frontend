@@ -37,12 +37,6 @@ export default function MobileCarousel() {
 
   const mainSlide = (
     <div className={`w-full flex-shrink-0 ${slideHeightClass} px-4`}>
-      <h1
-        id="mobile-header"
-        className="mx-auto text-3xl font-dmserif my-3 md:text-3xl text-center"
-      >
-        Ready to be a part of something bigger?
-      </h1>
       <div>
         <div
           className=""
