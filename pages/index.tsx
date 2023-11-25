@@ -1,24 +1,21 @@
+import React from 'react'
 import dynamic from 'next/dynamic'
 import AppHead from '../components/AppHead'
 import Navbar from '../components/Navbar'
 import MainHero from '../components/MainHero'
 import Footer from '../components/Footer'
 import ByTheNumbers from '../components/ByTheNumbers'
-import React from 'react'
 import ContactSection from '../components/Contact/ContactSection'
 import Mission from '../components/Mission'
 import Background from '../components/Background'
 import HowWeWork from '../components/HowWeWork'
 import WhatWeDo from '../components/WhatWeDo'
 import OurServices from '../components/OurServices'
+import Testimonials from '../components/Testimonials'
 import { createClient} from 'contentful'
 import { HOME_PAGE_DATA } from '../constants/home-page-data'
 
 const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"), {
-   ssr: false,
-});
-
-const Testimonials = dynamic(() => import("../components/Testimonials"), {
    ssr: false,
 });
 

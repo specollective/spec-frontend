@@ -1,58 +1,47 @@
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import ReadMore from './ReadMore'
 import { testimonialsData } from '../constants/testimonials-data'
-import { ItemContainer } from './Carousel/CarouselItemContainer'
 import { Heading3 } from './Typography/Heading'
 import HomeSection from './HomeSection'
-
-const Carousel = dynamic(() => import("./Carousel/Carousel"), {
-  ssr: false,
-});
-
-import { openDonatePage, openDocumentationPage } from '../utils/window';
+import Slider from './Slider';
 
 const testimonialCardStyle = `
   mx-auto
-  border-solid 
+  border-solid
+  md:border-2
+  md:border-spec-turquiose
   rounded 
-  border-spec-turquiose 
-  border-2 
-  py-8
-  my-8 
+  md:py-8
+  md:my-8 
   font-montserrat 
   items-center 
   text-base 
   text-center 
   w-full
-  md:w-1/2
-`
-const indicatorStyles = `
-  mx-[3px]
-  box-content
-  h-[10px] 
-  w-[10px] 
-  md:h-[10px] 
-  md:w-[10px] 
-  flex-initial 
-  cursor-pointer 
-  border-2  
-  border-solid 
-  border-black
-  rounded-full 
-  bg-green-600
-  p-0 
-  -indent-[999px] 
-  opacity-20
-  transition-opacity 
-  duration-[600ms] 
-  ease-[cubic-bezier(0.25,0.1,0.25,1.0)] 
-  motion-reduce:transition-none
+  md:w-2/3
 `
 
-function TestimonialItem({ title, body, alt, src, first }: { title: string, body: string, alt: string, src: string, first: boolean }) {
+function ActiveItem({ children }: { children: React.ReactNode }) {
   return (
-    <ItemContainer first={first}>
+    <div
+      className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-active
+      data-te-carousel-item
+      style={{backfaceVisibility: 'hidden'}}>
+      {children}
+    </div>
+  )
+}
+
+export function ItemContainer({ children }: { children: React.ReactNode }) {
+  return (
+    <ActiveItem>{children}</ActiveItem>
+  )
+}
+
+function TestimonialItem({ title, body, alt, src }: { title: string, body: string, alt: string, src: string }) {
+  return (
+    <ItemContainer>
       <div className={testimonialCardStyle}>
         <div className="flex justify-center">
           <Image
@@ -63,12 +52,12 @@ function TestimonialItem({ title, body, alt, src, first }: { title: string, body
             priority
           />
         </div>
+        <Heading3 className="content-center text-xl font-medium tracking-widest font-poppins pt-10">
+          {title}
+        </Heading3>
         <blockquote className="mb-8">
           <ReadMore description={body} limit={250}/>    
         </blockquote>
-        <Heading3 className="content-center text-xl font-medium tracking-widest font-poppins">
-          {title}
-        </Heading3>
       </div>
     </ItemContainer>
   )
@@ -76,42 +65,47 @@ function TestimonialItem({ title, body, alt, src, first }: { title: string, body
 
 export default function Testimonials() {
   // TODO: Clean up data structure.
-  const carouselItems = [
+  const slides = [
     {
       src: testimonialsData[0].src,
       alt: testimonialsData[0].name,
       title: testimonialsData[0].name,
-      body: testimonialsData[0].quote,
+      description: testimonialsData[0].quote,
       first: true,
     },
     {
       src: testimonialsData[1].src,
       alt: testimonialsData[1].name,
       title: testimonialsData[1].name,
-      body: testimonialsData[1].quote,
+      description: testimonialsData[1].quote,
     },
     {
       src: testimonialsData[2].src,
       alt: testimonialsData[2].name,
       title: testimonialsData[2].name,
-      body: testimonialsData[2].quote,
+      description: testimonialsData[2].quote,
     },
     {
       src: testimonialsData[3].src,
       alt: testimonialsData[3].name,
       title: testimonialsData[3].name,
-      body: testimonialsData[3].quote,
+      description: testimonialsData[3].quote,
     },
   ]
 
   return (
-    <HomeSection>
-      <Carousel
-        id="testimonials"
-        items={carouselItems}
-        indicatorStyles={indicatorStyles}
-        itemComponent={TestimonialItem}
-      />
-    </HomeSection>
+    <div className="pt-10">
+      <Slider slides={slides.map(slide => {
+        return (
+          <TestimonialItem
+            key={slide.title}
+            title={slide.title}
+            body={slide.description}
+            alt={slide.alt}
+            src={slide.src}
+          />
+        ) as any
+      })} />
+    </div>
   )
 }

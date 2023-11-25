@@ -21,54 +21,22 @@ const quoteStyle = `
   text-gray-900 
   dark:text-black 
   sm:text-ellipsis 
-  sm:overflow-hidden 
+  sm:overflow-hidden
 `
 const ReadMore = ({ description, limit }: ReadMoreProps) => {
   const [showAll, setShowAll] = useState(false);
   return (
-    description.length > limit ? (
+    <div className='flex flex-col mb-4 md:min-h-[360px]'>
       <div>
-        <>
-          {showAll ? (
-              <div>
-                <div className='flex flex-col mb-4'>
-                  <DownQuotation />
-                </div>
-                <div>
-                  <p className={quoteStyle}>
-                    {description}
-                  </p>
-                </div>
-                <div className='flex mr-4 justify-end'>
-                  <UpQuotation className="" />
-                </div>
-              <button
-                onClick={() => setShowAll(false)}
-                className="text-dmserif mb-4"
-              >
-                Read Less
-              </button>
-            </div>
-          ) : (
-            <div>
-              <div className='flex flex-col mb-4'>
-                <DownQuotation />
-                <Paragraph2 className={quoteStyle}>
-                  {description.substring(0, limit).concat("...")}
-                </Paragraph2>
-                
-                <div className='flex mr-4 justify-end'>
-                  <UpQuotation className="" />
-                </div>
-              </div>
-              <button onClick={() => setShowAll(true)} className="text-dmserif mb-4">
-                Read More
-              </button>
-            </div>
-          )}
-        </>
+        <DownQuotation />
       </div>
-    ) : (<>description</>)
+      <Paragraph2 className={quoteStyle}>
+        {description}
+      </Paragraph2>
+      <div className='flex mr-4 justify-end'>
+        <UpQuotation className="" />
+      </div>
+    </div>
   );
 };
 
