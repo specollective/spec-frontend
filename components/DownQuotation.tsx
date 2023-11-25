@@ -6,8 +6,8 @@ export default function DownQuotation() {
       <Image
         className="ml-10 float-left"
         src={"/downQuotationMark.svg"}
-        width={65}
-        height={65}
+        width={40}
+        height={40}
         alt="Quotation Mark"
         priority
       />

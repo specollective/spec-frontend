@@ -1,24 +1,43 @@
 import Image from 'next/image'
 import ReadMore from './ReadMore'
 import { testimonialsData } from '../constants/testimonials-data'
-import { ItemContainer } from './Carousel/CarouselItemContainer'
 import { Heading3 } from './Typography/Heading'
 import HomeSection from './HomeSection'
-import Slider from "./Carousel/Slider";
+import Slider from './Slider';
 
 const testimonialCardStyle = `
   mx-auto
-  border-solid 
+  border-solid
+  md:border-2
+  md:border-spec-turquiose
   rounded 
-  py-8
-  my-8 
+  md:py-8
+  md:my-8 
   font-montserrat 
   items-center 
   text-base 
   text-center 
   w-full
-  md:w-1/2
+  md:w-2/3
 `
+
+function ActiveItem({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-active
+      data-te-carousel-item
+      style={{backfaceVisibility: 'hidden'}}>
+      {children}
+    </div>
+  )
+}
+
+export function ItemContainer({ children }: { children: React.ReactNode }) {
+  return (
+    <ActiveItem>{children}</ActiveItem>
+  )
+}
 
 function TestimonialItem({ title, body, alt, src }: { title: string, body: string, alt: string, src: string }) {
   return (
@@ -33,12 +52,12 @@ function TestimonialItem({ title, body, alt, src }: { title: string, body: strin
             priority
           />
         </div>
+        <Heading3 className="content-center text-xl font-medium tracking-widest font-poppins pt-10">
+          {title}
+        </Heading3>
         <blockquote className="mb-8">
           <ReadMore description={body} limit={250}/>    
         </blockquote>
-        <Heading3 className="content-center text-xl font-medium tracking-widest font-poppins">
-          {title}
-        </Heading3>
       </div>
     </ItemContainer>
   )
@@ -75,7 +94,7 @@ export default function Testimonials() {
   ]
 
   return (
-    <HomeSection>
+    <div className="pt-10">
       <Slider slides={slides.map(slide => {
         return (
           <TestimonialItem
@@ -87,6 +106,6 @@ export default function Testimonials() {
           />
         ) as any
       })} />
-    </HomeSection>
+    </div>
   )
 }

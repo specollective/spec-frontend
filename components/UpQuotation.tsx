@@ -5,13 +5,13 @@ interface UpQuotationProps {
 
 export default function UpQuotation({ className }: UpQuotationProps) {
   return (
-    <div className="w-32 float-right">
+    <div className="float-right">
       <Image
         className="flex flex-col-reverse"
         src="/upQuotationMarks.svg"
         alt="Quotation Mark"
-        width={65}
-        height={65}
+        width={40}
+        height={40}
       />
     </div>
   )
