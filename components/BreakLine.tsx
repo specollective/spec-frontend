@@ -1,12 +1,11 @@
-export default function BreakLine({ color="spec-turquoise", lineWidth="1/3" , lineHeight="1"}) {
-  
+export default function BreakLine() {
   return (
     <hr 
       className={`
         my-6
         mx-auto 
-        w-${lineWidth}
-        h-${lineHeight}
+        w-full
+        h-1
         bg-spec-turquiose
         rounded
         border-0
