@@ -1,7 +1,6 @@
 import React from 'react'
 import HomeSection from './HomeSection'
 import Image from 'next/image'
-import ProjectsImg from '../public/ProjectsImage.svg'
 import SectionColumn from './SectionColumn'
 import { Heading4, Heading2 } from './Typography/Heading'
 import { Paragraph1 } from './Typography/Paragraph'
@@ -31,14 +30,14 @@ export default function HowWeWork() {
       <SectionColumn>
         <Image
           className="m-auto text-left mb-6 hidden lg:block lg:order-last"
-          src={ProjectsImg}
+          src="/ProjectsImage.svg"
           alt="two person talking"
           width={300}
           height={300}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"
-          src={ProjectsImg}
+          src="/ProjectsImage.svg"
           alt="people talking"
           width={200}
           height={200}
