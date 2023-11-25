@@ -1,18 +1,17 @@
 import Image from "next/image";
-import downQuotationMarks from "../public/downQuotationMark.svg";
-
 
 export default function DownQuotation() {
-  
-    return (
-          <Image
-              className="ml-10 float-left"
-            src={"/downQuotationMark.svg"}
-            width={50}
-            height={50}
-              alt="Quotation Mark"
-              priority
-            />
+  return (
+    <div className="float-left w-32">
+      <Image
+        className="ml-10 float-left"
+        src={"/downQuotationMark.svg"}
+        width={65}
+        height={65}
+        alt="Quotation Mark"
+        priority
+      />
+    </div>
   )
 }
 

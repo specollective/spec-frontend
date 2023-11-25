@@ -79,7 +79,7 @@ function ServicesAccordion({ services } : { services: any }) {
 
   return (
     <section className="w-full">
-      <BreakLine lineWidth="full" />
+      <BreakLine />
       {services?.map((project: ProjectProps, index: null) => (
         <div className="w-full" key={`${project.name}-${index}`}>
           <div className="cursor-pointer" onClick={() => showProject(index)}>
@@ -107,7 +107,7 @@ function ServicesAccordion({ services } : { services: any }) {
               <ServiceRow project={project} />
             </section>
           }
-          <BreakLine lineWidth="full" />
+          <BreakLine />
         </div>
       ))}
     </section>

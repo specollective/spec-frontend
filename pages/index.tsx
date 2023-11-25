@@ -13,6 +13,7 @@ import WhatWeDo from '../components/WhatWeDo'
 import OurServices from '../components/OurServices'
 import { createClient} from 'contentful'
 import { HOME_PAGE_DATA } from '../constants/home-page-data'
+import ExampleSlider from './Carousel/ExampleSlider'
 
 const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"), {
    ssr: false,
