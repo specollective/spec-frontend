@@ -69,6 +69,8 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
 
+  const wrappedSlides = [...slides, slides[0]]; // Append the first slide to the end
+
   const handlers = useSwipeable({
     onSwipedLeft: () => nextSlide(),
     onSwipedRight: () => prevSlide(),
@@ -76,15 +78,14 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
   });
 
   const nextSlide = () => {
-    if (currentSlide === slides.length - 1) {
-      // Disable the transition for immediate jump
+    if (currentSlide >= wrappedSlides.length - 1) {
       setTransitionEnabled(false);
       setCurrentSlide(0);
 
-      // Re-enable the transition for smooth effect
       setTimeout(() => {
         setTransitionEnabled(true);
-      }, 1000); // Timeout of 0 to push to end of call stack
+        setCurrentSlide(1);
+      }, 50);
     } else {
       setCurrentSlide((prev) => prev + 1);
     }
@@ -92,18 +93,21 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
 
   const prevSlide = () => {
     if (currentSlide === 0) {
+      // Jump to the last slide (which is visually the appended first slide) without transition
       setTransitionEnabled(false);
-      setCurrentSlide(slides.length - 1);
-      
+      setCurrentSlide(wrappedSlides.length - 1);
+
       setTimeout(() => {
         setTransitionEnabled(true);
-      }, 1000);
+        setCurrentSlide(wrappedSlides.length - 2); // Move to the actual last slide
+      }, 50);
     } else {
       setCurrentSlide((prev) => prev - 1);
     }
   };
 
   const slideOffset = -currentSlide * 100; // 100% for each slide
+  const indicatorPosition = currentSlide === wrappedSlides.length - 1 ? 0 : currentSlide;
 
   return (
     <div className="relative w-full overflow-hidden" {...handlers}>
@@ -111,7 +115,7 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
         className={`flex ${transitionEnabled ? 'transition-transform duration-500 ease-in-out' : ''} h-full`} 
         style={{ transform: `translateX(${slideOffset}%)` }}
       >
-        {slides.map((slide: any, index) => (
+        {wrappedSlides.map((slide: any, index) => (
           <div key={index} className="w-full flex-shrink-0 text-center">
             {slide}
           </div>
@@ -122,10 +126,7 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
           <LeftArrow />
         </button>
         {slides.map((_, index) => (
-          <span
-            key={index}
-            className={`h-2 w-2 mx-1 rounded-full ${index === currentSlide ? 'bg-green-600 border-2 border-black h-4 w-4 transition-opacity duration-500 ease-in-out motion-reduce:transition-none' : 'bg-gray-300 border-2 border-black w-4 h-4 opacity-20'}`}
-          ></span>
+          <span key={index} className={`h-2 w-2 mx-1 rounded-full ${index === indicatorPosition ? 'bg-green-600 border-2 border-black h-4 w-4 transition-opacity duration-500 ease-in-out motion-reduce:transition-none' : 'bg-gray-300 border-2 border-black w-4 h-4 opacity-20'}`}></span>
         ))}
         <button onClick={nextSlide}>
           <RightArrow />
