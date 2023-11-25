@@ -1,4 +1,4 @@
-import StatBox from '../pages/stat-box'
+import StatBox from './StatBox'
 import { Heading4, Heading0, Heading2 } from './Typography/Heading'
 import { Paragraph1  } from './Typography/Paragraph'
 import HomeSection from './HomeSection'
