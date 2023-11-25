@@ -94,7 +94,7 @@ export default function MobileCarousel() {
   )
 
   return (
-    <div className="bg-spec-sunshine visible pb-6 md:hidden">
+    <div id="get-involved-section" className="bg-spec-sunshine visible pb-6 md:hidden">
       <Slider slides={[mainSlide, ...getInvolvedSlides] as any} />
     </div>
   )
