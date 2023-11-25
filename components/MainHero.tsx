@@ -32,7 +32,7 @@ function MainHero({ title, content }: { title: string; content: string; }) {
               {content}
             </Paragraph0>
             <div className="">
-              <Link href="/home/#get-involved-section" className="block font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-sunshine text-center text-lg py-4 tracking-wider text-black w-full md:w-1/3 px-2 font-semibold" scroll={false}>
+              <Link href="/#get-involved-section" className="block font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-sunshine text-center text-lg py-4 tracking-wider text-black w-full md:w-1/3 px-2 font-semibold" scroll={false}>
                 JOIN OUR COMMUNITY
               </Link>
             </div>
