@@ -84,7 +84,7 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
       // Re-enable the transition for smooth effect
       setTimeout(() => {
         setTransitionEnabled(true);
-      }, 1000); // Timeout of 0 to push to end of call stack
+      }, 500); // Timeout of 0 to push to end of call stack
     } else {
       setCurrentSlide((prev) => prev + 1);
     }
@@ -97,7 +97,7 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
       
       setTimeout(() => {
         setTransitionEnabled(true);
-      }, 1000);
+      }, 500);
     } else {
       setCurrentSlide((prev) => prev - 1);
     }
