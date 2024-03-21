@@ -1,0 +1,101 @@
+.container {
+  /* Container for the entire component */
+  /* Fits neatly into its parent component */
+  /* Maintains aspect ratio of 1440:437 for the background image */
+  position: relative;
+  width: 100%;
+  padding-top: 30.42%;
+}
+
+.backgroundImage {
+  /* Background image of the component */
+  /* Positioned absolutely to fill the entire container */
+  /* Scales properly to cover the container */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image:/* webpackIgnore: true */ url("/assets/joer-hero-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  /* Container for the text content */
+  /* Positioned absolutely and centered within the container */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.j {
+  /* Styling for the letter "J" */
+  /* Dark gray color */
+  /* Responsive font size */
+  /* Light font weight */
+  /* Fira Sans font family */
+  /* Slight letter spacing */
+  /* Displayed inline-block and vertically aligned with other elements */
+  color: #1c1c1c;
+  font-size: 6.33vw;
+  font-weight: 300;
+  font-family: Fira Sans, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.specLogo {
+  /* Styling for the spec logo image */
+  /* Displayed inline-block and vertically aligned with other elements */
+  /* Responsive size */
+  /* Centered background image */
+  /* Added spacing on the sides */
+  display: inline-block;
+  vertical-align: middle;
+  width: 6.28vw;
+  height: 6.75vw;
+  background-image:/* webpackIgnore: true */ url("/assets/specLogo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 1vw;
+}
+
+.eR {
+  /* Styling for the letters "ER" */
+  /* Dark gray color */
+  /* Responsive font size */
+  /* Light font weight */
+  /* Fira Sans font family */
+  /* Slight letter spacing */
+  /* Displayed inline-block and vertically aligned with other elements */
+  color: #1c1c1c;
+  font-size: 6.33vw;
+  font-weight: 300;
+  font-family: Fira Sans, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.welcomeToTheJournalOfEngagedResearch {
+  /* Styling for the welcome text */
+  /* Black color */
+  /* Responsive font size */
+  /* Fira Sans font family */
+  /* Slight letter spacing */
+  /* Added spacing on the top */
+  color: #000;
+  font-size: 2.22vw;
+  font-family: Fira Sans, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: 0.02em;
+  margin-top: 2vw;
+}
