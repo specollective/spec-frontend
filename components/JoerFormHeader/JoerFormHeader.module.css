@@ -1,0 +1,66 @@
+.rectangle405 {
+  position: absolute;
+  left: 0;
+  top: 156px;
+  width: 1440px;
+  height: 437px;
+  background-image:/* webpackIgnore: true */ url("/assets/rectangle405.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.j {
+  color: #1c1c1c;
+  font-size: 91.1043px;
+  font-weight: 300;
+  font-family: Fira Sans, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: 0.02em;
+  position: absolute;
+  left: 614px;
+  top: 314px;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.specLogo3 {
+  position: absolute;
+  left: 639.6442px;
+  top: 319.3988px;
+  width: 90.4295px;
+  height: 97.1779px;
+  background-image:/* webpackIgnore: true */ url("/assets/specLogo3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.eR {
+  color: #1c1c1c;
+  font-size: 91.1043px;
+  font-weight: 300;
+  font-family: Fira Sans, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: 0.02em;
+  position: absolute;
+  left: 722.6503px;
+  top: 314.6748px;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.welcomeToTheJournalOfEngagedResearch {
+  color: #000;
+  font-size: 32px;
+  font-family: Fira Sans, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  letter-spacing: 0.02em;
+  position: absolute;
+  left: 379px;
+  top: 424px;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
