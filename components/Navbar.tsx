@@ -38,7 +38,7 @@ export default function Navbar() {
               DOCUMENTATION
             </a>
             <a
-              href="https://opencollective.com/spec"
+              href="https://hcb.hackclub.com/donations/start/spec"
               target="_blank"
               rel="noreferrer"
               className="font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4 "
