@@ -82,7 +82,7 @@ export default function Navbar() {
               Documentation
             </a>
             <a
-              href="https://opencollective.com/spec"
+              href="https://hcb.hackclub.com/donations/start/spec"
               target="_blank"
               rel="noreferrer"
               className="flex  w-40 h-14 items-center justify-center font-semibold  border-spec-turquiose border-4 bg-spec-turquiose tracking-wide py-5 px-16 text-lg text-white rounded-br-3xl rounded-tl-3xl font-montserrat hover:text-black hover:bg-white hover:border-spec-turquiose"
