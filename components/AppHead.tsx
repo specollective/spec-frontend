@@ -22,6 +22,7 @@ export function AppHead() {
         content="https://spec-bucket.nyc3.cdn.digitaloceanspaces.com/spec-logo-old.png"
       />
       <meta name="twitter:title" content="Sustainable Progress and Equality Collective" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5SMJ9E985"></script>
     </Head>
   )
 }
