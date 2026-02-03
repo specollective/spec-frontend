@@ -26,15 +26,6 @@ export default function Footer() {
       <div className="lg:visible float-right text-lg  mb-4 ">
         <div className="hidden lg:visible lg:block">
           <a
-            href="https://docs.specollective.org/introduction/"
-            aria-label="Documentation"
-            target="_blank"
-            rel="noreferrer"
-            className="pl-1 font-montserrat"
-          >
-            <p>Documentation</p>
-          </a>
-          <a
             href="https://medium.com/journal-of-engaged-research"
             aria-label="JoER"
             target="_blank"
@@ -52,7 +43,7 @@ export default function Footer() {
           >
             <p>Digital Art Gallery</p>
           </a>
-          
+
           <br></br>
           <SocialMedia/>
           <br></br>

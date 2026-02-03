@@ -30,14 +30,6 @@ export default function Navbar() {
         <div className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
           <div className="flex flex-col justify-center items-center font-montserrat">
             <a
-              href="https://docs.specollective.org/introduction/"
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4"
-            >
-              DOCUMENTATION
-            </a>
-            <a
               href="https://hcb.hackclub.com/donations/start/spec"
               target="_blank"
               rel="noreferrer"
@@ -73,14 +65,6 @@ export default function Navbar() {
             </p>
           </div>
           <div className="flex justify-center items-center space-x-8 font-montserrat leading-5 text-lg mb-6">
-            <a
-              href="https://docs.specollective.org/introduction/"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium text-center hover:underline hover:font-medium tracking-wide"
-            >
-              Documentation
-            </a>
             <a
               href="https://hcb.hackclub.com/donations/start/spec"
               target="_blank"

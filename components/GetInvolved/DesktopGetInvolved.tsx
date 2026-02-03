@@ -1,7 +1,7 @@
 import React from 'react'
 import DonationTable from '../DonationTable'
 import { getInvolvedData } from '../../constants/get-involved-data'
-import { openDocumentationPage, openDonatePage } from '../../utils/window'
+import { openDonatePage } from '../../utils/window'
 import { Heading2, Heading3, Heading1 } from '../Typography/Heading'
 import { Paragraph1 } from '../Typography/Paragraph'
 import GetInvolvedCard from './GetInvolvedCard'
@@ -34,21 +34,13 @@ export default function DesktopGetInvolved() {
                   </div>
 
                   <div className="">
-                    <div className="grid grid-cols-2">
-                      <button
-                        className="inline-block col-span-1 font-montserrat w-48 h-12 text-left text-base text-gray-400 font-semibold tracking-wide underline"
-                        onClick={openDocumentationPage}
-                      >
-                        LEARN MORE
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-block col-span-1 font-montserrat w-48 p-4 text-base rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center font-semibold tracking-wider text-white"
-                        onClick={openDonatePage}
-                      >
-                        DONATE
-                      </button>
-                    </div>
+                    <button
+                      type="button"
+                      className="inline-block font-montserrat w-48 p-4 text-base rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center font-semibold tracking-wider text-white"
+                      onClick={openDonatePage}
+                    >
+                      DONATE
+                    </button>
                   </div>
                 </div>
               </div>

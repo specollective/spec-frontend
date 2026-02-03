@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getInvolvedData } from '../../constants/get-involved-data';
-import { openDonatePage, openDocumentationPage } from '../../utils/window';
+import { openDonatePage } from '../../utils/window';
 import Slider from '../Slider';
 
 export default function MobileCarousel() {
@@ -68,16 +68,7 @@ export default function MobileCarousel() {
             </div>
             <div
               id="s1-container3"
-              className=" mt-7 flex items-center justify-evenly md:px-5">
-              <a
-                id="mobile-learn-more-hyperlink"
-                className="font-montserrat font-medium tracking-wide underline"
-                onClick={openDocumentationPage}
-              >
-                <p className="whitespace-nowrap text-lg px-3">
-                  LEARN MORE
-                </p>
-              </a>
+              className=" mt-7 flex items-center justify-center md:px-5">
               <button
                 type="button"
                 id="mobile-donate-button"
