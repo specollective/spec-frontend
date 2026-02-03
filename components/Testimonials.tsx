@@ -9,7 +9,7 @@ const testimonialCardStyle = `
   mx-auto
   border-solid
   md:border-2
-  md:border-spec-turquiose
+  md:border-spec-turquoise
   rounded 
   md:py-8
   md:my-8 

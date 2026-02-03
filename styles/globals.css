@@ -3,3 +3,28 @@
 @tailwind utilities;
 
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap'); */
+
+/* Global focus styles for keyboard navigation */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid #0C9FAA;
+    outline-offset: 2px;
+  }
+}
+
+/* Skip to main content link - hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}

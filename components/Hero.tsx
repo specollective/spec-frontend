@@ -17,14 +17,14 @@ export default function Hero() {
         </h1>
         <p
           id="browser-text"
-          className="hidden mt-10 w-10/12 font-montserrat text-2xl font-medium text-spec-turquiose lg:block  lg:text-2xl xl:text-3xl 2xl:text-4xl 2xl:leading-normal">
+          className="hidden mt-10 w-10/12 font-montserrat text-2xl font-medium text-spec-turquoise lg:block  lg:text-2xl xl:text-3xl 2xl:text-4xl 2xl:leading-normal">
           Through partnerships with clients, SPEC offers paid learning
           opportunities in website development, hardware creation, art, and
           writing.
         </p>
         <p
           id="mobile-text"
-          className="w-11/12 mt-4 mb-6 block font-montserrat text-sm font-medium text-spec-turquiose md:text-2xl md:leading-8 lg:hidden">
+          className="w-11/12 mt-4 mb-6 block font-montserrat text-sm font-medium text-spec-turquoise md:text-2xl md:leading-8 lg:hidden">
           SPEC provides paid learning opportunities by partnering with clients
           to build websites, hardware, art, and written content.
         </p>

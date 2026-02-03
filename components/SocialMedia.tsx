@@ -2,70 +2,67 @@ import Image from 'next/image'
 
 function SocialMedia () {
   return (
-    <div>
-      <div className=" flex flex-row space-x-4">
-        <a
-          href="https://github.com/specollective"
-          target="_blank"
-          rel="noreferrer"
-          className="pl-1"
-        >
+    <div className="flex gap-4">
+      <a
+        href="https://github.com/specollective"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Visit SPEC on GitHub"
+        className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
+      >
         <Image
-          className=" "
           src="/github-logo.svg"
-          alt="github-logo"
+          alt=""
           width={35}
           height={33}
           priority
         />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/specollective"
-          aria-label="LinkedIn"
-          target="_blank"
-          rel="noreferrer"
-          className="pl-1"
-        >
-          <Image
-            className=" "
-            src="/linkedin-logo.svg"
-            alt="linkedin-logo"
-            width={35}
-            height={33}
-            priority
-          />
-        </a>
-        <a
-          href="https://www.facebook.com/specollective"
-          target="_blank"
-          rel="noreferrer"
-          className="pl-1"
-        >    
-          <Image
-            className="float-right"
-            src="/facebook-logo.svg"
-            alt="facebook-logo"
-            width={35}
-            height={33}
-            priority
-          />
-        </a> 
-        <a
-          href="https://twitter.com/specollective"
-          target="_blank"
-          rel="noreferrer"
-          className="pl-1"
-        >
-          <Image
-            className="float-right  "
-            src="/twitter-logo.svg"
-            alt="twitter-logo"
-            width={35}
-            height={33}
-            priority
-          />
-        </a> 
-      </div> 
+      </a>
+      <a
+        href="https://www.linkedin.com/company/specollective"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Visit SPEC on LinkedIn"
+        className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
+      >
+        <Image
+          src="/linkedin-logo.svg"
+          alt=""
+          width={35}
+          height={33}
+          priority
+        />
+      </a>
+      <a
+        href="https://www.facebook.com/specollective"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Visit SPEC on Facebook"
+        className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
+      >
+        <Image
+          src="/facebook-logo.svg"
+          alt=""
+          width={35}
+          height={33}
+          priority
+        />
+      </a>
+      <a
+        href="https://twitter.com/specollective"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Visit SPEC on Twitter"
+        className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
+      >
+        <Image
+          src="/twitter-logo.svg"
+          alt=""
+          width={35}
+          height={33}
+          priority
+        />
+      </a>
     </div>
   )
 }

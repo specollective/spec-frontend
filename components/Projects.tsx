@@ -13,7 +13,7 @@ export default function Projects() {
 					</h1>
 					<p className="font-dmserif font-normal leading-8 mb-6 text-2xl md:text-4xl md:leading-10">
 						SPEC is organized as an open collective, which
-						<span className="text-spec-turquiose">
+						<span className="text-spec-turquoise">
 							&nbsp;raises and spends funds transparently&nbsp;
 						</span>
 						to achieve its goals.

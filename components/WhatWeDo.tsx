@@ -30,7 +30,7 @@ export default function WhatWeDo() {
           WHAT WE DO
         </Heading4>
         <Heading2>
-          We are a <span className="text-spec-turquiose">radically transparent and inclusive community.</span>
+          We are a <span className="text-spec-turquoise">radically transparent and inclusive community.</span>
         </Heading2>
         <Paragraph1>
           At SPEC, we are dedicated to fostering social impact and driving positive change through our diverse range of programs and services. Our approach centers around engaged research, collaborative mentorship, applied learning, capacity building, and pathways to sustainable careers.

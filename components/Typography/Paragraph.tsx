@@ -7,7 +7,7 @@ interface ParagraphProps {
 
 export function Paragraph0({ children, className }: ParagraphProps) {
   return (
-    <p className={`font-montserrat text-xl lg:text-2xl 2xl:text-4xl py-2 ${className}`}>
+    <p className={`font-montserrat text-lg md:text-xl lg:text-2xl xl:text-2xl 2xl:text-4xl ${className}`}>
       {children}
     </p>
   )
@@ -15,7 +15,7 @@ export function Paragraph0({ children, className }: ParagraphProps) {
 
 export function Paragraph1({ children, className }: ParagraphProps) {
   return (
-    <p className={`font-montserrat text-base md:text-xl ${className} py-2`}>
+    <p className={`font-montserrat text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-xl ${className}`}>
       {children}
     </p>
   )
@@ -23,7 +23,7 @@ export function Paragraph1({ children, className }: ParagraphProps) {
 
 export function Paragraph2({ children, className }: ParagraphProps) {
   return (
-    <p className={`text-sm md:text-base ${className}`}>
+    <p className={`font-montserrat text-sm md:text-base lg:text-base xl:text-base 2xl:text-base ${className}`}>
       {children}
     </p>
   )

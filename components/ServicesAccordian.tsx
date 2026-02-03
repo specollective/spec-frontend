@@ -58,13 +58,13 @@ function ServicesAccordion({ services } : { services: any }) {
 
   const toggleBtn = (index: any) => {
     const downImage = <Image
-      alt="down-arrow"
+      alt=""
       src="/ProjectArrow.svg"
       width={65}
       height={65}
     />;
     const upImage = <Image
-      alt="up-arrow"
+      alt=""
       src="/up-arrow.svg"
       width={65}
       height={65}
@@ -82,31 +82,33 @@ function ServicesAccordion({ services } : { services: any }) {
       <BreakLine />
       {services?.map((project: ProjectProps, index: null) => (
         <div className="w-full" key={`${project.name}-${index}`}>
-          <div className="cursor-pointer" onClick={() => showProject(index)}>
-            <div className="grid grid-cols-5">
-              <div className="col-span-4">
-                <Heading2>
-                  {project.name}
-                </Heading2>
-                <Subtitle1 className="pt-2 hidden md:block">
-                  {project.tag}
-                </Subtitle1>
-              </div>
-              <div className="col-span-1">
-                <button
-                  className="float-right"
-                  aria-expanded={isClicked === index ? "true" : "false"}
-                >
-                  {toggleBtn(index)}
-                </button>
-              </div>
+          <div className="grid grid-cols-5">
+            <div className="col-span-4">
+              <Heading2>
+                {project.name}
+              </Heading2>
+              <Subtitle1 className="pt-2 hidden md:block">
+                {project.tag}
+              </Subtitle1>
+            </div>
+            <div className="col-span-1">
+              <button
+                onClick={() => showProject(index)}
+                aria-expanded={isClicked === index ? "true" : "false"}
+                aria-controls={`accordion-content-${index}`}
+                className="float-right p-2 focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
+              >
+                {toggleBtn(index)}
+              </button>
             </div>
           </div>
-          {
-            <section className={isClicked === index ? "block" : "hidden"}>
-              <ServiceRow project={project} />
-            </section>
-          }
+          <section
+            id={`accordion-content-${index}`}
+            role="region"
+            className={isClicked === index ? "block" : "hidden"}
+          >
+            <ServiceRow project={project} />
+          </section>
           <BreakLine />
         </div>
       ))}

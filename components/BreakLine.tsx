@@ -7,7 +7,7 @@ export default function BreakLine() {
         mx-auto 
         w-full
         h-1
-        bg-spec-turquiose
+        bg-spec-turquoise
         rounded
         border-0
       `}

@@ -29,17 +29,22 @@ export default function Home({ title, heroContent }: HomeProps) {
   return (
     <>
       <AppHead />
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
-      <MainHero title={title} content={heroContent} />
-      <Mission />
-      <Background />
-      <HowWeWork />
-      <WhatWeDo />
-      <OurServices />
-      <GetInvolved />
-      <ByTheNumbers />
-      <Testimonials />
-      <ContactSection />
+      <main id="main-content">
+        <MainHero title={title} content={heroContent} />
+        <Mission />
+        <Background />
+        <HowWeWork />
+        <WhatWeDo />
+        <OurServices />
+        <GetInvolved />
+        <ByTheNumbers />
+        <Testimonials />
+        <ContactSection />
+      </main>
       <Footer />
     </>
   );

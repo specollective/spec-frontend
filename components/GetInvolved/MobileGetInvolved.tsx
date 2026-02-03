@@ -14,14 +14,14 @@ export default function MobileCarousel() {
       >
         <div
           key={slideData.title}
-          className="m-auto flex md:w-10/12 flex-col mt-3 px-4 md:px-5">
+          className="m-auto flex md:w-10/12 flex-col mt-3 px-6 md:px-8">
           <h1
             key={slideData.title}
-            className="rounded-tl-3xl bg-spec-lightTurquiose py-8 text-center font-dmserif text-2xl font-bold md:text-3xl">
+            className="rounded-tl-3xl bg-spec-lightTurquoise py-8 text-center font-dmserif text-2xl font-bold md:text-3xl">
             {slideData.title}
           </h1>
-          <div className="flex flex-col md:py-4 bg-spec-white rounded-br-3xl justify-between" style={{"height": "258px"}}>
-            <p className="md:text-2xl text-lg px-12 mt-8 font-montserrat md:px-40">
+          <div className="flex flex-col py-6 md:py-8 bg-spec-white rounded-br-3xl justify-between" style={{"height": "258px"}}>
+            <p className="md:text-2xl text-lg px-8 mt-4 font-montserrat md:px-16 lg:px-24">
               {slideData.body}
             </p>
             <div className="flex justify-center mt-2 mb-2">
@@ -40,7 +40,7 @@ export default function MobileCarousel() {
       <div>
       <div
           id="slide1"
-          className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-4 py-6 md:px-5 rounded-tl-3xl rounded-br-3xl"
+          className="m-auto flex md:w-6/12 min-w-fit flex-col mt-3 bg-spec-white px-6 py-6 md:px-8 rounded-tl-3xl rounded-br-3xl"
         >
           <div>
             <div
@@ -73,7 +73,7 @@ export default function MobileCarousel() {
                 type="button"
                 id="mobile-donate-button"
                 role="link"
-                className="font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquiose px-5 py-3 text-center text-lg font-semibold tracking-wider text-white"
+                className="font-montserrat rounded-br-3xl rounded-tl-3xl bg-spec-turquoise border-4 border-spec-turquoise px-6 py-3 text-center text-base font-semibold tracking-wider text-white hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
                 onClick={openDonatePage}>
                 DONATE
               </button>

@@ -1,56 +1,57 @@
 import SocialMedia from './SocialMedia'
+import Button from './Button'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0C9FAA] h-80">
-      <section className="flex p-4 justify-evenly">
-      <div className="flex-row">
-        <div className="text-center mt-12 mx-6 px-4">
-          <a
-            href="https://opencollective.com/spec"
-            className="  block bg-spec-yellow  text-center ml-24 p-3.5 text-md font-medium text-black rounded-br-2xl rounded-tl-2xl   hover:text-black hover:bg-white hover:border-spec-yellow hover:border-4 font-montserrat h-12 w-28 "
-          >
-            DONATE
-          </a>
-          <div className='flex flex-col justify-center'>
-            <div className="flex justify center lg:hidden content-center mt-10 mx-14">
+    <footer className="bg-spec-turquoise py-16 px-6">
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="flex flex-col items-center lg:items-start gap-8">
+            <Button
+              href="https://opencollective.com/spec"
+              variant="secondary"
+              size="md"
+            >
+              Donate to SPEC
+            </Button>
+
+            <div className="lg:hidden">
               <SocialMedia />
             </div>
-            <div className="lg:block font-montserrat items-center mt-10">
+
+            <p className="font-montserrat text-center lg:text-left text-sm md:text-base">
               © 2023 Sustainable Progress and Equality Collective
-            </div> 
-          </div> 
-        </div> 
-      </div>   
+            </p>
+          </div>
 
-      <div className="lg:visible float-right text-lg  mb-4 ">
-        <div className="hidden lg:visible lg:block">
-          <a
-            href="https://medium.com/journal-of-engaged-research"
-            aria-label="JoER"
-            target="_blank"
-            rel="noreferrer"
-            className="pl-1 font-montserrat"
-          >
-            <p>Journal of Engaged Research</p>
-          </a>
-          <a
-            href="https://medium.com/journal-of-engaged-research/expressions/home"
-            aria-label="ArtGallery"
-            target="_blank"
-            rel="noreferrer"
-            className="pl-1 font-montserrat"
-          >
-            <p>Digital Art Gallery</p>
-          </a>
+          <div className="hidden lg:flex lg:flex-col lg:items-end gap-6">
+            <nav className="flex flex-col items-end gap-3" aria-label="Footer navigation">
+              <a
+                href="https://medium.com/journal-of-engaged-research"
+                target="_blank"
+                rel="noreferrer"
+                className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
+              >
+                Journal of Engaged Research
+              </a>
+              <a
+                href="https://medium.com/journal-of-engaged-research/expressions/home"
+                target="_blank"
+                rel="noreferrer"
+                className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
+              >
+                Digital Art Gallery
+              </a>
+            </nav>
 
-          <br></br>
-          <SocialMedia/>
-          <br></br>
+            <div className="mt-4">
+              <SocialMedia />
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  </footer>
-)}
+    </footer>
+  )
+}
 
 

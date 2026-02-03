@@ -17,8 +17,8 @@ export default function DesktopGetInvolved() {
             Ready to be a part of something bigger?
           </Heading2>
 
-          <div className="bg-spec-white mx-auto rounded-tl-3xl rounded-br-3xl pt-24 pb-24 px-16 shadow-xl">
-            <div className="grid grid-cols-2 gap-20">
+          <div className="bg-spec-white mx-auto rounded-tl-3xl rounded-br-3xl pt-16 pb-16 px-12 lg:pt-20 lg:pb-20 lg:px-16 shadow-xl">
+            <div className="grid grid-cols-2 gap-12">
               <div className="col-span-1">
                 <div className="flex flex-col justify-between h-full">
                   <div className="flex">
@@ -33,10 +33,10 @@ export default function DesktopGetInvolved() {
                     </Paragraph1>
                   </div>
 
-                  <div className="">
+                  <div>
                     <button
                       type="button"
-                      className="inline-block font-montserrat w-48 p-4 text-base rounded-br-3xl rounded-tl-3xl bg-spec-turquiose text-center font-semibold tracking-wider text-white"
+                      className="inline-block font-montserrat w-48 px-6 py-3 text-base rounded-br-3xl rounded-tl-3xl bg-spec-turquoise border-4 border-spec-turquoise text-center font-semibold tracking-wider text-white hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
                       onClick={openDonatePage}
                     >
                       DONATE
@@ -53,7 +53,7 @@ export default function DesktopGetInvolved() {
             </div>
           </div>
 
-          <div className="flex justify-between mt-10 pb-4">
+          <div className="grid grid-cols-3 gap-6 mt-16 pb-4 max-w-full">
             {getInvolvedData.map((cardData, index) => {
               return <GetInvolvedCard key={index} cardData={cardData} index={index} />
             })}

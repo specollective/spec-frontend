@@ -1,30 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Button from "./Button";
 import logo from "../public/spec-logo.svg";
 import menu from "../public/menuSign.svg";
 import close from "../public/menuClose.svg";
 
 export default function Navbar() {
   const [displayMenu, setDisplayMenu] = useState(false);
+
   function toggleMenu() {
     setDisplayMenu(!displayMenu);
   }
+
+  useEffect(() => {
+    if (displayMenu) {
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          setDisplayMenu(false);
+        }
+      };
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [displayMenu]);
   return (
     <div className="sticky top-0 z-50 bg-white md:pt-4">
-      <div className="flex space-x-2 justify-between items-center border-b border-black px-1.5 py-3 h-14 md:hidden">
-        <div className="flex space-x-2">
+      <div className="flex justify-between items-center border-b border-black px-4 py-3 h-14 md:hidden">
+        <div className="flex items-center gap-2">
           <Image src={logo} alt="spec-logo" width={40} height={50} />
           <p className="text-2xl leading-9 font-semibold tracking-wider">
             SPEC
           </p>
         </div>
-        <div onClick={toggleMenu}>
+        <button
+          onClick={toggleMenu}
+          aria-label={displayMenu ? "Close menu" : "Open menu"}
+          aria-expanded={displayMenu}
+          className="p-2 focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
+        >
           <Image
             className="w-9"
             src={displayMenu ? close : menu}
-            alt={displayMenu ? "close menu" : "menu"}
+            alt=""
           />
-        </div>
+        </button>
       </div>
       {displayMenu && (
         <div className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
@@ -33,16 +52,16 @@ export default function Navbar() {
               href="https://hcb.hackclub.com/donations/start/spec"
               target="_blank"
               rel="noreferrer"
-              className="font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-5 px-10 text-lg p-4 "
+              className="font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-4 px-6 text-lg focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
             >
-              DONATE TO SPEC
+              Donate to SPEC
             </a>
           </div>
         </div>
       )}
       <div className="hidden md:block">
-        <div className="flex justify-between items-center border-b-2 border-black mx-20 mt-4">
-          <div className="flex space-x-2 mb-6">
+        <div className="flex justify-between items-center border-b-2 border-black mx-12 lg:mx-16 xl:mx-20 mt-4 pb-6">
+          <div className="flex items-center gap-2">
             <Image
               className="sm:hidden md:block lg:hidden text-left mt-2"
               src={logo}
@@ -64,15 +83,16 @@ export default function Navbar() {
               SPEC
             </p>
           </div>
-          <div className="flex justify-center items-center space-x-8 font-montserrat leading-5 text-lg mb-6">
-            <a
+          <div className="flex items-center">
+            <Button
               href="https://hcb.hackclub.com/donations/start/spec"
               target="_blank"
               rel="noreferrer"
-              className="flex  w-40 h-14 items-center justify-center font-semibold  border-spec-turquiose border-4 bg-spec-turquiose tracking-wide py-5 px-16 text-lg text-white rounded-br-3xl rounded-tl-3xl font-montserrat hover:text-black hover:bg-white hover:border-spec-turquiose"
+              variant="primary"
+              size="lg"
             >
-              DONATE
-            </a>
+              Donate to SPEC
+            </Button>
           </div>
         </div>
       </div>

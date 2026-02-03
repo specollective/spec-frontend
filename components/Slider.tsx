@@ -23,7 +23,7 @@ const indicatorStyles = `
   border-solid 
   border-black
   rounded-full 
-  bg-green-600
+  bg-spec-turquoise
   p-0 
   -indent-[999px] 
   opacity-20
@@ -110,9 +110,14 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
   const indicatorPosition = currentSlide === wrappedSlides.length - 1 ? 0 : currentSlide;
 
   return (
-    <div className="relative w-full overflow-hidden" {...handlers}>
-      <div 
-        className={`flex ${transitionEnabled ? 'transition-transform duration-500 ease-in-out' : ''} h-full`} 
+    <div
+      className="relative w-full overflow-hidden pb-16"
+      role="region"
+      aria-label="Carousel"
+      {...handlers}
+    >
+      <div
+        className={`flex ${transitionEnabled ? 'transition-transform duration-500 ease-in-out' : ''} h-full`}
         style={{ transform: `translateX(${slideOffset}%)` }}
       >
         {wrappedSlides.map((slide: any, index) => (
@@ -121,14 +126,22 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
           </div>
         ))}
       </div>
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center">
-        <button onClick={prevSlide}>
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center">
+        <button
+          onClick={prevSlide}
+          aria-label="Previous slide"
+          className="p-2 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+        >
           <LeftArrow />
         </button>
         {slides.map((_, index) => (
-          <span key={index} className={`h-2 w-2 mx-1 rounded-full ${index === indicatorPosition ? 'bg-green-600 border-2 border-black h-4 w-4 transition-opacity duration-500 ease-in-out motion-reduce:transition-none' : 'bg-gray-300 border-2 border-black w-4 h-4 opacity-20'}`}></span>
+          <span key={index} className={`h-2 w-2 mx-1 rounded-full ${index === indicatorPosition ? 'bg-spec-turquoise border-2 border-black h-4 w-4 transition-opacity duration-500 ease-in-out motion-reduce:transition-none' : 'bg-gray-300 border-2 border-black w-4 h-4 opacity-20'}`}></span>
         ))}
-        <button onClick={nextSlide}>
+        <button
+          onClick={nextSlide}
+          aria-label="Next slide"
+          className="p-2 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+        >
           <RightArrow />
         </button>
       </div>

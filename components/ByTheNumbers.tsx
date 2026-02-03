@@ -5,17 +5,17 @@ import HomeSection from './HomeSection'
 
 export default function ByTheNumbers() {
   return (
-    <div className="bg-spec-lightTurquiose py-16">
+    <div className="bg-spec-lightTurquoise py-16">
       <HomeSection>
         <div className="w-full grid grid-rows-2 gap-6 lg:mx-auto">
           <div className="grid lg:grid-cols-3 gap-6">
             <div className="col-span-2 lg:col-span-1 order-last lg:order-first">
               <StatBox
-                className="border border-spec-turquiose md:border-none row-start-3 col-start-1 font-normal rounded-md bg-spec-white"
+                className="border border-spec-turquoise md:border-none row-start-3 col-start-1 font-normal rounded-md bg-spec-white"
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquiose">
+                <Heading0 className="font-dmserif text-spec-turquoise">
                   $290k
                 </Heading0>
                 <Paragraph1>
@@ -38,11 +38,11 @@ export default function ByTheNumbers() {
           <div className="grid lg:grid-cols-3 gap-6">
             <div className="col-span-1">
               <StatBox
-                className="border border-spec-turquiose md:border-none row-start-3 col-start-1 font-normal rounded-md bg-spec-white"
+                className="border border-spec-turquoise md:border-none row-start-3 col-start-1 font-normal rounded-md bg-spec-lemon"
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquiose">
+                <Heading0 className="font-dmserif text-spec-turquoise">
                   28
                 </Heading0>
                 <Paragraph1 className="text-center">
@@ -52,11 +52,11 @@ export default function ByTheNumbers() {
             </div>
             <div className="col-span-1">
               <StatBox
-                className="border border-spec-turquiose md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-white"
+                className="border border-spec-turquoise md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-banana"
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquiose">
+                <Heading0 className="font-dmserif text-spec-turquoise">
                   15
                 </Heading0>
                 <Paragraph1 className="text-center">
@@ -66,11 +66,11 @@ export default function ByTheNumbers() {
             </div>
             <div className="col-span-1">
               <StatBox
-                className="border border-spec-turquiose md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-white"
+                className="border border-spec-turquoise md:border-none row-start-3 col-start-2 font-normal rounded-md bg-spec-orange"
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquiose">
+                <Heading0 className="font-dmserif text-spec-turquoise">
                   7
                 </Heading0>
                 <Paragraph1 className="text-center">

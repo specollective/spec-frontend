@@ -14,7 +14,7 @@ export default function HowWeWork() {
         </Heading4>
         <Heading2>
           SPEC is organized as an open collective, which
-          <span className="text-spec-turquiose">
+          <span className="text-spec-turquoise">
             &nbsp;raises and spends funds transparently&nbsp;
           </span>
           to achieve its goals.

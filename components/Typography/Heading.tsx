@@ -4,7 +4,7 @@ type HeadingProps = {
 }
 
 export function Heading0({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-4xl lg:text-7xl 2xl:text-8xl ${className}`;
+  const classes = `font-dmserif text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl ${className}`;
   return (
     <h1 className={classes}>
       {children}
@@ -13,7 +13,7 @@ export function Heading0({ children, className = '' }: HeadingProps) {
 }
 
 export function Heading1({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-3xl md:text-4xl 2xl:text-5xl ${className}`;
+  const classes = `font-dmserif text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-5xl ${className}`;
   return (
     <h1 className={classes}>
       {children}
@@ -22,37 +22,37 @@ export function Heading1({ children, className = '' }: HeadingProps) {
 }
 
 export function Subtitle1({ children, className = '' }: HeadingProps) {
-  const classes = `font-montserrat font-semibold text-base md:text-lg 2xl:text-2xl ${className}`;
+  const classes = `font-montserrat font-semibold text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl ${className}`;
   return (
-    <h1 className={classes}>
+    <p className={classes}>
       {children}
-    </h1>
+    </p>
   )
 }
 
 export function Heading2({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-xl md:text-4xl 2xl:text-3xl ${className}`;
+  const classes = `font-dmserif text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl ${className}`;
   return (
-    <h1 className={classes}>
+    <h2 className={classes}>
       {children}
-    </h1>
+    </h2>
   )
 }
 
 export function Heading3({ children, className = '' }: HeadingProps) {
-  const classes = `font-dmserif text-lg md:text-2xl 2xl:text-4xl ${className}`;
+  const classes = `font-dmserif text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl ${className}`;
   return (
-    <h1 className={classes}>
+    <h3 className={classes}>
       {children}
-    </h1>
+    </h3>
   )
 }
 
 export function Heading4({ children, className = '' }: HeadingProps) {
-  const classes = `font-medium opacity-40 text-black tracking-wider font-montserrat text-lg md:text-xl 2xl:text-3xl ${className} pb-2`;
+  const classes = `font-medium text-spec-gray tracking-wider font-montserrat text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl ${className}`;
   return (
-    <h1 className={classes}>
+    <h4 className={classes}>
       {children}
-    </h1>
+    </h4>
   )
 }

@@ -12,8 +12,8 @@ module.exports = {
       colors: {
         spec: {
           yellow: '#FCD991',
-          turquiose: '#0C9FAA',
-          lightTurquiose: '#92CDD1',
+          turquoise: '#0C9FAA',
+          lightTurquoise: '#92CDD1',
           lightRed: '#F16A6E',
           black: '#1C1C1C',
           white: '#FEFFFF',
