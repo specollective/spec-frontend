@@ -9,7 +9,7 @@ import HomeSection from '../HomeSection'
 
 export default function DesktopGetInvolved() {
   return (
-    <div className="hidden lg:block bg-spec-sunshine pb-10">
+    <div className="hidden lg:block bg-spec-yellow pb-10">
       <div id="get-involved-section" className="relative -top-64"></div>
       <HomeSection>
         <div className="w-full mx-auto">

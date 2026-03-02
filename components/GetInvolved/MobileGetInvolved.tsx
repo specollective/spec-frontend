@@ -52,7 +52,7 @@ export default function MobileCarousel() {
               </h2>
               <Image
                 id="mobile-donate-image"
-                alt="mobile-donate-image"
+                alt="People donating to support the community"
                 src="/DonateImg.svg"
                 className="w-5/12 md:w-6/12"
                 width={500}
@@ -85,7 +85,7 @@ export default function MobileCarousel() {
   )
 
   return (
-    <div className="bg-spec-sunshine visible pb-6 md:hidden">
+    <div className="bg-spec-yellow visible pb-6 md:hidden">
       <Slider slides={[mainSlide, ...getInvolvedSlides] as any} />
     </div>
   )

@@ -2,16 +2,17 @@ import React from 'react'
 import HomeSection from './HomeSection'
 import Image from 'next/image'
 import SectionColumn from './SectionColumn'
-import { Heading4, Heading2 } from './Typography/Heading'
+import { Heading2 } from './Typography/Heading'
+import { Eyebrow } from './Typography/Eyebrow'
 import { Paragraph1 } from './Typography/Paragraph'
 
 export default function HowWeWork() {
   return (
     <HomeSection>
       <SectionColumn orderClasses="order-last md:order-first">
-        <Heading4>
+        <Eyebrow>
           HOW WE WORK
-        </Heading4>
+        </Eyebrow>
         <Heading2>
           SPEC is organized as an open collective, which
           <span className="text-spec-turquoise">
@@ -31,14 +32,14 @@ export default function HowWeWork() {
         <Image
           className="m-auto text-left mb-6 hidden lg:block lg:order-last"
           src="/ProjectsImage.svg"
-          alt="two person talking"
+          alt="People collaborating on a project"
           width={300}
           height={300}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"
           src="/ProjectsImage.svg"
-          alt="people talking"
+          alt="People collaborating on a project"
           width={200}
           height={200}
         />

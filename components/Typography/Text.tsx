@@ -7,7 +7,7 @@ interface TextProps {
 
 export function Text1({ children, className }: TextProps) {
   return (
-    <p className={`font-montserrat text-xl md:text-2xl ${className}`}>
+    <p className={`font-montserrat leading-relaxed text-xl md:text-2xl ${className}`}>
       {children}
     </p>
   )
@@ -15,7 +15,7 @@ export function Text1({ children, className }: TextProps) {
 
 export function Text2({ children, className }: TextProps) {
   return (
-    <p className={`text-sm md:text-base ${className}`}>
+    <p className={`font-montserrat leading-relaxed text-sm md:text-base ${className}`}>
       {children}
     </p>
   )

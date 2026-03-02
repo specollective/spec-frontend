@@ -3,16 +3,17 @@ import Image from 'next/image'
 import HomeSection from './HomeSection'
 import SectionColumn from './SectionColumn'
 import { Paragraph1 } from './Typography/Paragraph'
-import { Heading2, Heading3, Heading4 } from './Typography/Heading'
+import { Heading2, Heading3 } from './Typography/Heading'
+import { Eyebrow } from './Typography/Eyebrow'
 
 export default function Mission() {
   return (
     <HomeSection>
       <div id="mission-section" className="relative -top-96"></div>
       <SectionColumn orderClasses="order-last md:order-first">
-        <Heading4>
+        <Eyebrow>
           OUR MISSION
-        </Heading4>
+        </Eyebrow>
         <Heading2 className="">
           We are on a mission to <span className='text-spec-turquoise'>provide diverse peoples the resources and opportunities </span> essential to learn skills, build careers, and become leaders of sustainable social impact.
         </Heading2>

@@ -12,7 +12,7 @@ interface HomeSectionProps {
 // xl	1280px	@media (min-width: 1280px) { ... }
 // 2xl	1536px	@media (min-width: 1536px) { ... }
 const HomeSection: React.FC<HomeSectionProps> = ({ children, id, className }) => {
-  return <div id={id} className={`flex flex-col items-center justify-center md:flex md:flex-row mx-10 md:mx-12 lg:mx-16 mt-16 xl:mx-52 2xl:px-50 2xl:max-w-screen-xl 2xl:mx-auto ${className}`}>
+  return <div id={id} className={`flex flex-col items-center justify-center md:flex-row px-6 md:px-12 lg:px-16 xl:px-20 py-16 md:py-20 max-w-screen-xl mx-auto ${className}`}>
     {children}
   </div>
 };

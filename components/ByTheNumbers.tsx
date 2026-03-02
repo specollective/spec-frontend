@@ -1,5 +1,6 @@
 import StatBox from './StatBox'
-import { Heading4, Heading0, Heading2 } from './Typography/Heading'
+import { Heading0, Heading2 } from './Typography/Heading'
+import { Eyebrow } from './Typography/Eyebrow'
 import { Paragraph1  } from './Typography/Paragraph'
 import HomeSection from './HomeSection'
 
@@ -15,7 +16,7 @@ export default function ByTheNumbers() {
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquoise">
+                <Heading0 as="p" className="font-dmserif text-spec-turquoise">
                   $290k
                 </Heading0>
                 <Paragraph1>
@@ -24,9 +25,9 @@ export default function ByTheNumbers() {
               </StatBox>
             </div>
             <div className="md:col-span-2">
-              <Heading4>
+              <Eyebrow>
                 BY THE NUMBERS
-              </Heading4>
+              </Eyebrow>
               <Heading2>
                 We are striving to <span className='text-spec-white'>create sustainable careers</span> for our contributors.
               </Heading2>
@@ -42,7 +43,7 @@ export default function ByTheNumbers() {
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquoise">
+                <Heading0 as="p" className="font-dmserif text-spec-turquoise">
                   28
                 </Heading0>
                 <Paragraph1 className="text-center">
@@ -56,7 +57,7 @@ export default function ByTheNumbers() {
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquoise">
+                <Heading0 as="p" className="font-dmserif text-spec-turquoise">
                   15
                 </Heading0>
                 <Paragraph1 className="text-center">
@@ -70,7 +71,7 @@ export default function ByTheNumbers() {
                 height="h-full"
                 width="w-full"
               >
-                <Heading0 className="font-dmserif text-spec-turquoise">
+                <Heading0 as="p" className="font-dmserif text-spec-turquoise">
                   7
                 </Heading0>
                 <Paragraph1 className="text-center">

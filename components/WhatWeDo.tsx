@@ -3,7 +3,8 @@ import HomeSection from './HomeSection'
 import Image from 'next/image'
 import SectionColumn from './SectionColumn'
 import TeamImg from '../public/Team.svg'
-import { Heading4, Heading2 } from './Typography/Heading'
+import { Heading2 } from './Typography/Heading'
+import { Eyebrow } from './Typography/Eyebrow'
 import { Paragraph1 } from './Typography/Paragraph'
 
 export default function WhatWeDo() {
@@ -13,22 +14,22 @@ export default function WhatWeDo() {
         <Image
           className="m-auto text-left mb-6 hidden lg:block float-left"
           src={TeamImg}
-          alt="two person talking"
+          alt="Team members working together"
           width={375}
           height={275}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"
           src={TeamImg}
-          alt="people talking"
+          alt="Team members working together"
           width={300}
           height={100}
         />
       </SectionColumn>
       <SectionColumn>
-        <Heading4>
+        <Eyebrow>
           WHAT WE DO
-        </Heading4>
+        </Eyebrow>
         <Heading2>
           We are a <span className="text-spec-turquoise">radically transparent and inclusive community.</span>
         </Heading2>

@@ -1,68 +1,48 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import AppHead from '../components/AppHead'
-import Navbar from '../components/Navbar'
-import MainHero from '../components/MainHero'
-import Footer from '../components/Footer'
-import ByTheNumbers from '../components/ByTheNumbers'
-import ContactSection from '../components/Contact/ContactSection'
-import Mission from '../components/Mission'
-import Background from '../components/Background'
-import HowWeWork from '../components/HowWeWork'
-import WhatWeDo from '../components/WhatWeDo'
-import OurServices from '../components/OurServices'
-import Testimonials from '../components/Testimonials'
-import { createClient} from 'contentful'
-import { HOME_PAGE_DATA } from '../constants/home-page-data'
+import SocialMedia from '../components/SocialMedia'
 
-const GetInvolved = dynamic(() => import("../components/GetInvolved/GetInvolved"), {
-   ssr: false,
-});
-
-type HomeProps = {
-  title: string;
-  heroContent: string;
-};
-
-// Langing page for app.
-export default function Home({ title, heroContent }: HomeProps) {
+export default function Home() {
   return (
     <>
       <AppHead />
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
-      <Navbar />
-      <main id="main-content">
-        <MainHero title={title} content={heroContent} />
-        <Mission />
-        <Background />
-        <HowWeWork />
-        <WhatWeDo />
-        <OurServices />
-        <GetInvolved />
-        <ByTheNumbers />
-        <Testimonials />
-        <ContactSection />
-      </main>
-      <Footer />
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6 md:px-12 lg:px-16">
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20 max-w-screen-lg mx-auto">
+          <div className="flex-shrink-0">
+            <Image
+              src="/spec-logo.svg"
+              alt="SPEC tree logo"
+              width={240}
+              height={300}
+              className="w-40 md:w-60 lg:w-72"
+              priority
+            />
+          </div>
+
+          <div className="flex flex-col gap-6 text-center md:text-left">
+            <h1 className="font-dmserif leading-tight text-4xl md:text-5xl lg:text-6xl">
+              Sustainable Progress &amp; Equality Collective
+            </h1>
+            <p className="font-montserrat leading-relaxed text-base md:text-lg text-spec-gray max-w-prose">
+              SPEC is a diverse community of people working together to provide resources and opportunities essential to learning skills, building careers, and becoming leaders of sustainable social impact.
+            </p>
+            <p className="font-montserrat leading-relaxed text-base md:text-lg text-spec-gray max-w-prose">
+              Our website is currently under construction. In the meantime, reach us at{' '}
+              <a
+                href="mailto:info@specollective.org"
+                className="text-spec-turquoise underline underline-offset-2 hover:text-spec-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 rounded"
+              >
+                info@specollective.org
+              </a>
+            </p>
+
+            <div className="pt-2">
+              <SocialMedia />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
-  );
-}
-
-export async function getServerSideProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID as string,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-  })
-
-  let data;
-  try {
-    data = await client.getEntry('5MnimUS5Kj9xVEwGV8Av7b')
-  } catch(e) {
-    console.log(e);
-    data = HOME_PAGE_DATA;
-  }
-
-  return { props: data.fields };
+  )
 }
