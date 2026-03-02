@@ -25,7 +25,7 @@ function MainHero({ title, content }: { title: string; content: string; }) {
         {/* <div className="bg-white bg-opacity-90 rounded-lg shadow-lg z-10 p-6 2xl:w-1/2 mx-6"> */}
         <div className="bg-spec-gray bg-opacity-90 rounded-lg shadow-lg px-6 md:px-8 py-12 md:py-16 w-full z-10">
           <div className="w-11/12 mx-auto">
-            <Heading1 className="text-white text-left">
+            <Heading1 as="h1" className="text-white text-left">
               {title}
             </Heading1>
             <Paragraph0 className="text-white text-left mt-8 mb-8 md:mt-12 md:mb-12 w-full">

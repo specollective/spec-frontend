@@ -4,7 +4,8 @@ import bpImg from '../public/BPImage.svg'
 import HomeSection from './HomeSection'
 import SectionColumn from './SectionColumn'
 import { Paragraph0, Paragraph1 } from './Typography/Paragraph'
-import { Heading4, Heading2 } from './Typography/Heading'
+import { Heading2 } from './Typography/Heading'
+import { Eyebrow } from './Typography/Eyebrow'
 
 export default function Background() {
   return (
@@ -13,22 +14,22 @@ export default function Background() {
         <Image
           className="m-auto text-left mb-6 hidden lg:block lg:order-last float-left"
           src={bpImg}
-          alt="two person talking"
+          alt="Two people in conversation"
           width={400}
           height={400}
         />
         <Image
           className="m-auto text-left mb-6 block lg:hidden"
           src={bpImg}
-          alt="people talking"
+          alt="Two people in conversation"
           width={400}
           height={400}
         />
       </SectionColumn>
       <SectionColumn>
-        <Heading4>
+        <Eyebrow>
           BACKGROUND
-        </Heading4>
+        </Eyebrow>
         <Heading2>
           SPEC was born out of research from <span className="text-spec-turquoise">The Buffalo Project</span>, a 10-year participatory research project that investigated using cultural data in the development of learning programs.
         </Heading2>

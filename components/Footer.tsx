@@ -4,7 +4,7 @@ import Button from './Button'
 export default function Footer() {
   return (
     <footer className="bg-spec-turquoise py-16 px-6">
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="flex flex-col items-center lg:items-start gap-8">
             <Button
@@ -33,6 +33,7 @@ export default function Footer() {
                 className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
                 Journal of Engaged Research
+                <span className="sr-only"> (opens in new tab)</span>
               </a>
               <a
                 href="https://medium.com/journal-of-engaged-research/expressions/home"
@@ -41,6 +42,7 @@ export default function Footer() {
                 className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
                 Digital Art Gallery
+                <span className="sr-only"> (opens in new tab)</span>
               </a>
             </nav>
 

@@ -10,29 +10,6 @@ interface SliderProps {
   slides: Slide[];
 }
 
-const indicatorStyles = `
-  mx-[3px]
-  box-content
-  h-[10px] 
-  w-[10px] 
-  md:h-[10px] 
-  md:w-[10px] 
-  flex-initial 
-  cursor-pointer 
-  border-2  
-  border-solid 
-  border-black
-  rounded-full 
-  bg-spec-turquoise
-  p-0 
-  -indent-[999px] 
-  opacity-20
-  transition-opacity 
-  duration-[600ms] 
-  ease-[cubic-bezier(0.25,0.1,0.25,1.0)] 
-  motion-reduce:transition-none
-`
-
 const LeftArrow = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -93,26 +70,30 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
 
   const prevSlide = () => {
     if (currentSlide === 0) {
-      // Jump to the last slide (which is visually the appended first slide) without transition
       setTransitionEnabled(false);
       setCurrentSlide(wrappedSlides.length - 1);
 
       setTimeout(() => {
         setTransitionEnabled(true);
-        setCurrentSlide(wrappedSlides.length - 2); // Move to the actual last slide
+        setCurrentSlide(wrappedSlides.length - 2);
       }, 50);
     } else {
       setCurrentSlide((prev) => prev - 1);
     }
   };
 
-  const slideOffset = -currentSlide * 100; // 100% for each slide
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const slideOffset = -currentSlide * 100;
   const indicatorPosition = currentSlide === wrappedSlides.length - 1 ? 0 : currentSlide;
 
   return (
     <div
       className="relative w-full overflow-hidden pb-16"
       role="region"
+      aria-roledescription="carousel"
       aria-label="Carousel"
       {...handlers}
     >
@@ -121,12 +102,18 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
         style={{ transform: `translateX(${slideOffset}%)` }}
       >
         {wrappedSlides.map((slide: any, index) => (
-          <div key={index} className="w-full flex-shrink-0 text-center">
+          <div
+            key={index}
+            className="w-full flex-shrink-0 text-center"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`Slide ${index + 1} of ${slides.length}`}
+          >
             {slide}
           </div>
         ))}
       </div>
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center">
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center" aria-live="polite">
         <button
           onClick={prevSlide}
           aria-label="Previous slide"
@@ -135,7 +122,13 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
           <LeftArrow />
         </button>
         {slides.map((_, index) => (
-          <span key={index} className={`h-2 w-2 mx-1 rounded-full ${index === indicatorPosition ? 'bg-spec-turquoise border-2 border-black h-4 w-4 transition-opacity duration-500 ease-in-out motion-reduce:transition-none' : 'bg-gray-300 border-2 border-black w-4 h-4 opacity-20'}`}></span>
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={index === indicatorPosition ? 'true' : undefined}
+            className={`h-4 w-4 mx-1 rounded-full border-2 border-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 ${index === indicatorPosition ? 'bg-spec-turquoise' : 'bg-gray-300 opacity-20'}`}
+          />
         ))}
         <button
           onClick={nextSlide}

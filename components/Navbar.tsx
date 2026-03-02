@@ -24,13 +24,13 @@ export default function Navbar() {
     }
   }, [displayMenu]);
   return (
-    <div className="sticky top-0 z-50 bg-white md:pt-4">
+    <header className="sticky top-0 z-50 bg-white md:pt-4">
       <div className="flex justify-between items-center border-b border-black px-4 py-3 h-14 md:hidden">
         <div className="flex items-center gap-2">
-          <Image src={logo} alt="spec-logo" width={40} height={50} />
-          <p className="text-2xl leading-9 font-semibold tracking-wider">
+          <Image src={logo} alt="SPEC logo" width={40} height={50} />
+          <span className="text-2xl leading-9 font-semibold tracking-wider">
             SPEC
-          </p>
+          </span>
         </div>
         <button
           onClick={toggleMenu}
@@ -46,7 +46,7 @@ export default function Navbar() {
         </button>
       </div>
       {displayMenu && (
-        <div className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
+        <nav aria-label="Mobile navigation" className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
           <div className="flex flex-col justify-center items-center font-montserrat">
             <a
               href="https://hcb.hackclub.com/donations/start/spec"
@@ -55,33 +55,34 @@ export default function Navbar() {
               className="font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-4 px-6 text-lg focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
             >
               Donate to SPEC
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
           </div>
-        </div>
+        </nav>
       )}
-      <div className="hidden md:block">
-        <div className="flex justify-between items-center border-b-2 border-black mx-12 lg:mx-16 xl:mx-20 mt-4 pb-6">
+      <nav aria-label="Main navigation" className="hidden md:block">
+        <div className="flex justify-between items-center border-b-2 border-black px-6 md:px-12 lg:px-16 xl:px-20 max-w-screen-xl mx-auto mt-4 pb-6">
           <div className="flex items-center gap-2">
             <Image
               className="sm:hidden md:block lg:hidden text-left mt-2"
               src={logo}
-              alt="spec-logo"
+              alt="SPEC logo"
               width={40}
               height={20}
             />
-            <p className="md:visible lg:hidden mt-2 text-2xl leading-9 font-semibold tracking-wider">
+            <span className="md:visible lg:hidden mt-2 text-2xl leading-9 font-semibold tracking-wider">
               SPEC
-            </p>
+            </span>
             <Image
               className="sm:hidden md:hidden lg:block text-left"
               src={logo}
-              alt="spec-logo"
+              alt="SPEC logo"
               width={60}
               height={80}
             />
-            <p className="md:hidden lg:block font-poppins text-xs lg:text-2xl leading-9 font-medium pt-2 tracking-wider">
+            <span className="md:hidden lg:block font-poppins text-xs lg:text-2xl leading-9 font-medium pt-2 tracking-wider">
               SPEC
-            </p>
+            </span>
           </div>
           <div className="flex items-center">
             <Button
@@ -95,7 +96,7 @@ export default function Navbar() {
             </Button>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }

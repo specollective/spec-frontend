@@ -17,7 +17,6 @@ module.exports = {
           lightRed: '#F16A6E',
           black: '#1C1C1C',
           white: '#FEFFFF',
-          sunshine: '#FCD991',
           lemon: '#FFEECC',
           banana: '#FFF7E5',
           orange: '#FFC692',
@@ -30,8 +29,9 @@ module.exports = {
         poppins: ['Poppins']
       },
       lineHeight: {
-        'extra-loose': '10.5',
-        '12': '3rem',
+        'tight-heading': '1.1',
+        'snug-heading': '1.25',
+        'body': '1.625',
       }
     }
   }

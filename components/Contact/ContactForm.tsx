@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Form, Formik, Field, ErrorMessage } from 'formik';
+import { Form, Formik, Field } from 'formik';
 import * as yup from 'yup';
 import { sendContactEmail } from '../../utils/contact';
+import Button from '../Button';
+
 interface ContactInfo {
   fullName: string;
   email: string;
@@ -34,6 +36,9 @@ export default function ContactForm() {
     }
   }
 
+  const errorClasses = 'border-red-500 border-2 bg-red-50';
+  const normalClasses = 'border border-black';
+
   return (
     <Formik
       initialValues={{ fullName: '', email: '', reason: '', message: '' }}
@@ -43,10 +48,10 @@ export default function ContactForm() {
       {({ errors, touched }) => (
         <Form role="form" id="contact-form" className="flex flex-col font-semibold font-montserrat gap-y-6 text-base md:text-lg">
           <div className="flex flex-col gap-2">
-            <label htmlFor="fullName">Full Name: <span className="text-red-500" aria-label="required">*</span></label>
+            <label htmlFor="fullName">Full Name: <span aria-hidden="true" className="text-red-500">*</span></label>
             <Field
               className={`
-                border ${errors.fullName && touched.fullName ? 'border-pink-500 bg-red-200' : 'border-black'}
+                ${errors.fullName && touched.fullName ? errorClasses : normalClasses}
                 rounded-lg px-4 py-3
                 focus:outline-none
                 focus:border-spec-turquoise
@@ -58,15 +63,16 @@ export default function ContactForm() {
               type="text"
               placeholder="First name Last name"
               autoComplete="name"
+              aria-required="true"
             />
-            {errors.fullName && touched.fullName && <div className="text-red-500 text-sm mt-1">{errors.fullName}</div>}
+            {errors.fullName && touched.fullName && <div className="text-red-700 text-sm mt-1" role="alert">{errors.fullName}</div>}
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="email">Email Address: <span className="text-red-500" aria-label="required">*</span></label>
+            <label htmlFor="email">Email Address: <span aria-hidden="true" className="text-red-500">*</span></label>
             <Field
               className={`
-                border ${errors.email && touched.email ? 'border-pink-500 bg-red-200' : 'border-black'}
+                ${errors.email && touched.email ? errorClasses : normalClasses}
                 rounded-lg px-4 py-3
                 focus:outline-none
                 focus:border-spec-turquoise
@@ -79,18 +85,19 @@ export default function ContactForm() {
               type="email"
               placeholder="hello@emailaddress.com"
               autoComplete="email"
+              aria-required="true"
             />
-            {errors.email && touched.email && <div className="text-red-500 text-sm mt-1">{errors.email}</div>}
+            {errors.email && touched.email && <div className="text-red-700 text-sm mt-1" role="alert">{errors.email}</div>}
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="reason">
-              Reason for message: <span className="text-red-500" aria-label="required">*</span>
+              Reason for message: <span aria-hidden="true" className="text-red-500">*</span>
             </label>
             <Field
               as="select"
               className={`
-                border ${errors.reason && touched.reason ? 'border-black shadow-xl' : 'border-black'}
+                ${errors.reason && touched.reason ? errorClasses : normalClasses}
                 rounded-lg px-4 py-3
                 focus:outline-none
                 focus:border-spec-turquoise
@@ -100,6 +107,7 @@ export default function ContactForm() {
                 font-normal
               `}
               name="reason"
+              aria-required="true"
             >
               <option value="">
                 Select Reason
@@ -113,15 +121,16 @@ export default function ContactForm() {
               <option value="praise">Praise</option>
               <option value="other">Other</option>
             </Field>
+            {errors.reason && touched.reason && <div className="text-red-700 text-sm mt-1" role="alert">{errors.reason}</div>}
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="message">Message: <span className="text-red-500" aria-label="required">*</span></label>
+            <label htmlFor="message">Message: <span aria-hidden="true" className="text-red-500">*</span></label>
             <Field
               as="textarea"
               name="message"
               className={`
-                border ${errors.message && touched.message ? 'border-black' : 'border-black'}
+                ${errors.message && touched.message ? errorClasses : normalClasses}
                 rounded-lg px-4 py-3
                 focus:outline-none
                 focus:border-spec-turquoise
@@ -131,7 +140,9 @@ export default function ContactForm() {
                 min-h-32
               `}
               rows="8"
+              aria-required="true"
             />
+            {errors.message && touched.message && <div className="text-red-700 text-sm mt-1" role="alert">{errors.message}</div>}
           </div>
 
           <div className="flex justify-between items-center mt-4">
@@ -139,9 +150,11 @@ export default function ContactForm() {
               {submit && <div className="text-green-600 font-semibold">Your message has been sent!</div>}
               {failed && <div className="text-red-600 font-semibold">Failed to send message. Please try again.</div>}
             </div>
-            <button type="submit" className="underline ml-auto hover:text-spec-turquoise transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 px-2">
-              Submit
-            </button>
+            <div className="ml-auto">
+              <Button type="submit" variant="primary" size="md">
+                Submit
+              </Button>
+            </div>
           </div>
         </Form>
       )}

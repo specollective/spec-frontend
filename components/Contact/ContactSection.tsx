@@ -15,14 +15,14 @@ export default function ContactSection() {
             <Image
               className="hidden md:block m-auto mt-12"
               src="/ContactUsImg.svg"
-              alt="contact-image"
+              alt="People communicating and collaborating"
               width={300}
               height={300}
             />
             <Image
               className="block md:hidden m-auto mt-8"
               src="/ContactUsImg.svg"
-              alt="contact-image"
+              alt="People communicating and collaborating"
               width={200}
               height={200}
             />

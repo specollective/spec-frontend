@@ -1,15 +1,15 @@
 import ServicesAccordion from './ServicesAccordian';
 import whatWeDoData from '../constants/what-we-do-data';
 import HomeSection from './HomeSection';
-import { Heading4 } from './Typography/Heading';
+import { Eyebrow } from './Typography/Eyebrow';
 
 function OurServicesSection() {
   return (
     <HomeSection>
       <div className="w-full">
-        <Heading4>
+        <Eyebrow>
           OUR SERVICES
-        </Heading4>
+        </Eyebrow>
         <ServicesAccordion services={whatWeDoData} />
       </div>
     </HomeSection>

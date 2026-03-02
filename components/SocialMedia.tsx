@@ -7,7 +7,7 @@ function SocialMedia () {
         href="https://github.com/specollective"
         target="_blank"
         rel="noreferrer"
-        aria-label="Visit SPEC on GitHub"
+        aria-label="Visit SPEC on GitHub (opens in new tab)"
         className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
       >
         <Image
@@ -22,7 +22,7 @@ function SocialMedia () {
         href="https://www.linkedin.com/company/specollective"
         target="_blank"
         rel="noreferrer"
-        aria-label="Visit SPEC on LinkedIn"
+        aria-label="Visit SPEC on LinkedIn (opens in new tab)"
         className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
       >
         <Image
@@ -37,7 +37,7 @@ function SocialMedia () {
         href="https://www.facebook.com/specollective"
         target="_blank"
         rel="noreferrer"
-        aria-label="Visit SPEC on Facebook"
+        aria-label="Visit SPEC on Facebook (opens in new tab)"
         className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
       >
         <Image
@@ -52,7 +52,7 @@ function SocialMedia () {
         href="https://twitter.com/specollective"
         target="_blank"
         rel="noreferrer"
-        aria-label="Visit SPEC on Twitter"
+        aria-label="Visit SPEC on Twitter (opens in new tab)"
         className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
       >
         <Image
