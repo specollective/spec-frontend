@@ -19,27 +19,24 @@ export default function Community() {
           </span>
         </Heading1>
         <Paragraph1 className="mt-4 max-w-screen-md text-spec-gray">
-          Meet the researchers, engineers, designers, and leaders who have
-          been part of our community. Their stories are at the heart of
-          everything we do.
+          Since 2020, career changers, recent grads, educators, and artists
+          have come through SPEC to work on real projects and learn alongside
+          each other. Some landed their first tech jobs within months. Others
+          led research, curated art exhibitions, or designed courses on equity
+          and inclusion.
         </Paragraph1>
 
         {/* Face tile grid */}
         <div className="mt-12 grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-3 md:gap-4">
           {communityMembers.map((member) => (
-            <div key={member.name} className="group relative">
-              <div className="aspect-square rounded-full overflow-hidden bg-spec-banana">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={120}
-                  height={120}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="mt-2 text-center font-montserrat text-xs font-medium text-spec-gray leading-tight">
-                {member.name.split(' ')[0]}
-              </p>
+            <div key={member.name} className="aspect-square rounded-full overflow-hidden bg-spec-banana">
+              <Image
+                src={member.image}
+                alt={member.name}
+                width={120}
+                height={120}
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
