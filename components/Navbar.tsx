@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Button from "./Button";
+
 import logo from "../public/spec-logo.svg";
 import menu from "../public/menuSign.svg";
 import close from "../public/menuClose.svg";
@@ -49,13 +49,11 @@ export default function Navbar() {
         <nav aria-label="Mobile navigation" className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
           <div className="flex flex-col justify-center items-center font-montserrat">
             <a
-              href="https://hcb.hackclub.com/donations/start/spec"
-              target="_blank"
-              rel="noreferrer"
+              href="#connect"
+              onClick={() => setDisplayMenu(false)}
               className="font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-4 px-6 text-lg focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
             >
-              Donate to SPEC
-              <span className="sr-only"> (opens in new tab)</span>
+              Contact
             </a>
           </div>
         </nav>
@@ -85,15 +83,12 @@ export default function Navbar() {
             </span>
           </div>
           <div className="flex items-center">
-            <Button
-              href="https://hcb.hackclub.com/donations/start/spec"
-              target="_blank"
-              rel="noreferrer"
-              variant="primary"
-              size="lg"
+            <a
+              href="#connect"
+              className="font-montserrat font-semibold tracking-wide text-lg text-spec-turquoise hover:text-spec-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 rounded"
             >
-              Donate to SPEC
-            </Button>
+              Contact
+            </a>
           </div>
         </div>
       </nav>

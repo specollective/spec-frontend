@@ -1,5 +1,4 @@
 import SocialMedia from './SocialMedia'
-import Button from './Button'
 
 export default function Footer() {
   return (
@@ -7,20 +6,12 @@ export default function Footer() {
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="flex flex-col items-center lg:items-start gap-8">
-            <Button
-              href="https://opencollective.com/spec"
-              variant="secondary"
-              size="md"
-            >
-              Donate to SPEC
-            </Button>
-
             <div className="lg:hidden">
               <SocialMedia />
             </div>
 
             <p className="font-montserrat text-center lg:text-left text-sm md:text-base">
-              © 2023 Sustainable Progress and Equality Collective
+              &copy; 2020&ndash;2025 Sustainable Progress and Equality Collective
             </p>
           </div>
 
@@ -42,6 +33,15 @@ export default function Footer() {
                 className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
                 Digital Art Gallery
+                <span className="sr-only"> (opens in new tab)</span>
+              </a>
+              <a
+                href="https://hcb.hackclub.com/donations/start/spec"
+                target="_blank"
+                rel="noreferrer"
+                className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
+              >
+                Donate to SPEC
                 <span className="sr-only"> (opens in new tab)</span>
               </a>
             </nav>

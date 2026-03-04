@@ -48,21 +48,7 @@ function SocialMedia () {
           priority
         />
       </a>
-      <a
-        href="https://twitter.com/specollective"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Visit SPEC on Twitter (opens in new tab)"
-        className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
-      >
-        <Image
-          src="/twitter-logo.svg"
-          alt=""
-          width={35}
-          height={33}
-          priority
-        />
-      </a>
+
     </div>
   )
 }
