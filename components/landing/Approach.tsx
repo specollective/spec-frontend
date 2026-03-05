@@ -7,7 +7,7 @@ const pillars = [
   {
     title: 'Engaged Research',
     description:
-      'Prioritizing community participation in research — including those affected as equal partners in shaping questions, making decisions, and creating programs.',
+      'Prioritizing community participation in research including those affected as equal partners in shaping questions, making decisions, and creating programs.',
   },
   {
     title: 'Collaborative Mentorship',
