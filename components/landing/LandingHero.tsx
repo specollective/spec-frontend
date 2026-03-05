@@ -29,7 +29,7 @@ export default function LandingHero() {
           </Heading0>
           <Subtitle1>
             A community-driven organization empowering people to learn
-            skills, build careers, and create meaningful social impact —
+            skills, build careers, and create meaningful social impact
             through mentorship, applied research, and open collaboration.
           </Subtitle1>
           <div className="pt-2">
