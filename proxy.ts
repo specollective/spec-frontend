@@ -9,5 +9,35 @@ export function proxy(req: NextRequest) {
     return NextResponse.redirect(`https://${newHost}${req.nextUrl.pathname}`, 301);
   }
 
+  const { pathname } = req.nextUrl;
+  if (pathname === '/glqf' || pathname.startsWith('/glqf/')) {
+    return basicAuth(req);
+  }
+
   return NextResponse.next();
+}
+
+function basicAuth(req: NextRequest) {
+  const expectedUser = process.env.GLQF_BASIC_AUTH_USER;
+  const expectedPass = process.env.GLQF_BASIC_AUTH_PASS;
+
+  if (!expectedUser || !expectedPass) {
+    return new NextResponse('Basic auth not configured', { status: 503 });
+  }
+
+  const header = req.headers.get('authorization');
+  if (header?.startsWith('Basic ')) {
+    const decoded = atob(header.slice(6));
+    const idx = decoded.indexOf(':');
+    const user = decoded.slice(0, idx);
+    const pass = decoded.slice(idx + 1);
+    if (user === expectedUser && pass === expectedPass) {
+      return NextResponse.next();
+    }
+  }
+
+  return new NextResponse('Authentication required', {
+    status: 401,
+    headers: { 'WWW-Authenticate': 'Basic realm="glqf"' },
+  });
 }

@@ -21,6 +21,17 @@ module.exports = {
           banana: '#FFF7E5',
           orange: '#FFC692',
           gray: '#454546',
+        },
+        glqf: {
+          ink: '#0F2A44',
+          'ink-soft': '#3A4F66',
+          slate: '#5F7387',
+          paper: '#FAF7F2',
+          'paper-2': '#F0EBE0',
+          line: '#D8D2C5',
+          accent: '#A8501C',
+          white: '#FFFFFF',
+          black: '#0A0A0A',
         }
       },
       fontFamily: {
