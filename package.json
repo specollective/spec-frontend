@@ -38,7 +38,9 @@
     "yup": "^1.0.2"
   },
   "devDependencies": {
+    "@types/jest-axe": "^3.5.9",
     "autoprefixer": "^10.4.13",
+    "jest-axe": "^10.0.0",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"
   },
