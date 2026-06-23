@@ -25,7 +25,7 @@ export const GlqfDiagram: FC<Props> = memo(function GlqfDiagram(props) {
     <svg
       viewBox="-60 0 720 600"
       xmlns="http://www.w3.org/2000/svg"
-      role="img"
+      role="group"
       aria-labelledby="glqf-diagram-title glqf-diagram-desc"
       className={props.className}
     >
