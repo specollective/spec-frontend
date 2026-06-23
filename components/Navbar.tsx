@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslation } from "next-i18next/pages";
 
 import logo from "../public/spec-logo.svg";
 import menu from "../public/menuSign.svg";
 import close from "../public/menuClose.svg";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
+  const { t } = useTranslation("common");
   const [displayMenu, setDisplayMenu] = useState(false);
 
   function toggleMenu() {
@@ -32,33 +35,36 @@ export default function Navbar() {
             SPEC
           </span>
         </div>
-        <button
-          onClick={toggleMenu}
-          aria-label={displayMenu ? "Close menu" : "Open menu"}
-          aria-expanded={displayMenu}
-          className="p-2 focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
-        >
-          <Image
-            className="w-9"
-            src={displayMenu ? close : menu}
-            alt=""
-          />
-        </button>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            onClick={toggleMenu}
+            aria-label={displayMenu ? t("nav.closeMenu") : t("nav.openMenu")}
+            aria-expanded={displayMenu}
+            className="p-2 focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
+          >
+            <Image
+              className="w-9"
+              src={displayMenu ? close : menu}
+              alt=""
+            />
+          </button>
+        </div>
       </div>
       {displayMenu && (
-        <nav aria-label="Mobile navigation" className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
+        <nav aria-label={t("nav.mobileNavigation")} className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
           <div className="flex flex-col justify-center items-center font-montserrat">
             <a
               href="#connect"
               onClick={() => setDisplayMenu(false)}
               className="font-semibold text-center bg-white opacity-100 leading-6 w-screen border-b border-black tracking-wide py-4 px-6 text-lg focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
             >
-              Contact
+              {t("nav.contact")}
             </a>
           </div>
         </nav>
       )}
-      <nav aria-label="Main navigation" className="hidden md:block">
+      <nav aria-label={t("nav.mainNavigation")} className="hidden md:block">
         <div className="flex justify-between items-center border-b-2 border-black px-6 md:px-12 lg:px-16 xl:px-20 max-w-screen-xl mx-auto mt-4 pb-6">
           <div className="flex items-center gap-2">
             <Image
@@ -82,13 +88,14 @@ export default function Navbar() {
               SPEC
             </span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-6">
             <a
               href="#connect"
               className="font-montserrat font-semibold tracking-wide text-lg text-spec-turquoise hover:text-spec-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 rounded"
             >
-              Contact
+              {t("nav.contact")}
             </a>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>

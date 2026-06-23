@@ -1,29 +1,25 @@
 import React from 'react'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next/pages'
 import { Heading1 } from '../Typography/Heading'
 import { Paragraph1, Paragraph2 } from '../Typography/Paragraph'
 import { Eyebrow } from '../Typography/Eyebrow'
 import { communityMembers, testimonials } from '../../constants/community-data'
 
 export default function Community() {
+  const { t } = useTranslation('landing')
   return (
     <section
       aria-labelledby="community-heading"
       className="bg-spec-lemon py-16 md:py-24 px-6 md:px-12 lg:px-16 xl:px-20"
     >
       <div className="max-w-screen-xl mx-auto">
-        <Eyebrow className="mb-4">OUR COMMUNITY</Eyebrow>
+        <Eyebrow className="mb-4">{t('community.eyebrow')}</Eyebrow>
         <Heading1 as="h2" className="max-w-screen-md">
-          <span id="community-heading">
-            The people who grew with SPEC
-          </span>
+          <span id="community-heading">{t('community.heading')}</span>
         </Heading1>
         <Paragraph1 className="mt-4 max-w-screen-md text-spec-gray">
-          Since 2020, career changers, recent grads, educators, and artists
-          have come through SPEC to work on real projects and learn alongside
-          each other. Some landed their first tech jobs within months. Others
-          led research, curated art exhibitions, or designed courses on equity
-          and inclusion.
+          {t('community.intro')}
         </Paragraph1>
 
         {/* Face tile grid */}
@@ -43,9 +39,9 @@ export default function Community() {
 
         {/* Testimonials */}
         <div className="mt-16">
-          <Eyebrow className="mb-4">TESTIMONIALS</Eyebrow>
+          <Eyebrow className="mb-4">{t('community.testimonialsEyebrow')}</Eyebrow>
           <Heading1 as="h3" className="max-w-screen-md">
-            In their own words
+            {t('community.testimonialsHeading')}
           </Heading1>
         </div>
 

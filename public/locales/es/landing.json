@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "logoAlt": "Logotipo del árbol de SPEC",
+    "title": "Sustainable Progress & Equality Collective",
+    "subtitle": "Una organización impulsada por la comunidad que empodera a las personas para aprender habilidades, desarrollar carreras y generar un impacto social significativo a través de la mentoría, la investigación aplicada y la colaboración abierta."
+  },
+  "story": {
+    "eyebrow": "NUESTRA HISTORIA",
+    "heading": "Nacida de la crisis, construida sobre un propósito compartido",
+    "p1": "SPEC surgió de <strong>The Buffalo Project</strong>, una iniciativa de investigación participativa de diez años que examinó cómo los datos culturales podían mejorar los programas de aprendizaje. Dirigida por la Dra. Rhianna Rogers, la investigación reveló que a los estudiantes no se les enseñaban adecuadamente las competencias interculturales, y que involucrar directamente a las comunidades podía transformar el diseño y la implementación de los programas.",
+    "p2": "Cuando la pandemia de COVID-19 llegó en 2020, se recortó la financiación de esa investigación y los estudiantes perdieron sus puestos de la noche a la mañana. Por esas mismas fechas, Joe Torreggiani publicó una oferta pública para brindar mentoría, formación técnica y pequeños préstamos a personas de entornos subrepresentados. Rhianna se puso en contacto con él y ambos descubrieron una pasión compartida e inmediata por la justicia ambiental y social. Joe se ofreció a cubrir el sueldo de una estudiante para que la investigación pudiera continuar, y en una semana habían formado SPEC como un colectivo abierto con plena transparencia financiera desde el primer día.",
+    "p3": "Entendemos que, para muchas personas de comunidades desatendidas, devolver o ayudar a los demás no es posible hasta que puedan acceder a bienes y servicios esenciales, aprender habilidades profesionales y alcanzar seguridad física y financiera. Esa comprensión impulsa todo lo que hacemos: investigación participativa, mentoría colaborativa, aprendizaje aplicado, fortalecimiento de capacidades y caminos hacia carreras sostenibles.",
+    "p4": "El nombre lo dice con claridad. <strong>Progreso sostenible</strong> significa emprender una acción colectiva para crear un mundo más igualitario y justo, sin dañar a las personas ni al planeta. Ese trabajo continúa."
+  },
+  "approach": {
+    "eyebrow": "NUESTRO ENFOQUE",
+    "heading": "Los pilares de nuestro trabajo",
+    "intro": "Nuestro enfoque integra la investigación, la mentoría, el aprendizaje y el desarrollo organizacional para crear un impacto social duradero.",
+    "pillars": [
+      {
+        "title": "Investigación participativa",
+        "description": "Priorizamos la participación de la comunidad en la investigación, incluyendo a las personas afectadas como socias en igualdad de condiciones para formular preguntas, tomar decisiones y crear programas."
+      },
+      {
+        "title": "Mentoría colaborativa",
+        "description": "Un estilo de mentoría inclusivo y cíclico que promueve un aprendizaje justo, fomentando vínculos equilibrados entre mentor y aprendiz mediante la conversación abierta y la co-creación."
+      },
+      {
+        "title": "Aprendizaje aplicado",
+        "description": "Educación práctica en la que las personas utilizan habilidades y teorías en situaciones reales, aplicando el conocimiento en proyectos concretos para generar impacto social."
+      },
+      {
+        "title": "Fortalecimiento de capacidades",
+        "description": "Empoderamos a las organizaciones mediante programas de desarrollo de habilidades, formación en liderazgo y apoyo al crecimiento comunitario."
+      },
+      {
+        "title": "Desarrollo profesional",
+        "description": "Conectamos a las organizaciones con talento excepcional y profesionales capacitados, con formación continua en liderazgo y apoyo al crecimiento comunitario."
+      }
+    ]
+  },
+  "community": {
+    "eyebrow": "NUESTRA COMUNIDAD",
+    "heading": "Las personas que crecieron con SPEC",
+    "intro": "Desde 2020, personas en transición de carrera, recién graduadas, educadoras y artistas han pasado por SPEC para trabajar en proyectos reales y aprender juntas. Algunas consiguieron su primer empleo en tecnología en cuestión de meses. Otras lideraron investigaciones, organizaron exposiciones de arte o diseñaron cursos sobre equidad e inclusión.",
+    "testimonialsEyebrow": "TESTIMONIOS",
+    "testimonialsHeading": "En sus propias palabras"
+  },
+  "impact": {
+    "eyebrow": "EN CIFRAS",
+    "heading": "Impacto real, reportado con transparencia",
+    "stats": [
+      { "value": "$290k", "label": "Recaudados y distribuidos a nuestra comunidad" },
+      { "value": "28", "label": "Colocaciones laborales" },
+      { "value": "15", "label": "Proyectos desarrollados y completados" },
+      { "value": "7", "label": "Alianzas y colaboraciones" }
+    ]
+  },
+  "partnerships": {
+    "eyebrow": "ALIANZAS",
+    "heading": "Organizaciones junto a las que hemos trabajado",
+    "intro": "SPEC cree en la colaboración abierta entre organizaciones. Estas alianzas han dado forma a nuestro trabajo y ampliado lo que podemos ofrecer a nuestra comunidad.",
+    "partners": [
+      {
+        "name": "RAND Center to Advance Racial Equity Policy",
+        "description": "RAND creó CAREP en 2020 para desarrollar enfoques y soluciones que promuevan la equidad racial en los sistemas y las políticas. SPEC se asoció con CAREP en una iniciativa de educación digital de dos años, produciendo microcredenciales, herramientas de aprendizaje basadas en juegos, una galería de expresiones digitales y el Journal of Engaged Research."
+      },
+      {
+        "name": "BuildJustly",
+        "description": "Una organización sin fines de lucro 501(c)(3) que trabaja para impulsar el pleno potencial económico de nuestro país mediante tecnología equitativa. BuildJustly desarrolla herramientas e investigación para promover la inclusión digital y cerrar la brecha de 1 de cada 3 hogares en EE. UU. sin dispositivos conectados o con baja participación digital."
+      },
+      {
+        "name": "Open Source Medical Supplies",
+        "description": "Una organización sin fines de lucro que empodera a personas de todo el mundo para mantener seguras a sus comunidades mediante diseños de código abierto confiables, guías de fabricación y conocimiento compartido para suministros médicos."
+      },
+      {
+        "name": "Public Invention",
+        "description": "Una organización sin fines de lucro que inventa en público, para el público, creando hardware humanitario de código abierto, incluyendo proyectos como el generador de oxígeno cerámico NASA-MCOG para ayudar a salvar vidas en países de bajos ingresos."
+      }
+    ]
+  },
+  "connect": {
+    "eyebrow": "CONECTA",
+    "heading": "Hablemos",
+    "intro": "Nos encanta conectar con personas que comparten nuestra pasión por la sostenibilidad, la equidad y el cambio impulsado por la comunidad. Ya sea que quieras colaborar, asociarte o simplemente saludar, escríbenos."
+  }
+}
