@@ -40,11 +40,11 @@ function Eyebrow({
   className?: string;
 }) {
   return (
-    <p
+    <h2
       className={`font-montserrat text-xs font-semibold uppercase tracking-[0.22em] text-giee-accent md:text-sm ${className}`}
     >
       {children}
-    </p>
+    </h2>
   );
 }
 
