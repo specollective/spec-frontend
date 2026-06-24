@@ -11,16 +11,31 @@ export function proxy(req: NextRequest) {
 
   const { pathname } = req.nextUrl;
   if (pathname === '/glqf' || pathname.startsWith('/glqf/')) {
-    return basicAuth(req);
+    return basicAuth(req, {
+      realm: 'glqf',
+      expectedUser: process.env.GLQF_BASIC_AUTH_USER,
+      expectedPass: process.env.GLQF_BASIC_AUTH_PASS,
+    });
+  }
+  if (pathname === '/giee' || pathname.startsWith('/giee/')) {
+    return basicAuth(req, {
+      realm: 'giee',
+      expectedUser: process.env.GIEE_BASIC_AUTH_USER,
+      expectedPass: process.env.GIEE_BASIC_AUTH_PASS,
+    });
   }
 
   return NextResponse.next();
 }
 
-function basicAuth(req: NextRequest) {
-  const expectedUser = process.env.GLQF_BASIC_AUTH_USER;
-  const expectedPass = process.env.GLQF_BASIC_AUTH_PASS;
-
+function basicAuth(
+  req: NextRequest,
+  { realm, expectedUser, expectedPass }: {
+    realm: string;
+    expectedUser?: string;
+    expectedPass?: string;
+  },
+) {
   if (!expectedUser || !expectedPass) {
     return new NextResponse('Basic auth not configured', { status: 503 });
   }
@@ -38,6 +53,6 @@ function basicAuth(req: NextRequest) {
 
   return new NextResponse('Authentication required', {
     status: 401,
-    headers: { 'WWW-Authenticate': 'Basic realm="glqf"' },
+    headers: { 'WWW-Authenticate': `Basic realm="${realm}"` },
   });
 }

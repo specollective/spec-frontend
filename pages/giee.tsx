@@ -41,7 +41,7 @@ function Eyebrow({
 }) {
   return (
     <h2
-      className={`font-montserrat text-xs font-semibold uppercase tracking-[0.22em] text-giee-accent md:text-sm ${className}`}
+      className={`font-giee-sans text-xs font-semibold uppercase tracking-[0.22em] text-giee-accent md:text-sm ${className}`}
     >
       {children}
     </h2>
@@ -93,12 +93,12 @@ export default function GieePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-giee-line"
         />
         <div className="relative mx-auto flex min-h-[82vh] max-w-5xl flex-col items-center justify-center px-6 pb-28 pt-24 text-center md:pt-32">
-          <h1 className="font-dmserif text-4xl leading-[1.05] text-giee-ink md:text-6xl lg:text-7xl">
+          <h1 className="font-giee-serif text-4xl leading-[1.05] text-giee-ink md:text-6xl lg:text-7xl">
             Global AI Governance &amp;
             <br />
             Inclusive Education Ecosystem
           </h1>
-          <p className="mt-8 max-w-2xl font-montserrat text-lg leading-relaxed text-giee-ink-soft md:text-xl">
+          <p className="mt-8 max-w-2xl font-giee-sans text-lg leading-relaxed text-giee-ink-soft md:text-xl">
             The rapid ascension of generative artificial intelligence demands a
             proactive, cross-sector approach to technology governance—one that
             prioritizes human capability, institutional accountability, and
@@ -107,13 +107,13 @@ export default function GieePage() {
           <div className="mt-12 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
               href="#overview"
-              className="inline-flex w-full items-center justify-center bg-giee-ink px-8 py-4 font-montserrat text-base font-semibold text-giee-paper transition-colors hover:bg-giee-black sm:w-auto sm:min-w-[14rem]"
+              className="inline-flex w-full items-center justify-center bg-giee-green px-8 py-4 font-giee-sans text-base font-semibold text-giee-white transition-colors hover:bg-giee-green/90 sm:w-auto sm:min-w-[14rem]"
             >
               Explore the ecosystem
             </a>
             <a
               href="#pillars"
-              className="inline-flex w-full items-center justify-center border-2 border-giee-ink bg-transparent px-8 py-4 font-montserrat text-base font-semibold text-giee-ink transition-colors hover:bg-giee-ink hover:text-giee-paper sm:w-auto sm:min-w-[14rem]"
+              className="inline-flex w-full items-center justify-center border-2 border-giee-ink bg-transparent px-8 py-4 font-giee-sans text-base font-semibold text-giee-ink transition-colors hover:bg-giee-ink hover:text-giee-paper sm:w-auto sm:min-w-[14rem]"
             >
               Our core pillars
             </a>
@@ -125,7 +125,7 @@ export default function GieePage() {
           aria-label="Scroll to overview"
           className="group absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-giee-slate transition-colors hover:text-giee-ink md:flex"
         >
-          <span className="font-montserrat text-[11px] uppercase tracking-[0.25em]">
+          <span className="font-giee-sans text-[11px] uppercase tracking-[0.25em]">
             Scroll
           </span>
           <ChevronDown className="h-5 w-5 animate-bounce" />
@@ -139,7 +139,7 @@ export default function GieePage() {
       >
         <div className="mx-auto max-w-3xl">
           <Eyebrow>Overview</Eyebrow>
-          <p className="mt-8 font-montserrat text-lg leading-relaxed text-giee-ink-soft md:text-xl">
+          <p className="mt-8 font-giee-sans text-lg leading-relaxed text-giee-ink-soft md:text-xl">
             The Global Inclusive Education Ecosystem (GIEE) serves as a
             foundational bridge linking emerging technology with robust
             human-centered frameworks. In direct collaboration with the Global
@@ -147,7 +147,7 @@ export default function GieePage() {
             Forum, we are moving beyond a posture of merely reacting to digital
             shifts.
           </p>
-          <p className="mt-6 font-montserrat text-lg leading-relaxed text-giee-ink-soft md:text-xl">
+          <p className="mt-6 font-giee-sans text-lg leading-relaxed text-giee-ink-soft md:text-xl">
             Together, we are designing the global benchmarks, policies, and
             guardrails that ensure AI serves as an instrument for collective
             empowerment, ethical growth, and educational trust.
@@ -163,7 +163,7 @@ export default function GieePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Our Core Pillars of Systemic Governance</Eyebrow>
-            <p className="mt-6 font-montserrat text-lg leading-relaxed text-giee-ink-soft">
+            <p className="mt-6 font-giee-sans text-lg leading-relaxed text-giee-ink-soft">
               When we discuss &ldquo;human-centered design&rdquo; in artificial
               intelligence architecture, it cannot simply be a rhetorical
               catchphrase. True technological equity requires an intentional,
@@ -176,13 +176,13 @@ export default function GieePage() {
             {pillars.map((p, i) => (
               <li key={p.name}>
                 <div className="group flex h-full flex-col border border-giee-line bg-giee-white p-8 transition-all hover:-translate-y-1 hover:border-giee-ink hover:shadow-md">
-                  <span className="font-montserrat text-xs font-semibold tracking-[0.22em] text-giee-accent">
+                  <span className="font-giee-sans text-xs font-semibold tracking-[0.22em] text-giee-accent">
                     0{i + 1}
                   </span>
-                  <h3 className="mt-4 font-dmserif text-2xl leading-snug text-giee-ink md:text-[1.65rem]">
+                  <h3 className="mt-4 font-giee-serif text-2xl leading-snug text-giee-ink md:text-[1.65rem]">
                     {p.name}
                   </h3>
-                  <p className="mt-4 flex-1 font-montserrat text-base leading-relaxed text-giee-ink-soft">
+                  <p className="mt-4 flex-1 font-giee-sans text-base leading-relaxed text-giee-ink-soft">
                     {p.description}
                   </p>
                 </div>
@@ -206,10 +206,10 @@ export default function GieePage() {
             {initiatives.map((item) => (
               <li key={item.name}>
                 <div className="flex h-full flex-col border border-giee-line bg-giee-paper p-8 md:p-10">
-                  <h3 className="font-dmserif text-2xl leading-snug text-giee-ink md:text-3xl">
+                  <h3 className="font-giee-serif text-2xl leading-snug text-giee-ink md:text-3xl">
                     {item.name}
                   </h3>
-                  <p className="mt-5 flex-1 font-montserrat text-base leading-relaxed text-giee-ink-soft md:text-lg">
+                  <p className="mt-5 flex-1 font-giee-sans text-base leading-relaxed text-giee-ink-soft md:text-lg">
                     {item.description}
                   </p>
                 </div>
@@ -225,10 +225,10 @@ export default function GieePage() {
         className="scroll-mt-24 bg-giee-ink px-6 py-24 text-giee-paper md:py-32"
       >
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-dmserif text-3xl leading-snug text-giee-paper md:text-4xl">
+          <h2 className="font-giee-serif text-3xl leading-snug text-giee-paper md:text-4xl">
             Shape the Future of Trust with Us
           </h2>
-          <p className="mt-8 font-montserrat text-lg leading-relaxed text-giee-paper/85 md:text-xl">
+          <p className="mt-8 font-giee-sans text-lg leading-relaxed text-giee-paper/85 md:text-xl">
             The intersection of AI governance and inclusive education is the
             defining policy challenge of our era. Whether you are a scholar,
             practitioner, tech architect, or public servant, your insights are
@@ -237,14 +237,14 @@ export default function GieePage() {
           <div className="mt-12 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex w-full items-center justify-center gap-2 border-2 border-giee-paper bg-giee-paper px-8 py-4 font-montserrat text-base font-semibold text-giee-ink transition-colors hover:bg-transparent hover:text-giee-paper sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 border-2 border-giee-green bg-giee-green px-8 py-4 font-giee-sans text-base font-semibold text-giee-white transition-colors hover:bg-transparent hover:text-giee-white sm:w-auto"
             >
               Explore Our Research Portfolio
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex w-full items-center justify-center border-2 border-giee-paper bg-transparent px-8 py-4 font-montserrat text-base font-semibold text-giee-paper transition-colors hover:bg-giee-paper hover:text-giee-ink sm:w-auto"
+              className="inline-flex w-full items-center justify-center border-2 border-giee-paper bg-transparent px-8 py-4 font-giee-sans text-base font-semibold text-giee-paper transition-colors hover:bg-giee-paper hover:text-giee-ink sm:w-auto"
             >
               Partner with GIEE
             </Link>

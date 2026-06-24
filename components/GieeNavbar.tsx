@@ -15,7 +15,7 @@ function Wordmark({ className = "" }: { className?: string }) {
       className={`group inline-flex items-baseline gap-3 ${className}`}
       aria-label="GIEE — Global AI Governance & Inclusive Education Ecosystem, home"
     >
-      <span className="font-dmserif text-2xl leading-none tracking-tight text-giee-ink md:text-3xl">
+      <span className="font-giee-serif text-2xl leading-none tracking-tight text-giee-ink md:text-3xl">
         GIEE
       </span>
     </Link>
@@ -48,7 +48,7 @@ export default function GieeNavbar() {
             <a
               key={link.href}
               href={link.href}
-              className="font-montserrat text-sm font-medium text-giee-ink-soft transition-colors hover:text-giee-ink"
+              className="font-giee-sans text-sm font-medium text-giee-ink-soft transition-colors hover:text-giee-ink"
             >
               {link.label}
             </a>
@@ -104,7 +104,7 @@ export default function GieeNavbar() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded px-4 py-3 font-montserrat text-base font-medium text-giee-ink hover:bg-giee-paper-2"
+                  className="block rounded px-4 py-3 font-giee-sans text-base font-medium text-giee-ink hover:bg-giee-paper-2"
                 >
                   {link.label}
                 </a>
