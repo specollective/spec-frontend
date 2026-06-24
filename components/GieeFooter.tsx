@@ -21,7 +21,7 @@ export default function GieeFooter() {
               href="https://specollective.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-giee-sans text-sm tracking-[0.12em] text-giee-slate [font-variant:small-caps] hover:text-giee-ink"
+              className="font-giee-sans text-sm tracking-[0.12em] text-giee-slate hover:text-giee-ink"
             >
               An initiative of SPEC ↗
             </a>
@@ -36,8 +36,7 @@ export default function GieeFooter() {
 
         <div className="mt-10 border-t border-giee-line pt-6">
           <p className="font-giee-sans text-xs text-giee-slate">
-            © {new Date().getFullYear()} Sustainable Progress &amp; Equality
-            Collective. In collaboration with GOER and the UN-Geneva Forum.
+            © 2026 Sustainable Progress &amp; Equality Collective.
           </p>
         </div>
       </div>
