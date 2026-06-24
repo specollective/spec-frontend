@@ -32,12 +32,37 @@ module.exports = {
           accent: '#A8501C',
           white: '#FFFFFF',
           black: '#0A0A0A',
+        },
+        giee: {
+          // Primary palette
+          blue: '#0F3D6E', // Ecosystem Deep Blue — primary type, headings, borders
+          green: '#1B7A4E', // Growth Emerald Green — secondary type, organic, metrics
+          // Secondary accent palette
+          red: '#C41E3A', // Impact Crimson Red — critical governance, short-term milestones
+          amber: '#E08B2D', // Foresight Amber Orange — transitional milestones, focal points
+          gold: '#C9A227', // Horizon Gold — strategic stars, long-term goals
+          cyan: '#1AA3C7', // Clearwater Cyan Blue — data points, system pathways
+          // Working aliases used across the GIEE components
+          ink: '#0F3D6E', // = Ecosystem Deep Blue
+          'ink-soft': '#353A40', // Charcoal — body / narrative prose
+          slate: '#6E7681', // Medium grey — taglines, sub-institutional lockups
+          paper: '#F7F9FB',
+          'paper-2': '#EAF0F4',
+          line: '#E2E6EA', // light grey hair-lines
+          accent: '#1B7A4E', // = Growth Emerald Green (subtitle / callout color)
+          white: '#FFFFFF',
+          black: '#0A0A0A',
         }
       },
       fontFamily: {
         montserrat: ['Montserrat'],
         dmserif: ['DM Serif Text'],
-        poppins: ['Poppins']
+        poppins: ['Poppins'],
+        // GIEE Brand Standards — Section 3 Typography Architecture.
+        // Primary titles & identity headers: high-contrast serif (deep blue).
+        'giee-serif': ['Georgia', 'Times New Roman', 'serif'],
+        // Subtitles, callouts, body & taglines: balanced, highly readable sans-serif.
+        'giee-sans': ['Arial', 'Helvetica', 'sans-serif']
       },
       lineHeight: {
         'tight-heading': '1.1',

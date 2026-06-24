@@ -1,19 +1,19 @@
 import { ReactNode } from "react";
 import Head from "next/head";
 import AppHead from "./AppHead";
-import GlqfNavbar from "./GlqfNavbar";
-import GlqfFooter from "./GlqfFooter";
+import GieeNavbar from "./GieeNavbar";
+import GieeFooter from "./GieeFooter";
 import { INDEXABLE } from "../constants/seo";
 
-interface GlqfLayoutProps {
+interface GieeLayoutProps {
   children: ReactNode;
 }
 
-export default function GlqfLayout({ children }: GlqfLayoutProps) {
+export default function GieeLayout({ children }: GieeLayoutProps) {
   return (
     <>
       <AppHead />
-      {!INDEXABLE.glqf && (
+      {!INDEXABLE.giee && (
         <Head>
           <meta name="robots" content="noindex, nofollow" />
         </Head>
@@ -21,10 +21,10 @@ export default function GlqfLayout({ children }: GlqfLayoutProps) {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-      <div className="bg-glqf-paper text-glqf-ink">
-        <GlqfNavbar />
+      <div className="bg-giee-paper text-giee-ink">
+        <GieeNavbar />
         <main id="main-content">{children}</main>
-        <GlqfFooter />
+        <GieeFooter />
       </div>
     </>
   );
