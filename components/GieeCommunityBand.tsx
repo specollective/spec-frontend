@@ -2,8 +2,7 @@
 // popup/rollover. It surfaces the decentralized working-group invitation at the
 // foot of GIEE subpages so visitors can step into the ecosystem inline.
 
-// TODO: replace with the real GIEE LinkedIn community group URL once it exists.
-const GIEE_LINKEDIN_GROUP_URL = "https://www.linkedin.com/groups/";
+const GIEE_LINKEDIN_GROUP_URL = "https://www.linkedin.com/groups/20130046/";
 
 function ArrowUpRight({ className = "" }: { className?: string }) {
   return (
