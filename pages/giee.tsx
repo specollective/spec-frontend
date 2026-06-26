@@ -236,14 +236,14 @@ export default function GieePage() {
           </p>
           <div className="mt-12 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <Link
-              href="/contact"
+              href="/giee/research"
               className="inline-flex w-full items-center justify-center gap-2 border-2 border-giee-green bg-giee-green px-8 py-4 font-giee-sans text-base font-semibold text-giee-white transition-colors hover:bg-transparent hover:text-giee-white sm:w-auto"
             >
               Explore Our Research Portfolio
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/contact"
+              href="/giee/partner"
               className="inline-flex w-full items-center justify-center border-2 border-giee-paper bg-transparent px-8 py-4 font-giee-sans text-base font-semibold text-giee-paper transition-colors hover:bg-giee-paper hover:text-giee-ink sm:w-auto"
             >
               Partner with GIEE
