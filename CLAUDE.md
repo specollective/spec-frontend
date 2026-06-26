@@ -27,6 +27,7 @@ Copy `.env.sample` to `.env.local` for local dev. The sample only includes Nodem
 - `NEXT_PUBLIC_API_URL` — Optional; overrides contact form API URL (defaults to `http://localhost:3000/api/contact`)
 - `GLQF_BASIC_AUTH_USER` / `GLQF_BASIC_AUTH_PASS` — Basic-auth gate for `/glqf`
 - `GIEE_BASIC_AUTH_USER` / `GIEE_BASIC_AUTH_PASS` — Basic-auth gate for `/giee`
+- `GIEE_INQUIRY_EMAIL` — Optional; recipient for GIEE partner-form submissions (`formType: "giee-partner"`). Falls back to `NODE_MAILER_EMAIL` if unset. Server-side only (not `NEXT_PUBLIC_`)
 
 **Runtime, not build:** every variable above is read at **runtime** — by the `proxy.ts` middleware (basic auth) and `getServerSideProps` (Contentful) — *not* inlined at build time. In production they must be set in the **DigitalOcean App Platform** environment (see Deployment), **not** in GitHub Actions. If a basic-auth pair is unset, that page returns `503 Basic auth not configured`.
 

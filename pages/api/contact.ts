@@ -8,13 +8,24 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
   try {
     const { method } = req;
     if (method === "POST") {
+      // GIEE partner inquiries route to a dedicated recipient when configured;
+      // every other form keeps going to the Nodemailer account. The recipient is
+      // chosen server-side from `formType` (never from a client-supplied address)
+      // so the endpoint can't be used as an open relay.
+      const isGiee = body.formType === "giee-partner";
+      const recipient =
+        (isGiee && process.env.GIEE_INQUIRY_EMAIL) ||
+        `${process.env.NODE_MAILER_EMAIL}`;
+      const subject = isGiee
+        ? "GIEE Partnership Inquiry"
+        : "Website Contact Form Submission";
       // Do something for POST requests
       await sendMail(
-        "Website Contact Form Submission",
-        `${process.env.NODE_MAILER_EMAIL}`,
-        `Name: ${body.fullName} 
-Email: ${body.email}  
-Reason: ${body.reason} 
+        subject,
+        recipient,
+        `Name: ${body.fullName}
+Email: ${body.email}
+Reason: ${body.reason}
 Message: ${body.message}`
       );
       res.status(201).json({

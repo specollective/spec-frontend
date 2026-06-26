@@ -43,6 +43,24 @@ const schema = yup.object().shape({
   message: yup.string().required("Required"),
 });
 
+function CheckCircle({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  );
+}
+
 const labelClasses = "font-giee-sans text-sm font-semibold text-giee-ink";
 const baseFieldClasses =
   "rounded-none border bg-giee-white px-4 py-3 font-giee-sans text-base text-giee-ink placeholder:text-giee-slate focus:outline-none focus:border-giee-green focus:ring-1 focus:ring-giee-green";
@@ -63,6 +81,8 @@ export default function GieePartnerForm() {
   ) {
     setFailed(false);
     const payload = {
+      // Routes the email to GIEE_INQUIRY_EMAIL server-side (see api/contact.ts).
+      formType: "giee-partner",
       fullName: values.fullName,
       email: values.email,
       reason: `GIEE Partnership Inquiry — ${values.interest}`,
@@ -88,6 +108,32 @@ ${values.message}`,
     } catch {
       setFailed(true);
     }
+  }
+
+  if (submitted) {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        className="flex flex-col items-start gap-5 py-6"
+      >
+        <CheckCircle className="h-12 w-12 text-giee-green" />
+        <h3 className="font-giee-serif text-2xl text-giee-ink">
+          Thank you — your inquiry has been sent.
+        </h3>
+        <p className="font-giee-sans text-base leading-relaxed text-giee-ink-soft">
+          Our team will review your message and route it to the right Case Study
+          Lead. We&rsquo;ll be in touch at the email address you provided.
+        </p>
+        <button
+          type="button"
+          onClick={() => setSubmitted(false)}
+          className="inline-flex items-center justify-center border-2 border-giee-green bg-transparent px-6 py-3 font-giee-sans text-base font-semibold text-giee-green transition-colors hover:bg-giee-green hover:text-giee-white"
+        >
+          Submit another inquiry
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -248,11 +294,6 @@ ${values.message}`,
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div role="status" aria-live="polite" className="font-giee-sans text-sm">
-              {submitted && (
-                <span className="font-semibold text-giee-green">
-                  Thank you — your partnership inquiry has been sent.
-                </span>
-              )}
               {failed && (
                 <span className="font-semibold text-giee-red">
                   Something went wrong. Please try again.
