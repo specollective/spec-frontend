@@ -5,8 +5,9 @@ import * as yup from "yup";
 // The GIEE intake reuses the existing Nodemailer contact API (no new backend or
 // secret required). The partner-specific fields are composed into the email body
 // and the chosen area of interest is mapped onto the API's `reason` field.
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api/contact";
+// Relative by default so the POST hits whatever origin served the page (any dev
+// port, the Caddy proxy host, or production) rather than a hardcoded localhost.
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "/api/contact";
 
 const ROLES = [
   "K-12 / Higher Ed",
