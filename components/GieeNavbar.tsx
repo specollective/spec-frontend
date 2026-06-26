@@ -4,8 +4,8 @@ import Link from "next/link";
 const NAV_LINKS = [
   { href: "/giee#overview", label: "Overview" },
   { href: "/giee#pillars", label: "Pillars" },
-  { href: "/giee#initiatives", label: "Initiatives" },
-  { href: "/giee#engage", label: "Get Involved" },
+  { href: "/giee/research", label: "Research" },
+  { href: "/giee/partner", label: "Partner" },
 ];
 
 // Supported languages for the GIEE site. Selection is presentational only for
