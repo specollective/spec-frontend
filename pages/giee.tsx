@@ -1,5 +1,6 @@
 import Link from "next/link";
 import GieeLayout from "../components/GieeLayout";
+import GieePartnerLogos from "../components/GieePartnerLogos";
 
 const pillars = [
   {
@@ -152,6 +153,16 @@ export default function GieePage() {
             guardrails that ensure AI serves as an instrument for collective
             empowerment, ethical growth, and educational trust.
           </p>
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section
+        id="partners"
+        className="scroll-mt-24 bg-giee-white px-6 pb-24 pt-4 md:pb-32"
+      >
+        <div className="mx-auto max-w-6xl">
+          <GieePartnerLogos />
         </div>
       </section>
 

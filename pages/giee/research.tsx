@@ -1,6 +1,7 @@
 import Link from "next/link";
 import GieeLayout from "../../components/GieeLayout";
 import GieeCommunityBand from "../../components/GieeCommunityBand";
+import GieePartnerLogos from "../../components/GieePartnerLogos";
 
 interface Initiative {
   name: string;
@@ -148,6 +149,8 @@ export default function GieeResearchPage() {
               Partner with GIEE
             </Link>
           </div>
+
+          <GieePartnerLogos className="mt-12" />
         </div>
       </section>
 
