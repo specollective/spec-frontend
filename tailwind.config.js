@@ -57,7 +57,12 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat'],
         dmserif: ['DM Serif Text'],
-        poppins: ['Poppins']
+        poppins: ['Poppins'],
+        // GIEE Brand Standards — Section 3 Typography Architecture.
+        // Primary titles & identity headers: high-contrast serif (deep blue).
+        'giee-serif': ['Georgia', 'Times New Roman', 'serif'],
+        // Subtitles, callouts, body & taglines: balanced, highly readable sans-serif.
+        'giee-sans': ['Arial', 'Helvetica', 'sans-serif']
       },
       lineHeight: {
         'tight-heading': '1.1',

@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import { axe } from "jest-axe";
+import type { ReactElement } from "react";
 
 import Home from "../../pages/index";
 import OurTeam from "../../pages/ourTeam";
@@ -8,7 +9,7 @@ import GlqfPage from "../../pages/glqf";
 
 // Renders each page that mounts without server-side props and asserts that
 // axe-core finds no accessibility violations in the rendered markup.
-const pages: [string, () => JSX.Element][] = [
+const pages: [string, () => ReactElement][] = [
   ["index", Home],
   ["ourTeam", OurTeam],
   ["giee", GieePage],

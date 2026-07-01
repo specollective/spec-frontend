@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SPEC (Sustainable Progress & Equality Collective) frontend — a Next.js 14 website using the **Pages Router** (not App Router). TypeScript with some plain JS files. Node 18.18.2 (pinned).
+SPEC (Sustainable Progress & Equality Collective) frontend — a Next.js 16 website using the **Pages Router** (not App Router). TypeScript with some plain JS files. (Note: `.nvmrc` pins Node 18.18.2, but `package.json` `engines` require `>=20.9.0` and CI / the DigitalOcean buildpack build on Node 22 — treat 20.9+ as the real floor.)
 
 ## Commands
 
@@ -19,11 +19,25 @@ npm run test -- path/to/test.tsx     # Single test file
 
 ## Environment Variables
 
-Copy `.env.sample` to `.env.local`. The sample only includes Nodemailer credentials. You also need:
+Copy `.env.sample` to `.env.local` for local dev. The sample only includes Nodemailer credentials; the full set used by the app:
 
 - `CONTENTFUL_SPACE_ID` — Contentful CMS space ID
 - `CONTENTFUL_ACCESS_TOKEN` — Contentful delivery API token
+- `NODE_MAILER_EMAIL` / `NODE_MAILER_PASSWORD` — Nodemailer/Gmail SMTP for the contact form
 - `NEXT_PUBLIC_API_URL` — Optional; overrides contact form API URL (defaults to `http://localhost:3000/api/contact`)
+- `GLQF_BASIC_AUTH_USER` / `GLQF_BASIC_AUTH_PASS` — Basic-auth gate for `/glqf`
+- `GIEE_BASIC_AUTH_USER` / `GIEE_BASIC_AUTH_PASS` — Basic-auth gate for `/giee`
+- `GIEE_INQUIRY_EMAIL` — Optional; recipient for GIEE partner-form submissions (`formType: "giee-partner"`). Falls back to `NODE_MAILER_EMAIL` if unset. Server-side only (not `NEXT_PUBLIC_`)
+
+**Runtime, not build:** every variable above is read at **runtime** — by the `proxy.ts` middleware (basic auth) and `getServerSideProps` (Contentful) — *not* inlined at build time. In production they must be set in the **DigitalOcean App Platform** environment (see Deployment), **not** in GitHub Actions. If a basic-auth pair is unset, that page returns `503 Basic auth not configured`.
+
+## Deployment
+
+Hosted on **DigitalOcean App Platform** (app name `spec-frontend`). The app spec is committed at `.do/deploy-template.yml` — a single `server` service on the Ubuntu-22 buildpack stack. The buildpack runs `npm run build` then `npm start` (`next start -H 0.0.0.0 -p ${PORT:-8080}`), i.e. a long-running Node server — *not* a static export and *not* Vercel.
+
+- **Production env vars** (Contentful, Nodemailer, `GLQF_/GIEE_BASIC_AUTH_*`) are configured in the DigitalOcean dashboard: App Platform → `spec-frontend` → Settings → the `server` component → **Environment Variables** (mark secrets as encrypted), then redeploy. They are **not** in the repo and **not** in GitHub Actions.
+- **GitHub Actions does not deploy.** The only workflows are `build.yml` (compiles, with Contentful build-env) and `lint.yml`; neither ships to production. DigitalOcean redeploys on push to the deploy branch via its own GitHub integration.
+- **To add a new gated page or secret:** read the new `process.env.*` var in `proxy.ts`, then add the value in the DO dashboard for the `server` component.
 
 ## Architecture
 
@@ -67,7 +81,7 @@ Contact form uses **Formik + Yup** for form state and validation (`components/Co
 
 - Components are TypeScript (`.tsx`); some utilities and constants are plain JS
 - No path aliases — use relative imports
-- `middleware.ts` redirects `www.` to apex domain
+- `proxy.ts` (Next 16's renamed middleware — runs at runtime) redirects `www.` to the apex domain and gates `/glqf` and `/giee` behind HTTP basic auth
 - `next.config.js` has `trailingSlash: true` and `images: { unoptimized: true }`
 - ESLint config is minimal: just `next/core-web-vitals`
 - CI runs build and lint on every push/PR (GitHub Actions) but does **not** run tests
