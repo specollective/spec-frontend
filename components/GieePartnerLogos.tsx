@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "next-i18next/pages";
 
 // Partner logos are exported on a shared 160×90 artboard from the GIEE brand
 // kit, so every logo uses the same intrinsic dimensions. Add a partner by
@@ -43,10 +44,13 @@ function Logo({
   logo: string;
   sizeClass: string;
 }) {
+  const { t } = useTranslation("giee");
+  // Organization NAMES stay in English (proper nouns); only the generic
+  // "... logo" wrapper is translated.
   return (
     <Image
       src={logo}
-      alt={`${name} logo`}
+      alt={t("partnerLogos.logoAlt", { name })}
       width={PARTNER_LOGO_WIDTH}
       height={PARTNER_LOGO_HEIGHT}
       className={`w-auto object-contain ${sizeClass}`}

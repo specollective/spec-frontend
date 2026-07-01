@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import { useTranslation } from "next-i18next/pages";
 import AppHead from "./AppHead";
 import GieeNavbar from "./GieeNavbar";
 import GieeFooter from "./GieeFooter";
@@ -10,6 +11,7 @@ interface GieeLayoutProps {
 }
 
 export default function GieeLayout({ children }: GieeLayoutProps) {
+  const { t } = useTranslation("common");
   return (
     <>
       <AppHead />
@@ -19,7 +21,7 @@ export default function GieeLayout({ children }: GieeLayoutProps) {
         </Head>
       )}
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {t("skipToContent")}
       </a>
       <div className="bg-giee-paper text-giee-ink">
         <GieeNavbar />

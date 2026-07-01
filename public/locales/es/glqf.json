@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "eyebrow": "Un marco para reconocer el aprendizaje",
+    "title": "The Global Learning<br />Qualifications Framework",
+    "subtitle": "Un estándar flexible y de código abierto para definir y evaluar el aprendizaje de nivel universitario, donde sea, como sea y cuando sea que ocurra.",
+    "exploreCta": "Explora el marco",
+    "viewModelCta": "Ver el modelo",
+    "scrollLabel": "Desplázate a la visión general",
+    "scroll": "Desplázate"
+  },
+  "overview": {
+    "eyebrow": "Visión general",
+    "heading": "¿Qué es el GLQF?",
+    "p1": "El GLQF se basa en investigaciones que abarcan más de 90 marcos nacionales de cualificaciones de todo el mundo. Establece un lenguaje global y compartido sobre lo que significa aprender a nivel de grado.",
+    "p2": "Ya sea que el aprendizaje ocurra en un aula, a través de la experiencia laboral, mediante recursos educativos abiertos o a través del estudio independiente, el GLQF proporciona un estándar común para reconocerlo y evaluarlo.",
+    "quote": "Un estándar común para el aprendizaje de nivel universitario, independientemente de dónde, cómo o cuándo se adquirió."
+  },
+  "constructsSection": {
+    "eyebrow": "El núcleo",
+    "heading": "Tres constructos generales",
+    "intro": "En conjunto, estos constructos describen lo que distingue el aprendizaje de nivel universitario del conocimiento o la habilidad por sí solos.",
+    "readMore": "Leer más"
+  },
+  "constructDescriptions": {
+    "integration": "Reflexionar sobre el conocimiento, sintetizarlo y combinarlo para dar sentido a la información, unificarla y compartirla en entornos colaborativos y en evolución.",
+    "knowledge": "La culminación de hechos, conceptos, principios, habilidades y competencias adquiridos mediante la experiencia y la educación que producen una comprensión teórica y práctica.",
+    "engagement": "Interactuar de forma intencionada, prestar atención y desarrollar una relación con un objeto de estudio, una comunidad, un proyecto o un conjunto de tareas."
+  },
+  "diagramSection": {
+    "eyebrow": "El modelo",
+    "heading": "Constructos y dominios, integrados",
+    "intro": "Tres constructos en el centro, ocho dominios de aprendizaje a su alrededor. Selecciona cualquier etiqueta para profundizar."
+  },
+  "domainsSection": {
+    "eyebrow": "Ocho dominios",
+    "heading": "El aprendizaje, desglosado",
+    "intro": "Cada dominio se define en dos niveles —introductorio (grado asociado) y avanzado (licenciatura)—, ofreciendo a evaluadores, docentes y estudiantes descriptores claros y accionables."
+  },
+  "internationalSection": {
+    "eyebrow": "Base internacional",
+    "heading": "Fundamentado en más de 90 marcos nacionales",
+    "intro": "Durante el desarrollo del GLQF se investigaron las políticas, los procedimientos y los marcos de cualificaciones de más de 90 países."
+  },
+  "cta": {
+    "eyebrow": "Abierto y adaptable",
+    "heading": "Úsalo. Adáptalo. Construye sobre él.",
+    "body": "El GLQF está disponible libremente y es totalmente adaptable. Úsalo para evaluar portafolios de aprendizaje previo, valorar la formación en el lugar de trabajo, diseñar planes de estudio, otorgar créditos por cursos abiertos o comparar microcredenciales. Las instituciones, los socios de la industria y los estudiantes pueden aplicarlo en su totalidad o en parte, y se les anima a construir sobre él para sus propios contextos.",
+    "button": "Ponte en contacto"
+  },
+  "items": {
+    "integration": "Integración",
+    "knowledge": "Conocimiento",
+    "engagement": "Compromiso",
+    "specialized-knowledge": "Conocimiento especializado",
+    "applied-knowledge": "Conocimiento aplicado",
+    "integrated-knowledge": "Conocimiento integrado",
+    "communication": "Comunicación",
+    "information-literacy": "Alfabetización informacional",
+    "ethical-responsibility": "Responsabilidad ética",
+    "sociocultural-and-civic-engagement": "Compromiso sociocultural y cívico",
+    "learning-engagement": "Compromiso con el aprendizaje"
+  },
+  "navbar": {
+    "overview": "Visión general",
+    "constructs": "Constructos",
+    "domains": "Dominios",
+    "research": "Investigación",
+    "wordmarkLabel": "GLQF — Global Learning Qualifications Framework, inicio",
+    "menu": "Menú",
+    "navLabel": "Navegación de GLQF",
+    "mobileNavLabel": "Navegación móvil de GLQF"
+  },
+  "footer": {
+    "tagline": "The Global Learning Qualifications Framework: un estándar abierto para definir y evaluar el aprendizaje de nivel universitario.",
+    "initiative": "Una iniciativa de SPEC ↗",
+    "copyright": "© {{year}} Sustainable Progress & Equality Collective. El GLQF está disponible libremente bajo una licencia abierta."
+  },
+  "slug": {
+    "breadcrumbLabel": "Ruta de navegación",
+    "constructsCrumb": "Constructos",
+    "domainsCrumb": "Dominios",
+    "constructEyebrow": "Constructo del GLQF",
+    "domainEyebrow": "Dominio del GLQF",
+    "underConstruction": "Esta página está en construcción. Vuelve pronto para ver una descripción detallada, los descriptores de nivel y ejemplos de evidencia para <highlight>{{name}}</highlight>.",
+    "otherConstructs": "Otros constructos",
+    "otherDomains": "Otros dominios",
+    "continueExploring": "Sigue explorando",
+    "backToFramework": "Volver al marco"
+  },
+  "diagram": {
+    "title": "Global Learning Qualifications Framework",
+    "desc": "Diagrama interactivo del GLQF. Tres constructos centrales —Integración, Conocimiento y Compromiso— se sitúan en el centro de una esfera, rodeados por ocho dominios de aprendizaje: Conocimiento especializado, Conocimiento aplicado, Conocimiento integrado, Comunicación, Alfabetización informacional, Responsabilidad ética, Compromiso sociocultural y cívico, y Compromiso con el aprendizaje. Cada etiqueta enlaza a su página de detalle.",
+    "domainLines": {
+      "specialized-knowledge": ["Conocimiento", "especializado"],
+      "applied-knowledge": ["Conocimiento", "aplicado"],
+      "integrated-knowledge": ["Conocimiento", "integrado"],
+      "communication": ["Comunicación"],
+      "information-literacy": ["Alfabetización", "informacional"],
+      "ethical-responsibility": ["Responsabilidad", "ética"],
+      "sociocultural-and-civic-engagement": ["Compromiso", "sociocultural", "y cívico"],
+      "learning-engagement": ["Compromiso con", "el aprendizaje"]
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { FC, memo, ReactNode } from "react";
+import { useTranslation } from "next-i18next/pages";
 
 interface Props {
   className?: string;
@@ -20,7 +21,23 @@ const DiagramLink: FC<DiagramLinkProps> = ({ href, label, children }) => (
   </a>
 );
 
+// Geometry for the eight domain labels around the sphere. Text content is pulled
+// from translations (each entry may wrap onto multiple <tspan> lines); positions
+// stay fixed here so the layout is identical across locales.
+const DOMAIN_LABELS: { slug: string; x: number; y: number }[] = [
+  { slug: "specialized-knowledge", x: 180, y: 120 },
+  { slug: "applied-knowledge", x: 420, y: 120 },
+  { slug: "integrated-knowledge", x: 540, y: 240 },
+  { slug: "communication", x: 545, y: 375 },
+  { slug: "information-literacy", x: 400, y: 520 },
+  { slug: "ethical-responsibility", x: 200, y: 520 },
+  { slug: "sociocultural-and-civic-engagement", x: 55, y: 360 },
+  { slug: "learning-engagement", x: 60, y: 240 },
+];
+
 export const GlqfDiagram: FC<Props> = memo(function GlqfDiagram(props) {
+  const { t } = useTranslation("glqf");
+
   return (
     <svg
       viewBox="-60 0 720 600"
@@ -29,17 +46,8 @@ export const GlqfDiagram: FC<Props> = memo(function GlqfDiagram(props) {
       aria-labelledby="glqf-diagram-title glqf-diagram-desc"
       className={props.className}
     >
-      <title id="glqf-diagram-title">
-        Global Learning Qualifications Framework
-      </title>
-      <desc id="glqf-diagram-desc">
-        Interactive diagram of the GLQF. Three core constructs — Integration,
-        Knowledge, and Engagement — sit at the center of a sphere, surrounded
-        by eight learning domains: Specialized Knowledge, Applied Knowledge,
-        Integrated Knowledge, Communication, Information Literacy, Ethical
-        Responsibility, Sociocultural and Civic Engagement, and Learning
-        Engagement. Each label links to its detail page.
-      </desc>
+      <title id="glqf-diagram-title">{t("diagram.title")}</title>
+      <desc id="glqf-diagram-desc">{t("diagram.desc")}</desc>
 
       <defs>
         <radialGradient id="glqf-sphere" cx="38%" cy="32%" r="72%">
@@ -100,14 +108,20 @@ export const GlqfDiagram: FC<Props> = memo(function GlqfDiagram(props) {
         textAnchor="middle"
         letterSpacing="1.2"
       >
-        <DiagramLink href="/glqf/integration" label="Integration">
-          <text transform="translate(258 273) rotate(-60)">INTEGRATION</text>
+        <DiagramLink href="/glqf/integration" label={t("items.integration")}>
+          <text transform="translate(258 273) rotate(-60)">
+            {t("items.integration").toUpperCase()}
+          </text>
         </DiagramLink>
-        <DiagramLink href="/glqf/knowledge" label="Knowledge">
-          <text transform="translate(342 273) rotate(60)">KNOWLEDGE</text>
+        <DiagramLink href="/glqf/knowledge" label={t("items.knowledge")}>
+          <text transform="translate(342 273) rotate(60)">
+            {t("items.knowledge").toUpperCase()}
+          </text>
         </DiagramLink>
-        <DiagramLink href="/glqf/engagement" label="Engagement">
-          <text x="300" y="358">ENGAGEMENT</text>
+        <DiagramLink href="/glqf/engagement" label={t("items.engagement")}>
+          <text x="300" y="358">
+            {t("items.engagement").toUpperCase()}
+          </text>
         </DiagramLink>
       </g>
 
@@ -118,70 +132,26 @@ export const GlqfDiagram: FC<Props> = memo(function GlqfDiagram(props) {
         fill="#3A4F66"
         textAnchor="middle"
       >
-        <DiagramLink
-          href="/glqf/specialized-knowledge"
-          label="Specialized Knowledge"
-        >
-          <text x="180" y="120">
-            <tspan x="180">Specialized</tspan>
-            <tspan x="180" dy="18">Knowledge</tspan>
-          </text>
-        </DiagramLink>
-        <DiagramLink href="/glqf/applied-knowledge" label="Applied Knowledge">
-          <text x="420" y="120">
-            <tspan x="420">Applied</tspan>
-            <tspan x="420" dy="18">Knowledge</tspan>
-          </text>
-        </DiagramLink>
-        <DiagramLink
-          href="/glqf/integrated-knowledge"
-          label="Integrated Knowledge"
-        >
-          <text x="540" y="240">
-            <tspan x="540">Integrated</tspan>
-            <tspan x="540" dy="18">Knowledge</tspan>
-          </text>
-        </DiagramLink>
-        <DiagramLink href="/glqf/communication" label="Communication">
-          <text x="545" y="375">Communication</text>
-        </DiagramLink>
-        <DiagramLink
-          href="/glqf/information-literacy"
-          label="Information Literacy"
-        >
-          <text x="400" y="520">
-            <tspan x="400">Information</tspan>
-            <tspan x="400" dy="18">Literacy</tspan>
-          </text>
-        </DiagramLink>
-        <DiagramLink
-          href="/glqf/ethical-responsibility"
-          label="Ethical Responsibility"
-        >
-          <text x="200" y="520">
-            <tspan x="200">Ethical</tspan>
-            <tspan x="200" dy="18">Responsibility</tspan>
-          </text>
-        </DiagramLink>
-        <DiagramLink
-          href="/glqf/sociocultural-and-civic-engagement"
-          label="Sociocultural and Civic Engagement"
-        >
-          <text x="55" y="360">
-            <tspan x="55">Sociocultural</tspan>
-            <tspan x="55" dy="18">and Civic</tspan>
-            <tspan x="55" dy="18">Engagement</tspan>
-          </text>
-        </DiagramLink>
-        <DiagramLink
-          href="/glqf/learning-engagement"
-          label="Learning Engagement"
-        >
-          <text x="60" y="240">
-            <tspan x="60">Learning</tspan>
-            <tspan x="60" dy="18">Engagement</tspan>
-          </text>
-        </DiagramLink>
+        {DOMAIN_LABELS.map(({ slug, x, y }) => {
+          const lines = t(`diagram.domainLines.${slug}`, {
+            returnObjects: true,
+          }) as string[];
+          return (
+            <DiagramLink
+              key={slug}
+              href={`/glqf/${slug}`}
+              label={t(`items.${slug}`)}
+            >
+              <text x={x} y={y}>
+                {lines.map((line, i) => (
+                  <tspan key={i} x={x} {...(i > 0 ? { dy: 18 } : {})}>
+                    {line}
+                  </tspan>
+                ))}
+              </text>
+            </DiagramLink>
+          );
+        })}
       </g>
     </svg>
   );

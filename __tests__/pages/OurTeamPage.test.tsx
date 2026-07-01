@@ -8,9 +8,9 @@ describe("OurTeamPage", () => {
   it("renders title", () => {
     render(<OurTeamPage />);
 
-    const title = screen.getByText(
-      /Our Team/
-    );
+    // The i18n mock echoes translation keys, so assert on the heading role
+    // (locale-independent) rather than literal English copy.
+    const title = screen.getByRole("heading", { level: 1 });
 
     expect(title).toBeInTheDocument();
   });
