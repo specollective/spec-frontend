@@ -1,5 +1,6 @@
 import { memo } from "react";
 import type { FC } from "react";
+import { useTranslation } from "next-i18next/pages";
 import classes from "./JoerFormHeader.module.css";
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 export const JoerFormHeader: FC<Props> = memo(function JoerFormHeader(
   props = {}
 ) {
+  const { t } = useTranslation("journal");
   return (
     <div className={`${classes.container} ${props.className}`}>
       <div className={classes.backgroundImage}></div>
@@ -17,7 +19,7 @@ export const JoerFormHeader: FC<Props> = memo(function JoerFormHeader(
         <div className={classes.specLogo}></div>
         <div className={classes.eR}>ER</div>
         <div className={classes.welcomeToTheJournalOfEngagedResearch}>
-          Welcome to the Journal of Engaged Research!
+          {t("welcome")}
         </div>
       </div>
     </div>

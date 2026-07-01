@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next/pages'
 import { Heading0, Subtitle1 } from '../Typography/Heading'
 import SocialMedia from '../SocialMedia'
 
 export default function LandingHero() {
+  const { t } = useTranslation('landing')
   return (
     <section
       aria-labelledby="hero-heading"
@@ -13,7 +15,7 @@ export default function LandingHero() {
         <div className="flex-shrink-0">
           <Image
             src="/spec-logo.svg"
-            alt="SPEC tree logo"
+            alt={t('hero.logoAlt')}
             width={240}
             height={300}
             className="w-40 md:w-52 lg:w-64"
@@ -23,15 +25,9 @@ export default function LandingHero() {
 
         <div className="flex flex-col gap-6 text-center md:text-left">
           <Heading0 className="" as="h1">
-            <span id="hero-heading">
-              Sustainable Progress &amp; Equality Collective
-            </span>
+            <span id="hero-heading">{t('hero.title')}</span>
           </Heading0>
-          <Subtitle1>
-            A community-driven organization empowering people to learn
-            skills, build careers, and create meaningful social impact
-            through mentorship, applied research, and open collaboration.
-          </Subtitle1>
+          <Subtitle1>{t('hero.subtitle')}</Subtitle1>
           <div className="pt-2">
             <SocialMedia />
           </div>

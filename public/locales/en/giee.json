@@ -1,0 +1,217 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "pillars": "Pillars",
+    "research": "Research",
+    "partner": "Partner",
+    "ariaLabel": "GIEE navigation",
+    "mobileAriaLabel": "GIEE mobile navigation",
+    "menu": "Menu",
+    "changeLanguage": "Change language, current language {{language}}",
+    "wordmarkAria": "GIEE — Global AI Governance & Inclusive Education Ecosystem, home"
+  },
+  "footer": {
+    "tagline": "The Global Inclusive Education Ecosystem — designing the global benchmarks, policies, and guardrails that keep AI an instrument for collective empowerment and educational trust.",
+    "initiativeOf": "An initiative of SPEC ↗",
+    "contact": "Contact",
+    "copyright": "© 2026 Sustainable Progress & Equality Collective."
+  },
+  "home": {
+    "hero": {
+      "title": "Global AI Governance &<br/>Inclusive Education Ecosystem",
+      "subtitle": "The rapid ascension of generative artificial intelligence demands a proactive, cross-sector approach to technology governance—one that prioritizes human capability, institutional accountability, and equity.",
+      "explore": "Explore the ecosystem",
+      "pillarsCta": "Our core pillars",
+      "scroll": "Scroll",
+      "scrollAria": "Scroll to overview"
+    },
+    "overview": {
+      "eyebrow": "Overview",
+      "p1": "The Global Inclusive Education Ecosystem (GIEE) serves as a foundational bridge linking emerging technology with robust human-centered frameworks. In direct collaboration with the Global Online Education Regulator (GOER) and the United Nations-Geneva Forum, we are moving beyond a posture of merely reacting to digital shifts.",
+      "p2": "Together, we are designing the global benchmarks, policies, and guardrails that ensure AI serves as an instrument for collective empowerment, ethical growth, and educational trust."
+    },
+    "pillars": {
+      "eyebrow": "Our Core Pillars of Systemic Governance",
+      "intro": "When we discuss “human-centered design” in artificial intelligence architecture, it cannot simply be a rhetorical catchphrase. True technological equity requires an intentional, evidence-based framework. Our ecosystem is anchored in three structural truths:",
+      "items": [
+        {
+          "name": "Technology Must Amplify Human Capability",
+          "description": "Systems must serve the individual, not the inverse. We advocate for and audit algorithmic models to ensure they are engineered to elevate human curiosity, critical thinking, and baseline capability—never to diminish, gatekeep, or displace the human architecture of learning."
+        },
+        {
+          "name": "Equity Demands Intentional Design",
+          "description": "Societies do not stumble into ethical AI platforms. Responsible deployment requires a deliberate vetting infrastructure that forces technology architects, policymakers, and institutions to audit how a digital tool impacts learner privacy, access, and psychological safety before it scales globally."
+        },
+        {
+          "name": "Trust is our Ultimate Institutional Currency",
+          "description": "If educators, students, and community stakeholders do not trust the operational systems they rely on, the innovation inherently fails. By anchoring emerging technology in transparent, rigorous governance models, we effectively turn institutional skepticism into collaborative progress."
+        }
+      ]
+    },
+    "initiatives": {
+      "eyebrow": "Strategic Global Initiatives & Intersections",
+      "items": [
+        {
+          "name": "The GOER AI Integrity Badge",
+          "description": "Administered by the GOER Board, the AI Integrity Badge represents a critical evolution in educational quality assurance. Far more than a technical validation process, this badge establishes the global baseline for ethical, transparent, and accountable AI integration. By auditing and recognizing technical innovators who meet these stringent criteria, we provide educational systems with verified, safe, and equitable digital tools."
+        },
+        {
+          "name": "The UN-Geneva Forum Alliance",
+          "description": "Through our continuous collaboration with the Geneva Forum, GIEE scales localized benchmarks into global policy frameworks. This alliance bridges the gap between grassroots educational technology and high-level international diplomacy, ensuring that global frameworks for digital sovereignty are rooted in data-driven, real-world impact."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Shape the Future of Trust with Us",
+      "body": "The intersection of AI governance and inclusive education is the defining policy challenge of our era. Whether you are a scholar, practitioner, tech architect, or public servant, your insights are vital to constructing these global guardrails.",
+      "research": "Explore Our Research Portfolio",
+      "partner": "Partner with GIEE"
+    }
+  },
+  "partner": {
+    "back": "← Back to GIEE",
+    "eyebrow": "Partner with GIEE",
+    "heading": "Join the Sandbox",
+    "intro": "GIEE partners with forward-thinking institutions, community advocates, and industry leaders to build bankable, human-centered public assets. Please fill out the form to connect with our Executive Leadership Team.",
+    "features": {
+      "sandbox": {
+        "term": "A quality-assured regulatory sandbox",
+        "description": "We bridge high-level international policy with real-world, grassroots execution—anchored in the GLQF and GOER principles."
+      },
+      "collaboration": {
+        "term": "Built for collaboration",
+        "description": "Whether you arrive with a case study, a new proposal, or a research question, our team will route your inquiry to the right Case Study Lead."
+      },
+      "portfolio": {
+        "term": "Explore the portfolio first",
+        "description": "See our active case studies and ecosystem partners on the <portfolio>Research Portfolio</portfolio>."
+      }
+    }
+  },
+  "research": {
+    "back": "← Back to GIEE",
+    "heading": "Explore Our Research Portfolio",
+    "intro": "Welcome to the Global Inclusive Education Ecosystem (GIEE) Research Portfolio. GIEE functions as a quality-assured regulatory sandbox, bridging high-level international policy with real-world, grassroots execution. By centering our initiatives around the GLQF and GOER principles, we actively shift global education from standard content delivery to outcome-based competency and human-AI synergy.",
+    "eyebrow": "Active Case Studies & Ecosystem Partners",
+    "ecosystemPartners": "Ecosystem Partners",
+    "partnerCta": "Partner with GIEE",
+    "initiatives": [
+      {
+        "name": "Women in AI Framework",
+        "description": "This initiative explores the structural inclusion of women's perspectives across the entire AI development lifecycle.",
+        "partners": [
+          "Mount Saint Mary's University (Los Angeles, CA)",
+          "University of Barcelona — Social Work Department"
+        ]
+      },
+      {
+        "name": "Insight Recognition",
+        "description": "An AI-driven assessment and personalized learning environment that maps knowledge through individualized, bottom-up concept mapping.",
+        "partners": [
+          "Prior Learning Assessment Advisory Group",
+          "United States Workforce Development Partners",
+          "International Educational Systems"
+        ]
+      },
+      {
+        "name": "Scaling & Expanding Youth-Led Critical AI Education",
+        "description": "A critical science and technology program addressing professional development for K-12 educators regarding sociotechnical harms.",
+        "partners": [
+          "UCLA",
+          "Race, Abolition, and Artificial Intelligence (RAAI) Program",
+          "Brown University",
+          "NYC WorkEd"
+        ]
+      },
+      {
+        "name": "murmur: AI Design in Mental Health",
+        "description": "A structured clinical instrument built on Schema Therapy models to provide clinician-supervised reflective support for learners.",
+        "partners": [
+          "APA Professional Networks",
+          "Central Asian University Counseling Centers",
+          "Kyrgyzstan Local Clinicians"
+        ]
+      },
+      {
+        "name": "Street Racket: Schools and Hybrid Learning Environments",
+        "description": "Investigating how movement-based learning can be enhanced through AI-supported reflection and goal-setting.",
+        "partners": [
+          "Street Racket International",
+          "Tarek's Tennis Academy (Belgium)",
+          "Global Educational Technology Partners"
+        ]
+      },
+      {
+        "name": "CheckIT Learning: AI Supporting SEN Students",
+        "description": "Exploring how neuroscience-informed digital pathways enhance engagement for students with Special Educational Needs (SEN).",
+        "partners": [
+          "CheckIT Learning (CLEO LMS Platform)",
+          "St. George's British International School (Bilbao, Spain)"
+        ]
+      }
+    ]
+  },
+  "partnerForm": {
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "First name Last name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "hello@institution.org"
+      },
+      "affiliation": {
+        "label": "Affiliation",
+        "placeholder": "Institution, organization, or company"
+      },
+      "role": {
+        "label": "Primary Professional Role",
+        "placeholder": "Select a role"
+      },
+      "interest": {
+        "label": "Area of Interest",
+        "placeholder": "Select an area"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about your collaboration objectives."
+      }
+    },
+    "roles": {
+      "k12HigherEd": "K-12 / Higher Ed",
+      "industryAiArchitect": "Industry / AI Architect",
+      "nonProfitLead": "Non-Profit Lead",
+      "communityAdvocate": "Community Advocate",
+      "policyOfficial": "Policy Official"
+    },
+    "interests": {
+      "news": "News",
+      "caseStudyPartnership": "Case Study Partnership",
+      "research": "Research",
+      "newProposal": "New Proposal",
+      "other": "Other"
+    },
+    "validation": {
+      "required": "Required",
+      "email": "Enter a valid email address",
+      "select": "Please select a valid option"
+    },
+    "submit": "Submit Partnership Inquiry",
+    "error": "Something went wrong. Please try again.",
+    "success": {
+      "heading": "Thank you — your inquiry has been sent.",
+      "body": "Our team will review your message and route it to the right Case Study Lead. We’ll be in touch at the email address you provided.",
+      "button": "Submit another inquiry"
+    }
+  },
+  "communityBand": {
+    "eyebrow": "Join Our GIEE Community",
+    "title": "Connect with the Ecosystem Architecture",
+    "body": "The heartbeat of GIEE relies on our active, decentralized peer-to-peer network. Don’t wait for our next formal presentation to step into the ecosystem. Join our official working group right now to interact with our Case Study Leads and participate in public evidence reviews.",
+    "cta": "Join the GIEE LinkedIn Community Group"
+  },
+  "partnerLogos": {
+    "logoAlt": "{{name}} logo"
+  }
+}

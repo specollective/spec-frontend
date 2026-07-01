@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useTranslation } from "next-i18next/pages";
 
 export default function GlqfFooter() {
+  const { t } = useTranslation("glqf");
+  const { t: tCommon } = useTranslation("common");
   return (
     <footer className="border-t border-glqf-line bg-glqf-paper">
       <div className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
@@ -10,8 +13,7 @@ export default function GlqfFooter() {
               GLQF
             </p>
             <p className="mt-3 font-montserrat text-sm leading-relaxed text-glqf-slate">
-              The Global Learning Qualifications Framework — an open standard
-              for defining and assessing college-level learning.
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -22,21 +24,20 @@ export default function GlqfFooter() {
               rel="noopener noreferrer"
               className="font-montserrat text-xs uppercase tracking-[0.22em] text-glqf-ink-soft hover:text-glqf-ink"
             >
-              An initiative of SPEC ↗
+              {t("footer.initiative")}
             </a>
             <Link
               href="/contact"
               className="font-montserrat text-sm text-glqf-ink-soft hover:text-glqf-ink"
             >
-              Contact
+              {tCommon("nav.contact")}
             </Link>
           </div>
         </div>
 
         <div className="mt-10 border-t border-glqf-line pt-6">
           <p className="font-montserrat text-xs text-glqf-slate">
-            © {new Date().getFullYear()} Sustainable Progress &amp; Equality
-            Collective. The GLQF is freely available under an open license.
+            {t("footer.copyright", { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

@@ -1,7 +1,11 @@
 import Link from "next/link";
+import type { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next/pages";
+import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import GieeLayout from "../../components/GieeLayout";
 import GieeCommunityBand from "../../components/GieeCommunityBand";
 import GieePartnerLogos from "../../components/GieePartnerLogos";
+import nextI18NextConfig from "../../next-i18next.config";
 
 interface Initiative {
   name: string;
@@ -9,67 +13,15 @@ interface Initiative {
   partners: string[];
 }
 
-const initiatives: Initiative[] = [
-  {
-    name: "Women in AI Framework",
-    description:
-      "This initiative explores the structural inclusion of women's perspectives across the entire AI development lifecycle.",
-    partners: [
-      "Mount Saint Mary's University (Los Angeles, CA)",
-      "University of Barcelona — Social Work Department",
-    ],
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale ?? nextI18NextConfig.i18n.defaultLocale,
+      ["common", "giee"],
+      nextI18NextConfig
+    )),
   },
-  {
-    name: "Insight Recognition",
-    description:
-      "An AI-driven assessment and personalized learning environment that maps knowledge through individualized, bottom-up concept mapping.",
-    partners: [
-      "Prior Learning Assessment Advisory Group",
-      "United States Workforce Development Partners",
-      "International Educational Systems",
-    ],
-  },
-  {
-    name: "Scaling & Expanding Youth-Led Critical AI Education",
-    description:
-      "A critical science and technology program addressing professional development for K-12 educators regarding sociotechnical harms.",
-    partners: [
-      "UCLA",
-      "Race, Abolition, and Artificial Intelligence (RAAI) Program",
-      "Brown University",
-      "NYC WorkEd",
-    ],
-  },
-  {
-    name: "murmur: AI Design in Mental Health",
-    description:
-      "A structured clinical instrument built on Schema Therapy models to provide clinician-supervised reflective support for learners.",
-    partners: [
-      "APA Professional Networks",
-      "Central Asian University Counseling Centers",
-      "Kyrgyzstan Local Clinicians",
-    ],
-  },
-  {
-    name: "Street Racket: Schools and Hybrid Learning Environments",
-    description:
-      "Investigating how movement-based learning can be enhanced through AI-supported reflection and goal-setting.",
-    partners: [
-      "Street Racket International",
-      "Tarek's Tennis Academy (Belgium)",
-      "Global Educational Technology Partners",
-    ],
-  },
-  {
-    name: "CheckIT Learning: AI Supporting SEN Students",
-    description:
-      "Exploring how neuroscience-informed digital pathways enhance engagement for students with Special Educational Needs (SEN).",
-    partners: [
-      "CheckIT Learning (CLEO LMS Platform)",
-      "St. George's British International School (Bilbao, Spain)",
-    ],
-  },
-];
+});
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -80,6 +32,10 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 }
 
 export default function GieeResearchPage() {
+  const { t } = useTranslation("giee");
+  const initiatives = t("research.initiatives", {
+    returnObjects: true,
+  }) as Initiative[];
   return (
     <GieeLayout>
       {/* INTRO */}
@@ -89,18 +45,13 @@ export default function GieeResearchPage() {
             href="/giee"
             className="font-giee-sans text-sm text-giee-slate transition-colors hover:text-giee-ink"
           >
-            ← Back to GIEE
+            {t("research.back")}
           </Link>
           <h1 className="mt-6 font-giee-serif text-4xl leading-[1.08] text-giee-ink md:text-5xl lg:text-6xl">
-            Explore Our Research Portfolio
+            {t("research.heading")}
           </h1>
           <p className="mt-8 font-giee-sans text-lg leading-relaxed text-giee-ink-soft md:text-xl">
-            Welcome to the Global Inclusive Education Ecosystem (GIEE) Research
-            Portfolio. GIEE functions as a quality-assured regulatory sandbox,
-            bridging high-level international policy with real-world, grassroots
-            execution. By centering our initiatives around the GLQF and GOER
-            principles, we actively shift global education from standard content
-            delivery to outcome-based competency and human-AI synergy.
+            {t("research.intro")}
           </p>
         </div>
       </section>
@@ -108,7 +59,7 @@ export default function GieeResearchPage() {
       {/* PORTFOLIO GRID */}
       <section className="bg-giee-white px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <Eyebrow>Active Case Studies &amp; Ecosystem Partners</Eyebrow>
+          <Eyebrow>{t("research.eyebrow")}</Eyebrow>
 
           <ul className="mt-12 grid list-none gap-6 p-0 md:grid-cols-2 lg:grid-cols-3">
             {initiatives.map((item) => (
@@ -123,7 +74,7 @@ export default function GieeResearchPage() {
 
                   <div className="mt-6 border-t border-giee-line pt-5">
                     <p className="font-giee-sans text-xs font-semibold uppercase tracking-[0.18em] text-giee-accent">
-                      Ecosystem Partners
+                      {t("research.ecosystemPartners")}
                     </p>
                     <ul className="mt-3 flex list-none flex-col gap-2 p-0">
                       {item.partners.map((partner) => (
@@ -146,7 +97,7 @@ export default function GieeResearchPage() {
               href="/giee/partner"
               className="inline-flex items-center justify-center bg-giee-green px-8 py-4 font-giee-sans text-base font-semibold text-giee-white transition-colors hover:bg-giee-green/90"
             >
-              Partner with GIEE
+              {t("research.partnerCta")}
             </Link>
           </div>
 

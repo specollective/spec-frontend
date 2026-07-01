@@ -1,27 +1,16 @@
 import Link from "next/link";
+import type { GetStaticProps } from "next";
+import { useTranslation, Trans } from "next-i18next/pages";
+import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import * as Flags from "country-flag-icons/react/3x2";
 import GlqfLayout from "../components/GlqfLayout";
 import { GlqfDiagram } from "../components/GlqfDiagram";
+import nextI18NextConfig from "../next-i18next.config";
 
 const constructs = [
-  {
-    name: "Integration",
-    href: "/glqf/integration",
-    description:
-      "Reflecting on, synthesizing, and combining knowledge to make sense of, unify, and share information within collaborative and evolving environments.",
-  },
-  {
-    name: "Knowledge",
-    href: "/glqf/knowledge",
-    description:
-      "The culmination of facts, concepts, principles, skills, and competencies acquired through experience and education that yield theoretical and practical understanding.",
-  },
-  {
-    name: "Engagement",
-    href: "/glqf/engagement",
-    description:
-      "Purposefully interacting with, attending to, and developing a relationship with an object of study, a community, a project, or an assortment of tasks.",
-  },
+  { slug: "integration" },
+  { slug: "knowledge" },
+  { slug: "engagement" },
 ];
 
 const countries: { name: string; code: keyof typeof Flags }[] = [
@@ -120,46 +109,14 @@ const countries: { name: string; code: keyof typeof Flags }[] = [
 ];
 
 const domains = [
-  {
-    name: "Specialized Knowledge",
-    href: "/glqf/specialized-knowledge",
-    construct: "Knowledge",
-  },
-  {
-    name: "Applied Knowledge",
-    href: "/glqf/applied-knowledge",
-    construct: "Knowledge",
-  },
-  {
-    name: "Integrated Knowledge",
-    href: "/glqf/integrated-knowledge",
-    construct: "Knowledge",
-  },
-  {
-    name: "Communication",
-    href: "/glqf/communication",
-    construct: "Integration",
-  },
-  {
-    name: "Information Literacy",
-    href: "/glqf/information-literacy",
-    construct: "Integration",
-  },
-  {
-    name: "Ethical Responsibility",
-    href: "/glqf/ethical-responsibility",
-    construct: "Integration",
-  },
-  {
-    name: "Sociocultural and Civic Engagement",
-    href: "/glqf/sociocultural-and-civic-engagement",
-    construct: "Engagement",
-  },
-  {
-    name: "Learning Engagement",
-    href: "/glqf/learning-engagement",
-    construct: "Engagement",
-  },
+  { slug: "specialized-knowledge", constructSlug: "knowledge" },
+  { slug: "applied-knowledge", constructSlug: "knowledge" },
+  { slug: "integrated-knowledge", constructSlug: "knowledge" },
+  { slug: "communication", constructSlug: "integration" },
+  { slug: "information-literacy", constructSlug: "integration" },
+  { slug: "ethical-responsibility", constructSlug: "integration" },
+  { slug: "sociocultural-and-civic-engagement", constructSlug: "engagement" },
+  { slug: "learning-engagement", constructSlug: "engagement" },
 ];
 
 function Eyebrow({
@@ -214,6 +171,8 @@ function ArrowRight({ className = "" }: { className?: string }) {
 }
 
 export default function GlqfPage() {
+  const { t } = useTranslation("glqf");
+
   return (
     <GlqfLayout>
       {/* HERO */}
@@ -223,40 +182,36 @@ export default function GlqfPage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-glqf-line"
         />
         <div className="relative mx-auto flex min-h-[82vh] max-w-5xl flex-col items-center justify-center px-6 pb-28 pt-24 text-center md:pt-32">
-          <Eyebrow>A Framework for Recognizing Learning</Eyebrow>
+          <Eyebrow>{t("hero.eyebrow")}</Eyebrow>
           <h1 className="mt-6 font-dmserif text-4xl leading-[1.05] text-glqf-ink md:text-6xl lg:text-7xl">
-            The Global Learning
-            <br />
-            Qualifications Framework
+            <Trans i18nKey="hero.title" t={t} />
           </h1>
           <p className="mt-8 max-w-2xl font-montserrat text-lg leading-relaxed text-glqf-ink-soft md:text-xl">
-            A flexible, open-source standard for defining and assessing
-            college-level learning — wherever, however, and whenever it
-            happens.
+            {t("hero.subtitle")}
           </p>
           <div className="mt-12 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
               href="#overview"
               className="inline-flex w-full items-center justify-center bg-glqf-ink px-8 py-4 font-montserrat text-base font-semibold text-glqf-paper transition-colors hover:bg-glqf-black sm:w-auto sm:min-w-[14rem]"
             >
-              Explore the framework
+              {t("hero.exploreCta")}
             </a>
             <a
               href="#diagram"
               className="inline-flex w-full items-center justify-center border-2 border-glqf-ink bg-transparent px-8 py-4 font-montserrat text-base font-semibold text-glqf-ink transition-colors hover:bg-glqf-ink hover:text-glqf-paper sm:w-auto sm:min-w-[14rem]"
             >
-              View the model
+              {t("hero.viewModelCta")}
             </a>
           </div>
         </div>
 
         <a
           href="#overview"
-          aria-label="Scroll to overview"
+          aria-label={t("hero.scrollLabel")}
           className="group absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-glqf-slate transition-colors hover:text-glqf-ink md:flex"
         >
           <span className="font-montserrat text-[11px] uppercase tracking-[0.25em]">
-            Scroll
+            {t("hero.scroll")}
           </span>
           <ChevronDown className="h-5 w-5 animate-bounce" />
         </a>
@@ -268,27 +223,20 @@ export default function GlqfPage() {
         className="scroll-mt-24 bg-glqf-white px-6 py-24 md:py-32"
       >
         <div className="mx-auto max-w-3xl">
-          <Eyebrow>Overview</Eyebrow>
+          <Eyebrow>{t("overview.eyebrow")}</Eyebrow>
           <h2 className="mt-3 font-dmserif text-3xl leading-snug text-glqf-ink md:text-4xl">
-            What is the GLQF?
+            {t("overview.heading")}
           </h2>
           <p className="mt-8 font-montserrat text-lg leading-relaxed text-glqf-ink-soft md:text-xl">
-            The GLQF is built on research spanning more than 90 national
-            qualification frameworks from around the world. It establishes a
-            shared, global language for what it means to learn at the
-            undergraduate level.
+            {t("overview.p1")}
           </p>
           <p className="mt-6 font-montserrat text-lg leading-relaxed text-glqf-ink-soft md:text-xl">
-            Whether learning happens in a classroom, through workplace
-            experience, via open educational resources, or through independent
-            study, the GLQF provides a common standard to recognize and
-            evaluate it.
+            {t("overview.p2")}
           </p>
 
           <figure className="my-12 border-l-2 border-glqf-accent pl-6 md:pl-8">
             <blockquote className="font-dmserif text-2xl leading-snug text-glqf-ink md:text-3xl">
-              A common standard for college-level learning — independent of
-              where, how, or when it was acquired.
+              {t("overview.quote")}
             </blockquote>
           </figure>
         </div>
@@ -301,34 +249,33 @@ export default function GlqfPage() {
       >
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>The Core</Eyebrow>
+            <Eyebrow>{t("constructsSection.eyebrow")}</Eyebrow>
             <h2 className="mt-3 font-dmserif text-3xl leading-snug text-glqf-ink md:text-4xl">
-              Three overarching constructs
+              {t("constructsSection.heading")}
             </h2>
             <p className="mt-6 font-montserrat text-lg leading-relaxed text-glqf-ink-soft">
-              Together, these constructs describe what distinguishes
-              college-level learning from knowledge or skill alone.
+              {t("constructsSection.intro")}
             </p>
           </div>
 
           <ul className="mt-16 grid list-none gap-6 p-0 md:grid-cols-3">
             {constructs.map((c, i) => (
-              <li key={c.name}>
+              <li key={c.slug}>
                 <Link
-                  href={c.href}
+                  href={`/glqf/${c.slug}`}
                   className="group flex h-full flex-col border border-glqf-line bg-glqf-white p-8 transition-all hover:-translate-y-1 hover:border-glqf-ink hover:shadow-md"
                 >
                   <span className="font-montserrat text-xs font-semibold tracking-[0.22em] text-glqf-accent">
                     0{i + 1}
                   </span>
                   <h3 className="mt-4 font-dmserif text-2xl leading-snug text-glqf-ink md:text-3xl">
-                    {c.name}
+                    {t(`items.${c.slug}`)}
                   </h3>
                   <p className="mt-4 flex-1 font-montserrat text-base leading-relaxed text-glqf-ink-soft">
-                    {c.description}
+                    {t(`constructDescriptions.${c.slug}`)}
                   </p>
                   <span className="mt-6 inline-flex items-center gap-2 font-montserrat text-xs font-semibold uppercase tracking-[0.22em] text-glqf-ink">
-                    Read more
+                    {t("constructsSection.readMore")}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
@@ -345,13 +292,12 @@ export default function GlqfPage() {
       >
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>The Model</Eyebrow>
+            <Eyebrow>{t("diagramSection.eyebrow")}</Eyebrow>
             <h2 className="mt-3 font-dmserif text-3xl leading-snug text-glqf-ink md:text-4xl">
-              Constructs and domains, integrated
+              {t("diagramSection.heading")}
             </h2>
             <p className="mt-6 font-montserrat text-lg leading-relaxed text-glqf-ink-soft">
-              Three constructs at the center, eight learning domains around
-              them. Select any label to dive deeper.
+              {t("diagramSection.intro")}
             </p>
           </div>
           <div className="mt-16 border border-glqf-line bg-glqf-paper p-6 md:p-12">
@@ -367,30 +313,28 @@ export default function GlqfPage() {
       >
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Eight Domains</Eyebrow>
+            <Eyebrow>{t("domainsSection.eyebrow")}</Eyebrow>
             <h2 className="mt-3 font-dmserif text-3xl leading-snug text-glqf-ink md:text-4xl">
-              Learning, broken down
+              {t("domainsSection.heading")}
             </h2>
             <p className="mt-6 font-montserrat text-lg leading-relaxed text-glqf-ink-soft">
-              Each domain is defined at two levels — introductory (associate)
-              and advanced (bachelor&#39;s) — giving evaluators, faculty, and
-              learners clear, actionable descriptors.
+              {t("domainsSection.intro")}
             </p>
           </div>
 
           <ul className="mt-16 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {domains.map((d) => (
-              <li key={d.name}>
+              <li key={d.slug}>
                 <Link
-                  href={d.href}
+                  href={`/glqf/${d.slug}`}
                   className="group flex h-full flex-col justify-between border border-glqf-line bg-glqf-white p-6 transition-all hover:-translate-y-1 hover:border-glqf-ink hover:shadow-md"
                 >
                   <div>
                     <p className="font-montserrat text-[11px] uppercase tracking-[0.22em] text-glqf-slate">
-                      {d.construct}
+                      {t(`items.${d.constructSlug}`)}
                     </p>
                     <p className="mt-3 font-dmserif text-xl leading-snug text-glqf-ink md:text-2xl">
-                      {d.name}
+                      {t(`items.${d.slug}`)}
                     </p>
                   </div>
                   <ArrowRight className="mt-6 h-5 w-5 text-glqf-ink transition-transform group-hover:translate-x-1" />
@@ -408,14 +352,12 @@ export default function GlqfPage() {
       >
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>International Foundation</Eyebrow>
+            <Eyebrow>{t("internationalSection.eyebrow")}</Eyebrow>
             <h2 className="mt-3 font-dmserif text-3xl leading-snug text-glqf-ink md:text-4xl">
-              Grounded in 90+ national frameworks
+              {t("internationalSection.heading")}
             </h2>
             <p className="mt-6 font-montserrat text-lg leading-relaxed text-glqf-ink-soft">
-              The policies, procedures, and qualification frameworks of more
-              than 90 countries were researched in the development of the
-              GLQF.
+              {t("internationalSection.intro")}
             </p>
           </div>
 
@@ -448,27 +390,34 @@ export default function GlqfPage() {
       <section className="bg-glqf-ink px-6 py-24 text-glqf-paper md:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.22em] text-glqf-accent md:text-sm">
-            Open &amp; Adaptable
+            {t("cta.eyebrow")}
           </p>
           <h2 className="mt-3 font-dmserif text-3xl leading-snug text-glqf-paper md:text-4xl">
-            Use it. Adapt it. Build on it.
+            {t("cta.heading")}
           </h2>
           <p className="mt-8 font-montserrat text-lg leading-relaxed text-glqf-paper/85 md:text-xl">
-            The GLQF is freely available and fully adaptable. Use it to assess
-            prior-learning portfolios, evaluate workplace training, design
-            curriculum, award credit for open courseware, or benchmark
-            microcredentials. Institutions, industry partners, and learners can
-            apply it in whole or in part, and are encouraged to build upon it
-            for their own contexts.
+            {t("cta.body")}
           </p>
           <Link
             href="/contact"
             className="mt-12 inline-flex items-center justify-center border-2 border-glqf-paper bg-glqf-paper px-8 py-4 font-montserrat text-base font-semibold text-glqf-ink transition-colors hover:bg-transparent hover:text-glqf-paper"
           >
-            Get in touch
+            {t("cta.button")}
           </Link>
         </div>
       </section>
     </GlqfLayout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(
+        locale ?? nextI18NextConfig.i18n.defaultLocale,
+        ["common", "glqf"],
+        nextI18NextConfig
+      )),
+    },
+  };
+};

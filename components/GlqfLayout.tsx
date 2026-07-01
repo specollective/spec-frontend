@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import { useTranslation } from "next-i18next/pages";
 import AppHead from "./AppHead";
 import GlqfNavbar from "./GlqfNavbar";
 import GlqfFooter from "./GlqfFooter";
@@ -10,6 +11,7 @@ interface GlqfLayoutProps {
 }
 
 export default function GlqfLayout({ children }: GlqfLayoutProps) {
+  const { t } = useTranslation("common");
   return (
     <>
       <AppHead />
@@ -19,7 +21,7 @@ export default function GlqfLayout({ children }: GlqfLayoutProps) {
         </Head>
       )}
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {t("skipToContent")}
       </a>
       <div className="bg-glqf-paper text-glqf-ink">
         <GlqfNavbar />
