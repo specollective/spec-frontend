@@ -159,12 +159,15 @@ function Wordmark({
   return (
     <Link
       href="/giee"
-      className={`group inline-flex items-baseline gap-3 ${className}`}
+      className={`group inline-flex items-center ${className}`}
       aria-label={ariaLabel}
     >
-      <span className="font-giee-serif text-2xl leading-none tracking-tight text-giee-ink md:text-3xl">
-        GIEE
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/giee-logo.svg"
+        alt="GIEE"
+        className="h-10 w-auto md:h-12"
+      />
     </Link>
   );
 }

@@ -27,6 +27,7 @@ const partners: Partner[] = [
   { name: "Motum", logo: "/partners/motum.svg" },
   { name: "The Common Ground Collaborative", logo: "/partners/common-group-collab.svg" },
   { name: "FLOWWWY", logo: "/partners/flowwwy.svg" },
+  { name: "Glitch", logo: "/partners/Glitch.svg" },
   { name: "Mount Saint Mary's University", logo: "/partners/msm.svg" },
   {
     name: "Insight Recognition",
@@ -63,8 +64,13 @@ export default function GieePartnerLogos({
 }: {
   className?: string;
 }) {
+  const { t } = useTranslation("giee");
   return (
     <div className={`flex flex-col items-center gap-y-10 md:gap-y-14 ${className}`}>
+      <h2 className="font-giee-serif text-3xl leading-snug text-giee-ink md:text-4xl">
+        {t("partnerLogos.title")}
+      </h2>
+
       <ul className="flex list-none flex-wrap items-center justify-center gap-x-12 gap-y-8 p-0 md:gap-x-20">
         {featured.map((p) => (
           <li key={p.name}>
