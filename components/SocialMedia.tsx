@@ -1,13 +1,15 @@
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next/pages'
 
 function SocialMedia () {
+  const { t } = useTranslation('common')
   return (
     <div className="flex gap-4">
       <a
         href="https://github.com/specollective"
         target="_blank"
         rel="noreferrer"
-        aria-label="Visit SPEC on GitHub (opens in new tab)"
+        aria-label={t('social.github')}
         className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
       >
         <Image
@@ -22,7 +24,7 @@ function SocialMedia () {
         href="https://www.linkedin.com/company/specollective"
         target="_blank"
         rel="noreferrer"
-        aria-label="Visit SPEC on LinkedIn (opens in new tab)"
+        aria-label={t('social.linkedin')}
         className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
       >
         <Image
@@ -37,7 +39,7 @@ function SocialMedia () {
         href="https://www.facebook.com/specollective"
         target="_blank"
         rel="noreferrer"
-        aria-label="Visit SPEC on Facebook (opens in new tab)"
+        aria-label={t('social.facebook')}
         className="hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise rounded"
       >
         <Image

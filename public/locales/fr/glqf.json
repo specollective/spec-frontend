@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "eyebrow": "A Framework for Recognizing Learning",
+    "title": "The Global Learning<br />Qualifications Framework",
+    "subtitle": "A flexible, open-source standard for defining and assessing college-level learning — wherever, however, and whenever it happens.",
+    "exploreCta": "Explore the framework",
+    "viewModelCta": "View the model",
+    "scrollLabel": "Scroll to overview",
+    "scroll": "Scroll"
+  },
+  "overview": {
+    "eyebrow": "Overview",
+    "heading": "What is the GLQF?",
+    "p1": "The GLQF is built on research spanning more than 90 national qualification frameworks from around the world. It establishes a shared, global language for what it means to learn at the undergraduate level.",
+    "p2": "Whether learning happens in a classroom, through workplace experience, via open educational resources, or through independent study, the GLQF provides a common standard to recognize and evaluate it.",
+    "quote": "A common standard for college-level learning — independent of where, how, or when it was acquired."
+  },
+  "constructsSection": {
+    "eyebrow": "The Core",
+    "heading": "Three overarching constructs",
+    "intro": "Together, these constructs describe what distinguishes college-level learning from knowledge or skill alone.",
+    "readMore": "Read more"
+  },
+  "constructDescriptions": {
+    "integration": "Reflecting on, synthesizing, and combining knowledge to make sense of, unify, and share information within collaborative and evolving environments.",
+    "knowledge": "The culmination of facts, concepts, principles, skills, and competencies acquired through experience and education that yield theoretical and practical understanding.",
+    "engagement": "Purposefully interacting with, attending to, and developing a relationship with an object of study, a community, a project, or an assortment of tasks."
+  },
+  "diagramSection": {
+    "eyebrow": "The Model",
+    "heading": "Constructs and domains, integrated",
+    "intro": "Three constructs at the center, eight learning domains around them. Select any label to dive deeper."
+  },
+  "domainsSection": {
+    "eyebrow": "Eight Domains",
+    "heading": "Learning, broken down",
+    "intro": "Each domain is defined at two levels — introductory (associate) and advanced (bachelor's) — giving evaluators, faculty, and learners clear, actionable descriptors."
+  },
+  "internationalSection": {
+    "eyebrow": "International Foundation",
+    "heading": "Grounded in 90+ national frameworks",
+    "intro": "The policies, procedures, and qualification frameworks of more than 90 countries were researched in the development of the GLQF."
+  },
+  "cta": {
+    "eyebrow": "Open & Adaptable",
+    "heading": "Use it. Adapt it. Build on it.",
+    "body": "The GLQF is freely available and fully adaptable. Use it to assess prior-learning portfolios, evaluate workplace training, design curriculum, award credit for open courseware, or benchmark microcredentials. Institutions, industry partners, and learners can apply it in whole or in part, and are encouraged to build upon it for their own contexts.",
+    "button": "Get in touch"
+  },
+  "items": {
+    "integration": "Integration",
+    "knowledge": "Knowledge",
+    "engagement": "Engagement",
+    "specialized-knowledge": "Specialized Knowledge",
+    "applied-knowledge": "Applied Knowledge",
+    "integrated-knowledge": "Integrated Knowledge",
+    "communication": "Communication",
+    "information-literacy": "Information Literacy",
+    "ethical-responsibility": "Ethical Responsibility",
+    "sociocultural-and-civic-engagement": "Sociocultural and Civic Engagement",
+    "learning-engagement": "Learning Engagement"
+  },
+  "navbar": {
+    "overview": "Overview",
+    "constructs": "Constructs",
+    "domains": "Domains",
+    "research": "Research",
+    "wordmarkLabel": "GLQF — Global Learning Qualifications Framework, home",
+    "menu": "Menu",
+    "navLabel": "GLQF navigation",
+    "mobileNavLabel": "GLQF mobile navigation"
+  },
+  "footer": {
+    "tagline": "The Global Learning Qualifications Framework — an open standard for defining and assessing college-level learning.",
+    "initiative": "An initiative of SPEC ↗",
+    "copyright": "© {{year}} Sustainable Progress & Equality Collective. The GLQF is freely available under an open license."
+  },
+  "slug": {
+    "breadcrumbLabel": "Breadcrumb",
+    "constructsCrumb": "Constructs",
+    "domainsCrumb": "Domains",
+    "constructEyebrow": "GLQF Construct",
+    "domainEyebrow": "GLQF Domain",
+    "underConstruction": "This page is under construction. Check back soon for a detailed description, level descriptors, and example evidence for <highlight>{{name}}</highlight>.",
+    "otherConstructs": "Other Constructs",
+    "otherDomains": "Other Domains",
+    "continueExploring": "Continue exploring",
+    "backToFramework": "Back to the framework"
+  },
+  "diagram": {
+    "title": "Global Learning Qualifications Framework",
+    "desc": "Interactive diagram of the GLQF. Three core constructs — Integration, Knowledge, and Engagement — sit at the center of a sphere, surrounded by eight learning domains: Specialized Knowledge, Applied Knowledge, Integrated Knowledge, Communication, Information Literacy, Ethical Responsibility, Sociocultural and Civic Engagement, and Learning Engagement. Each label links to its detail page.",
+    "domainLines": {
+      "specialized-knowledge": ["Specialized", "Knowledge"],
+      "applied-knowledge": ["Applied", "Knowledge"],
+      "integrated-knowledge": ["Integrated", "Knowledge"],
+      "communication": ["Communication"],
+      "information-literacy": ["Information", "Literacy"],
+      "ethical-responsibility": ["Ethical", "Responsibility"],
+      "sociocultural-and-civic-engagement": ["Sociocultural", "and Civic", "Engagement"],
+      "learning-engagement": ["Learning", "Engagement"]
+    }
+  }
+}

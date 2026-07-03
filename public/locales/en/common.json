@@ -1,0 +1,34 @@
+{
+  "site": {
+    "title": "Sustainable Progress Equality Collective",
+    "ogTitle": "Sustainable Progress and Equality Collective",
+    "ogDescription": "Helping people learn skills, build careers, and become leaders of sustainable social impact."
+  },
+  "nav": {
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation"
+  },
+  "skipToContent": "Skip to main content",
+  "social": {
+    "github": "Visit SPEC on GitHub (opens in new tab)",
+    "linkedin": "Visit SPEC on LinkedIn (opens in new tab)",
+    "facebook": "Visit SPEC on Facebook (opens in new tab)"
+  },
+  "footer": {
+    "copyright": "© 2020–2025 Sustainable Progress and Equality Collective",
+    "navigation": "Footer navigation",
+    "journal": "Journal of Engaged Research",
+    "gallery": "Digital Art Gallery",
+    "donate": "Donate to SPEC",
+    "opensNewTab": " (opens in new tab)"
+  },
+  "languageSwitcher": {
+    "label": "Select language",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français"
+  }
+}

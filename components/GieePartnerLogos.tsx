@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "next-i18next/pages";
 
 // Partner logos are exported on a shared 160×90 artboard from the GIEE brand
 // kit, so every logo uses the same intrinsic dimensions. Add a partner by
@@ -26,6 +27,7 @@ const partners: Partner[] = [
   { name: "Motum", logo: "/partners/motum.svg" },
   { name: "The Common Ground Collaborative", logo: "/partners/common-group-collab.svg" },
   { name: "FLOWWWY", logo: "/partners/flowwwy.svg" },
+  { name: "Glitch", logo: "/partners/Glitch.svg" },
   { name: "Mount Saint Mary's University", logo: "/partners/msm.svg" },
   {
     name: "Insight Recognition",
@@ -43,10 +45,13 @@ function Logo({
   logo: string;
   sizeClass: string;
 }) {
+  const { t } = useTranslation("giee");
+  // Organization NAMES stay in English (proper nouns); only the generic
+  // "... logo" wrapper is translated.
   return (
     <Image
       src={logo}
-      alt={`${name} logo`}
+      alt={t("partnerLogos.logoAlt", { name })}
       width={PARTNER_LOGO_WIDTH}
       height={PARTNER_LOGO_HEIGHT}
       className={`w-auto object-contain ${sizeClass}`}
@@ -59,8 +64,13 @@ export default function GieePartnerLogos({
 }: {
   className?: string;
 }) {
+  const { t } = useTranslation("giee");
   return (
     <div className={`flex flex-col items-center gap-y-10 md:gap-y-14 ${className}`}>
+      <h2 className="font-giee-serif text-3xl leading-snug text-giee-ink md:text-4xl">
+        {t("partnerLogos.title")}
+      </h2>
+
       <ul className="flex list-none flex-wrap items-center justify-center gap-x-12 gap-y-8 p-0 md:gap-x-20">
         {featured.map((p) => (
           <li key={p.name}>

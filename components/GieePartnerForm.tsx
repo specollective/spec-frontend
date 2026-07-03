@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Form, Formik, Field } from "formik";
 import * as yup from "yup";
+import { useTranslation } from "next-i18next/pages";
 
 // The GIEE intake reuses the existing Nodemailer contact API (no new backend or
 // secret required). The partner-specific fields are composed into the email body
@@ -25,6 +26,25 @@ const INTERESTS = [
   "Other",
 ] as const;
 
+// The stored option VALUES above must stay stable (they feed the email payload
+// and the oneOf() whitelist). These maps translate only what the user SEES:
+// each stored value → a catalog key under partnerForm.roles / .interests.
+const ROLE_LABEL_KEYS: Record<(typeof ROLES)[number], string> = {
+  "K-12 / Higher Ed": "k12HigherEd",
+  "Industry / AI Architect": "industryAiArchitect",
+  "Non-Profit Lead": "nonProfitLead",
+  "Community Advocate": "communityAdvocate",
+  "Policy Official": "policyOfficial",
+};
+
+const INTEREST_LABEL_KEYS: Record<(typeof INTERESTS)[number], string> = {
+  News: "news",
+  "Case Study Partnership": "caseStudyPartnership",
+  Research: "research",
+  "New Proposal": "newProposal",
+  Other: "other",
+};
+
 interface PartnerInfo {
   fullName: string;
   email: string;
@@ -33,15 +53,6 @@ interface PartnerInfo {
   interest: string;
   message: string;
 }
-
-const schema = yup.object().shape({
-  fullName: yup.string().required("Required"),
-  email: yup.string().email("Enter a valid email address").required("Required"),
-  affiliation: yup.string().required("Required"),
-  role: yup.string().oneOf(ROLES as readonly string[]).required("Required"),
-  interest: yup.string().oneOf(INTERESTS as readonly string[]).required("Required"),
-  message: yup.string().required("Required"),
-});
 
 function CheckCircle({ className = "" }: { className?: string }) {
   return (
@@ -72,8 +83,38 @@ function fieldClasses(hasError: unknown) {
 }
 
 export default function GieePartnerForm() {
+  const { t } = useTranslation("giee");
   const [submitted, setSubmitted] = useState(false);
   const [failed, setFailed] = useState(false);
+
+  // Built inside the component so every validation message resolves through
+  // t(); rebuilt when the active language (t) changes.
+  const schema = useMemo(
+    () =>
+      yup.object().shape({
+        fullName: yup.string().required(t("partnerForm.validation.required")),
+        email: yup
+          .string()
+          .email(t("partnerForm.validation.email"))
+          .required(t("partnerForm.validation.required")),
+        affiliation: yup
+          .string()
+          .required(t("partnerForm.validation.required")),
+        role: yup
+          .string()
+          .oneOf(ROLES as readonly string[], t("partnerForm.validation.select"))
+          .required(t("partnerForm.validation.required")),
+        interest: yup
+          .string()
+          .oneOf(
+            INTERESTS as readonly string[],
+            t("partnerForm.validation.select"),
+          )
+          .required(t("partnerForm.validation.required")),
+        message: yup.string().required(t("partnerForm.validation.required")),
+      }),
+    [t],
+  );
 
   async function onSubmit(
     values: PartnerInfo,
@@ -119,18 +160,17 @@ ${values.message}`,
       >
         <CheckCircle className="h-12 w-12 text-giee-green" />
         <h3 className="font-giee-serif text-2xl text-giee-ink">
-          Thank you — your inquiry has been sent.
+          {t("partnerForm.success.heading")}
         </h3>
         <p className="font-giee-sans text-base leading-relaxed text-giee-ink-soft">
-          Our team will review your message and route it to the right Case Study
-          Lead. We&rsquo;ll be in touch at the email address you provided.
+          {t("partnerForm.success.body")}
         </p>
         <button
           type="button"
           onClick={() => setSubmitted(false)}
           className="inline-flex items-center justify-center border-2 border-giee-green bg-transparent px-6 py-3 font-giee-sans text-base font-semibold text-giee-green transition-colors hover:bg-giee-green hover:text-giee-white"
         >
-          Submit another inquiry
+          {t("partnerForm.success.button")}
         </button>
       </div>
     );
@@ -159,13 +199,14 @@ ${values.message}`,
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="flex flex-col gap-2">
               <label htmlFor="fullName" className={labelClasses}>
-                Name <span aria-hidden="true" className="text-giee-red">*</span>
+                {t("partnerForm.fields.name.label")}{" "}
+                <span aria-hidden="true" className="text-giee-red">*</span>
               </label>
               <Field
                 id="fullName"
                 name="fullName"
                 type="text"
-                placeholder="First name Last name"
+                placeholder={t("partnerForm.fields.name.placeholder")}
                 autoComplete="name"
                 aria-required="true"
                 className={fieldClasses(errors.fullName && touched.fullName)}
@@ -179,13 +220,14 @@ ${values.message}`,
 
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className={labelClasses}>
-                Email <span aria-hidden="true" className="text-giee-red">*</span>
+                {t("partnerForm.fields.email.label")}{" "}
+                <span aria-hidden="true" className="text-giee-red">*</span>
               </label>
               <Field
                 id="email"
                 name="email"
                 type="email"
-                placeholder="hello@institution.org"
+                placeholder={t("partnerForm.fields.email.placeholder")}
                 autoComplete="email"
                 aria-required="true"
                 className={fieldClasses(errors.email && touched.email)}
@@ -200,13 +242,14 @@ ${values.message}`,
 
           <div className="flex flex-col gap-2">
             <label htmlFor="affiliation" className={labelClasses}>
-              Affiliation <span aria-hidden="true" className="text-giee-red">*</span>
+              {t("partnerForm.fields.affiliation.label")}{" "}
+              <span aria-hidden="true" className="text-giee-red">*</span>
             </label>
             <Field
               id="affiliation"
               name="affiliation"
               type="text"
-              placeholder="Institution, organization, or company"
+              placeholder={t("partnerForm.fields.affiliation.placeholder")}
               autoComplete="organization"
               aria-required="true"
               className={fieldClasses(errors.affiliation && touched.affiliation)}
@@ -221,7 +264,7 @@ ${values.message}`,
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="flex flex-col gap-2">
               <label htmlFor="role" className={labelClasses}>
-                Primary Professional Role{" "}
+                {t("partnerForm.fields.role.label")}{" "}
                 <span aria-hidden="true" className="text-giee-red">*</span>
               </label>
               <Field
@@ -231,10 +274,10 @@ ${values.message}`,
                 aria-required="true"
                 className={fieldClasses(errors.role && touched.role)}
               >
-                <option value="">Select a role</option>
+                <option value="">{t("partnerForm.fields.role.placeholder")}</option>
                 {ROLES.map((role) => (
                   <option key={role} value={role}>
-                    {role}
+                    {t(`partnerForm.roles.${ROLE_LABEL_KEYS[role]}`)}
                   </option>
                 ))}
               </Field>
@@ -247,7 +290,7 @@ ${values.message}`,
 
             <div className="flex flex-col gap-2">
               <label htmlFor="interest" className={labelClasses}>
-                Area of Interest{" "}
+                {t("partnerForm.fields.interest.label")}{" "}
                 <span aria-hidden="true" className="text-giee-red">*</span>
               </label>
               <Field
@@ -257,10 +300,12 @@ ${values.message}`,
                 aria-required="true"
                 className={fieldClasses(errors.interest && touched.interest)}
               >
-                <option value="">Select an area</option>
+                <option value="">
+                  {t("partnerForm.fields.interest.placeholder")}
+                </option>
                 {INTERESTS.map((interest) => (
                   <option key={interest} value={interest}>
-                    {interest}
+                    {t(`partnerForm.interests.${INTEREST_LABEL_KEYS[interest]}`)}
                   </option>
                 ))}
               </Field>
@@ -274,14 +319,15 @@ ${values.message}`,
 
           <div className="flex flex-col gap-2">
             <label htmlFor="message" className={labelClasses}>
-              Message <span aria-hidden="true" className="text-giee-red">*</span>
+              {t("partnerForm.fields.message.label")}{" "}
+              <span aria-hidden="true" className="text-giee-red">*</span>
             </label>
             <Field
               as="textarea"
               id="message"
               name="message"
               rows={6}
-              placeholder="Tell us about your collaboration objectives."
+              placeholder={t("partnerForm.fields.message.placeholder")}
               aria-required="true"
               className={`${fieldClasses(errors.message && touched.message)} min-h-32`}
             />
@@ -296,7 +342,7 @@ ${values.message}`,
             <div role="status" aria-live="polite" className="font-giee-sans text-sm">
               {failed && (
                 <span className="font-semibold text-giee-red">
-                  Something went wrong. Please try again.
+                  {t("partnerForm.error")}
                 </span>
               )}
             </div>
@@ -304,7 +350,7 @@ ${values.message}`,
               type="submit"
               className="inline-flex items-center justify-center bg-giee-green px-8 py-4 font-giee-sans text-base font-semibold text-giee-white transition-colors hover:bg-giee-green/90"
             >
-              Submit Partnership Inquiry
+              {t("partnerForm.submit")}
             </button>
           </div>
         </Form>

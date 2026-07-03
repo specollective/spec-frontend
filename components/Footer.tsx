@@ -1,6 +1,8 @@
+import { useTranslation } from 'next-i18next/pages'
 import SocialMedia from './SocialMedia'
 
 export default function Footer() {
+  const { t } = useTranslation('common')
   return (
     <footer className="bg-spec-turquoise py-16 px-6">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-16 xl:px-20">
@@ -11,20 +13,20 @@ export default function Footer() {
             </div>
 
             <p className="font-montserrat text-center lg:text-left text-sm md:text-base">
-              &copy; 2020&ndash;2025 Sustainable Progress and Equality Collective
+              {t('footer.copyright')}
             </p>
           </div>
 
           <div className="hidden lg:flex lg:flex-col lg:items-end gap-6">
-            <nav className="flex flex-col items-end gap-3" aria-label="Footer navigation">
+            <nav className="flex flex-col items-end gap-3" aria-label={t('footer.navigation')}>
               <a
                 href="https://medium.com/journal-of-engaged-research"
                 target="_blank"
                 rel="noreferrer"
                 className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
-                Journal of Engaged Research
-                <span className="sr-only"> (opens in new tab)</span>
+                {t('footer.journal')}
+                <span className="sr-only">{t('footer.opensNewTab')}</span>
               </a>
               <a
                 href="https://medium.com/journal-of-engaged-research/expressions/home"
@@ -32,8 +34,8 @@ export default function Footer() {
                 rel="noreferrer"
                 className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
-                Digital Art Gallery
-                <span className="sr-only"> (opens in new tab)</span>
+                {t('footer.gallery')}
+                <span className="sr-only">{t('footer.opensNewTab')}</span>
               </a>
               <a
                 href="https://hcb.hackclub.com/donations/start/spec"
@@ -41,8 +43,8 @@ export default function Footer() {
                 rel="noreferrer"
                 className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
-                Donate to SPEC
-                <span className="sr-only"> (opens in new tab)</span>
+                {t('footer.donate')}
+                <span className="sr-only">{t('footer.opensNewTab')}</span>
               </a>
             </nav>
 
@@ -55,5 +57,3 @@ export default function Footer() {
     </footer>
   )
 }
-
-
