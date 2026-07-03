@@ -23,7 +23,7 @@ export default function Footer() {
                 href="https://medium.com/journal-of-engaged-research"
                 target="_blank"
                 rel="noreferrer"
-                className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
+                className="font-montserrat text-base hover:underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
                 {t('footer.journal')}
                 <span className="sr-only">{t('footer.opensNewTab')}</span>
@@ -32,7 +32,7 @@ export default function Footer() {
                 href="https://medium.com/journal-of-engaged-research/expressions/home"
                 target="_blank"
                 rel="noreferrer"
-                className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
+                className="font-montserrat text-base hover:underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
                 {t('footer.gallery')}
                 <span className="sr-only">{t('footer.opensNewTab')}</span>
@@ -41,7 +41,7 @@ export default function Footer() {
                 href="https://hcb.hackclub.com/donations/start/spec"
                 target="_blank"
                 rel="noreferrer"
-                className="font-montserrat text-base hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
+                className="font-montserrat text-base hover:underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
               >
                 {t('footer.donate')}
                 <span className="sr-only">{t('footer.opensNewTab')}</span>

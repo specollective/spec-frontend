@@ -94,6 +94,7 @@ function ServicesAccordion({ services } : { services: any }) {
             <div className="col-span-1">
               <button
                 onClick={() => showProject(index)}
+                aria-label={project.name}
                 aria-expanded={isClicked === index ? "true" : "false"}
                 aria-controls={`accordion-content-${index}`}
                 className="float-right p-2 focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
@@ -105,6 +106,7 @@ function ServicesAccordion({ services } : { services: any }) {
           <section
             id={`accordion-content-${index}`}
             role="region"
+            aria-label={project.name}
             className={isClicked === index ? "block" : "hidden"}
           >
             <ServiceRow project={project} />

@@ -13,6 +13,9 @@ module.exports = {
         spec: {
           yellow: '#FCD991',
           turquoise: '#0C9FAA',
+          // Darker turquoise for text/links on white — #0C9FAA is only ~3.2:1
+          // against white, below the 4.5:1 WCAG AA minimum for body-size text.
+          'turquoise-dark': '#067A83',
           lightTurquoise: '#92CDD1',
           lightRed: '#F16A6E',
           black: '#1C1C1C',
@@ -25,7 +28,7 @@ module.exports = {
         glqf: {
           ink: '#0F2A44',
           'ink-soft': '#3A4F66',
-          slate: '#5F7387',
+          slate: '#55677B', // darkened from #5F7387 so small text clears 4.5:1 on paper
           paper: '#FAF7F2',
           'paper-2': '#F0EBE0',
           line: '#D8D2C5',
@@ -42,10 +45,11 @@ module.exports = {
           amber: '#E08B2D', // Foresight Amber Orange — transitional milestones, focal points
           gold: '#C9A227', // Horizon Gold — strategic stars, long-term goals
           cyan: '#1AA3C7', // Clearwater Cyan Blue — data points, system pathways
+          'cyan-bright': '#4FC0DE', // Lightened cyan for small text on giee-ink (cyan is only ~3.7:1 there)
           // Working aliases used across the GIEE components
           ink: '#0F3D6E', // = Ecosystem Deep Blue
           'ink-soft': '#353A40', // Charcoal — body / narrative prose
-          slate: '#6E7681', // Medium grey — taglines, sub-institutional lockups
+          slate: '#626A74', // Medium grey — taglines, sub-institutional lockups (darkened from #6E7681 to clear 4.5:1 on paper)
           paper: '#F7F9FB',
           'paper-2': '#EAF0F4',
           line: '#E2E6EA', // light grey hair-lines

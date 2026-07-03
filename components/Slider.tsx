@@ -98,7 +98,7 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
       {...handlers}
     >
       <div
-        className={`flex ${transitionEnabled ? 'transition-transform duration-500 ease-in-out' : ''} h-full`}
+        className={`flex ${transitionEnabled ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''} h-full`}
         style={{ transform: `translateX(${slideOffset}%)` }}
       >
         {wrappedSlides.map((slide: any, index) => (
@@ -107,13 +107,18 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
             className="w-full flex-shrink-0 text-center"
             role="group"
             aria-roledescription="slide"
-            aria-label={`Slide ${index + 1} of ${slides.length}`}
+            aria-label={`Slide ${(index % slides.length) + 1} of ${slides.length}`}
+            aria-hidden={index !== currentSlide}
+            inert={index !== currentSlide}
           >
             {slide}
           </div>
         ))}
       </div>
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center" aria-live="polite">
+      <p className="sr-only" aria-live="polite">
+        {`Slide ${indicatorPosition + 1} of ${slides.length}`}
+      </p>
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center">
         <button
           onClick={prevSlide}
           aria-label="Previous slide"

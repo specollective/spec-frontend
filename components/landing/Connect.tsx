@@ -24,7 +24,7 @@ export default function Connect() {
 
           <a
             href="mailto:info@specollective.org"
-            className="font-montserrat font-semibold text-lg md:text-xl text-spec-turquoise underline underline-offset-4 hover:text-spec-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 rounded"
+            className="font-montserrat font-semibold text-lg md:text-xl text-spec-turquoise-dark underline underline-offset-4 hover:text-spec-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 rounded"
           >
             info@specollective.org
           </a>

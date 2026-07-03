@@ -6,13 +6,14 @@ import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
+  title?: string;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, title }: LayoutProps) {
   const { t } = useTranslation('common');
   return (
     <>
-      <AppHead />
+      <AppHead title={title} />
       <a href="#main-content" className="skip-link">
         {t('skipToContent')}
       </a>

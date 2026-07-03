@@ -20,7 +20,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 export default function GieePartnerPage() {
   const { t } = useTranslation("giee");
   return (
-    <GieeLayout>
+    <GieeLayout
+      title={t("partner.eyebrow")}
+      description={t("partner.intro")}
+    >
       <section className="bg-giee-paper px-6 pb-20 pt-20 md:pb-28 md:pt-28">
         <div className="mx-auto max-w-6xl">
           <Link

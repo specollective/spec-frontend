@@ -209,10 +209,12 @@ ${values.message}`,
                 placeholder={t("partnerForm.fields.name.placeholder")}
                 autoComplete="name"
                 aria-required="true"
+                aria-invalid={errors.fullName && touched.fullName ? true : undefined}
+                aria-describedby={errors.fullName && touched.fullName ? "fullName-error" : undefined}
                 className={fieldClasses(errors.fullName && touched.fullName)}
               />
               {errors.fullName && touched.fullName && (
-                <div className="font-giee-sans text-sm text-giee-red" role="alert">
+                <div id="fullName-error" className="font-giee-sans text-sm text-giee-red" role="alert">
                   {errors.fullName}
                 </div>
               )}
@@ -230,10 +232,12 @@ ${values.message}`,
                 placeholder={t("partnerForm.fields.email.placeholder")}
                 autoComplete="email"
                 aria-required="true"
+                aria-invalid={errors.email && touched.email ? true : undefined}
+                aria-describedby={errors.email && touched.email ? "email-error" : undefined}
                 className={fieldClasses(errors.email && touched.email)}
               />
               {errors.email && touched.email && (
-                <div className="font-giee-sans text-sm text-giee-red" role="alert">
+                <div id="email-error" className="font-giee-sans text-sm text-giee-red" role="alert">
                   {errors.email}
                 </div>
               )}
@@ -252,10 +256,12 @@ ${values.message}`,
               placeholder={t("partnerForm.fields.affiliation.placeholder")}
               autoComplete="organization"
               aria-required="true"
+              aria-invalid={errors.affiliation && touched.affiliation ? true : undefined}
+              aria-describedby={errors.affiliation && touched.affiliation ? "affiliation-error" : undefined}
               className={fieldClasses(errors.affiliation && touched.affiliation)}
             />
             {errors.affiliation && touched.affiliation && (
-              <div className="font-giee-sans text-sm text-giee-red" role="alert">
+              <div id="affiliation-error" className="font-giee-sans text-sm text-giee-red" role="alert">
                 {errors.affiliation}
               </div>
             )}
@@ -272,6 +278,8 @@ ${values.message}`,
                 id="role"
                 name="role"
                 aria-required="true"
+                aria-invalid={errors.role && touched.role ? true : undefined}
+                aria-describedby={errors.role && touched.role ? "role-error" : undefined}
                 className={fieldClasses(errors.role && touched.role)}
               >
                 <option value="">{t("partnerForm.fields.role.placeholder")}</option>
@@ -282,7 +290,7 @@ ${values.message}`,
                 ))}
               </Field>
               {errors.role && touched.role && (
-                <div className="font-giee-sans text-sm text-giee-red" role="alert">
+                <div id="role-error" className="font-giee-sans text-sm text-giee-red" role="alert">
                   {errors.role}
                 </div>
               )}
@@ -298,6 +306,8 @@ ${values.message}`,
                 id="interest"
                 name="interest"
                 aria-required="true"
+                aria-invalid={errors.interest && touched.interest ? true : undefined}
+                aria-describedby={errors.interest && touched.interest ? "interest-error" : undefined}
                 className={fieldClasses(errors.interest && touched.interest)}
               >
                 <option value="">
@@ -310,7 +320,7 @@ ${values.message}`,
                 ))}
               </Field>
               {errors.interest && touched.interest && (
-                <div className="font-giee-sans text-sm text-giee-red" role="alert">
+                <div id="interest-error" className="font-giee-sans text-sm text-giee-red" role="alert">
                   {errors.interest}
                 </div>
               )}
@@ -329,10 +339,12 @@ ${values.message}`,
               rows={6}
               placeholder={t("partnerForm.fields.message.placeholder")}
               aria-required="true"
+              aria-invalid={errors.message && touched.message ? true : undefined}
+              aria-describedby={errors.message && touched.message ? "message-error" : undefined}
               className={`${fieldClasses(errors.message && touched.message)} min-h-32`}
             />
             {errors.message && touched.message && (
-              <div className="font-giee-sans text-sm text-giee-red" role="alert">
+              <div id="message-error" className="font-giee-sans text-sm text-giee-red" role="alert">
                 {errors.message}
               </div>
             )}

@@ -1,4 +1,5 @@
 import type { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next/pages";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import Layout from "../../components/Layout";
 import { JoerFormHeader } from "../../components/JoerFormHeader/JoerFormHeader";
@@ -15,8 +16,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 });
 
 export default function JoerSubmissionsPage() {
+  const { t } = useTranslation("journal");
   return (
-    <Layout>
+    <Layout title={t("pageTitle")}>
       <JoerFormHeader />
     </Layout>
   );

@@ -33,12 +33,12 @@ export default function GieeCommunityBand() {
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-10 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
-          <h2 className="font-giee-sans text-xs font-semibold uppercase tracking-[0.22em] text-giee-cyan">
+          <p className="font-giee-sans text-xs font-semibold uppercase tracking-[0.22em] text-giee-cyan-bright">
             {t("communityBand.eyebrow")}
-          </h2>
-          <p className="mt-5 font-giee-serif text-2xl leading-snug text-giee-paper md:text-3xl">
-            {t("communityBand.title")}
           </p>
+          <h2 className="mt-5 font-giee-serif text-2xl leading-snug text-giee-paper md:text-3xl">
+            {t("communityBand.title")}
+          </h2>
           <p className="mt-5 font-giee-sans text-base leading-relaxed text-giee-paper/85 md:text-lg">
             {t("communityBand.body")}
           </p>

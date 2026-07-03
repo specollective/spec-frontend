@@ -15,12 +15,13 @@ export const JoerFormHeader: FC<Props> = memo(function JoerFormHeader(
     <div className={`${classes.container} ${props.className}`}>
       <div className={classes.backgroundImage}></div>
       <div className={classes.content}>
-        <div className={classes.j}>J</div>
-        <div className={classes.specLogo}></div>
-        <div className={classes.eR}>ER</div>
-        <div className={classes.welcomeToTheJournalOfEngagedResearch}>
+        {/* Decorative J-[logo]-ER lockup; the h1 below carries the journal name for AT. */}
+        <div aria-hidden="true" className={classes.j}>J</div>
+        <div aria-hidden="true" className={classes.specLogo}></div>
+        <div aria-hidden="true" className={classes.eR}>ER</div>
+        <h1 className={classes.welcomeToTheJournalOfEngagedResearch}>
           {t("welcome")}
-        </div>
+        </h1>
       </div>
     </div>
   );
