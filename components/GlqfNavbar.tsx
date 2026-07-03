@@ -93,12 +93,14 @@ export default function GlqfNavbar() {
               {t(link.labelKey)}
             </a>
           ))}
-          <GlqfLanguageSwitcher />
+          {/* Temporarily hidden until Spanish/English translations are ready. */}
+          {/* <GlqfLanguageSwitcher /> */}
         </nav>
 
         {/* Mobile controls */}
         <div className="flex items-center gap-3 md:hidden">
-          <GlqfLanguageSwitcher />
+          {/* Temporarily hidden until Spanish/English translations are ready. */}
+          {/* <GlqfLanguageSwitcher /> */}
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

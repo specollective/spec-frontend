@@ -5,7 +5,8 @@ import { useTranslation } from "next-i18next/pages";
 import logo from "../public/spec-logo.svg";
 import menu from "../public/menuSign.svg";
 import close from "../public/menuClose.svg";
-import LanguageSwitcher from "./LanguageSwitcher";
+// Temporarily hidden until Spanish/English translations are ready.
+// import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const { t } = useTranslation("common");
@@ -36,7 +37,8 @@ export default function Navbar() {
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <LanguageSwitcher />
+          {/* Temporarily hidden until Spanish/English translations are ready. */}
+          {/* <LanguageSwitcher /> */}
           <button
             onClick={toggleMenu}
             aria-label={displayMenu ? t("nav.closeMenu") : t("nav.openMenu")}
@@ -95,7 +97,8 @@ export default function Navbar() {
             >
               {t("nav.contact")}
             </a>
-            <LanguageSwitcher />
+            {/* Temporarily hidden until Spanish/English translations are ready. */}
+            {/* <LanguageSwitcher /> */}
           </div>
         </div>
       </nav>

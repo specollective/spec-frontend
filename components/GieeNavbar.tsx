@@ -216,7 +216,8 @@ export default function GieeNavbar() {
               </a>
             ))}
           </nav>
-          <LanguageMenu
+          {/* Temporarily hidden until Spanish/English translations are ready. */}
+          {/* <LanguageMenu
             locales={locales}
             value={activeLocale}
             onChange={changeLanguage}
@@ -224,7 +225,7 @@ export default function GieeNavbar() {
             buttonLabel={t("nav.changeLanguage", {
               language: languageLabel(activeLocale),
             })}
-          />
+          /> */}
         </div>
 
         {/* Mobile toggle */}
@@ -284,8 +285,8 @@ export default function GieeNavbar() {
             ))}
           </ul>
 
-          {/* Language options */}
-          <div
+          {/* Language options — temporarily hidden until Spanish/English translations are ready. */}
+          {/* <div
             role="group"
             aria-label={tCommon("languageSwitcher.label")}
             className="flex items-center gap-2 border-t border-giee-line p-3"
@@ -310,7 +311,7 @@ export default function GieeNavbar() {
                 </button>
               );
             })}
-          </div>
+          </div> */}
         </nav>
       )}
     </header>
