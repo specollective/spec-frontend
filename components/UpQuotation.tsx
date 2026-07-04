@@ -9,7 +9,7 @@ export default function UpQuotation({ className }: UpQuotationProps) {
       <Image
         className="flex flex-col-reverse"
         src="/upQuotationMarks.svg"
-        alt="Quotation Mark"
+        alt=""
         width={40}
         height={40}
       />

@@ -1,0 +1,58 @@
+{
+  "title": "Privacy Policy",
+  "updated": "Last updated: July 3, 2026",
+  "intro": [
+    "The Sustainable Progress & Equality Collective (\"SPEC\", \"we\", \"us\") operates specollective.org, including the GIEE program pages. This policy explains what personal data we collect, why, and what rights you have over it.",
+    "The short version: we collect nothing about you unless you send us a form or an email. We use no analytics, no advertising, and no tracking cookies."
+  ],
+  "sections": [
+    {
+      "heading": "What we collect",
+      "paragraphs": [
+        "If you contact us through a form on this site (such as the GIEE partnership form), we receive the information you enter: your name, email address, affiliation, professional role, area of interest, and message.",
+        "Our hosting provider automatically keeps short-lived technical server logs (such as IP address and browser type) for security and reliability, as virtually all web hosts do.",
+        "We do not use analytics or advertising services, and we do not set tracking cookies. Fonts and all other assets are served from our own infrastructure, so viewing this site does not send your data to third-party services."
+      ]
+    },
+    {
+      "heading": "Why we collect it and on what legal basis",
+      "paragraphs": [
+        "We use the information you submit solely to respond to your inquiry and, where relevant, to explore the collaboration you asked us about. Under the GDPR, our legal bases are taking steps at your request prior to entering into an agreement (Art. 6(1)(b)) and our legitimate interest in responding to messages sent to us (Art. 6(1)(f)).",
+        "We never sell personal data, use it for advertising, or share it with third parties beyond the service providers listed below."
+      ]
+    },
+    {
+      "heading": "Who processes it",
+      "paragraphs": [
+        "Form submissions are delivered to us by email using Google Workspace (Gmail), and this website is hosted on DigitalOcean in the United States. Both act as our processors under their standard data processing agreements. Transfers to the United States are safeguarded under the EU-U.S. Data Privacy Framework and/or Standard Contractual Clauses."
+      ]
+    },
+    {
+      "heading": "How long we keep it",
+      "paragraphs": [
+        "Inquiry emails are kept for up to 12 months after the inquiry is resolved, then deleted, unless the exchange leads to an ongoing collaboration or we are legally required to keep it longer. We do not store form submissions in any database."
+      ]
+    },
+    {
+      "heading": "Your rights",
+      "paragraphs": [
+        "If you are in the European Economic Area, the United Kingdom, or another jurisdiction with similar protections, you have the right to:"
+      ],
+      "list": [
+        "access the personal data we hold about you;",
+        "have it corrected or deleted;",
+        "restrict or object to our processing of it;",
+        "receive it in a portable format;",
+        "lodge a complaint with your local supervisory authority."
+      ],
+      "afterList": "To exercise any of these rights, email us at info@specollective.org. We will respond within one month."
+    },
+    {
+      "heading": "Contact",
+      "paragraphs": [
+        "For any question about this policy or your personal data, contact us at info@specollective.org.",
+        "If we change this policy, we will post the updated version on this page with a new \"last updated\" date."
+      ]
+    }
+  ]
+}

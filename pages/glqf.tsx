@@ -174,7 +174,7 @@ export default function GlqfPage() {
   const { t } = useTranslation("glqf");
 
   return (
-    <GlqfLayout>
+    <GlqfLayout title={t("diagram.title")}>
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-glqf-paper">
         <div

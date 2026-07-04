@@ -20,6 +20,7 @@ interface Partner {
 
 export default function Partnerships() {
   const { t } = useTranslation('landing')
+  const { t: tCommon } = useTranslation('common')
   const partners = t('partnerships.partners', { returnObjects: true }) as Partner[]
   return (
     <section
@@ -49,6 +50,7 @@ export default function Partnerships() {
                   rel="noopener noreferrer"
                 >
                   {partner.name}
+                  <span className="sr-only">{tCommon('footer.opensNewTab')}</span>
                 </a>
               </Heading3>
               <Paragraph2 className="text-spec-gray">

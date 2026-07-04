@@ -1,4 +1,5 @@
 {
+  "pageTitle": "Global AI Governance & Inclusive Education Ecosystem",
   "nav": {
     "overview": "Overview",
     "pillars": "Pillars",
@@ -203,7 +204,8 @@
       "heading": "Thank you — your inquiry has been sent.",
       "body": "Our team will review your message and route it to the right Case Study Lead. We’ll be in touch at the email address you provided.",
       "button": "Submit another inquiry"
-    }
+    },
+    "privacyNotice": "By submitting this form you agree to our <privacy>Privacy Policy</privacy>."
   },
   "communityBand": {
     "eyebrow": "Join Our GIEE Community",

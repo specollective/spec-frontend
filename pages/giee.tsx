@@ -84,7 +84,7 @@ export default function GieePage() {
     returnObjects: true,
   }) as Initiative[];
   return (
-    <GieeLayout>
+    <GieeLayout title={t("pageTitle")} description={t("home.hero.subtitle")}>
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-giee-paper">
         <div

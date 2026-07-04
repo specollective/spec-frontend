@@ -17,14 +17,6 @@ export function proxy(req: NextRequest) {
       expectedPass: process.env.GLQF_BASIC_AUTH_PASS,
     });
   }
-  if (pathname === '/giee' || pathname.startsWith('/giee/')) {
-    return basicAuth(req, {
-      realm: 'giee',
-      expectedUser: process.env.GIEE_BASIC_AUTH_USER,
-      expectedPass: process.env.GIEE_BASIC_AUTH_PASS,
-    });
-  }
-
   return NextResponse.next();
 }
 

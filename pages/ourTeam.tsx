@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 export default function OurTeam() {
   const { t } = useTranslation("ourTeam");
   return (
-    <Layout>
+    <Layout title={t("title")}>
       <div className="container mx-auto p-8">
         <h1 className="text-4xl font-bold">{t("title")}</h1>
       </div>

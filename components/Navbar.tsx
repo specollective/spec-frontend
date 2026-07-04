@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslation } from "next-i18next/pages";
 
@@ -11,6 +11,8 @@ import close from "../public/menuClose.svg";
 export default function Navbar() {
   const { t } = useTranslation("common");
   const [displayMenu, setDisplayMenu] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
 
   function toggleMenu() {
     setDisplayMenu(!displayMenu);
@@ -18,9 +20,13 @@ export default function Navbar() {
 
   useEffect(() => {
     if (displayMenu) {
+      // Move focus into the overlay so keyboard users aren't left on content
+      // hidden behind it, and hand it back to the toggle when Escape closes.
+      menuRef.current?.querySelector<HTMLElement>('a')?.focus();
       const handleEscape = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
           setDisplayMenu(false);
+          menuButtonRef.current?.focus();
         }
       };
       document.addEventListener('keydown', handleEscape);
@@ -40,9 +46,11 @@ export default function Navbar() {
           {/* Temporarily hidden until Spanish/English translations are ready. */}
           {/* <LanguageSwitcher /> */}
           <button
+            ref={menuButtonRef}
             onClick={toggleMenu}
             aria-label={displayMenu ? t("nav.closeMenu") : t("nav.openMenu")}
             aria-expanded={displayMenu}
+            aria-controls="mobile-menu"
             className="p-2 focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2"
           >
             <Image
@@ -54,7 +62,7 @@ export default function Navbar() {
         </div>
       </div>
       {displayMenu && (
-        <nav aria-label={t("nav.mobileNavigation")} className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
+        <nav id="mobile-menu" ref={menuRef} aria-label={t("nav.mobileNavigation")} className="left-0 h-screen w-screen bg-black opacity-100 z-50 mt-0 md:hidden">
           <div className="flex flex-col justify-center items-center font-montserrat">
             <a
               href="#connect"
@@ -93,7 +101,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <a
               href="#connect"
-              className="font-montserrat font-semibold tracking-wide text-lg text-spec-turquoise hover:text-spec-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 rounded"
+              className="font-montserrat font-semibold tracking-wide text-lg text-spec-turquoise-dark hover:text-spec-black transition-colors focus:outline-none focus:ring-2 focus:ring-spec-turquoise focus:ring-offset-2 rounded"
             >
               {t("nav.contact")}
             </a>

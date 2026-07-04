@@ -1,4 +1,5 @@
 {
+  "pageTitle": "Gobernanza global de la IA y ecosistema de educación inclusiva",
   "nav": {
     "overview": "Resumen",
     "pillars": "Pilares",
@@ -203,7 +204,8 @@
       "heading": "Gracias, tu consulta se ha enviado.",
       "body": "Nuestro equipo revisará tu mensaje y lo dirigirá al Case Study Lead correspondiente. Nos pondremos en contacto contigo en el correo electrónico que nos facilitaste.",
       "button": "Enviar otra consulta"
-    }
+    },
+    "privacyNotice": "Al enviar este formulario, aceptas nuestra <privacy>Política de privacidad</privacy>."
   },
   "communityBand": {
     "eyebrow": "Únete a nuestra comunidad GIEE",

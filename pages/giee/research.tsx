@@ -37,7 +37,10 @@ export default function GieeResearchPage() {
     returnObjects: true,
   }) as Initiative[];
   return (
-    <GieeLayout>
+    <GieeLayout
+      title={t("research.heading")}
+      description={t("research.intro")}
+    >
       {/* INTRO */}
       <section className="bg-giee-paper px-6 pb-16 pt-20 md:pb-20 md:pt-28">
         <div className="mx-auto max-w-4xl">

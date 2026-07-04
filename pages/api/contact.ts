@@ -28,9 +28,9 @@ Email: ${body.email}
 Reason: ${body.reason}
 Message: ${body.message}`
       );
-      res.status(201).json({
-        data: `${body.fullName} ${body.email} ${body.reason} ${body.message}`
-      });
+      // Don't echo the submitted personal data back in the response
+      // (data minimization) — the client only checks response.ok.
+      res.status(201).json({ data: "Message sent" });
     } else {
       // Handle all other request methods
       res.setHeader("Allow", ["POST", "GET", "PUT", "DELETE"]);

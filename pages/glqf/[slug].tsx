@@ -71,7 +71,7 @@ export default function GlqfItemPage({
   const displayName = t(`items.${slug}`);
 
   return (
-    <GlqfLayout>
+    <GlqfLayout title={`${displayName} — ${t("diagram.title")}`}>
       {/* HERO */}
       <section className="bg-glqf-paper">
         <div className="mx-auto max-w-4xl px-6 pb-20 pt-16 md:pt-24">

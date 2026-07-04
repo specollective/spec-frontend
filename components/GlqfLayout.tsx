@@ -8,13 +8,14 @@ import { INDEXABLE } from "../constants/seo";
 
 interface GlqfLayoutProps {
   children: ReactNode;
+  title?: string;
 }
 
-export default function GlqfLayout({ children }: GlqfLayoutProps) {
+export default function GlqfLayout({ children, title }: GlqfLayoutProps) {
   const { t } = useTranslation("common");
   return (
     <>
-      <AppHead />
+      <AppHead title={title} />
       {!INDEXABLE.glqf && (
         <Head>
           <meta name="robots" content="noindex, nofollow" />

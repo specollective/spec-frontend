@@ -4,9 +4,12 @@ module.exports = {
     defaultLocale: 'en',
     // Add a locale here and drop a matching folder under public/locales/<locale>/
     // to ship another language. No code changes required.
-    // 'fr' is scaffolded: its catalogs are English placeholders pending
-    // translation, and fallbackLng keeps any untranslated keys readable.
-    locales: ['en', 'es', 'fr'],
+    // 'es' and 'fr' are scaffolded under public/locales/ but excluded until
+    // their translations are complete — otherwise /es and /fr serve pages
+    // tagged lang="es"/"fr" whose content is still largely English, which
+    // breaks screen-reader pronunciation (WCAG 3.1.1). Re-add them here to
+    // ship; fallbackLng keeps any remaining untranslated keys readable.
+    locales: ['en'],
   },
   // Fall back to English for any key a locale has not translated yet. Lets a
   // partially translated locale (e.g. the scaffolded 'fr') render cleanly

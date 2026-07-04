@@ -8,7 +8,7 @@ export default function DownQuotation() {
         src={"/downQuotationMark.svg"}
         width={40}
         height={40}
-        alt="Quotation Mark"
+        alt=""
         priority
       />
     </div>
