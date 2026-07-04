@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next/pages";
 
 export default function GieeFooter() {
   const { t } = useTranslation("giee");
+  const { t: tCommon } = useTranslation("common");
   return (
     <footer className="border-t border-giee-line bg-giee-paper">
       <div className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
@@ -30,6 +31,12 @@ export default function GieeFooter() {
               className="font-giee-sans text-sm text-giee-ink-soft hover:text-giee-ink"
             >
               {t("footer.contact")}
+            </Link>
+            <Link
+              href="/privacy"
+              className="font-giee-sans text-sm text-giee-ink-soft hover:text-giee-ink"
+            >
+              {tCommon("footer.privacy")}
             </Link>
           </div>
         </div>

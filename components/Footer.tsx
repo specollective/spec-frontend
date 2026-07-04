@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useTranslation } from 'next-i18next/pages'
 import SocialMedia from './SocialMedia'
 
@@ -15,6 +16,12 @@ export default function Footer() {
             <p className="font-montserrat text-center lg:text-left text-sm md:text-base">
               {t('footer.copyright')}
             </p>
+            <Link
+              href="/privacy"
+              className="font-montserrat text-sm md:text-base underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-spec-turquoise"
+            >
+              {t('footer.privacy')}
+            </Link>
           </div>
 
           <div className="hidden lg:flex lg:flex-col lg:items-end gap-6">

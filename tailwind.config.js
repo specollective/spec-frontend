@@ -59,9 +59,11 @@ module.exports = {
         }
       },
       fontFamily: {
-        montserrat: ['Montserrat'],
-        dmserif: ['DM Serif Text'],
-        poppins: ['Poppins'],
+        // Self-hosted via next/font in _app.tsx; the CSS variables are set on
+        // the app wrapper. Named fallbacks cover contexts outside the wrapper.
+        montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+        dmserif: ['var(--font-dmserif)', 'DM Serif Text', 'serif'],
+        poppins: ['var(--font-poppins)', 'Poppins', 'sans-serif'],
         // GIEE Brand Standards — Section 3 Typography Architecture.
         // Primary titles & identity headers: high-contrast serif (deep blue).
         'giee-serif': ['Georgia', 'Times New Roman', 'serif'],

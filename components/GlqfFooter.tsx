@@ -32,6 +32,12 @@ export default function GlqfFooter() {
             >
               {tCommon("nav.contact")}
             </Link>
+            <Link
+              href="/privacy"
+              className="font-montserrat text-sm text-glqf-ink-soft hover:text-glqf-ink"
+            >
+              {tCommon("footer.privacy")}
+            </Link>
           </div>
         </div>
 

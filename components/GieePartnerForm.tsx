@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { Form, Formik, Field } from "formik";
 import * as yup from "yup";
-import { useTranslation } from "next-i18next/pages";
+import { Trans, useTranslation } from "next-i18next/pages";
 
 // The GIEE intake reuses the existing Nodemailer contact API (no new backend or
 // secret required). The partner-specific fields are composed into the email body
@@ -349,6 +350,21 @@ ${values.message}`,
               </div>
             )}
           </div>
+
+          <p className="font-giee-sans text-sm text-giee-slate">
+            <Trans
+              i18nKey="partnerForm.privacyNotice"
+              t={t}
+              components={{
+                privacy: (
+                  <Link
+                    href="/privacy"
+                    className="underline underline-offset-2 hover:text-giee-ink"
+                  />
+                ),
+              }}
+            />
+          </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div role="status" aria-live="polite" className="font-giee-sans text-sm">

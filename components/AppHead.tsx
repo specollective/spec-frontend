@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Script from 'next/script'
 import { useTranslation } from 'next-i18next/pages'
 import { SITE_URL } from '../constants/seo'
 
@@ -45,10 +44,9 @@ export function AppHead({ title, description, image, path }: AppHeadProps) {
         />
         <meta name="twitter:image" content={ogImage} key="twitter:image" />
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-E5SMJ9E985"
-        strategy="afterInteractive"
-      />
+      {/* Google Analytics was removed for GDPR compliance: it loaded for every
+          visitor without consent. If analytics is reintroduced, it must sit
+          behind a consent banner (or use a cookieless provider). */}
     </>
   )
 }
