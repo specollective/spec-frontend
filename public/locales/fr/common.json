@@ -2,32 +2,32 @@
   "site": {
     "title": "Sustainable Progress Equality Collective",
     "ogTitle": "Sustainable Progress and Equality Collective",
-    "ogDescription": "Helping people learn skills, build careers, and become leaders of sustainable social impact."
+    "ogDescription": "Aider les personnes à acquérir des compétences, à construire leur carrière et à devenir des acteurs d'un impact social durable."
   },
   "nav": {
     "contact": "Contact",
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "mainNavigation": "Main navigation",
-    "mobileNavigation": "Mobile navigation"
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "mainNavigation": "Navigation principale",
+    "mobileNavigation": "Navigation mobile"
   },
-  "skipToContent": "Skip to main content",
+  "skipToContent": "Aller au contenu principal",
   "social": {
-    "github": "Visit SPEC on GitHub (opens in new tab)",
-    "linkedin": "Visit SPEC on LinkedIn (opens in new tab)",
-    "facebook": "Visit SPEC on Facebook (opens in new tab)"
+    "github": "Visiter SPEC sur GitHub (s'ouvre dans un nouvel onglet)",
+    "linkedin": "Visiter SPEC sur LinkedIn (s'ouvre dans un nouvel onglet)",
+    "facebook": "Visiter SPEC sur Facebook (s'ouvre dans un nouvel onglet)"
   },
   "footer": {
     "copyright": "© 2020–2025 Sustainable Progress and Equality Collective",
-    "navigation": "Footer navigation",
+    "navigation": "Navigation du pied de page",
     "journal": "Journal of Engaged Research",
-    "gallery": "Digital Art Gallery",
-    "donate": "Donate to SPEC",
-    "opensNewTab": " (opens in new tab)",
+    "gallery": "Galerie d'art numérique",
+    "donate": "Faire un don à SPEC",
+    "opensNewTab": " (s'ouvre dans un nouvel onglet)",
     "privacy": "Politique de confidentialité"
   },
   "languageSwitcher": {
-    "label": "Select language",
+    "label": "Choisir la langue",
     "en": "English",
     "es": "Español",
     "fr": "Français"
