@@ -1,113 +1,113 @@
 {
-  "pageTitle": "Global AI Governance & Inclusive Education Ecosystem",
+  "pageTitle": "Gouvernance mondiale de l'IA et écosystème d'éducation inclusive",
   "nav": {
-    "overview": "Overview",
-    "pillars": "Pillars",
-    "research": "Research",
-    "partner": "Partner",
-    "ariaLabel": "GIEE navigation",
-    "mobileAriaLabel": "GIEE mobile navigation",
+    "overview": "Présentation",
+    "pillars": "Piliers",
+    "research": "Recherche",
+    "partner": "Partenaire",
+    "ariaLabel": "Navigation GIEE",
+    "mobileAriaLabel": "Navigation mobile GIEE",
     "menu": "Menu",
-    "changeLanguage": "Change language, current language {{language}}",
-    "wordmarkAria": "GIEE — Global AI Governance & Inclusive Education Ecosystem, home"
+    "changeLanguage": "Changer de langue, langue actuelle {{language}}",
+    "wordmarkAria": "GIEE — Gouvernance mondiale de l'IA et écosystème d'éducation inclusive, accueil"
   },
   "footer": {
-    "tagline": "The Global Inclusive Education Ecosystem — designing the global benchmarks, policies, and guardrails that keep AI an instrument for collective empowerment and educational trust.",
-    "initiativeOf": "An initiative of SPEC ↗",
+    "tagline": "Le Global Inclusive Education Ecosystem — concevoir les référentiels mondiaux, les politiques et les garde-fous qui maintiennent l'IA comme instrument d'autonomisation collective et de confiance éducative.",
+    "initiativeOf": "Une initiative de SPEC ↗",
     "contact": "Contact",
     "copyright": "© 2026 Sustainable Progress & Equality Collective."
   },
   "home": {
     "hero": {
-      "title": "Global AI Governance &<br/>Inclusive Education Ecosystem",
-      "subtitle": "The rapid ascension of generative artificial intelligence demands a proactive, cross-sector approach to technology governance—one that prioritizes human capability, institutional accountability, and equity.",
-      "explore": "Explore the ecosystem",
-      "pillarsCta": "Our core pillars",
-      "scroll": "Scroll",
-      "scrollAria": "Scroll to overview"
+      "title": "Gouvernance mondiale de l'IA et<br/>écosystème d'éducation inclusive",
+      "subtitle": "L'essor rapide de l'intelligence artificielle générative exige une approche proactive et intersectorielle de la gouvernance technologique — une approche qui place au premier plan les capacités humaines, la responsabilité institutionnelle et l'équité.",
+      "explore": "Explorer l'écosystème",
+      "pillarsCta": "Nos piliers fondamentaux",
+      "scroll": "Défiler",
+      "scrollAria": "Défiler vers la présentation"
     },
     "overview": {
-      "eyebrow": "Overview",
-      "p1": "The Global Inclusive Education Ecosystem (GIEE) serves as a foundational bridge linking emerging technology with robust human-centered frameworks. In direct collaboration with the Global Online Education Regulator (GOER) and the United Nations-Geneva Forum, we are moving beyond a posture of merely reacting to digital shifts.",
-      "p2": "Together, we are designing the global benchmarks, policies, and guardrails that ensure AI serves as an instrument for collective empowerment, ethical growth, and educational trust."
+      "eyebrow": "Présentation générale",
+      "p1": "Le Global Inclusive Education Ecosystem (GIEE) constitue un pont fondamental entre les technologies émergentes et des cadres robustes centrés sur l'humain. En collaboration directe avec le Global Online Education Regulator (GOER) et le Forum de Genève des Nations Unies, nous dépassons la posture de simple réaction aux transformations numériques.",
+      "p2": "Ensemble, nous concevons les référentiels mondiaux, les politiques et les garde-fous qui garantissent que l'IA reste un instrument d'autonomisation collective, de croissance éthique et de confiance éducative."
     },
     "pillars": {
-      "eyebrow": "Our Core Pillars of Systemic Governance",
-      "intro": "When we discuss “human-centered design” in artificial intelligence architecture, it cannot simply be a rhetorical catchphrase. True technological equity requires an intentional, evidence-based framework. Our ecosystem is anchored in three structural truths:",
+      "eyebrow": "Nos piliers fondamentaux de gouvernance systémique",
+      "intro": "Lorsque nous évoquons la « conception centrée sur l'humain » dans l'architecture de l'intelligence artificielle, il ne peut s'agir d'un simple slogan rhétorique. Une véritable équité technologique exige un cadre intentionnel et fondé sur des preuves. Notre écosystème repose sur trois vérités structurelles :",
       "items": [
         {
-          "name": "Technology Must Amplify Human Capability",
-          "description": "Systems must serve the individual, not the inverse. We advocate for and audit algorithmic models to ensure they are engineered to elevate human curiosity, critical thinking, and baseline capability—never to diminish, gatekeep, or displace the human architecture of learning."
+          "name": "La technologie doit amplifier les capacités humaines",
+          "description": "Les systèmes doivent servir l'individu, et non l'inverse. Nous plaidons pour et auditons les modèles algorithmiques afin de garantir qu'ils sont conçus pour élever la curiosité humaine, la pensée critique et les capacités fondamentales — jamais pour diminuer, filtrer ou supplanter l'architecture humaine de l'apprentissage."
         },
         {
-          "name": "Equity Demands Intentional Design",
-          "description": "Societies do not stumble into ethical AI platforms. Responsible deployment requires a deliberate vetting infrastructure that forces technology architects, policymakers, and institutions to audit how a digital tool impacts learner privacy, access, and psychological safety before it scales globally."
+          "name": "L'équité exige une conception intentionnelle",
+          "description": "Les sociétés ne tombent pas par hasard sur des plateformes d'IA éthiques. Un déploiement responsable requiert une infrastructure délibérée d'évaluation qui oblige les architectes technologiques, les décideurs et les institutions à analyser l'impact d'un outil numérique sur la vie privée des apprenants, leur accès et leur sécurité psychologique avant toute mise à l'échelle mondiale."
         },
         {
-          "name": "Trust is our Ultimate Institutional Currency",
-          "description": "If educators, students, and community stakeholders do not trust the operational systems they rely on, the innovation inherently fails. By anchoring emerging technology in transparent, rigorous governance models, we effectively turn institutional skepticism into collaborative progress."
+          "name": "La confiance est notre monnaie institutionnelle ultime",
+          "description": "Si les éducateurs, les étudiants et les parties prenantes communautaires ne font pas confiance aux systèmes opérationnels dont ils dépendent, l'innovation échoue inévitablement. En ancrant les technologies émergentes dans des modèles de gouvernance transparents et rigoureux, nous transformons efficacement le scepticisme institutionnel en progrès collaboratif."
         }
       ]
     },
     "initiatives": {
-      "eyebrow": "Strategic Global Initiatives & Intersections",
+      "eyebrow": "Initiatives mondiales stratégiques et intersections",
       "items": [
         {
-          "name": "The GOER AI Integrity Badge",
-          "description": "Administered by the GOER Board, the AI Integrity Badge represents a critical evolution in educational quality assurance. Far more than a technical validation process, this badge establishes the global baseline for ethical, transparent, and accountable AI integration. By auditing and recognizing technical innovators who meet these stringent criteria, we provide educational systems with verified, safe, and equitable digital tools."
+          "name": "Le Badge d'intégrité IA du GOER",
+          "description": "Administré par le Conseil du GOER, le Badge d'intégrité IA représente une évolution décisive dans l'assurance qualité éducative. Bien plus qu'un simple processus de validation technique, ce badge établit le référentiel mondial pour une intégration de l'IA éthique, transparente et responsable. En auditant et en reconnaissant les innovateurs technologiques qui répondent à ces critères exigeants, nous fournissons aux systèmes éducatifs des outils numériques vérifiés, sûrs et équitables."
         },
         {
-          "name": "The UN-Geneva Forum Alliance",
-          "description": "Through our continuous collaboration with the Geneva Forum, GIEE scales localized benchmarks into global policy frameworks. This alliance bridges the gap between grassroots educational technology and high-level international diplomacy, ensuring that global frameworks for digital sovereignty are rooted in data-driven, real-world impact."
+          "name": "L'Alliance Forum de Genève – Nations Unies",
+          "description": "Grâce à notre collaboration continue avec le Forum de Genève, le GIEE transforme des référentiels locaux en cadres politiques mondiaux. Cette alliance comble le fossé entre la technologie éducative de terrain et la diplomatie internationale de haut niveau, garantissant que les cadres mondiaux de souveraineté numérique sont ancrés dans un impact concret et fondé sur des données."
         }
       ]
     },
     "cta": {
-      "heading": "Shape the Future of Trust with Us",
-      "body": "The intersection of AI governance and inclusive education is the defining policy challenge of our era. Whether you are a scholar, practitioner, tech architect, or public servant, your insights are vital to constructing these global guardrails.",
-      "research": "Explore Our Research Portfolio",
-      "partner": "Partner with GIEE"
+      "heading": "Façonnez avec nous l'avenir de la confiance",
+      "body": "L'intersection entre la gouvernance de l'IA et l'éducation inclusive est le défi politique déterminant de notre époque. Que vous soyez chercheur, praticien, architecte technologique ou agent public, votre expertise est essentielle à la construction de ces garde-fous mondiaux.",
+      "research": "Explorer notre portefeuille de recherche",
+      "partner": "Devenir partenaire du GIEE"
     }
   },
   "partner": {
-    "back": "← Back to GIEE",
-    "eyebrow": "Partner with GIEE",
-    "heading": "Join the Sandbox",
-    "intro": "GIEE partners with forward-thinking institutions, community advocates, and industry leaders to build bankable, human-centered public assets. Please fill out the form to connect with our Executive Leadership Team.",
+    "back": "← Retour au GIEE",
+    "eyebrow": "Devenez partenaire du GIEE",
+    "heading": "Rejoindre l'environnement d'expérimentation réglementaire",
+    "intro": "Le GIEE collabore avec des institutions visionnaires, des acteurs engagés de la société civile et des leaders de l'industrie afin de développer des biens publics centrés sur l'humain, crédibles et susceptibles d'attirer des financements. Veuillez remplir le formulaire pour entrer en contact avec notre équipe de direction.",
     "features": {
       "sandbox": {
-        "term": "A quality-assured regulatory sandbox",
-        "description": "We bridge high-level international policy with real-world, grassroots execution—anchored in the GLQF and GOER principles."
+        "term": "Un environnement d'expérimentation réglementaire garantissant un haut niveau d'assurance qualité",
+        "description": "Nous faisons le lien entre les politiques internationales de haut niveau et leur mise en œuvre concrète sur le terrain, en nous appuyant sur les principes du GLQF et du GOER."
       },
       "collaboration": {
-        "term": "Built for collaboration",
-        "description": "Whether you arrive with a case study, a new proposal, or a research question, our team will route your inquiry to the right Case Study Lead."
+        "term": "Conçu pour la collaboration",
+        "description": "Qu'il s'agisse d'une étude de cas, d'une nouvelle proposition ou d'une question de recherche, notre équipe veillera à orienter votre demande vers le responsable de l'étude de cas le mieux placé pour vous accompagner."
       },
       "portfolio": {
-        "term": "Explore the portfolio first",
-        "description": "See our active case studies and ecosystem partners on the <portfolio>Research Portfolio</portfolio>."
+        "term": "Explorez d'abord le portefeuille",
+        "description": "Consultez nos études de cas actives et nos partenaires de l'écosystème dans le <portfolio>portefeuille de recherche</portfolio>."
       }
     }
   },
   "research": {
-    "back": "← Back to GIEE",
-    "heading": "Explore Our Research Portfolio",
-    "intro": "Welcome to the Global Inclusive Education Ecosystem (GIEE) Research Portfolio. GIEE functions as a quality-assured regulatory sandbox, bridging high-level international policy with real-world, grassroots execution. By centering our initiatives around the GLQF and GOER principles, we actively shift global education from standard content delivery to outcome-based competency and human-AI synergy.",
-    "eyebrow": "Active Case Studies & Ecosystem Partners",
-    "ecosystemPartners": "Ecosystem Partners",
-    "partnerCta": "Partner with GIEE",
+    "back": "← Retour au GIEE",
+    "heading": "Explorer notre portefeuille de recherche",
+    "intro": "Bienvenue dans le portefeuille de recherche du Global Inclusive Education Ecosystem (GIEE). Le GIEE agit comme un environnement d'expérimentation réglementaire sécurisé et encadré, reliant les orientations internationales de haut niveau à leur mise en œuvre concrète sur le terrain. En centrant nos initiatives sur les principes du GLQF et du GOER, nous faisons activement évoluer l'éducation mondiale d'une simple transmission de contenu standardisé vers la compétence fondée sur les résultats et la synergie humain-IA.",
+    "eyebrow": "Études de cas actives et partenaires de l'écosystème",
+    "ecosystemPartners": "Partenaires de l'écosystème",
+    "partnerCta": "Devenir partenaire du GIEE",
     "initiatives": [
       {
-        "name": "Women in AI Framework",
-        "description": "This initiative explores the structural inclusion of women's perspectives across the entire AI development lifecycle.",
+        "name": "Cadre d'action « Femmes et IA »",
+        "description": "Cette initiative explore l'inclusion structurelle des perspectives des femmes dans l'ensemble du cycle de développement de l'IA.",
         "partners": [
           "Mount Saint Mary's University (Los Angeles, CA)",
           "University of Barcelona — Social Work Department"
         ]
       },
       {
-        "name": "Insight Recognition",
-        "description": "An AI-driven assessment and personalized learning environment that maps knowledge through individualized, bottom-up concept mapping.",
+        "name": "Reconnaissance des acquis",
+        "description": "Un environnement d'évaluation et d'apprentissage personnalisé piloté par l'IA, qui cartographie les connaissances grâce à une cartographie conceptuelle individualisée et ascendante.",
         "partners": [
           "Prior Learning Assessment Advisory Group",
           "United States Workforce Development Partners",
@@ -115,8 +115,8 @@
         ]
       },
       {
-        "name": "Scaling & Expanding Youth-Led Critical AI Education",
-        "description": "A critical science and technology program addressing professional development for K-12 educators regarding sociotechnical harms.",
+        "name": "Développement de l'éducation critique à l'IA menée par les jeunes",
+        "description": "Un programme critique en sciences et technologies axé sur le développement professionnel des éducateurs de la maternelle au lycée concernant les préjudices sociotechniques.",
         "partners": [
           "UCLA",
           "Race, Abolition, and Artificial Intelligence (RAAI) Program",
@@ -125,8 +125,8 @@
         ]
       },
       {
-        "name": "murmur: AI Design in Mental Health",
-        "description": "A structured clinical instrument built on Schema Therapy models to provide clinician-supervised reflective support for learners.",
+        "name": "murmur : Conception de l'IA et Santé Mentale",
+        "description": "Un instrument clinique structuré fondé sur les modèles de la thérapie des schémas, conçu pour offrir un soutien réflexif supervisé par des cliniciens aux apprenants.",
         "partners": [
           "APA Professional Networks",
           "Central Asian University Counseling Centers",
@@ -134,8 +134,8 @@
         ]
       },
       {
-        "name": "Street Racket: Schools and Hybrid Learning Environments",
-        "description": "Investigating how movement-based learning can be enhanced through AI-supported reflection and goal-setting.",
+        "name": "Street Racket : Écoles et environnements d'apprentissage hybrides",
+        "description": "Exploration de la manière dont l'apprentissage par le mouvement peut être enrichi grâce à la réflexion et à la définition d'objectifs soutenues par l'IA.",
         "partners": [
           "Street Racket International",
           "Tarek's Tennis Academy (Belgium)",
@@ -143,8 +143,8 @@
         ]
       },
       {
-        "name": "CheckIT Learning: AI Supporting SEN Students",
-        "description": "Exploring how neuroscience-informed digital pathways enhance engagement for students with Special Educational Needs (SEN).",
+        "name": "CheckIT Learning : L'IA au service des élèves à besoins éducatifs particuliers (BEP)",
+        "description": "Explorer comment des parcours d'apprentissage numériques fondés sur les neurosciences renforcent l'engagement des élèves à besoins éducatifs particuliers (BEP).",
         "partners": [
           "CheckIT Learning (CLEO LMS Platform)",
           "Exceptional Learners Collaborative"
@@ -155,66 +155,66 @@
   "partnerForm": {
     "fields": {
       "name": {
-        "label": "Name",
-        "placeholder": "First name Last name"
+        "label": "Nom",
+        "placeholder": "Prénom Nom"
       },
       "email": {
-        "label": "Email",
+        "label": "Adresse e-mail",
         "placeholder": "hello@institution.org"
       },
       "affiliation": {
-        "label": "Affiliation",
-        "placeholder": "Institution, organization, or company"
+        "label": "Organisation",
+        "placeholder": "Institution, organisation ou entreprise"
       },
       "role": {
-        "label": "Primary Professional Role",
-        "placeholder": "Select a role"
+        "label": "Fonction principale",
+        "placeholder": "Sélectionner un rôle"
       },
       "interest": {
-        "label": "Area of Interest",
-        "placeholder": "Select an area"
+        "label": "Domaine d'intérêt",
+        "placeholder": "Sélectionner un domaine"
       },
       "message": {
         "label": "Message",
-        "placeholder": "Tell us about your collaboration objectives."
+        "placeholder": "Parlez-nous de vos objectifs de collaboration."
       }
     },
     "roles": {
-      "k12HigherEd": "K-12 / Higher Ed",
-      "industryAiArchitect": "Industry / AI Architect",
-      "nonProfitLead": "Non-Profit Lead",
-      "communityAdvocate": "Community Advocate",
-      "policyOfficial": "Policy Official"
+      "k12HigherEd": "Enseignement primaire-secondaire / Enseignement supérieur",
+      "industryAiArchitect": "Industrie / Architecte IA",
+      "nonProfitLead": "Responsable d'organisation à but non lucratif",
+      "communityAdvocate": "Défenseur communautaire",
+      "policyOfficial": "Responsable politique"
     },
     "interests": {
-      "news": "News",
-      "caseStudyPartnership": "Case Study Partnership",
-      "research": "Research",
-      "newProposal": "New Proposal",
-      "other": "Other"
+      "news": "Actualités",
+      "caseStudyPartnership": "Partenariat d'étude de cas",
+      "research": "Recherche",
+      "newProposal": "Nouvelle proposition",
+      "other": "Autre"
     },
     "validation": {
-      "required": "Required",
-      "email": "Enter a valid email address",
-      "select": "Please select a valid option"
+      "required": "Obligatoire",
+      "email": "Veuillez saisir une adresse e-mail valide",
+      "select": "Veuillez sélectionner une option valide"
     },
-    "submit": "Submit Partnership Inquiry",
-    "error": "Something went wrong. Please try again.",
+    "submit": "Soumettre une demande de partenariat",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
     "success": {
-      "heading": "Thank you — your inquiry has been sent.",
-      "body": "Our team will review your message and route it to the right Case Study Lead. We’ll be in touch at the email address you provided.",
-      "button": "Submit another inquiry"
+      "heading": "Merci — votre demande a bien été envoyée.",
+      "body": "Notre équipe examinera votre message et le transmettra au responsable d'étude de cas le mieux placé. Nous vous répondrons à l'adresse e-mail que vous avez indiquée.",
+      "button": "Soumettre une autre demande"
     },
-    "privacyNotice": "By submitting this form you agree to our <privacy>Privacy Policy</privacy>."
+    "privacyNotice": "En soumettant ce formulaire, vous acceptez notre <privacy>Politique de confidentialité</privacy>."
   },
   "communityBand": {
-    "eyebrow": "Join Our GIEE Community",
-    "title": "Connect with the Ecosystem Architecture",
-    "body": "The heartbeat of GIEE relies on our active, decentralized peer-to-peer network. Don’t wait for our next formal presentation to step into the ecosystem. Join our official working group right now to interact with our Case Study Leads and participate in public evidence reviews.",
-    "cta": "Join the GIEE LinkedIn Community Group"
+    "eyebrow": "Rejoignez notre communauté GIEE",
+    "title": "Connectez-vous à l'architecture de l'écosystème",
+    "body": "Le cœur du GIEE repose sur un réseau actif et décentralisé d'échanges entre pairs. N'attendez pas notre prochaine présentation officielle pour intégrer l'écosystème. Rejoignez dès maintenant notre groupe de travail officiel pour interagir avec nos responsables d'études de cas et participer aux revues publiques de données probantes.",
+    "cta": "Rejoindre la communauté GIEE sur LinkedIn"
   },
   "partnerLogos": {
     "title": "Partenaires",
-    "logoAlt": "{{name}} logo"
+    "logoAlt": "Logo {{name}}"
   }
 }
