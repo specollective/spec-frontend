@@ -22,6 +22,7 @@ const featured: Partner[] = [
 // Partner & case-study organizations — shown below the featured row.
 const partners: Partner[] = [
   { name: "Win The Toss", logo: "/partners/win-the-toss.svg" },
+  { name: "Check it Learning", logo: "/partners/check-it-learning.svg" },
   { name: "Symbol", logo: "/partners/symbol.svg" },
   { name: "Motum", logo: "/partners/motum.svg" },
   { name: "The Common Ground Collaborative", logo: "/partners/common-group-collab.svg" },
