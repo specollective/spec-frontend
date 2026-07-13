@@ -149,6 +149,14 @@
           "CheckIT Learning (CLEO LMS Platform)",
           "Exceptional Learners Collaborative"
         ]
+      },
+      {
+        "name": "Flowwwly: Investigating a Human-Centred Digital Solution to Help Young People Move Beyond Screen Dependency and Discover Purpose",
+        "description": "Esta investigación explora cómo Flowwwly aborda uno de los desafíos más importantes que enfrentan los jóvenes hoy en día: el uso excesivo de pantallas y una creciente desconexión del propósito, la acción y las experiencias del mundo real. La investigación examina cómo la aplicación combina el descubrimiento del propósito, la orientación apoyada por IA y desafíos del mundo real para fomentar hábitos tecnológicos más saludables, el desarrollo personal y una participación significativa.",
+        "partners": [
+          "Flowwwly",
+          "GOER"
+        ]
       }
     ]
   },
