@@ -34,6 +34,11 @@ const partners: Partner[] = [
     logo: "/partners/insight-recognition.svg",
     sizeClass: "h-20 md:h-28",
   },
+  {
+    name: "Exceptional Learners Collaborative",
+    logo: "/partners/elc.svg",
+    sizeClass: "h-20 md:h-28",
+  },
 ];
 
 function Logo({
