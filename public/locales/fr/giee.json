@@ -115,13 +115,11 @@
         ]
       },
       {
-        "name": "Développement de l'éducation critique à l'IA menée par les jeunes",
-        "description": "Un programme critique en sciences et technologies axé sur le développement professionnel des éducateurs de la maternelle au lycée concernant les préjudices sociotechniques.",
+        "name": "Déployer et développer l'éducation critique à l'IA menée par les jeunes",
+        "description": "GLITCH (Generating Liberation through Intersectionality, Technology and Critical Hope) est un laboratoire de R&D qui conçoit des programmes d'IA ancrés dans la communauté et orientés vers la justice, destinés aux jeunes issus de communautés à faibles ressources. Par la co-conception avec les jeunes et la recherche-action participative, il produit également des ressources de développement professionnel pour les éducateurs en quête d'approches de l'IA plus justes, plus joyeuses et plus transformatrices pour l'éducation.",
         "partners": [
-          "UCLA",
-          "Race, Abolition, and Artificial Intelligence (RAAI) Program",
-          "Brown University",
-          "NYC WorkEd"
+          "Center for Resilience and Digital Justice (UCLA)",
+          "Community Health Informatics Data Lab (Brown University)"
         ]
       },
       {
@@ -144,7 +142,7 @@
       },
       {
         "name": "CheckIT Learning : L'IA au service des élèves à besoins éducatifs particuliers (BEP)",
-        "description": "Cette étude de cas explore comment une intelligence artificielle responsable, fondée sur les sciences de l'apprentissage, peut améliorer les résultats des élèves ayant des besoins éducatifs particuliers (BEP). Elle analyse comment la participation des élèves, le développement professionnel des enseignants et une gouvernance participative peuvent contribuer à des systèmes éducatifs plus inclusifs, plus humains et fondés sur les connaissances scientifiques.",
+        "description": "Cette étude de cas explore comment une intelligence artificielle responsable, fondée sur les sciences de l'apprentissage, peut améliorer les résultats des élèves ayant des besoins éducatifs particuliers (BEP). Elle analyse comment la participation des élèves, le développement professionnel des enseignants et une gouvernance participative peuvent contribuer à des systèmes éducatifs plus inclusifs, plus centrés sur l'humains et fondés sur des données probantes.",
         "partners": [
           "CheckIT Learning (CLEO LMS Platform)",
           "Exceptional Learners Collaborative"
