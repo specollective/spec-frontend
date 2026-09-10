@@ -1,0 +1,80 @@
+import type { NextApiRequest, NextApiResponse } from "next";
+import { recordGieePageView } from "../../service/gieeAnalyticsStore";
+import {
+  isGieeAnalyticsLocale,
+  normalizeGieePath,
+} from "../../utils/gieeAnalytics";
+
+export const config = {
+  api: {
+    bodyParser: { sizeLimit: "256b" },
+  },
+};
+
+const WINDOW_MS = 60_000;
+const MAX_REQUESTS_PER_WINDOW = 1_000;
+let windowStartedAt = 0;
+let windowRequests = 0;
+
+function withinRateLimit(): boolean {
+  const now = Date.now();
+  if (now - windowStartedAt >= WINDOW_MS) {
+    windowStartedAt = now;
+    windowRequests = 0;
+  }
+  windowRequests += 1;
+  return windowRequests <= MAX_REQUESTS_PER_WINDOW;
+}
+
+function hasGrantedConsent(req: NextApiRequest): boolean {
+  return /(?:^|;\s*)giee-analytics=granted(?:;|$)/.test(req.headers.cookie ?? "");
+}
+
+function hasAllowedOrigin(req: NextApiRequest): boolean {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+  if (origin === "null") return false;
+
+  const forwardedHost = req.headers["x-forwarded-host"] ?? req.headers.host;
+  const forwardedProto = req.headers["x-forwarded-proto"] ?? "https";
+  const host = Array.isArray(forwardedHost) ? forwardedHost[0] : forwardedHost;
+  const proto = Array.isArray(forwardedProto) ? forwardedProto[0] : forwardedProto;
+  return Boolean(host && origin === `${proto}://${host}`);
+}
+
+function validBody(body: unknown): body is { path: string; locale: string } {
+  if (!body || typeof body !== "object" || Array.isArray(body)) return false;
+  const keys = Object.keys(body);
+  if (keys.length !== 2 || !keys.includes("path") || !keys.includes("locale")) {
+    return false;
+  }
+  const value = body as Record<string, unknown>;
+  return typeof value.path === "string" && typeof value.locale === "string";
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== "POST" || !withinRateLimit() || !hasAllowedOrigin(req)) {
+    return res.status(204).end();
+  }
+  if (!req.headers["content-type"]?.toLowerCase().startsWith("application/json")) {
+    return res.status(204).end();
+  }
+  if (!hasGrantedConsent(req) || !validBody(req.body)) {
+    return res.status(204).end();
+  }
+
+  const path = normalizeGieePath(req.body.path);
+  if (!path || !isGieeAnalyticsLocale(req.body.locale)) {
+    return res.status(204).end();
+  }
+
+  try {
+    await recordGieePageView(path, req.body.locale);
+  } catch {
+    // Analytics failures are intentionally invisible to visitors.
+  }
+  return res.status(204).end();
+}

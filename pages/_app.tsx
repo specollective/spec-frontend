@@ -3,6 +3,8 @@ import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next/pages";
 import { Montserrat, DM_Serif_Text, Poppins } from "next/font/google";
 import nextI18NextConfig from "../next-i18next.config";
+import { useRouter } from "next/router";
+import GieeAnalytics from "../components/GieeAnalytics";
 
 // Fonts are self-hosted via next/font (downloaded at build time) instead of
 // loaded from fonts.googleapis.com at runtime. Serving them from Google's CDN
@@ -32,11 +34,15 @@ const poppins = Poppins({
 });
 
 function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isGiee =
+    router.pathname === "/giee" || router.pathname.startsWith("/giee/");
   return (
     <div
       className={`${montserrat.variable} ${dmSerifText.variable} ${poppins.variable}`}
     >
       <Component {...pageProps} />
+      {isGiee && <GieeAnalytics />}
     </div>
   );
 }

@@ -31,5 +31,15 @@
     "en": "English",
     "es": "Español",
     "fr": "Français"
+  },
+  "gieeAnalytics": {
+    "title": "Mesure de l'utilisation de GIEE",
+    "body": "Nous souhaitons mesurer anonymement les pages GIEE consultées. Aucun visiteur n'est identifié.",
+    "accept": "Accepter",
+    "reject": "Refuser",
+    "enabled": "Mesure autorisée.",
+    "disabled": "Mesure refusée.",
+    "change": "Modifier mon choix",
+    "privacy": "Lire la politique de confidentialité"
   }
 }

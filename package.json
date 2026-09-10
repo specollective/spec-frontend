@@ -6,6 +6,7 @@
     "dev": "next dev -p 3322",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
+    "giee:db:migrate": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/migrations/001_giee_page_views.sql",
     "lint": "eslint .",
     "test": "jest"
   },
@@ -15,6 +16,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^16.1.0",
     "@types/node": "^22.0.0",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "contentful": "^10.6.5",
@@ -33,6 +35,7 @@
     "next-i18next": "^16.0.7",
     "node-mocks-http": "^1.12.2",
     "nodemailer": "^8.0.0",
+    "pg": "^8.23.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^17.0.8",
