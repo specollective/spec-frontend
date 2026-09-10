@@ -314,13 +314,22 @@ only aggregate rows exist and that retention cleanup works.
 
 ## Local database setup
 
-After a local PostgreSQL instance is available, put its connection string in
-`.env.local` as `DATABASE_URL`. Then run one command from the repository root:
+Put the default local PostgreSQL connection string in `.env.local` as
+`DATABASE_URL`:
+
+```env
+DATABASE_URL=postgresql://postgres:local@localhost:54329/giee_analytics
+```
+
+Then run one command from the repository root:
 
 ```sh
 npm run giee:db:setup
 ```
 
-This creates the table idempotently. It does not provision PostgreSQL itself or
-create the DigitalOcean Managed PostgreSQL cluster; those are infrastructure
-operations performed once outside the application.
+For the default local URL, the command starts or reuses a Docker container
+named `spec-giee-postgres`, waits for PostgreSQL to accept connections, and
+creates the table idempotently. Docker must be installed and running. For a
+DigitalOcean URL, it only applies the migration and never starts Docker. It
+does not create the DigitalOcean Managed PostgreSQL cluster; that is an
+infrastructure operation performed once outside the application.
