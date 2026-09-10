@@ -12,7 +12,10 @@ function getPool(): Pool {
     max: 5,
     connectionTimeoutMillis: 3000,
     idleTimeoutMillis: 30000,
-    ssl: { rejectUnauthorized: true },
+    ssl:
+      process.env.NODE_ENV === "production"
+        ? { rejectUnauthorized: true }
+        : false,
   });
   return pool;
 }
