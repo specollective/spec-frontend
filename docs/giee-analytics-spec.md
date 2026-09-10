@@ -282,10 +282,12 @@ in every enabled locale before release.
    service region.
 2. Configure private connectivity, TLS, backups, database roles, and the
    encrypted `DATABASE_URL` runtime variable.
-3. Add the `pg` dependency, `db/migrations/001_giee_page_views.sql`, and an
-   idempotent `npm run giee:db:migrate` script that an operator runs with
-   `DATABASE_URL` before the endpoint is enabled. Application startup must not
-   perform schema changes.
+3. Add the `pg` dependency, `db/migrations/001_giee_page_views.sql`, and the
+   idempotent `npm run giee:db:setup` script. The script loads `.env.local` or
+   deployment environment variables, connects to `DATABASE_URL`, and applies
+   the migration before the endpoint is enabled. Application startup must not
+   perform schema changes. `giee:db:migrate` remains an alias for the setup
+   command.
 4. Implement the consent UI and cookie behavior.
 5. Implement canonical path/locale validation in a shared server-safe helper.
 6. Implement the route-gated client component and API endpoint.
@@ -309,3 +311,16 @@ The implementation review must also include browser network evidence for a GIEE
 page before and after consent, navigation between GIEE pages, consent
 withdrawal, and a non-GIEE page. It must include a database query proving that
 only aggregate rows exist and that retention cleanup works.
+
+## Local database setup
+
+After a local PostgreSQL instance is available, put its connection string in
+`.env.local` as `DATABASE_URL`. Then run one command from the repository root:
+
+```sh
+npm run giee:db:setup
+```
+
+This creates the table idempotently. It does not provision PostgreSQL itself or
+create the DigitalOcean Managed PostgreSQL cluster; those are infrastructure
+operations performed once outside the application.

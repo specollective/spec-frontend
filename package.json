@@ -6,7 +6,8 @@
     "dev": "next dev -p 3322",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
-    "giee:db:migrate": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/migrations/001_giee_page_views.sql",
+    "giee:db:setup": "node scripts/setup-giee-db.js",
+    "giee:db:migrate": "npm run giee:db:setup",
     "lint": "eslint .",
     "test": "jest"
   },
