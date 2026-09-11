@@ -17,22 +17,20 @@ require_command doctl
 require_command yq
 require_command jq
 require_command npm
+require_command curl
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 SPEC_FILE="$(mktemp "${TMPDIR:-/tmp}/spec-frontend.XXXXXX.yaml")"
+OPERATOR_RULE_UUID=""
 cleanup() {
+  if [[ -n "$OPERATOR_RULE_UUID" ]]; then
+    doctl databases firewalls remove "$DB_ID" --uuid "$OPERATOR_RULE_UUID" >/dev/null || true
+  fi
   rm -f "$SPEC_FILE"
   unset DB_URL
 }
 trap cleanup EXIT
-
-if ! doctl databases firewalls list "$DB_ID" --output json \
-  | jq -e --arg app_id "$APP_ID" 'any(.[]; .type == "app" and .value == $app_id)' \
-  >/dev/null; then
-  printf 'Allowing the App Platform service through the database firewall...\n'
-  doctl databases firewalls append "$DB_ID" --rule "app:$APP_ID"
-fi
 
 printf 'Retrieving the current App Platform spec...\n'
 if ! doctl apps spec get "$APP_ID" --format yaml >"$SPEC_FILE"; then
@@ -52,8 +50,36 @@ if [[ -z "$DB_URL" ]]; then
   exit 1
 fi
 
+OPERATOR_IP="$(curl -fsS https://api.ipify.org)"
+if [[ -z "$OPERATOR_IP" ]]; then
+  printf 'Could not determine the current public IP address.\n' >&2
+  exit 1
+fi
+
+if ! doctl databases firewalls list "$DB_ID" --output json \
+  | jq -e --arg ip "$OPERATOR_IP" 'any(.[]; .type == "ip_addr" and .value == $ip)' \
+  >/dev/null; then
+  printf 'Temporarily allowing this machine to run the migration...\n'
+  doctl databases firewalls append "$DB_ID" --rule "ip_addr:$OPERATOR_IP"
+  OPERATOR_RULE_UUID="$(doctl databases firewalls list "$DB_ID" --output json \
+    | jq -r --arg ip "$OPERATOR_IP" 'first(.[] | select(.type == "ip_addr" and .value == $ip) | .uuid) // empty')"
+fi
+
 printf 'Applying the analytics database migration...\n'
 (cd "$REPO_ROOT" && NODE_ENV=production DATABASE_URL="$DB_URL" npm run giee:db:setup)
+
+if [[ -n "$OPERATOR_RULE_UUID" ]]; then
+  printf 'Removing the temporary machine firewall rule...\n'
+  doctl databases firewalls remove "$DB_ID" --uuid "$OPERATOR_RULE_UUID"
+  OPERATOR_RULE_UUID=""
+fi
+
+if ! doctl databases firewalls list "$DB_ID" --output json \
+  | jq -e --arg app_id "$APP_ID" 'any(.[]; .type == "app" and .value == $app_id)' \
+  >/dev/null; then
+  printf 'Allowing the App Platform service through the database firewall...\n'
+  doctl databases firewalls append "$DB_ID" --rule "app:$APP_ID"
+fi
 
 printf 'Adding the encrypted DATABASE_URL runtime variable...\n'
 DB_URL="$DB_URL" yq -i '
