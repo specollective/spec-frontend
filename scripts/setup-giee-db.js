@@ -90,8 +90,11 @@ async function main() {
     path.join(__dirname, "..", "db", "migrations", "001_giee_page_views.sql"),
     "utf8"
   );
+  const databaseUrl = new URL(process.env.DATABASE_URL);
+  // pg lets URI ssl parameters override the explicit SSL object below.
+  databaseUrl.searchParams.delete("sslmode");
   const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: databaseUrl.toString(),
     max: 1,
     connectionTimeoutMillis: 5000,
     ssl:

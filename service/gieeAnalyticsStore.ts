@@ -7,8 +7,12 @@ function getPool(): Pool {
     throw new Error("DATABASE_URL is not configured");
   }
 
+  const databaseUrl = new URL(process.env.DATABASE_URL);
+  // pg lets URI ssl parameters override the explicit SSL object below.
+  databaseUrl.searchParams.delete("sslmode");
+
   pool ??= new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: databaseUrl.toString(),
     max: 5,
     connectionTimeoutMillis: 3000,
     idleTimeoutMillis: 30000,
