@@ -109,4 +109,4 @@ DB_URL="$DB_URL" DB_CA="$DB_CA" yq -i '
 printf 'Updating App Platform and waiting for deployment...\n'
 doctl apps update "$APP_ID" --spec "$SPEC_FILE" --wait
 
-printf 'DATABASE_URL attached to App Platform successfully.\n'
+printf 'Database connection URL and CA attached to App Platform successfully.\n'
