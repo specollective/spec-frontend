@@ -101,6 +101,10 @@ db-reset:
     -docker rm -f {{local_container}}
     @echo 'Run `just db-setup` to recreate it.'
 
+# Print the analytics report from the production database (operator-only: needs doctl, psql, jq)
+db-report-prod:
+    ./scripts/production-report.sh
+
 # Attach the managed database to App Platform and migrate it (operator-only: needs doctl, yq, jq)
 db-connect:
     ./scripts/connect-db.sh

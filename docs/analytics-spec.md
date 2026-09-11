@@ -319,11 +319,16 @@ DigitalOcean database console or a protected maintenance script. There is no
 public reporting endpoint and no visitor-level export.
 
 `scripts/analytics-report.sql` is that maintenance script: a read-only dump of
-the registered sections, per-page totals, the last 14 days, and two invariants
-that must both report zero — rows whose path falls outside its section, and
-rows older than that section's retention period. Run it locally with
-`just db-report`, or pipe it into an operator psql session against the managed
-database.
+the registered sections, per-page visitor counts, the last 14 days, and two
+invariants that must both report zero — rows whose path falls outside its
+section, and rows older than that section's retention period.
+
+Run it against local development with `just db-report`, or against the managed
+database with `just db-report-prod`. The latter retrieves the connection and CA
+through `doctl`, verifies TLS with `sslmode=verify-full`, opens a read-only
+session, and temporarily allows the operator's IP through the database firewall,
+removing that rule on exit including on failure. It reads only; it never writes,
+migrates, or changes the App Platform spec.
 
 ## Privacy and compliance
 
