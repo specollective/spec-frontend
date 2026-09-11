@@ -68,8 +68,31 @@ describe("/api/page-views", () => {
     expect(recordMock).not.toHaveBeenCalled();
   });
 
-  it("hides storage failures behind 204", async () => {
-    recordMock.mockRejectedValueOnce(new Error("database unavailable"));
+  it("hides storage failures behind 204 but logs the fault", async () => {
+    const logged = jest.spyOn(console, "error").mockImplementation(() => undefined);
+    recordMock.mockRejectedValueOnce(Object.assign(new Error("relation does not exist"), { code: "42P01" }));
+    const { req, res } = createMocks({
+      method: "POST",
+      headers: granted,
+      body: { path: "/giee/research", locale: "en" },
+    });
+
+    await handler(req, res);
+
+    expect(res._getStatusCode()).toBe(204);
+    expect(logged).toHaveBeenCalledWith("Analytics storage failed (postgres 42P01)");
+
+    // The log must never carry the request: no path, locale, or error detail.
+    const line = logged.mock.calls[0].join(" ");
+    expect(line).not.toContain("/giee");
+    expect(line).not.toContain("relation does not exist");
+
+    logged.mockRestore();
+  });
+
+  it("still returns 204 when the failure carries no postgres code", async () => {
+    const logged = jest.spyOn(console, "error").mockImplementation(() => undefined);
+    recordMock.mockRejectedValueOnce(new Error("connection refused"));
     const { req, res } = createMocks({
       method: "POST",
       headers: granted,
@@ -79,5 +102,7 @@ describe("/api/page-views", () => {
     await handler(req, res);
 
     expect(res._getStatusCode()).toBe(204);
+    expect(logged).toHaveBeenCalledWith("Analytics storage failed");
+    logged.mockRestore();
   });
 });

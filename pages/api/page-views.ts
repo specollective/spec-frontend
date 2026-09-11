@@ -68,8 +68,16 @@ export default async function handler(
 
   try {
     await recordPageView(canonical.section.slug, canonical.path, req.body.locale);
-  } catch {
-    // Analytics failures are intentionally invisible to visitors.
+  } catch (error) {
+    // Failures stay invisible to visitors, but a silently broken database is
+    // indistinguishable from no traffic. Log the PostgreSQL error code only:
+    // it identifies the fault (42P01 is a missing table) while carrying none
+    // of the request. The message and detail fields are deliberately not
+    // logged, because a constraint violation puts the row's values in them.
+    const code = (error as { code?: unknown } | null)?.code;
+    console.error(
+      `Analytics storage failed${typeof code === "string" ? ` (postgres ${code})` : ""}`
+    );
   }
   return res.status(204).end();
 }
