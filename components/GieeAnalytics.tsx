@@ -15,11 +15,15 @@ type Consent = "granted" | "denied" | null;
 function ConsentPanel({
   consent,
   onChange,
+  hideWhenDecided = false,
 }: {
   consent: Consent;
   onChange: (value: "granted" | "denied") => void;
+  hideWhenDecided?: boolean;
 }) {
   const { t } = useTranslation("common");
+
+  if (hideWhenDecided && consent) return null;
 
   return (
     <aside
@@ -112,5 +116,11 @@ export default function GieeAnalytics() {
     if (value === "denied") lastSentPath.current = null;
   }
 
-  return <ConsentPanel consent={consent} onChange={updateConsent} />;
+  return (
+    <ConsentPanel
+      consent={consent}
+      onChange={updateConsent}
+      hideWhenDecided
+    />
+  );
 }
