@@ -4,7 +4,8 @@ import { appWithTranslation } from "next-i18next/pages";
 import { Montserrat, DM_Serif_Text, Poppins } from "next/font/google";
 import nextI18NextConfig from "../next-i18next.config";
 import { useRouter } from "next/router";
-import GieeAnalytics from "../components/GieeAnalytics";
+import Analytics from "../components/Analytics";
+import { findSection } from "../utils/analytics/sections";
 
 // Fonts are self-hosted via next/font (downloaded at build time) instead of
 // loaded from fonts.googleapis.com at runtime. Serving them from Google's CDN
@@ -35,14 +36,15 @@ const poppins = Poppins({
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isGiee =
-    router.pathname === "/giee" || router.pathname.startsWith("/giee/");
+  // router.pathname is already locale-free, so the registry alone decides
+  // whether this route is measured.
+  const section = findSection(router.pathname);
   return (
     <div
       className={`${montserrat.variable} ${dmSerifText.variable} ${poppins.variable}`}
     >
       <Component {...pageProps} />
-      {isGiee && <GieeAnalytics />}
+      {section && <Analytics section={section} />}
     </div>
   );
 }

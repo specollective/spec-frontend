@@ -3,7 +3,7 @@
   "updated": "Last updated: July 3, 2026",
   "intro": [
     "The Sustainable Progress & Equality Collective (\"SPEC\", \"we\", \"us\") operates specollective.org, including the GIEE program pages. This policy explains what personal data we collect, why, and what rights you have over it.",
-    "The short version: we collect nothing about you unless you send us a form or an email. On GIEE pages, if you opt in, we count page views in aggregate without identifying visitors. We use no advertising or tracking cookies."
+    "The short version: we collect nothing about you unless you send us a form or an email. On GIEE pages, if you opt in, we count how many visitors read each page per day, in aggregate and without identifying anyone. We use no advertising or tracking cookies."
   ],
   "sections": [
     {
@@ -11,7 +11,7 @@
       "paragraphs": [
         "If you contact us through a form on this site (such as the GIEE partnership form), we receive the information you enter: your name, email address, affiliation, professional role, area of interest, and message.",
         "Our hosting provider automatically keeps short-lived technical server logs (such as IP address and browser type) for security and reliability, as virtually all web hosts do.",
-        "On GIEE pages, optional analytics records only a canonical page path and locale in an aggregate daily counter after you grant consent. We do not measure unique visitors, use advertising services, or create profiles. Fonts and all other assets are served from our own infrastructure."
+        "On GIEE pages, optional analytics records only a canonical page path and locale in an aggregate daily counter after you grant consent. Each page is counted at most once per visitor per day, so the figure is a daily visitor count rather than a page-view total. To do that without identifying you, your browser keeps a short list of the pages it has already reported today in its own local storage, under the name \"analytics-seen\"; it contains no identifier, never leaves your device, is replaced the next day, and is deleted if you withdraw consent. We do not record IP addresses, link visits across days, follow you between devices, use advertising services, or create profiles. Fonts and all other assets are served from our own infrastructure."
       ]
     },
     {
@@ -30,7 +30,7 @@
     {
       "heading": "How long we keep it",
       "paragraphs": [
-        "Inquiry emails are kept for up to 12 months after the inquiry is resolved, then deleted, unless the exchange leads to an ongoing collaboration or we are legally required to keep it longer. GIEE analytics are stored as daily aggregate counters for 90 days; managed-database backups follow the retention period stated in the deployment record and may retain encrypted copies for that period. We do not store form submissions in any database."
+        "Inquiry emails are kept for up to 12 months after the inquiry is resolved, then deleted, unless the exchange leads to an ongoing collaboration or we are legally required to keep it longer. GIEE analytics are stored as daily aggregate visitor counts for 90 days; managed-database backups follow the retention period stated in the deployment record and may retain encrypted copies for that period. The \"analytics-seen\" entry in your browser's local storage covers only the current day and is replaced or removed the next time you visit. We do not store form submissions in any database."
       ]
     },
     {

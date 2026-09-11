@@ -73,7 +73,7 @@ if ! doctl databases firewalls list "$DB_ID" --output json \
 fi
 
 printf 'Applying the analytics database migration...\n'
-(cd "$REPO_ROOT" && NODE_ENV=production DATABASE_URL="$DB_URL" DATABASE_SSL_CA="$DB_CA" npm run giee:db:setup)
+(cd "$REPO_ROOT" && NODE_ENV=production DATABASE_URL="$DB_URL" DATABASE_SSL_CA="$DB_CA" npm run db:setup)
 
 if [[ -n "$OPERATOR_RULE_UUID" ]]; then
   printf 'Removing the temporary machine firewall rule...\n'

@@ -8,13 +8,20 @@ SPEC (Sustainable Progress & Equality Collective) frontend — a Next.js 16 webs
 
 ## Commands
 
+A `justfile` wraps all of these (`just` lists them; `just check` runs lint,
+typecheck, test, and build). The underlying npm scripts:
+
 ```bash
-npm run dev          # Local dev server (port 3000)
+npm run dev          # Local dev server (port 3322)
 npm run build        # Production build
 npm run lint         # ESLint (next/core-web-vitals)
 npm run test         # Jest + React Testing Library
 npm run test -- --watch              # Watch mode
 npm run test -- path/to/test.tsx     # Single test file
+
+npm run db:setup     # Start/reuse local Postgres in Docker, then migrate
+npm run db:generate  # Emit a migration after editing db/schema.ts
+npm run db:migrate   # Apply pending migrations to DATABASE_URL
 ```
 
 ## Environment Variables
@@ -26,6 +33,8 @@ Copy `.env.sample` to `.env.local` for local dev. The sample only includes Nodem
 - `NODE_MAILER_EMAIL` / `NODE_MAILER_PASSWORD` — Nodemailer/Gmail SMTP for the contact form
 - `NEXT_PUBLIC_API_URL` — Optional; overrides contact form API URL (defaults to `http://localhost:3000/api/contact`)
 - `GLQF_BASIC_AUTH_USER` / `GLQF_BASIC_AUTH_PASS` — Basic-auth gate for `/glqf`
+- `DATABASE_URL` — PostgreSQL connection string for the privacy-first page-view counter (`/giee` only today). Server-side only
+- `DATABASE_SSL_CA` — Managed-database CA certificate; required in production, where TLS verification is enforced
 - `GIEE_INQUIRY_EMAIL` — Optional; recipient for GIEE partner-form submissions (`formType: "giee-partner"`). Falls back to `NODE_MAILER_EMAIL` if unset. Server-side only (not `NEXT_PUBLIC_`)
 
 **Runtime, not build:** every variable above is read at **runtime** — by the `proxy.ts` middleware (basic auth) and `getServerSideProps` (Contentful) — *not* inlined at build time. In production they must be set in the **DigitalOcean App Platform** environment (see Deployment), **not** in GitHub Actions. If a basic-auth pair is unset, that page returns `503 Basic auth not configured`.
@@ -45,7 +54,8 @@ Hosted on **DigitalOcean App Platform** (app name `spec-frontend`). The app spec
 - `pages/` — Next.js Pages Router (routes, API routes, `_app.tsx`, `_document.tsx`)
 - `components/` — React components (flat structure with some subdirectories)
 - `constants/` — Static/fallback data (plain JS)
-- `service/` — Nodemailer transport (`mailService.js`)
+- `service/` — Nodemailer transport (`mailService.js`) and the analytics store (`analyticsStore.ts`)
+- `db/` — Drizzle schema (`schema.ts`), pool (`client.ts`), and generated migrations
 - `utils/` — Small helpers (contact form fetch wrapper, window utilities)
 - `styles/` — `globals.css` (Tailwind directives), `sections.js` (shared Tailwind class strings)
 - `__tests__/` — Mirrors source structure (`components/`, `pages/`)
@@ -54,6 +64,7 @@ Hosted on **DigitalOcean App Platform** (app name `spec-frontend`). The app spec
 
 - **Contentful CMS**: The homepage uses `getServerSideProps` with the `contentful` SDK to fetch hero content. Falls back to `constants/home-page-data.js` if Contentful is unavailable.
 - **Contact form**: `pages/api/contact.ts` receives POST data and sends email via Nodemailer/Gmail SMTP. The client-side wrapper is `utils/contact.ts`.
+- **Analytics**: opt-in aggregate page-view counters in PostgreSQL via Drizzle ORM. Collection is scoped to the sections registered in `utils/analytics/sections.ts` and enforced again in the database; see `docs/analytics-spec.md` before changing anything under `db/`, `utils/analytics/`, or `pages/api/page-views.ts`.
 - No data fetching library (no SWR, React Query). No global state management.
 
 ### Styling

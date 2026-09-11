@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1789094374944,
+      "tag": "0000_init_analytics",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789094381845,
+      "tag": "0001_analytics_scope_guard",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789097974168,
+      "tag": "0002_rename_views_to_visitors",
+      "breakpoints": true
+    }
+  ]
+}

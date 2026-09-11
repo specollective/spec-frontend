@@ -1,50 +1,41 @@
 import { createMocks } from "node-mocks-http";
-import handler from "../../../pages/api/giee-analytics";
-import { recordGieePageView } from "../../../service/gieeAnalyticsStore";
+import handler from "../../../pages/api/page-views";
+import { recordPageView } from "../../../service/analyticsStore";
+import { CONSENT_COOKIE } from "../../../utils/analytics/consent";
 
-jest.mock("../../../service/gieeAnalyticsStore", () => ({
-  recordGieePageView: jest.fn(),
+jest.mock("../../../service/analyticsStore", () => ({
+  recordPageView: jest.fn(),
 }));
 
-const recordMock = recordGieePageView as jest.MockedFunction<
-  typeof recordGieePageView
->;
+const recordMock = recordPageView as jest.MockedFunction<typeof recordPageView>;
+const granted = { "content-type": "application/json", cookie: `${CONSENT_COOKIE}=granted` };
 
-describe("/api/giee-analytics", () => {
+describe("/api/page-views", () => {
   beforeEach(() => {
     recordMock.mockReset();
   });
 
-  it("records a valid consented event and returns 204", async () => {
+  it("records a valid consented event with its section and returns 204", async () => {
     const { req, res } = createMocks({
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-        cookie: "giee-analytics=granted",
-      },
+      headers: granted,
       body: { path: "/giee/research", locale: "en" },
     });
 
     await handler(req, res);
 
     expect(res._getStatusCode()).toBe(204);
-    expect(recordMock).toHaveBeenCalledWith("/giee/research", "en");
+    expect(recordMock).toHaveBeenCalledWith("giee", "/giee/research", "en");
   });
 
   it.each([
     { method: "GET", body: { path: "/giee", locale: "en" } },
     { method: "POST", body: { path: "/glqf", locale: "en" } },
+    { method: "POST", body: { path: "/", locale: "en" } },
     { method: "POST", body: { path: "/giee", locale: "es" } },
     { method: "POST", body: { path: "/giee", locale: "en", extra: true } },
   ] as const)("does not record invalid event %#", async ({ method, body }) => {
-    const { req, res } = createMocks({
-      method,
-      headers: {
-        "content-type": "application/json",
-        cookie: "giee-analytics=granted",
-      },
-      body,
-    });
+    const { req, res } = createMocks({ method, headers: granted, body });
 
     await handler(req, res);
 
@@ -60,12 +51,16 @@ describe("/api/giee-analytics", () => {
     });
     await handler(noConsent.req, noConsent.res);
 
+    const denied = createMocks({
+      method: "POST",
+      headers: { "content-type": "application/json", cookie: `${CONSENT_COOKIE}=denied` },
+      body: { path: "/giee", locale: "en" },
+    });
+    await handler(denied.req, denied.res);
+
     const wrongType = createMocks({
       method: "POST",
-      headers: {
-        "content-type": "text/plain",
-        cookie: "giee-analytics=granted",
-      },
+      headers: { ...granted, "content-type": "text/plain" },
       body: { path: "/giee", locale: "en" },
     });
     await handler(wrongType.req, wrongType.res);
@@ -77,10 +72,7 @@ describe("/api/giee-analytics", () => {
     recordMock.mockRejectedValueOnce(new Error("database unavailable"));
     const { req, res } = createMocks({
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-        cookie: "giee-analytics=granted",
-      },
+      headers: granted,
       body: { path: "/giee", locale: "en" },
     });
 

@@ -1,9 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { recordGieePageView } from "../../service/gieeAnalyticsStore";
-import {
-  isGieeAnalyticsLocale,
-  normalizeGieePath,
-} from "../../utils/gieeAnalytics";
+import { recordPageView } from "../../service/analyticsStore";
+import { hasGrantedConsent } from "../../utils/analytics/consent";
+import { normalizeAnalyticsPath } from "../../utils/analytics/path";
+import { isAnalyticsLocale } from "../../utils/analytics/sections";
 
 export const config = {
   api: {
@@ -24,10 +23,6 @@ function withinRateLimit(): boolean {
   }
   windowRequests += 1;
   return windowRequests <= MAX_REQUESTS_PER_WINDOW;
-}
-
-function hasGrantedConsent(req: NextApiRequest): boolean {
-  return /(?:^|;\s*)giee-analytics=granted(?:;|$)/.test(req.headers.cookie ?? "");
 }
 
 function hasAllowedOrigin(req: NextApiRequest): boolean {
@@ -62,17 +57,17 @@ export default async function handler(
   if (!req.headers["content-type"]?.toLowerCase().startsWith("application/json")) {
     return res.status(204).end();
   }
-  if (!hasGrantedConsent(req) || !validBody(req.body)) {
+  if (!hasGrantedConsent(req.headers.cookie) || !validBody(req.body)) {
     return res.status(204).end();
   }
 
-  const path = normalizeGieePath(req.body.path);
-  if (!path || !isGieeAnalyticsLocale(req.body.locale)) {
+  const canonical = normalizeAnalyticsPath(req.body.path);
+  if (!canonical || !isAnalyticsLocale(req.body.locale)) {
     return res.status(204).end();
   }
 
   try {
-    await recordGieePageView(path, req.body.locale);
+    await recordPageView(canonical.section.slug, canonical.path, req.body.locale);
   } catch {
     // Analytics failures are intentionally invisible to visitors.
   }
