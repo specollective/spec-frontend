@@ -94,11 +94,44 @@ fi
 # parameters override PGSSLMODE, so replace the query rather than setting the
 # environment variable. verify-full checks the hostname as well as the chain.
 DB_URL_BASE="${DB_URL%%\?*}"
+CONNECTION="${DB_URL_BASE}?sslmode=verify-full&sslrootcert=${CA_FILE}"
 
-printf 'Reading the production analytics report...\n\n'
-PGOPTIONS='-c default_transaction_read_only=on' \
-  psql "${DB_URL_BASE}?sslmode=verify-full&sslrootcert=${CA_FILE}" \
-    --no-psqlrc \
-    --quiet \
-    --set ON_ERROR_STOP=1 \
-    --file "$REPORT_SQL"
+run_psql() {
+  PGOPTIONS='-c default_transaction_read_only=on' \
+    psql "$CONNECTION" --no-psqlrc --quiet --set ON_ERROR_STOP=1 "$@"
+}
+
+# Report which schema is actually deployed before running a report that assumes
+# one. Without this the operator sees a bare "relation does not exist" error
+# and has to work out which migration state produced it.
+SCHEMA_STATE="$(run_psql --tuples-only --no-align --command "
+  SELECT CASE
+    WHEN to_regclass('public.page_views') IS NOT NULL THEN 'current'
+    WHEN to_regclass('public.giee_page_views') IS NOT NULL THEN 'legacy'
+    ELSE 'none'
+  END")"
+
+case "$SCHEMA_STATE" in
+  current)
+    printf 'Reading the production analytics report...\n\n'
+    run_psql --file "$REPORT_SQL"
+    ;;
+  legacy)
+    printf 'Production is still on the pre-migration schema.\n'
+    printf 'It has giee_page_views but not page_views, so migrations 0000-0002\n'
+    printf 'have not been applied. Run just db-connect to migrate it.\n\n'
+    printf 'These raw view counts are what migration 0002 will carry over and\n'
+    printf 'relabel as visitors:\n\n'
+    run_psql --command "
+      SELECT day, path, locale, views
+      FROM giee_page_views
+      ORDER BY day DESC, views DESC, path;"
+    run_psql --command "
+      SELECT count(*) AS rows, coalesce(sum(views), 0) AS total_views
+      FROM giee_page_views;"
+    ;;
+  *)
+    printf 'Production has no analytics schema: neither page_views nor\n'
+    printf 'giee_page_views exists. Run just db-connect to migrate it.\n'
+    ;;
+esac
