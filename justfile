@@ -105,6 +105,10 @@ db-reset:
 db-report-prod:
     ./scripts/production-report.sh
 
+# Apply pending migrations to the production database, and nothing else (operator-only)
+db-migrate-prod:
+    ./scripts/production-migrate.sh
+
 # Attach the managed database to App Platform and migrate it (operator-only: needs doctl, yq, jq)
 db-connect:
     ./scripts/connect-db.sh
