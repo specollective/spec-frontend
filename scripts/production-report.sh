@@ -34,8 +34,12 @@ if [[ ! -f "$REPORT_SQL" ]]; then
   exit 1
 fi
 
-CA_FILE="$(mktemp "${TMPDIR:-/tmp}/spec-db-ca.XXXXXX.crt")"
-chmod 600 "$CA_FILE"
+# A temp *directory* rather than a temp file: BSD mktemp does not substitute
+# the X's when a suffix follows them, so "...XXXXXX.crt" yields that literal
+# name -- predictable, and colliding between runs. -d randomizes correctly and
+# is created 0700, so the CA inside it is protected by the directory.
+TMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/spec-report.XXXXXX")"
+CA_FILE="$TMP_DIR/ca.crt"
 OPERATOR_RULE_UUID=""
 
 cleanup() {
@@ -43,7 +47,7 @@ cleanup() {
     printf 'Removing the temporary machine firewall rule...\n'
     doctl databases firewalls remove "$DB_ID" --uuid "$OPERATOR_RULE_UUID" >/dev/null || true
   fi
-  rm -f "$CA_FILE"
+  rm -rf "$TMP_DIR"
   unset DB_URL
 }
 trap cleanup EXIT

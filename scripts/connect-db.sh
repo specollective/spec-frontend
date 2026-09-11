@@ -21,13 +21,17 @@ require_command curl
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-SPEC_FILE="$(mktemp "${TMPDIR:-/tmp}/spec-frontend.XXXXXX.yaml")"
+# A temp directory, not a temp file: BSD mktemp leaves the X's literal when a
+# suffix follows them, which would put the App Platform spec -- and with it
+# DATABASE_URL and the CA -- at a predictable path. -d randomizes and is 0700.
+TMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/spec-frontend.XXXXXX")"
+SPEC_FILE="$TMP_DIR/spec.yaml"
 OPERATOR_RULE_UUID=""
 cleanup() {
   if [[ -n "$OPERATOR_RULE_UUID" ]]; then
     doctl databases firewalls remove "$DB_ID" --uuid "$OPERATOR_RULE_UUID" >/dev/null || true
   fi
-  rm -f "$SPEC_FILE"
+  rm -rf "$TMP_DIR"
   unset DB_URL
   unset DB_CA
 }
