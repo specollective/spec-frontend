@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useRef, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useTranslation } from "next-i18next/pages";
 import {
   isGieeAnalyticsLocale,
@@ -10,20 +10,45 @@ import {
   writeAnalyticsConsent,
 } from "../utils/gieeAnalytics";
 
-type Consent = "granted" | "denied" | null;
+type Consent = "granted" | "denied" | "undecided" | "loading";
+
+const getClientConsent = () => readAnalyticsConsent() ?? "undecided";
+const getServerConsent = () => "loading" as const;
+
+function useConsent(): Consent {
+  return useSyncExternalStore(
+    subscribeToAnalyticsConsent,
+    getClientConsent,
+    getServerConsent
+  );
+}
 
 function ConsentPanel({
   consent,
   onChange,
-  hideWhenDecided = false,
+  isOpen,
+  onOpen,
 }: {
   consent: Consent;
   onChange: (value: "granted" | "denied") => void;
-  hideWhenDecided?: boolean;
+  isOpen: boolean;
+  onOpen: () => void;
 }) {
   const { t } = useTranslation("common");
 
-  if (hideWhenDecided && consent) return null;
+  if (consent === "loading") return null;
+
+  if (consent !== "undecided" && !isOpen) {
+    return (
+      <button
+        type="button"
+        onClick={onOpen}
+        className="fixed bottom-4 left-4 z-50 rounded-full border border-giee-ink bg-giee-paper px-4 py-2 font-giee-sans text-sm shadow-md"
+      >
+        {t("gieeAnalytics.change")}
+      </button>
+    );
+  }
 
   return (
     <aside
@@ -38,7 +63,9 @@ function ConsentPanel({
         {t("gieeAnalytics.privacy")}
       </Link>
       <p className="mt-3 font-giee-sans text-sm" aria-live="polite">
-        {consent ? t(`gieeAnalytics.${consent === "granted" ? "enabled" : "disabled"}`) : null}
+        {consent === "granted" || consent === "denied"
+          ? t(`gieeAnalytics.${consent === "granted" ? "enabled" : "disabled"}`)
+          : null}
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <button
@@ -61,26 +88,28 @@ function ConsentPanel({
 }
 
 export function GieeAnalyticsConsent() {
-  const consent = useSyncExternalStore(
-    subscribeToAnalyticsConsent,
-    readAnalyticsConsent,
-    () => null
-  );
+  const consent = useConsent();
+  const [isOpen, setIsOpen] = useState(false);
 
   function updateConsent(value: "granted" | "denied") {
     writeAnalyticsConsent(value);
+    setIsOpen(false);
   }
 
-  return <ConsentPanel consent={consent} onChange={updateConsent} />;
+  return (
+    <ConsentPanel
+      consent={consent}
+      onChange={updateConsent}
+      isOpen={isOpen}
+      onOpen={() => setIsOpen(true)}
+    />
+  );
 }
 
 export default function GieeAnalytics() {
   const router = useRouter();
-  const consent = useSyncExternalStore(
-    subscribeToAnalyticsConsent,
-    readAnalyticsConsent,
-    () => null
-  );
+  const consent = useConsent();
+  const [isOpen, setIsOpen] = useState(false);
   const lastSentPath = useRef<string | null>(null);
 
   useEffect(() => {
@@ -113,6 +142,7 @@ export default function GieeAnalytics() {
 
   function updateConsent(value: "granted" | "denied") {
     writeAnalyticsConsent(value);
+    setIsOpen(false);
     if (value === "denied") lastSentPath.current = null;
   }
 
@@ -120,7 +150,8 @@ export default function GieeAnalytics() {
     <ConsentPanel
       consent={consent}
       onChange={updateConsent}
-      hideWhenDecided
+      isOpen={isOpen}
+      onOpen={() => setIsOpen(true)}
     />
   );
 }
