@@ -29,6 +29,7 @@ cleanup() {
   fi
   rm -f "$SPEC_FILE"
   unset DB_URL
+  unset DB_CA
 }
 trap cleanup EXIT
 
@@ -50,6 +51,12 @@ if [[ -z "$DB_URL" ]]; then
   exit 1
 fi
 
+DB_CA="$(doctl databases get-ca "$DB_ID" --format Certificate --no-header)"
+if [[ -z "$DB_CA" ]]; then
+  printf 'Could not retrieve the database CA certificate.\n' >&2
+  exit 1
+fi
+
 OPERATOR_IP="$(curl -fsS https://api.ipify.org)"
 if [[ -z "$OPERATOR_IP" ]]; then
   printf 'Could not determine the current public IP address.\n' >&2
@@ -66,7 +73,7 @@ if ! doctl databases firewalls list "$DB_ID" --output json \
 fi
 
 printf 'Applying the analytics database migration...\n'
-(cd "$REPO_ROOT" && NODE_ENV=production DATABASE_URL="$DB_URL" npm run giee:db:setup)
+(cd "$REPO_ROOT" && NODE_ENV=production DATABASE_URL="$DB_URL" DATABASE_SSL_CA="$DB_CA" npm run giee:db:setup)
 
 if [[ -n "$OPERATOR_RULE_UUID" ]]; then
   printf 'Removing the temporary machine firewall rule...\n'
@@ -82,13 +89,18 @@ if ! doctl databases firewalls list "$DB_ID" --output json \
 fi
 
 printf 'Adding the encrypted DATABASE_URL runtime variable...\n'
-DB_URL="$DB_URL" yq -i '
+DB_URL="$DB_URL" DB_CA="$DB_CA" yq -i '
   (.services[] | select(.name == "server") | .envs) =
     ((. // [])
-      | map(select(.key != "DATABASE_URL"))
+      | map(select(.key != "DATABASE_URL" and .key != "DATABASE_SSL_CA"))
       + [{
           "key": "DATABASE_URL",
           "value": strenv(DB_URL),
+          "scope": "RUN_TIME",
+          "type": "SECRET"
+        }, {
+          "key": "DATABASE_SSL_CA",
+          "value": strenv(DB_CA),
           "scope": "RUN_TIME",
           "type": "SECRET"
         }])

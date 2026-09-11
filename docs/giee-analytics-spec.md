@@ -47,11 +47,12 @@ connections and configure the pool for the single App Platform service and
 the expected database connection limit.
 
 The application connects to a DigitalOcean Managed PostgreSQL cluster in the
-same region as the App Platform service. The encrypted `DATABASE_URL` runtime
-environment variable is configured in DigitalOcean and is never committed to
-the repository or exposed to the browser. TLS must be enabled for the
-connection. Database access is limited to the application service and the
-named service owner/operator accounts.
+same region as the App Platform service. The encrypted `DATABASE_URL` and
+`DATABASE_SSL_CA` runtime environment variables are configured in DigitalOcean
+and are never committed to the repository or exposed to the browser. TLS must
+be enabled and the connection must validate the cluster CA; do not disable
+certificate verification. Database access is limited to the application
+service and the named service owner/operator accounts.
 
 ## Consent decision
 
@@ -281,7 +282,8 @@ in every enabled locale before release.
 1. Create the DigitalOcean Managed PostgreSQL cluster in the App Platform
    service region.
 2. Configure private connectivity, TLS, backups, database roles, and the
-   encrypted `DATABASE_URL` runtime variable.
+   encrypted `DATABASE_URL` and `DATABASE_SSL_CA` runtime variables. Retrieve
+   the CA with `doctl databases get-ca`; do not use `rejectUnauthorized: false`.
 3. Add the `pg` dependency, `db/migrations/001_giee_page_views.sql`, and the
    idempotent `npm run giee:db:setup` script. The script loads `.env.local` or
    deployment environment variables, connects to `DATABASE_URL`, and applies

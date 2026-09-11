@@ -14,7 +14,10 @@ function getPool(): Pool {
     idleTimeoutMillis: 30000,
     ssl:
       process.env.NODE_ENV === "production"
-        ? { rejectUnauthorized: true }
+        ? {
+            ca: process.env.DATABASE_SSL_CA,
+            rejectUnauthorized: true,
+          }
         : false,
   });
   return pool;
