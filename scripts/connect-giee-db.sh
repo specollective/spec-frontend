@@ -16,6 +16,9 @@ require_command() {
 require_command doctl
 require_command yq
 require_command jq
+require_command npm
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 SPEC_FILE="$(mktemp "${TMPDIR:-/tmp}/spec-frontend.XXXXXX.yaml")"
 cleanup() {
@@ -48,6 +51,9 @@ if [[ -z "$DB_URL" ]]; then
   printf 'Could not retrieve the database connection string.\n' >&2
   exit 1
 fi
+
+printf 'Applying the analytics database migration...\n'
+(cd "$REPO_ROOT" && NODE_ENV=production DATABASE_URL="$DB_URL" npm run giee:db:setup)
 
 printf 'Adding the encrypted DATABASE_URL runtime variable...\n'
 DB_URL="$DB_URL" yq -i '
