@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next/pages";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import Layout from "../components/Layout";
 import nextI18NextConfig from "../next-i18next.config";
+import { AnalyticsConsent } from "../components/Analytics";
 
 interface PolicySection {
   heading: string;
@@ -72,6 +73,7 @@ export default function PrivacyPage() {
           </section>
         ))}
       </div>
+      <AnalyticsConsent />
     </Layout>
   );
 }

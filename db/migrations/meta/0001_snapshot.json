@@ -1,0 +1,141 @@
+{
+  "id": "03235a0e-0af2-405e-95f5-5bcae9cd36e9",
+  "prevId": "0b5cd400-0728-4a4b-a272-d8b78ed3fba4",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.analytics_sections": {
+      "name": "analytics_sections",
+      "schema": "",
+      "columns": {
+        "slug": {
+          "name": "slug",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "root_path": {
+          "name": "root_path",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "retention_days": {
+          "name": "retention_days",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 90
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "analytics_sections_root_path_unique": {
+          "name": "analytics_sections_root_path_unique",
+          "columns": [
+            "root_path"
+          ],
+          "nullsNotDistinct": false
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "analytics_sections_root_path_shape": {
+          "name": "analytics_sections_root_path_shape",
+          "value": "\"analytics_sections\".\"root_path\" ~ '^/[a-z0-9-]+$'"
+        },
+        "analytics_sections_retention_positive": {
+          "name": "analytics_sections_retention_positive",
+          "value": "\"analytics_sections\".\"retention_days\" > 0"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "public.page_views": {
+      "name": "page_views",
+      "schema": "",
+      "columns": {
+        "day": {
+          "name": "day",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "section": {
+          "name": "section",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "path": {
+          "name": "path",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "locale": {
+          "name": "locale",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "views": {
+          "name": "views",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "page_views_section_analytics_sections_slug_fk": {
+          "name": "page_views_section_analytics_sections_slug_fk",
+          "tableFrom": "page_views",
+          "columnsFrom": [
+            "section"
+          ],
+          "tableTo": "analytics_sections",
+          "columnsTo": [
+            "slug"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "page_views_day_section_path_locale_pk": {
+          "name": "page_views_day_section_path_locale_pk",
+          "columns": [
+            "day",
+            "section",
+            "path",
+            "locale"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "page_views_views_non_negative": {
+          "name": "page_views_views_non_negative",
+          "value": "\"page_views\".\"views\" >= 0"
+        }
+      },
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "views": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

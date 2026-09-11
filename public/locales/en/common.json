@@ -31,5 +31,21 @@
     "en": "English",
     "es": "Español",
     "fr": "Français"
+  },
+  "analytics": {
+    "title": "Usage measurement",
+    "body": "We would like to measure how these pages are used, anonymously. Visitors are not identified.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "enabled": "Measurement enabled.",
+    "disabled": "Measurement disabled.",
+    "change": "Change my choice",
+    "privacy": "Read the privacy policy",
+    "sections": {
+      "giee": {
+        "title": "GIEE usage measurement",
+        "body": "We would like to measure GIEE pages anonymously. Visitors are not identified."
+      }
+    }
   }
 }
