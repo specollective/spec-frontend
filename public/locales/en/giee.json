@@ -116,12 +116,10 @@
       },
       {
         "name": "Scaling & Expanding Youth-Led Critical AI Education",
-        "description": "A critical science and technology program addressing professional development for K-12 educators regarding sociotechnical harms.",
+        "description": "GLITCH (Generating Liberation through Intersectionality, Technology and Critical Hope) is a R&D lab that builds community-centered and justice-oriented AI programming for youth from under-resourced communities. It also generates, through youth co-design and participatory action research, professional development resources for educators seeking more just, joyous and transformative approaches to AI in education.",
         "partners": [
-          "UCLA",
-          "Race, Abolition, and Artificial Intelligence (RAAI) Program",
-          "Brown University",
-          "NYC WorkEd"
+          "Center for Resilience and Digital Justice (UCLA)",
+          "Community Health Informatics Data Lab (Brown University)"
         ]
       },
       {
