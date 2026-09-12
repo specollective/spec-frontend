@@ -197,15 +197,15 @@ async function main() {
   await ensureLocalDatabase();
   await waitForDatabase();
 
-  // drizzle-kit owns schema changes and its own applied-migration ledger, so
-  // this script never issues DDL itself. Application startup never migrates.
+  // Migrations own schema changes and their own applied ledger, so this
+  // script never issues DDL itself. Application startup never migrates.
   const migrated = spawnSync(
-    process.platform === "win32" ? "npx.cmd" : "npx",
-    ["drizzle-kit", "migrate"],
+    process.platform === "win32" ? "npm.cmd" : "npm",
+    ["run", "--silent", "db:migrate"],
     { stdio: "inherit", cwd: path.join(__dirname, "..") }
   );
   if (migrated.status !== 0) {
-    throw new Error("drizzle-kit migrate failed");
+    throw new Error("Migration failed");
   }
 
   process.stdout.write("Analytics database is ready.\n");

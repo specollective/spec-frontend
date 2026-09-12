@@ -75,9 +75,16 @@ export default async function handler(
     // of the request. The message and detail fields are deliberately not
     // logged, because a constraint violation puts the row's values in them.
     const code = (error as { code?: unknown } | null)?.code;
-    console.error(
-      `Analytics storage failed${typeof code === "string" ? ` (postgres ${code})` : ""}`
-    );
+    if (typeof code === "string") {
+      console.error(`Analytics storage failed (postgres ${code})`);
+    } else {
+      // No PostgreSQL code means the failure happened before any query ran --
+      // a configuration or connection fault. Such an error cannot carry row
+      // values, so its message is safe to log and is the only thing that
+      // distinguishes "misconfigured" from "database down".
+      const message = error instanceof Error ? error.message : "unknown error";
+      console.error(`Analytics storage failed: ${message}`);
+    }
   }
   return res.status(204).end();
 }

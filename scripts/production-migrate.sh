@@ -29,7 +29,7 @@ require_command doctl
 require_command psql
 require_command jq
 require_command curl
-require_command npx
+require_command npm
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
@@ -112,7 +112,7 @@ printf 'Applying pending migrations...\n'
   NODE_ENV=production \
   DATABASE_URL="$DB_URL" \
   DATABASE_SSL_CA="$DB_CA" \
-    npx drizzle-kit migrate
+    npm run --silent db:migrate
 )
 
 printf '\nSchema after: %s\n' "$(schema_state)"

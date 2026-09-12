@@ -90,7 +90,7 @@ describe("/api/page-views", () => {
     logged.mockRestore();
   });
 
-  it("still returns 204 when the failure carries no postgres code", async () => {
+  it("names the fault when it has no postgres code, e.g. misconfiguration", async () => {
     const logged = jest.spyOn(console, "error").mockImplementation(() => undefined);
     recordMock.mockRejectedValueOnce(new Error("connection refused"));
     const { req, res } = createMocks({
@@ -102,7 +102,7 @@ describe("/api/page-views", () => {
     await handler(req, res);
 
     expect(res._getStatusCode()).toBe(204);
-    expect(logged).toHaveBeenCalledWith("Analytics storage failed");
+    expect(logged).toHaveBeenCalledWith("Analytics storage failed: connection refused");
     logged.mockRestore();
   });
 });

@@ -93,23 +93,34 @@ if ! doctl databases firewalls list "$DB_ID" --output json \
 fi
 
 printf 'Adding the encrypted DATABASE_URL runtime variable...\n'
+# Top-level envs, where every other secret on this app already lives. An
+# earlier version targeted a service named "server", which does not exist --
+# the service is named after the app -- so yq matched nothing and the script
+# reported success while changing nothing.
 DB_URL="$DB_URL" DB_CA="$DB_CA" yq -i '
-  (.services[] | select(.name == "server") | .envs) =
-    ((. // [])
-      | map(select(.key != "DATABASE_URL" and .key != "DATABASE_SSL_CA"))
-      + [{
-          "key": "DATABASE_URL",
-          "value": strenv(DB_URL),
-          "scope": "RUN_TIME",
-          "type": "SECRET"
-        }, {
-          "key": "DATABASE_SSL_CA",
-          "value": strenv(DB_CA),
-          "scope": "RUN_TIME",
-          "type": "SECRET"
-        }])
+  .envs = ((.envs // [])
+    | map(select(.key != "DATABASE_URL" and .key != "DATABASE_SSL_CA"))
+    + [{
+        "key": "DATABASE_URL",
+        "value": strenv(DB_URL),
+        "scope": "RUN_TIME",
+        "type": "SECRET"
+      }, {
+        "key": "DATABASE_SSL_CA",
+        "value": strenv(DB_CA),
+        "scope": "RUN_TIME",
+        "type": "SECRET"
+      }])
 ' "$SPEC_FILE"
 
+# Fail loudly if the edit did not take. Silently deploying an unchanged spec
+# is how the missing credentials went unnoticed through several deploys.
+for required in DATABASE_URL DATABASE_SSL_CA; do
+  if ! required="$required" yq -e '.envs[] | select(.key == strenv(required))' "$SPEC_FILE" >/dev/null 2>&1; then
+    printf 'Failed to add %s to the App Platform spec; not deploying.\n' "$required" >&2
+    exit 1
+  fi
+done
 printf 'Updating App Platform and waiting for deployment...\n'
 doctl apps update "$APP_ID" --spec "$SPEC_FILE" --wait
 
