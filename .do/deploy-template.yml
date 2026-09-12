@@ -1,6 +1,19 @@
+# Reference copy of the live App Platform app. DigitalOcean holds the
+# authoritative spec; retrieve it with:
+#
+#   doctl apps spec get <APP_ID> --format yaml
+#
+# The service name must match the live app. It previously read `server`,
+# which does not exist, and scripts/connect-db.sh selected on that name --
+# so it silently failed to attach DATABASE_URL while reporting success.
+#
+# Environment variables are deliberately absent here. Every one is an
+# encrypted APP-LEVEL secret (top-level `envs`, not per service) held in
+# DigitalOcean and never committed. `just db-connect` sets DATABASE_URL and
+# DATABASE_SSL_CA programmatically.
 spec:
   name: spec-frontend
   services:
-  - name: server
+  - name: spec-frontend
     features:
       - buildpack-stack=ubuntu-22
