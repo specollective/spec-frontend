@@ -8,7 +8,7 @@
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "db:setup": "node scripts/setup-db.js",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
+    "db:migrate": "tsx scripts/migrate.ts",
     "lint": "eslint .",
     "test": "jest"
   },
@@ -52,7 +52,8 @@
     "drizzle-kit": "^0.31.10",
     "jest-axe": "^10.0.0",
     "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "tsx": "^4.0.0"
   },
   "engines": {
     "node": ">=20.9.0"
