@@ -41,11 +41,17 @@ Copy `.env.sample` to `.env.local` for local dev. The sample only includes Nodem
 
 ## Deployment
 
-Hosted on **DigitalOcean App Platform** (app name `spec-frontend`). The app spec is committed at `.do/deploy-template.yml` — a single `server` service on the Ubuntu-22 buildpack stack. The buildpack runs `npm run build` then `npm start` (`next start -H 0.0.0.0 -p ${PORT:-8080}`), i.e. a long-running Node server — *not* a static export and *not* Vercel.
+Hosted on **DigitalOcean App Platform** (app name `spec-frontend`). A reference copy of the spec is committed at `.do/deploy-template.yml`, but **DigitalOcean holds the authoritative one** (`doctl apps spec get <APP_ID> --format yaml`). It is a single service, also named `spec-frontend`, on the Ubuntu-22 buildpack stack. The buildpack runs `npm run build` then `npm start` (`next start -H 0.0.0.0 -p ${PORT:-8080}`), i.e. a long-running Node server — *not* a static export and *not* Vercel.
 
-- **Production env vars** (Contentful, Nodemailer, `GLQF_BASIC_AUTH_*`) are configured in the DigitalOcean dashboard: App Platform → `spec-frontend` → Settings → the `server` component → **Environment Variables** (mark secrets as encrypted), then redeploy. They are **not** in the repo and **not** in GitHub Actions.
+- **Production env vars** live at the **app level** (top-level `envs` in the spec), *not* on the service: App Platform → `spec-frontend` → Settings → **App-Level Environment Variables** (mark secrets as encrypted), then redeploy. They are **not** in the repo and **not** in GitHub Actions.
+- **`DATABASE_URL` / `DATABASE_SSL_CA` are set programmatically** by `just db-connect`, which reads them from the managed database and writes them into the spec. Do not add them by hand.
+- **Operator commands** (need `doctl` authenticated, plus `psql`/`jq`/`yq`):
+  - `just db-connect` — attach the managed database: sets `DATABASE_URL`/`DATABASE_SSL_CA`, migrates, redeploys.
+  - `just db-migrate-prod` — apply pending migrations only; no spec change, no redeploy.
+  - `just db-report-prod` — read-only analytics report from production.
+  Each temporarily opens the database firewall to your IP and closes it on exit.
 - **GitHub Actions does not deploy.** The only workflows are `build.yml` (compiles, with Contentful build-env) and `lint.yml`; neither ships to production. DigitalOcean redeploys on push to the deploy branch via its own GitHub integration.
-- **To add a new gated page or secret:** read the new `process.env.*` var in `proxy.ts`, then add the value in the DO dashboard for the `server` component.
+- **To add a new gated page or secret:** read the new `process.env.*` var in `proxy.ts`, then add the value as an app-level variable in the DO dashboard.
 
 ## Architecture
 

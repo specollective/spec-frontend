@@ -42,10 +42,12 @@ These are all read at **runtime** (by `proxy.ts` and `getServerSideProps`), so i
 
 ## Deployment
 
-Deployed on **DigitalOcean App Platform** (app `spec-frontend`). The app spec is committed at `.do/deploy-template.yml` (single `server` service, Ubuntu-22 buildpack); the buildpack runs `npm run build` then `npm start`. DigitalOcean redeploys automatically from GitHub — the repo's GitHub Actions (`build.yml`, `lint.yml`) only build and lint, they do **not** deploy.
+Deployed on **DigitalOcean App Platform** (app `spec-frontend`). A reference copy of the spec is committed at `.do/deploy-template.yml` (single service named `spec-frontend`, Ubuntu-22 buildpack) — DigitalOcean holds the authoritative one; the buildpack runs `npm run build` then `npm start`. DigitalOcean redeploys automatically from GitHub — the repo's GitHub Actions (`build.yml`, `lint.yml`) only build and lint, they do **not** deploy.
 
 Production environment variables (Contentful, Nodemailer, and the `GLQF_/GIEE_BASIC_AUTH_*` gates) are managed in the DigitalOcean dashboard:
 
-> App Platform → `spec-frontend` → Settings → `server` component → Environment Variables (mark secrets as encrypted), then redeploy.
+> App Platform → `spec-frontend` → Settings → **App-Level Environment Variables** (mark secrets as encrypted), then redeploy.
+
+They are app-level, not attached to the service. `DATABASE_URL` and `DATABASE_SSL_CA` are the exception to the manual process: `just db-connect` reads them from the managed database and writes them into the spec for you.
 
 If a basic-auth pair is missing, that page returns `503 Basic auth not configured`.
