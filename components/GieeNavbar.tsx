@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: "/giee#overview", key: "overview" },
   { href: "/giee#pillars", key: "pillars" },
   { href: "/giee/research", key: "research" },
+  { href: "/giee/news", key: "news" },
   { href: "/giee/partner", key: "partner" },
 ];
 

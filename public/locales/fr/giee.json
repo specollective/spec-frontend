@@ -4,6 +4,7 @@
     "overview": "Présentation",
     "pillars": "Piliers",
     "research": "Recherche",
+    "news": "Actualités",
     "partner": "Partenaire",
     "ariaLabel": "Navigation GIEE",
     "mobileAriaLabel": "Navigation mobile GIEE",
@@ -157,6 +158,16 @@
         ]
       }
     ]
+  },
+  "news": {
+    "back": "← Retour au GIEE",
+    "backToNews": "← Retour aux actualités",
+    "eyebrow": "Actualités du GIEE",
+    "heading": "Actualités et perspectives",
+    "intro": "Actualités, notes de recherche et apprentissages partagés du Global Inclusive Education Ecosystem.",
+    "readArticle": "Lire l'article",
+    "by": "par",
+    "empty": "De nouveaux articles arrivent bientôt."
   },
   "partnerForm": {
     "fields": {
