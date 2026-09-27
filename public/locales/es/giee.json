@@ -4,6 +4,7 @@
     "overview": "Resumen",
     "pillars": "Pilares",
     "research": "Investigación",
+    "news": "Noticias",
     "partner": "Colabora",
     "ariaLabel": "Navegación de GIEE",
     "mobileAriaLabel": "Navegación móvil de GIEE",
@@ -157,6 +158,16 @@
         ]
       }
     ]
+  },
+  "news": {
+    "back": "← Volver a GIEE",
+    "backToNews": "← Volver a noticias",
+    "eyebrow": "Noticias de GIEE",
+    "heading": "Noticias y perspectivas",
+    "intro": "Actualizaciones, notas de investigación y aprendizajes compartidos del Global Inclusive Education Ecosystem.",
+    "readArticle": "Leer artículo",
+    "by": "por",
+    "empty": "Pronto habrá nuevos artículos."
   },
   "partnerForm": {
     "fields": {
