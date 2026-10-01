@@ -79,11 +79,13 @@ export default function GieePartnerLogos({
   className?: string;
 }) {
   const { t } = useTranslation("giee");
+  // `isolate` keeps the logos' multiply blend inside these opaque grids: a
+  // blend that reaches main would break the hero glass blur (see GlassLayers).
   return (
     <div className={className}>
       <ul
         aria-label={t("partnerLogos.primary")}
-        className="m-0 grid list-none grid-cols-3 gap-px border-b border-t-[1.5px] border-b-giee-rule border-t-giee-navy bg-giee-rule p-0"
+        className="isolate m-0 grid list-none grid-cols-3 gap-px border-b border-t-[1.5px] border-b-giee-rule border-t-giee-navy bg-giee-rule p-0"
       >
         {PRIMARY.map((p) => (
           <li
@@ -96,7 +98,7 @@ export default function GieePartnerLogos({
       </ul>
       <ul
         aria-label={t("partnerLogos.others")}
-        className="m-0 grid list-none grid-cols-2 gap-px border-b border-giee-rule bg-giee-rule p-0 sm:grid-cols-5 lg:grid-cols-10"
+        className="isolate m-0 grid list-none grid-cols-2 gap-px border-b border-giee-rule bg-giee-rule p-0 sm:grid-cols-5 lg:grid-cols-10"
       >
         {PARTNERS.map((p) => (
           <li

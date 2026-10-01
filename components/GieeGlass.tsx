@@ -161,6 +161,12 @@ export function GlassLayers({
           );
         }
         const isGlow = layer.kind === "glow";
+        // Shadows are pure black, so plain alpha compositing gives exactly what
+        // mix-blend-mode: multiply would. Don't add a blend mode back: in
+        // Chromium a blended descendant makes the stacking context it sits in
+        // (main, the footer) an isolated group, and the glass pieces' backdrop
+        // blur then stops picking up the pieces behind them (sharp edges show
+        // through the frosted glass).
         return (
           <svg
             key={i}
@@ -169,9 +175,7 @@ export function GlassLayers({
             width={width}
             height={height}
             viewBox={`0 0 ${width} ${height}`}
-            className={`pointer-events-none absolute left-0 top-0 overflow-visible ${
-              isGlow ? "" : "mix-blend-multiply"
-            }`}
+            className="pointer-events-none absolute left-0 top-0 overflow-visible"
             style={isGlow ? undefined : { opacity: layer.opacity }}
           >
             <path
