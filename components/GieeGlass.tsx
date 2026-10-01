@@ -1,5 +1,5 @@
 // Building blocks for the GIEE v3 "glass pebble" compositions: translucent,
-// grainy pieces that overlap and cast noisy shadows on one another.
+// grainy pieces that overlap, with blurred grainy navy blobs between them.
 //
 // The compositions are drawn on fixed design boards (1440 px desktop, 390 px
 // phone). <ScaledBoard> keeps that geometry intact and scales the whole board
@@ -24,8 +24,8 @@ const ALL_LAYERS = [
   ...CTA_PHONE_BACK,
   ...CTA_PHONE_FRONT,
 ];
-const SHADOW_BLURS = Array.from(
-  new Set(ALL_LAYERS.filter((l) => l.kind === "shadow").map((l) => l.blur)),
+const BLOB_BLURS = Array.from(
+  new Set(ALL_LAYERS.filter((l) => l.kind === "blob").map((l) => l.blur)),
 );
 const GLOW_BLURS = Array.from(
   new Set(ALL_LAYERS.filter((l) => l.kind === "glow").map((l) => l.blur)),
@@ -45,52 +45,45 @@ export function GieeFilters() {
       className="pointer-events-none absolute h-0 w-0 overflow-hidden"
     >
       <defs>
-        {/* Noisy shadow: a soft blur whose edge dissolves into dots. */}
-        {SHADOW_BLURS.map((blur) => (
+        {/* Blob: the shape, blurred, with a speckle grain over it (in the
+            glass grain's scale), so its soft edge breaks up into dots:
+            alpha = blurred alpha × (0.55 + 0.9 × speckle). */}
+        {BLOB_BLURS.map((blur) => (
           <filter
             key={blur}
-            id={`giee-shadow-${blur}`}
-            x="-40%"
-            y="-40%"
-            width="180%"
-            height="180%"
+            id={`giee-blob-${blur}`}
+            x="-100%"
+            y="-100%"
+            width="300%"
+            height="300%"
             colorInterpolationFilters="sRGB"
           >
-            <feGaussianBlur in="SourceAlpha" stdDeviation={blur} result="b" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation={blur} result="b" />
             <feTurbulence
               type="fractalNoise"
               baseFrequency="0.9"
               numOctaves={1}
-              seed={35}
+              seed={11}
               result="t"
             />
             <feColorMatrix
               in="t"
               type="matrix"
-              values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3.3 0 0 0 -1.15"
-              result="tn"
+              values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 0 0 0 0"
+              result="n"
             />
+            <feComponentTransfer in="n" result="dots">
+              <feFuncA type="discrete" tableValues="0 0 0 1 1" />
+            </feComponentTransfer>
             <feComposite
               in="b"
-              in2="tn"
+              in2="dots"
               operator="arithmetic"
-              k1={0}
-              k2={1.15}
-              k3={-1}
+              k1={0.9}
+              k2={0.55}
+              k3={0}
               k4={0}
-              result="diff"
             />
-            <feComponentTransfer in="diff" result="sp">
-              <feFuncA type="discrete" tableValues="0 0.42 0.55 0.62" />
-            </feComponentTransfer>
-            <feFlood floodColor="#000000" result="k" />
-            <feComposite in="k" in2="sp" operator="in" result="dots" />
-            <feFlood floodColor="#000000" floodOpacity={0.22} result="k2" />
-            <feComposite in="k2" in2="b" operator="in" result="soft" />
-            <feMerge>
-              <feMergeNode in="soft" />
-              <feMergeNode in="dots" />
-            </feMerge>
           </filter>
         ))}
 
@@ -120,6 +113,17 @@ export function Grain({ navy = false }: { navy?: boolean }) {
         navy ? "giee-grain-navy" : "giee-grain"
       }`}
     />
+  );
+}
+
+/** Rounded rectangle path; radii [tl, tr, br, bl] default to a pill. */
+function pebblePath(w: number, h: number, r?: [number, number, number, number]) {
+  const max = Math.min(w, h) / 2;
+  const [a, b, c, d] = (r ?? [max, max, max, max]).map((v) => Math.min(v, max));
+  return (
+    `M${a} 0H${w - b}A${b} ${b} 0 0 1 ${w} ${b}V${h - c}` +
+    `A${c} ${c} 0 0 1 ${w - c} ${h}H${d}A${d} ${d} 0 0 1 0 ${h - d}` +
+    `V${a}A${a} ${a} 0 0 1 ${a} 0Z`
   );
 }
 
@@ -160,13 +164,36 @@ export function GlassLayers({
             </div>
           );
         }
-        const isGlow = layer.kind === "glow";
-        // Shadows are pure black, so plain alpha compositing gives exactly what
-        // mix-blend-mode: multiply would. Don't add a blend mode back: in
-        // Chromium a blended descendant makes the stacking context it sits in
-        // (main, the footer) an isolated group, and the glass pieces' backdrop
-        // blur then stops picking up the pieces behind them (sharp edges show
-        // through the frosted glass).
+        if (layer.kind === "blob") {
+          // Own small SVG (bbox + room for the blur) rather than a full-board
+          // one, so the filter only runs where the blob is. No blend mode:
+          // navy over the pieces at low alpha already darkens them, and in
+          // Chromium a blended descendant stops the glass pieces' backdrop
+          // blur from seeing the pieces behind them.
+          const pad = Math.ceil(layer.blur * 3);
+          const { x, y, w, h } = layer;
+          return (
+            <svg
+              key={i}
+              aria-hidden="true"
+              focusable="false"
+              width={w + pad * 2}
+              height={h + pad * 2}
+              className="pointer-events-none absolute overflow-visible"
+              style={{ left: x - pad, top: y - pad }}
+            >
+              <path
+                transform={`translate(${pad} ${pad})${
+                  layer.rotate ? ` rotate(${layer.rotate} ${w / 2} ${h / 2})` : ""
+                }`}
+                d={pebblePath(w, h, layer.r)}
+                fill="#111322"
+                fillOpacity={layer.opacity}
+                filter={`url(#giee-blob-${layer.blur})`}
+              />
+            </svg>
+          );
+        }
         return (
           <svg
             key={i}
@@ -176,14 +203,13 @@ export function GlassLayers({
             height={height}
             viewBox={`0 0 ${width} ${height}`}
             className="pointer-events-none absolute left-0 top-0 overflow-visible"
-            style={isGlow ? undefined : { opacity: layer.opacity }}
           >
             <path
               transform={layer.transform}
               d={layer.d}
-              fill={isGlow ? "#1640C0" : "#FFFFFF"}
-              fillOpacity={isGlow ? layer.fillOpacity : undefined}
-              filter={`url(#giee-${layer.kind}-${layer.blur})`}
+              fill="#1640C0"
+              fillOpacity={layer.fillOpacity}
+              filter={`url(#giee-glow-${layer.blur})`}
             />
           </svg>
         );
