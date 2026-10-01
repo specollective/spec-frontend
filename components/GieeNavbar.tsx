@@ -336,9 +336,9 @@ export default function GieeNavbar() {
                 href="/giee"
                 aria-label={t("nav.home")}
                 aria-current={section === "home" ? "page" : undefined}
-                className="pointer-events-auto absolute left-[57px] top-[50px] flex items-start gap-[12px] rounded-[6px]"
+                className="pointer-events-auto absolute left-[57px] top-[40px] flex h-[40px] items-center gap-[12px] rounded-[6px]"
               >
-                <GieeMark tone="cream" className="mt-[5px] h-[38px] w-[58px]" />
+                <GieeMark tone="cream" className="h-[38px] w-[58px] flex-none" />
                 <Wordmark size="desktop" />
               </Link>
 
@@ -380,7 +380,7 @@ export default function GieeNavbar() {
           </div>
 
           {/* Phone and tablet: a compact bar with three small buttons. */}
-          <div className="relative lg:hidden">
+          <div className="relative pt-[10px] lg:hidden">
             <div
               aria-hidden="true"
               className={`absolute inset-x-[10px] top-[10px] h-[76px] rounded-[24px_24px_130px_24px] shadow-[0_18px_36px_-18px_rgba(17,19,34,0.55)] ${compactShadow}`}
@@ -389,7 +389,7 @@ export default function GieeNavbar() {
               aria-hidden="true"
               className={`pointer-events-auto absolute inset-x-[10px] top-[10px] h-[var(--mh)] rounded-[24px_24px_130px_24px] bg-giee-navy [clip-path:inset(0_0_calc(var(--mh)_-_76px)_0)] ${shown}`}
             />
-            <div className="pointer-events-auto relative mx-[10px] mt-[10px] flex h-[76px] items-center justify-between gap-2 pl-4 pr-[10px]">
+            <div className="pointer-events-auto relative mx-[10px] flex h-[76px] items-center justify-between gap-2 pl-4 pr-[10px]">
               <Link
                 href="/giee"
                 aria-label={t("nav.home")}
