@@ -5,6 +5,8 @@ import type { ReactElement } from "react";
 import Home from "../../pages/index";
 import OurTeam from "../../pages/ourTeam";
 import GieePage from "../../pages/giee";
+import GieeResearchPage from "../../pages/giee/research";
+import GieePartnerPage from "../../pages/giee/partner";
 import GlqfPage from "../../pages/glqf";
 
 // Renders each page that mounts without server-side props and asserts that
@@ -13,6 +15,8 @@ const pages: [string, () => ReactElement][] = [
   ["index", Home],
   ["ourTeam", OurTeam],
   ["giee", GieePage],
+  ["giee/research", GieeResearchPage],
+  ["giee/partner", GieePartnerPage],
   ["glqf", GlqfPage],
 ];
 
