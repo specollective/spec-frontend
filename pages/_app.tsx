@@ -26,12 +26,15 @@ const dmSerifText = DM_Serif_Text({
   display: "swap",
 });
 
+// Poppins is only used at weight 500 (the navbar wordmark), so only that
+// file is generated, and it is not preloaded on every page.
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: "500",
+  style: "normal",
   variable: "--font-poppins",
   display: "swap",
+  preload: false,
 });
 
 function App({ Component, pageProps }: AppProps) {

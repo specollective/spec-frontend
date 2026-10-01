@@ -79,7 +79,8 @@ Hosted on **DigitalOcean App Platform** (app name `spec-frontend`). A reference 
 - One CSS Modules outlier: `JoerFormHeader.module.css`.
 - Shared Tailwind class strings are in `styles/sections.js` (exported as `sectionClasses`).
 - Brand colors use the `spec.*` namespace in `tailwind.config.js` (e.g., `spec-turquoise`, `spec-yellow`).
-- Custom font families: `font-montserrat`, `font-dmserif`, `font-poppins` (loaded from Google Fonts in `_document.tsx`).
+- Custom font families: `font-montserrat`, `font-dmserif`, `font-poppins` (self-hosted via `next/font/google` in `_app.tsx`).
+- **GIEE (`/giee`, v3 "Swiss pebbles" design):** `font-giee` is Overused Grotesk (SIL OFL), self-hosted from `styles/fonts/` via `next/font/local` in `components/gieeFont.ts`; colours live under `giee.*` (`giee-navy`, `giee-cream`, `giee-ground`, …). The glass compositions are design-board coordinates in `constants/giee-glass.ts`, rendered by `components/GieeGlass.tsx` (`ScaledBoard` scales a 1440 px / 390 px board to the viewport in pure CSS). Page copy is in `public/locales/*/giee.json`.
 
 ### Typography Components
 
@@ -98,9 +99,17 @@ Contact form uses **Formik + Yup** for form state and validation (`components/Co
 - Components are TypeScript (`.tsx`); some utilities and constants are plain JS
 - No path aliases — use relative imports
 - `proxy.ts` (Next 16's renamed middleware — runs at runtime) redirects `www.` to the apex domain and gates `/glqf` behind HTTP basic auth
-- `next.config.js` has `trailingSlash: true` and `images: { unoptimized: true }`
+- `next.config.js` has `trailingSlash: true`; the Next image optimizer is **on** (sharp, AVIF/WebP), so prefer `next/image` with raster sources. SVGs are served as-is — don't embed photos in SVG wrappers.
 - ESLint config is minimal: just `next/core-web-vitals`
 - CI runs build and lint on every push/PR (GitHub Actions) but does **not** run tests
+
+## SEO
+
+- `components/AppHead.tsx` renders every page's head: title (`<title> | SPEC`), meta description, robots, canonical, `hreflang` alternates for every enabled locale plus `x-default`, Open Graph/Twitter, and a JSON-LD `@graph` (SPEC `NGO`, `WebSite`, `WebPage`, plus page nodes passed via `jsonLd`). URLs are derived from the router — pages only pass `title`/`description` (via `Layout`, `GieeLayout`, `GlqfLayout`).
+- Helpers for absolute URLs and schema.org nodes are in `utils/seo.ts`.
+- `/sitemap.xml` (`pages/sitemap.xml.tsx`, built by `utils/sitemap.ts`) lists `SITEMAP_ROUTES` from `constants/seo.js` once per locale with hreflang alternates. `public/robots.txt` points to it.
+- `INDEXABLE` in `constants/seo.js` gates incubating sections: when a flag is `false` the section is `noindex` and left out of the sitemap. Flip it to launch. **GIEE is `false` today.**
+- Give every new page a unique title (≈ 50–60 chars with the suffix) and description (≈ 120–160 chars) in its locale file, and add it to `SITEMAP_ROUTES`.
 
 ## Known Quirks
 
