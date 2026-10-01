@@ -129,7 +129,7 @@ export default function GieeNavbar() {
 
             <nav
               aria-label={t("nav.ariaLabel")}
-              className="pointer-events-auto absolute left-[806px] top-[40px] flex h-[40px] items-center gap-[28px] text-[18px] font-bold uppercase leading-[0.9] tracking-[0.05em]"
+              className="pointer-events-auto absolute right-[350px] top-[40px] flex h-[40px] items-center gap-[28px] text-[18px] font-bold uppercase leading-[0.9] tracking-[0.05em]"
             >
               {links.map((l) => (
                 <Link

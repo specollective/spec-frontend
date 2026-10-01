@@ -18,7 +18,7 @@
     "ariaLabel": "Principal",
     "about": "Acerca de",
     "research": "Investigación",
-    "partnerCta": "Colabora con nosotros",
+    "partnerCta": "Colabora",
     "home": "Global Inclusive Education Ecosystem, inicio",
     "wordmarkLine1": "Global Inclusive",
     "wordmarkLine2": "Education Ecosystem",
@@ -28,9 +28,9 @@
   },
   "hero": {
     "titleLines": [
-      "Construimos una IA",
-      "segura e inclusiva",
-      "para la educación"
+      "Una IA segura",
+      "e inclusiva para",
+      "la educación"
     ],
     "together": "juntos",
     "lede": "Estudios de caso en tres continentes alimentan un conjunto de reglas comunes, acordadas en el Foro de Ginebra de la ONU.",

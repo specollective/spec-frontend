@@ -220,7 +220,7 @@ export function ScaledBoard({
   } as CSSProperties;
   return (
     <div
-      className={`relative w-full overflow-hidden [aspect-ratio:var(--ar)] lg:[aspect-ratio:var(--lar)] ${className}`}
+      className={`relative w-full overflow-hidden lg:overflow-visible [aspect-ratio:var(--ar)] lg:[aspect-ratio:var(--lar)] ${className}`}
       style={vars}
     >
       <div

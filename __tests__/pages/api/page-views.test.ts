@@ -32,7 +32,7 @@ describe("/api/page-views", () => {
     { method: "GET", body: { path: "/giee", locale: "en" } },
     { method: "POST", body: { path: "/glqf", locale: "en" } },
     { method: "POST", body: { path: "/", locale: "en" } },
-    { method: "POST", body: { path: "/giee", locale: "es" } },
+    { method: "POST", body: { path: "/giee", locale: "de" } },
     { method: "POST", body: { path: "/giee", locale: "en", extra: true } },
   ] as const)("does not record invalid event %#", async ({ method, body }) => {
     const { req, res } = createMocks({ method, headers: granted, body });

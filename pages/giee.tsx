@@ -56,7 +56,9 @@ function Together({ word }: { word: string }) {
         el.style.fontSize = current;
         return;
       }
-      const next = w > TOGETHER_MEASURE ? (TOGETHER_SIZE * TOGETHER_MEASURE) / w : TOGETHER_SIZE;
+      // Only shrink: growing a short word ("juntos") would push its
+      // descender over the caption beneath it.
+      const next = Math.min((TOGETHER_SIZE * TOGETHER_MEASURE) / w, TOGETHER_SIZE);
       el.style.fontSize = `${next}px`;
       setSize(next);
     };
