@@ -27,7 +27,7 @@ export default function PrivacyPage() {
   const intro = t("intro", { returnObjects: true }) as string[];
   const sections = t("sections", { returnObjects: true }) as PolicySection[];
   return (
-    <Layout title={t("title")}>
+    <Layout title={t("title")} description={t("description")}>
       <div className="max-w-screen-md mx-auto px-6 py-16 md:py-24">
         <h1 className="font-dmserif text-4xl md:text-5xl">{t("title")}</h1>
         <p className="mt-4 font-montserrat text-sm text-spec-gray">

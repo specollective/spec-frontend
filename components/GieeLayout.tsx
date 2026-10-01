@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-import Head from "next/head";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next/pages";
 import AppHead from "./AppHead";
 import GieeNavbar from "./GieeNavbar";
@@ -21,20 +19,14 @@ export default function GieeLayout({
   description,
 }: GieeLayoutProps) {
   const { t } = useTranslation("common");
-  const { asPath } = useRouter();
   return (
     <>
       <AppHead
         title={title}
         description={description}
         image={GIEE_OG_IMAGE}
-        path={asPath}
+        noindex={!INDEXABLE.giee}
       />
-      {!INDEXABLE.giee && (
-        <Head>
-          <meta name="robots" content="noindex, nofollow" />
-        </Head>
-      )}
       <a href="#main-content" className="skip-link">
         {t("skipToContent")}
       </a>

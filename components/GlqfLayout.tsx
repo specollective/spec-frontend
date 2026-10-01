@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Head from "next/head";
 import { useTranslation } from "next-i18next/pages";
 import AppHead from "./AppHead";
 import GlqfNavbar from "./GlqfNavbar";
@@ -15,12 +14,7 @@ export default function GlqfLayout({ children, title }: GlqfLayoutProps) {
   const { t } = useTranslation("common");
   return (
     <>
-      <AppHead title={title} />
-      {!INDEXABLE.glqf && (
-        <Head>
-          <meta name="robots" content="noindex, nofollow" />
-        </Head>
-      )}
+      <AppHead title={title} noindex={!INDEXABLE.glqf} />
       <a href="#main-content" className="skip-link">
         {t("skipToContent")}
       </a>
