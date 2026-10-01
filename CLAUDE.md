@@ -80,7 +80,7 @@ Hosted on **DigitalOcean App Platform** (app name `spec-frontend`). A reference 
 - Shared Tailwind class strings are in `styles/sections.js` (exported as `sectionClasses`).
 - Brand colors use the `spec.*` namespace in `tailwind.config.js` (e.g., `spec-turquoise`, `spec-yellow`).
 - Custom font families: `font-montserrat`, `font-dmserif`, `font-poppins` (self-hosted via `next/font/google` in `_app.tsx`).
-- **GIEE (`/giee`, v3 "Swiss pebbles" design):** `font-giee` is Overused Grotesk (SIL OFL), self-hosted from `styles/fonts/` via `next/font/local` in `components/gieeFont.ts`; colours live under `giee.*` (`giee-navy`, `giee-cream`, `giee-ground`, …). The glass compositions are design-board coordinates in `constants/giee-glass.ts`, rendered by `components/GieeGlass.tsx` (`ScaledBoard` scales a 1440 px / 390 px board to the viewport in pure CSS). Page copy is in `public/locales/*/giee.json`.
+- **GIEE (`/giee`, v3 "Swiss pebbles" design):** `font-giee` is Overused Grotesk (SIL OFL), self-hosted from `styles/fonts/` via `next/font/local` in `components/gieeFont.ts`; colours live under `giee.*` (`giee-navy`, `giee-cream`, `giee-ground`, …). The glass compositions are design-board coordinates in `constants/giee-glass.ts`, rendered by `components/GieeGlass.tsx` (`ScaledBoard` scales a 1440 px / 390 px board to the viewport in pure CSS). Page copy is in `public/locales/*/giee.json`. The fixed header (`GieeNavbar`) morphs out of the hero panel on scroll: it measures the static panel GieeHero marks with `data-giee-panel`, then draws it itself (one copy behind `main`, one clipped to the header band above it), so `main` and the footer sit at `z-[2]` inside the `isolate`d page wrapper.
 
 ### Typography Components
 

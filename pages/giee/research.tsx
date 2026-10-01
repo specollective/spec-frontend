@@ -72,7 +72,7 @@ export default function GieeResearchPage() {
               <li
                 key={s.slug}
                 id={s.slug}
-                className={`flex scroll-mt-6 flex-col px-6 pb-8 pt-7 lg:px-12 lg:pb-12 lg:pt-11 ${
+                className={`flex scroll-mt-32 flex-col px-6 pb-8 pt-7 lg:px-12 lg:pb-12 lg:pt-11 ${
                   right
                     ? "rounded-[24px_170px_24px_24px/24px_140px_24px_24px] lg:translate-y-32 lg:rounded-[36px_280px_36px_36px/36px_240px_36px_36px]"
                     : "rounded-[24px_24px_170px_24px/24px_24px_140px_24px] lg:rounded-[36px_36px_280px_36px/36px_36px_240px_36px]"

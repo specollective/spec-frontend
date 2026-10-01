@@ -178,7 +178,7 @@ export default function GieePage() {
       <section
         id="about"
         aria-labelledby="about-title"
-        className={`${sectionPad} scroll-mt-6 lg:pt-[152px]`}
+        className={`${sectionPad} scroll-mt-32 lg:pt-[152px]`}
       >
         <div aria-hidden="true" className="border-t-2 border-giee-navy" />
         <div className="mt-6 lg:mt-12 lg:grid lg:grid-cols-12 lg:gap-x-6">
@@ -245,7 +245,7 @@ export default function GieePage() {
       <section
         id="beliefs"
         aria-labelledby="beliefs-title"
-        className={`${sectionPad} scroll-mt-6 lg:pt-[168px]`}
+        className={`${sectionPad} scroll-mt-32 lg:pt-[168px]`}
       >
         <div aria-hidden="true" className="border-t-2 border-giee-navy" />
         <div className="mt-6 lg:mt-12 lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-6">
@@ -307,7 +307,7 @@ export default function GieePage() {
       <section
         id="research"
         aria-labelledby="research-title"
-        className={`${sectionPad} scroll-mt-6 lg:pt-[104px]`}
+        className={`${sectionPad} scroll-mt-32 lg:pt-[104px]`}
       >
         <div aria-hidden="true" className="border-t-2 border-giee-navy" />
         <div className="mt-6 lg:mt-14 lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-6">

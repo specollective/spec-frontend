@@ -54,8 +54,11 @@ export default function GieeHero({
     >
       <div className="hidden lg:block">
         <ScaledBoard width={1440} height={boardHeight}>
+          {/* Static panel: the no-JS look, and the size GieeNavbar morphs from. */}
           <div
             aria-hidden="true"
+            data-giee-panel="desktop"
+            data-h={panelHeight}
             className="absolute left-[20px] top-[20px] w-[1100px] rounded-[36px_36px_300px_36px] bg-giee-navy"
             style={{ height: panelHeight }}
           />
@@ -63,7 +66,9 @@ export default function GieeHero({
         </ScaledBoard>
       </div>
 
-      <div className="relative mx-[10px] mt-[10px] rounded-[24px_24px_130px_24px] bg-giee-navy px-4 pb-[21.3cqw] pt-[88px] lg:contents">
+      <div
+        data-giee-panel="phone"
+        className="relative mx-[10px] mt-[10px] rounded-[24px_24px_130px_24px] bg-giee-navy px-4 pb-[21.3cqw] pt-[88px] lg:contents">
         <h1
           id={id}
           style={titleVars}

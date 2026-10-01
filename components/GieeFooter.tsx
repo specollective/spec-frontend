@@ -128,7 +128,7 @@ export default function GieeFooter() {
   return (
     <div
       id="partner"
-      className={`giee-on-navy relative text-giee-navy ${
+      className={`giee-on-navy relative z-[2] text-giee-navy ${
         variant === "home" ? "mt-[88px]" : "mt-24 lg:mt-[168px]"
       }`}
     >

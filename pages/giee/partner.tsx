@@ -64,7 +64,7 @@ export default function GieePartnerPage() {
       <section
         id="p-form"
         aria-label={t("partner.sectionLabel")}
-        className="mx-auto max-w-[1440px] scroll-mt-6 px-4 pt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-6 lg:px-16 lg:pt-24"
+        className="mx-auto max-w-[1440px] scroll-mt-32 px-4 pt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-6 lg:px-16 lg:pt-24"
       >
         <ul className="m-0 list-none border-t-[1.5px] border-giee-navy p-0 lg:col-span-5">
           {features.map((f, i) => (

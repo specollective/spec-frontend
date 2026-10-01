@@ -41,7 +41,7 @@ export default function GieeLayout({
         {t("skipToContent")}
       </a>
       <div
-        className={`${gieeFont.variable} giee relative overflow-x-clip font-giee text-giee-navy antialiased selection:bg-giee-orange selection:text-giee-navy`}
+        className={`${gieeFont.variable} giee relative isolate overflow-x-clip font-giee text-giee-navy antialiased selection:bg-giee-orange selection:text-giee-navy`}
         style={{
           background: `#FAF8F1 linear-gradient(180deg, #F1ECDB 0px, #F1ECDB ${Math.round(
             fade * 0.11,
@@ -51,7 +51,7 @@ export default function GieeLayout({
       >
         <GieeFilters />
         <GieeNavbar />
-        <main id="main-content" tabIndex={-1} className="outline-none">
+        <main id="main-content" tabIndex={-1} className="relative z-[2] outline-none">
           {children}
         </main>
         <GieeFooter />
