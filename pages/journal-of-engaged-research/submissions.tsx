@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 export default function JoerSubmissionsPage() {
   const { t } = useTranslation("journal");
   return (
-    <Layout title={t("pageTitle")}>
+    <Layout title={t("pageTitle")} description={t("description")}>
       <JoerFormHeader />
     </Layout>
   );

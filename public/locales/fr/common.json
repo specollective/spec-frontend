@@ -1,8 +1,10 @@
 {
   "site": {
-    "title": "Sustainable Progress Equality Collective",
-    "ogTitle": "Sustainable Progress and Equality Collective",
-    "ogDescription": "Aider les personnes à acquérir des compétences, à construire leur carrière et à devenir des acteurs d'un impact social durable."
+    "title": "Sustainable Progress & Equality Collective",
+    "shortName": "SPEC",
+    "homeTitle": "SPEC | Sustainable Progress & Equality Collective",
+    "ogTitle": "Sustainable Progress & Equality Collective",
+    "ogDescription": "Un collectif communautaire qui aide chacun à se former, à bâtir sa carrière et à créer un impact social durable, par le mentorat et la recherche engagée."
   },
   "nav": {
     "contact": "Contact",

@@ -1,200 +1,297 @@
 {
-  "pageTitle": "Gobernanza global de la IA y ecosistema de educación inclusiva",
-  "nav": {
-    "overview": "Resumen",
-    "pillars": "Pilares",
-    "research": "Investigación",
-    "partner": "Colabora",
-    "ariaLabel": "Navegación de GIEE",
-    "mobileAriaLabel": "Navegación móvil de GIEE",
-    "menu": "Menú",
-    "changeLanguage": "Cambiar idioma, idioma actual {{language}}",
-    "wordmarkAria": "GIEE — Global AI Governance & Inclusive Education Ecosystem, inicio"
-  },
-  "footer": {
-    "tagline": "El Global Inclusive Education Ecosystem: diseñamos los estándares, las políticas y las salvaguardas globales que mantienen la IA como un instrumento para el empoderamiento colectivo y la confianza educativa.",
-    "initiativeOf": "Una iniciativa de SPEC ↗",
-    "contact": "Contacto",
-    "copyright": "© 2026 Sustainable Progress & Equality Collective."
-  },
-  "home": {
-    "hero": {
-      "title": "Global AI Governance &<br/>Inclusive Education Ecosystem",
-      "subtitle": "El rápido ascenso de la inteligencia artificial generativa exige un enfoque proactivo e intersectorial para la gobernanza de la tecnología, uno que priorice la capacidad humana, la responsabilidad institucional y la equidad.",
-      "explore": "Explora el ecosistema",
-      "pillarsCta": "Nuestros pilares fundamentales",
-      "scroll": "Desplázate",
-      "scrollAria": "Desplázate hasta el resumen"
+  "name": "Global Inclusive Education Ecosystem",
+  "meta": {
+    "home": {
+      "title": "GIEE — IA segura e inclusiva para la educación",
+      "description": "GIEE une a docentes, investigadores y responsables políticos para convertir la evidencia del aula en normas y salvaguardas para una IA educativa justa y segura."
     },
-    "overview": {
-      "eyebrow": "Resumen",
-      "p1": "El Global Inclusive Education Ecosystem (GIEE) actúa como un puente fundamental que conecta la tecnología emergente con marcos sólidos y centrados en las personas. En colaboración directa con el Global Online Education Regulator (GOER) y el United Nations-Geneva Forum, vamos más allá de una postura de mera reacción ante los cambios digitales.",
-      "p2": "Juntos, diseñamos los estándares, las políticas y las salvaguardas globales que garantizan que la IA sirva como un instrumento para el empoderamiento colectivo, el crecimiento ético y la confianza educativa."
+    "research": {
+      "title": "Investigación GIEE — Estudios de caso de IA en educación",
+      "description": "Siete estudios de caso en tres continentes prueban la IA en escuelas, clínicas y comunidades. Explora la investigación de GIEE y sus socios."
     },
-    "pillars": {
-      "eyebrow": "Nuestros pilares fundamentales de gobernanza sistémica",
-      "intro": "Cuando hablamos de “diseño centrado en las personas” en la arquitectura de la inteligencia artificial, no puede ser simplemente un lema retórico. La verdadera equidad tecnológica requiere un marco intencional y basado en la evidencia. Nuestro ecosistema se sustenta en tres verdades estructurales:",
-      "items": [
-        {
-          "name": "La tecnología debe amplificar la capacidad humana",
-          "description": "Los sistemas deben servir a la persona, no al revés. Abogamos por los modelos algorítmicos y los auditamos para garantizar que estén diseñados para elevar la curiosidad humana, el pensamiento crítico y la capacidad esencial de las personas, nunca para disminuir, restringir el acceso ni desplazar la arquitectura humana del aprendizaje."
-        },
-        {
-          "name": "La equidad exige un diseño intencional",
-          "description": "Las sociedades no llegan por casualidad a plataformas de IA éticas. Un despliegue responsable requiere una infraestructura de evaluación deliberada que obligue a quienes diseñan la tecnología, a las autoridades y a las instituciones a auditar cómo una herramienta digital afecta la privacidad, el acceso y la seguridad psicológica de quien aprende antes de que se escale a nivel mundial."
-        },
-        {
-          "name": "La confianza es nuestra máxima moneda institucional",
-          "description": "Si el profesorado, el estudiantado y los actores de la comunidad no confían en los sistemas operativos de los que dependen, la innovación fracasa de raíz. Al anclar la tecnología emergente en modelos de gobernanza transparentes y rigurosos, convertimos el escepticismo institucional en progreso colaborativo."
-        }
-      ]
-    },
-    "initiatives": {
-      "eyebrow": "Iniciativas e intersecciones globales estratégicas",
-      "items": [
-        {
-          "name": "The GOER AI Integrity Badge",
-          "description": "Administrado por la Junta de GOER, el AI Integrity Badge representa una evolución fundamental en la garantía de calidad educativa. Mucho más que un proceso de validación técnica, este distintivo establece la referencia global para una integración de la IA ética, transparente y responsable. Al auditar y reconocer a quienes innovan en el ámbito técnico y cumplen estos criterios rigurosos, dotamos a los sistemas educativos de herramientas digitales verificadas, seguras y equitativas."
-        },
-        {
-          "name": "The UN-Geneva Forum Alliance",
-          "description": "A través de nuestra colaboración continua con el Geneva Forum, GIEE convierte las referencias locales en marcos de política global. Esta alianza tiende un puente entre la tecnología educativa de base y la diplomacia internacional de alto nivel, garantizando que los marcos globales para la soberanía digital se sustenten en un impacto real y basado en datos."
-        }
-      ]
-    },
-    "cta": {
-      "heading": "Construyamos juntos el futuro de la confianza",
-      "body": "La intersección entre la gobernanza de la IA y la educación inclusiva es el desafío político que define nuestra era. Ya sea que trabajes en el ámbito académico, la práctica profesional, la arquitectura tecnológica o el servicio público, tus perspectivas son vitales para construir estas salvaguardas globales.",
-      "research": "Explora nuestro portafolio de investigación",
-      "partner": "Colabora con GIEE"
+    "partner": {
+      "title": "Colabora con GIEE — Únete al sandbox de IA educativa",
+      "description": "Trae un estudio de caso, una propuesta o una pregunta al sandbox de GIEE para la IA en educación. Envía una solicitud a nuestro equipo."
     }
+  },
+  "nav": {
+    "ariaLabel": "Principal",
+    "about": "Acerca de",
+    "research": "Investigación",
+    "partnerCta": "Colabora",
+    "partnerShort": "Colabora",
+    "home": "Global Inclusive Education Ecosystem, inicio",
+    "wordmarkLine1": "Global Inclusive",
+    "wordmarkLine2": "Education Ecosystem",
+    "language": "Idioma",
+    "switchTo": "Cambiar a {{language}}",
+    "menu": "Menú"
+  },
+  "hero": {
+    "titleLines": [
+      "Una IA segura",
+      "e inclusiva para",
+      "la educación"
+    ],
+    "together": "juntos",
+    "lede": "Estudios de caso en tres continentes alimentan un conjunto de reglas comunes, acordadas en el Foro de Ginebra de la ONU.",
+    "initiative": "Una iniciativa de SPEC, con GOER",
+    "next": "Siguiente pregunta",
+    "questionsLabel": "Preguntas que plantean nuestros estudios de caso",
+    "questions": [
+      {
+        "question": "¿Cómo deberían hablar los docentes de los daños de la IA?",
+        "source": "Educación crítica en IA liderada por jóvenes · Los Ángeles, Providence",
+        "region": "na"
+      },
+      {
+        "question": "¿Quién tiene voz en cómo se diseña la IA?",
+        "source": "Marco «Mujeres en la IA» · Barcelona, Los Ángeles",
+        "region": "eu"
+      },
+      {
+        "question": "¿Puede la IA apoyar la reflexión, con un clínico al tanto?",
+        "source": "murmur · Kirguistán",
+        "region": "as"
+      }
+    ]
+  },
+  "about": {
+    "title": "Qué hace GIEE",
+    "body": "GIEE conecta a docentes, investigadores, emprendedores y responsables políticos que quieren una IA justa y segura en la educación. Con el Global Online Education Regulator (GOER) y el Foro de Ginebra de la ONU, convertimos lo que funciona en aulas reales en normas, políticas y salvaguardas que otros pueden adoptar.",
+    "wayIn": {
+      "title": "Encuentra tu camino",
+      "items": [
+        {
+          "title": "Creo herramientas",
+          "body": "Conoce los estándares con los que se medirá tu producto y pruébalo en nuestro sandbox."
+        },
+        {
+          "title": "Enseño o investigo",
+          "body": "Únete a un portafolio de investigación vivo, con socios para estudiar, citar y colaborar."
+        },
+        {
+          "title": "Diseño políticas",
+          "body": "Toma normas y salvaguardas listas para adaptarse a tu propio país."
+        }
+      ]
+    }
+  },
+  "beliefs": {
+    "title": "En qué creemos",
+    "intro": "«Diseño centrado en las personas» es fácil de decir. Estas tres convicciones nos obligan a cumplirlo.",
+    "items": [
+      {
+        "title": "La tecnología debe hacernos más capaces, nunca menos.",
+        "body": "La IA debe servir a quien aprende, no al revés. Comprobamos que las herramientas fomenten la curiosidad, el pensamiento crítico y la confianza, y que no excluyan, reduzcan ni sustituyan la parte humana del aprendizaje."
+      },
+      {
+        "title": "La equidad hay que diseñarla.",
+        "body": "Nadie llega por casualidad a una IA ética. Antes de que una herramienta llegue a millones de estudiantes, alguien debe revisar cómo trata su privacidad, su acceso y su bienestar. Hacemos que esa revisión forme parte del proceso."
+      },
+      {
+        "title": "Sin confianza, nada funciona.",
+        "body": "Si docentes, estudiantes y familias no pueden confiar en sus herramientas, hasta las buenas ideas fracasan. Una gobernanza abierta y cuidadosa convierte esa duda en progreso compartido."
+      }
+    ]
+  },
+  "researchList": {
+    "title": "Investigación para leer hoy.",
+    "all": "Ver todo el portafolio"
+  },
+  "caseStudies": [
+    {
+      "slug": "women-in-ai",
+      "name": "Marco «Mujeres en la IA»",
+      "summary": "Llevar la mirada de las mujeres a cada etapa de cómo se crea la IA.",
+      "description": "¿Cómo puede la mirada de las mujeres dar forma a la IA en cada etapa, desde la primera idea hasta el uso diario? Esta iniciativa estudia cómo integrarla de forma estructural.",
+      "locations": [
+        {
+          "name": "Los Ángeles",
+          "region": "na"
+        },
+        {
+          "name": "Barcelona",
+          "region": "eu"
+        }
+      ],
+      "partners": [
+        "Mount Saint Mary’s University (Los Angeles, CA)",
+        "University of Barcelona — Social Work Department"
+      ]
+    },
+    {
+      "slug": "insight-recognition",
+      "name": "Insight Recognition",
+      "summary": "Evaluación con apoyo de IA que mapea lo que sabe cada estudiante, de abajo arriba.",
+      "description": "Un espacio de evaluación y aprendizaje personalizado impulsado por IA, que mapea lo que sabe cada persona a partir de sus propios mapas conceptuales.",
+      "locations": [
+        {
+          "name": "Estados Unidos",
+          "region": "na"
+        }
+      ],
+      "partners": [
+        "Prior Learning Assessment Advisory Group",
+        "United States Workforce Development Partners",
+        "International Educational Systems"
+      ]
+    },
+    {
+      "slug": "youth-led-critical-ai",
+      "name": "Ampliar la educación crítica en IA liderada por jóvenes",
+      "summary": "Programas de IA co-diseñados con jóvenes, y formación para los docentes que los imparten.",
+      "description": "GLITCH (Generating Liberation through Intersectionality, Technology and Critical Hope) es un laboratorio que crea programas de IA justos y arraigados en la comunidad para jóvenes de entornos con pocos recursos. Co-diseñando con ellos, también crea formación para docentes que buscan formas más justas y alegres de llevar la IA al aula.",
+      "locations": [
+        {
+          "name": "Los Ángeles",
+          "region": "na"
+        },
+        {
+          "name": "Providence",
+          "region": "na"
+        }
+      ],
+      "partners": [
+        "Center for Resilience and Digital Justice (UCLA)",
+        "Community Health Informatics Data Lab (Brown University)"
+      ]
+    },
+    {
+      "slug": "murmur",
+      "name": "murmur: diseño de IA en salud mental",
+      "summary": "Una herramienta supervisada por clínicos, basada en la terapia de esquemas, que da espacio para reflexionar.",
+      "description": "Una herramienta clínica estructurada, basada en los modelos de la terapia de esquemas, que ofrece a los estudiantes un espacio de reflexión, siempre con la supervisión de un clínico.",
+      "locations": [
+        {
+          "name": "Kirguistán",
+          "region": "as"
+        }
+      ],
+      "partners": [
+        "APA Professional Networks",
+        "Central Asian University Counseling Centers",
+        "Kyrgyzstan Local Clinicians"
+      ]
+    },
+    {
+      "slug": "street-racket",
+      "name": "Street Racket: escuelas y entornos de aprendizaje híbridos",
+      "summary": "Cómo crece el aprendizaje a través del movimiento con reflexión y metas apoyadas por IA.",
+      "description": "¿Cómo puede crecer el aprendizaje a través del movimiento con reflexión y fijación de metas apoyadas por IA? Este estudio lo comprueba, en la pista y en el aula.",
+      "locations": [
+        {
+          "name": "Bélgica",
+          "region": "eu"
+        }
+      ],
+      "partners": [
+        "Street Racket International",
+        "Tarek’s Tennis Academy (Belgium)",
+        "Global Educational Technology Partners"
+      ]
+    },
+    {
+      "slug": "checkit-learning",
+      "name": "CheckIT Learning: IA al servicio del alumnado con NEE",
+      "summary": "IA responsable, basada en la ciencia del aprendizaje, para estudiantes con necesidades educativas especiales.",
+      "description": "¿Cómo puede una IA responsable, basada en la ciencia del aprendizaje, mejorar los resultados del alumnado con necesidades educativas especiales (NEE)? El estudio analiza cómo la colaboración con el alumnado, la formación docente y la gobernanza compartida hacen la educación más inclusiva.",
+      "locations": [
+        {
+          "name": "En línea · CLEO LMS",
+          "region": "online"
+        }
+      ],
+      "partners": [
+        "CheckIT Learning (CLEO LMS Platform)",
+        "Exceptional Learners Collaborative"
+      ]
+    },
+    {
+      "slug": "flowwwly",
+      "name": "Flowwwly: de la dependencia de las pantallas al propósito",
+      "summary": "Una app centrada en las personas que ayuda a los jóvenes a cambiar tiempo de pantalla por propósito y acción.",
+      "description": "Demasiada pantalla y poco propósito: este estudio analiza cómo Flowwwly combina el descubrimiento de propósito, la orientación con IA y retos del mundo real para ayudar a los jóvenes a crear hábitos más sanos e implicarse en lo que les importa.",
+      "locations": [
+        {
+          "name": "En línea · app Flowwwly",
+          "region": "online"
+        }
+      ],
+      "partners": [
+        "Flowwwly",
+        "GOER"
+      ]
+    }
+  ],
+  "research": {
+    "titleLines": [
+      "Siete estudios de caso",
+      "en tres continentes"
+    ],
+    "intro": "GIEE funciona como un sandbox con calidad garantizada: un lugar para probar la IA en escuelas, clínicas y comunidades reales, con 17 organizaciones socias. Lo que aprendemos llega a la política internacional, guiado por los principios de GLQF y GOER.",
+    "listLabel": "Estudios de caso activos y socios del ecosistema",
+    "ecosystemPartners": "Socios del ecosistema",
+    "partnersTitle": "Socios"
   },
   "partner": {
-    "back": "← Volver a GIEE",
-    "eyebrow": "Colabora con GIEE",
-    "heading": "Únete al Sandbox",
-    "intro": "GIEE colabora con instituciones visionarias, personas defensoras de la comunidad y líderes de la industria para crear activos públicos viables y centrados en las personas. Por favor, completa el formulario para ponerte en contacto con nuestro Equipo de Liderazgo Ejecutivo.",
-    "features": {
-      "sandbox": {
-        "term": "Un sandbox regulatorio con calidad garantizada",
-        "description": "Conectamos la política internacional de alto nivel con la ejecución real y de base, anclada en los principios de GLQF y GOER."
-      },
-      "collaboration": {
-        "term": "Diseñado para la colaboración",
-        "description": "Ya sea que llegues con un caso de estudio, una nueva propuesta o una pregunta de investigación, nuestro equipo dirigirá tu consulta al Case Study Lead correspondiente."
-      },
-      "portfolio": {
-        "term": "Explora primero el portafolio",
-        "description": "Consulta nuestros casos de estudio activos y socios del ecosistema en el <portfolio>Portafolio de Investigación</portfolio>."
-      }
-    }
-  },
-  "research": {
-    "back": "← Volver a GIEE",
-    "heading": "Explora nuestro portafolio de investigación",
-    "intro": "Te damos la bienvenida al Portafolio de Investigación del Global Inclusive Education Ecosystem (GIEE). GIEE funciona como un sandbox regulatorio con calidad garantizada, que conecta la política internacional de alto nivel con la ejecución real y de base. Al centrar nuestras iniciativas en los principios de GLQF y GOER, transformamos activamente la educación global, pasando de la entrega estándar de contenidos a la competencia basada en resultados y la sinergia entre las personas y la IA.",
-    "eyebrow": "Casos de estudio activos y socios del ecosistema",
-    "ecosystemPartners": "Socios del ecosistema",
-    "partnerCta": "Colabora con GIEE",
-    "initiatives": [
+    "titleLines": [
+      "Únete al sandbox"
+    ],
+    "intro": "Trabajamos con instituciones, activistas comunitarios y líderes de la industria para crear bienes públicos duraderos y centrados en las personas. Cuéntanos un poco sobre ti y nuestro equipo directivo se encargará del resto.",
+    "sectionLabel": "Por qué colaborar, y el formulario de solicitud",
+    "features": [
       {
-        "name": "Women in AI Framework",
-        "description": "Esta iniciativa explora la inclusión estructural de las perspectivas de las mujeres a lo largo de todo el ciclo de vida del desarrollo de la IA.",
-        "partners": [
-          "Mount Saint Mary's University (Los Angeles, CA)",
-          "University of Barcelona — Social Work Department"
-        ]
+        "title": "Un sandbox regulatorio con calidad garantizada",
+        "body": "Conectamos la política internacional con el trabajo real sobre el terreno, anclados en los principios de GLQF y GOER."
       },
       {
-        "name": "Insight Recognition",
-        "description": "Un entorno de evaluación y aprendizaje personalizado impulsado por IA que mapea el conocimiento mediante un mapa de conceptos individualizado y construido de abajo hacia arriba.",
-        "partners": [
-          "Prior Learning Assessment Advisory Group",
-          "United States Workforce Development Partners",
-          "International Educational Systems"
-        ]
+        "title": "Pensado para colaborar",
+        "body": "Trae un estudio de caso, una nueva propuesta o una pregunta de investigación. Te pondremos en contacto con la persona responsable adecuada."
       },
       {
-        "name": "Scaling & Expanding Youth-Led Critical AI Education",
-        "description": "GLITCH (Generating Liberation through Intersectionality, Technology and Critical Hope) es un laboratorio de I+D que desarrolla programación de IA centrada en la comunidad y orientada a la justicia para jóvenes de comunidades con pocos recursos. Además, mediante el codiseño con jóvenes y la investigación-acción participativa, genera recursos de desarrollo profesional para el profesorado que busca enfoques más justos, gozosos y transformadores de la IA en la educación.",
-        "partners": [
-          "Center for Resilience and Digital Justice (UCLA)",
-          "Community Health Informatics Data Lab (Brown University)"
-        ]
-      },
-      {
-        "name": "murmur: AI Design in Mental Health",
-        "description": "Un instrumento clínico estructurado, basado en modelos de Terapia de Esquemas, que ofrece apoyo reflexivo supervisado por profesionales clínicos para quienes aprenden.",
-        "partners": [
-          "APA Professional Networks",
-          "Central Asian University Counseling Centers",
-          "Kyrgyzstan Local Clinicians"
-        ]
-      },
-      {
-        "name": "Street Racket: Schools and Hybrid Learning Environments",
-        "description": "Investigamos cómo el aprendizaje basado en el movimiento puede potenciarse mediante la reflexión y el establecimiento de objetivos con apoyo de la IA.",
-        "partners": [
-          "Street Racket International",
-          "Tarek's Tennis Academy (Belgium)",
-          "Global Educational Technology Partners"
-        ]
-      },
-      {
-        "name": "CheckIT Learning: AI Supporting SEN Students",
-        "description": "Exploramos cómo las rutas digitales fundamentadas en la neurociencia mejoran la participación del estudiantado con Necesidades Educativas Especiales (SEN).",
-        "partners": [
-          "CheckIT Learning (CLEO LMS Platform)",
-          "Exceptional Learners Collaborative"
-        ]
-      },
-      {
-        "name": "Flowwwly: Investigating a Human-Centred Digital Solution to Help Young People Move Beyond Screen Dependency and Discover Purpose",
-        "description": "Esta investigación explora cómo Flowwwly aborda uno de los desafíos más importantes que enfrentan los jóvenes hoy en día: el uso excesivo de pantallas y una creciente desconexión del propósito, la acción y las experiencias del mundo real. La investigación examina cómo la aplicación combina el descubrimiento del propósito, la orientación apoyada por IA y desafíos del mundo real para fomentar hábitos tecnológicos más saludables, el desarrollo personal y una participación significativa.",
-        "partners": [
-          "Flowwwly",
-          "GOER"
-        ]
+        "title": "Explora primero el portafolio",
+        "body": "Conoce nuestros estudios de caso activos y socios en el <portfolio>portafolio de investigación</portfolio>."
       }
     ]
   },
   "partnerForm": {
+    "title": "Solicitud de colaboración",
+    "requiredNote": "Todos los campos son obligatorios y están marcados con un asterisco (*).",
     "fields": {
       "name": {
         "label": "Nombre",
-        "placeholder": "Nombre y apellidos"
+        "placeholder": "Nombre Apellido"
       },
       "email": {
         "label": "Correo electrónico",
-        "placeholder": "hola@institucion.org"
+        "placeholder": "hello@institution.org"
       },
       "affiliation": {
         "label": "Afiliación",
         "placeholder": "Institución, organización o empresa"
       },
       "role": {
-        "label": "Rol profesional principal",
-        "placeholder": "Selecciona un rol"
+        "label": "Función profesional principal"
       },
       "interest": {
-        "label": "Área de interés",
-        "placeholder": "Selecciona un área"
+        "label": "Área de interés"
       },
       "message": {
         "label": "Mensaje",
-        "placeholder": "Cuéntanos sobre los objetivos de tu colaboración."
+        "placeholder": "Cuéntanos tus objetivos de colaboración."
       }
     },
     "roles": {
-      "k12HigherEd": "K-12 / Educación superior",
-      "industryAiArchitect": "Industria / Arquitecto de IA",
-      "nonProfitLead": "Responsable de una organización sin fines de lucro",
-      "communityAdvocate": "Persona defensora de la comunidad",
-      "policyOfficial": "Responsable de políticas públicas"
+      "k12HigherEd": "Escolar / Educación superior",
+      "industryAiArchitect": "Industria / Arquitectura de IA",
+      "nonProfitLead": "Dirección de ONG",
+      "communityAdvocate": "Activismo comunitario",
+      "policyOfficial": "Cargo público"
     },
     "interests": {
       "news": "Noticias",
-      "caseStudyPartnership": "Colaboración en un caso de estudio",
+      "caseStudyPartnership": "Colaboración en estudio de caso",
       "research": "Investigación",
       "newProposal": "Nueva propuesta",
       "other": "Otro"
@@ -204,23 +301,64 @@
       "email": "Introduce un correo electrónico válido",
       "select": "Selecciona una opción válida"
     },
-    "submit": "Enviar consulta de colaboración",
+    "submit": "Enviar solicitud de colaboración",
     "error": "Algo salió mal. Inténtalo de nuevo.",
     "success": {
-      "heading": "Gracias, tu consulta se ha enviado.",
-      "body": "Nuestro equipo revisará tu mensaje y lo dirigirá al Case Study Lead correspondiente. Nos pondremos en contacto contigo en el correo electrónico que nos facilitaste.",
-      "button": "Enviar otra consulta"
+      "heading": "Gracias: tu solicitud se ha enviado.",
+      "body": "Nuestro equipo revisará tu mensaje y lo enviará a la persona responsable del estudio de caso adecuado. Te escribiremos al correo que nos indicaste.",
+      "button": "Enviar otra solicitud"
     },
-    "privacyNotice": "Al enviar este formulario, aceptas nuestra <privacy>Política de privacidad</privacy>."
+    "privacyNotice": "Al enviar este formulario aceptas nuestra <privacy>Política de privacidad</privacy>."
   },
-  "communityBand": {
-    "eyebrow": "Únete a nuestra comunidad GIEE",
-    "title": "Conecta con la arquitectura del ecosistema",
-    "body": "El pulso de GIEE depende de nuestra red entre pares, activa y descentralizada. No esperes a nuestra próxima presentación formal para entrar en el ecosistema. Únete ahora mismo a nuestro grupo de trabajo oficial para interactuar con nuestros Case Study Leads y participar en revisiones públicas de evidencia.",
-    "cta": "Únete al grupo de comunidad de GIEE en LinkedIn"
+  "cta": {
+    "title": "Tráenos un estudio de caso, una propuesta o una pregunta.",
+    "body": "Investigadora, docente, emprendedor o servidora pública: si trabajas donde la IA se cruza con la educación inclusiva, lo que sabes puede dar forma a las reglas.",
+    "partner": "Colabora con GIEE",
+    "fillInquiry": "Rellena la solicitud",
+    "research": "Explora la investigación",
+    "community": {
+      "title": "Únete a la conversación",
+      "body": "Conoce a nuestros responsables de estudios de caso y participa en revisiones públicas de evidencia en el grupo de LinkedIn de GIEE.",
+      "link": "Unirse al grupo",
+      "short": "LinkedIn"
+    },
+    "curious": {
+      "title": "¿Solo curiosidad?",
+      "body": "Lee lo que están descubriendo nuestros estudios de caso, en lenguaje claro.",
+      "link": "Ver la investigación"
+    },
+    "newHere": {
+      "title": "¿Nuevo en GIEE?",
+      "body": "Empieza por lo que hacemos, con quién trabajamos y en qué creemos.",
+      "link": "Acerca de GIEE"
+    }
+  },
+  "footer": {
+    "logo": "GIEE",
+    "tagline": "El Global Inclusive Education Ecosystem. Damos forma a las normas, políticas y salvaguardas que mantienen la IA al servicio de cada estudiante.",
+    "explore": "Explorar",
+    "about": "Acerca de",
+    "beliefs": "Convicciones",
+    "research": "Investigación",
+    "getInvolved": "Participa",
+    "partner": "Colabora con GIEE",
+    "linkedin": "Comunidad de LinkedIn",
+    "contact": "Contacto",
+    "spec": "SPEC",
+    "specSite": "specollective.org",
+    "privacy": "Política de privacidad",
+    "privacyShort": "Privacidad",
+    "copyright": "© 2026 Sustainable Progress & Equality Collective.",
+    "initiativeOf": "Una iniciativa de SPEC",
+    "backToTop": "Volver arriba",
+    "newTab": "(se abre en una pestaña nueva)"
   },
   "partnerLogos": {
-    "title": "Socios",
-    "logoAlt": "logotipo de {{name}}"
+    "primary": "Socios principales",
+    "others": "Socios",
+    "logoAlt": "{{name}}"
+  },
+  "breadcrumb": {
+    "home": "GIEE"
   }
 }

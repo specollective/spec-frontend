@@ -1,8 +1,10 @@
 {
   "site": {
-    "title": "Sustainable Progress Equality Collective",
-    "ogTitle": "Sustainable Progress and Equality Collective",
-    "ogDescription": "Helping people learn skills, build careers, and become leaders of sustainable social impact."
+    "title": "Sustainable Progress & Equality Collective",
+    "shortName": "SPEC",
+    "homeTitle": "SPEC | Sustainable Progress & Equality Collective",
+    "ogTitle": "Sustainable Progress & Equality Collective",
+    "ogDescription": "A community-driven collective helping people learn skills, build careers and lead social impact through mentorship, engaged research and open collaboration."
   },
   "nav": {
     "contact": "Contact",

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslation } from "next-i18next/pages";
 
-import logo from "../public/spec-logo.svg";
+import logo from "../public/spec-logo.png";
 import menu from "../public/menuSign.svg";
 import close from "../public/menuClose.svg";
 // Temporarily hidden until Spanish/English translations are ready.

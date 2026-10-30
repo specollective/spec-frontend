@@ -40,3 +40,35 @@
     scroll-behavior: auto !important;
   }
 }
+/* GIEE v3: focus ring — royal blue on cream, orange on navy and glass. */
+.giee :focus-visible {
+  outline: 3px solid #2F4AF4;
+  outline-offset: 3px;
+}
+.giee .giee-on-navy :focus-visible {
+  outline-color: #F1A73E;
+}
+
+/* GIEE v3: riso-like grain for the glass pieces. One small SVG noise tile,
+   rasterised once by the browser and repeated, instead of a full-size SVG
+   filter per piece (much cheaper to paint). */
+.giee-grain,
+.giee-grain-navy {
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
+.giee-grain {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g' x='0' y='0' width='1' height='1' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' seed='11' stitchTiles='stitch' result='t'/><feColorMatrix in='t' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4 0 0 0 2.4' result='d0'/><feComponentTransfer in='d0' result='d'><feFuncA type='discrete' tableValues='0 0.085'/></feComponentTransfer><feColorMatrix in='t' type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 4 0 0 0 -1.6' result='l0'/><feComponentTransfer in='l0' result='l'><feFuncA type='discrete' tableValues='0 0.075'/></feComponentTransfer><feMerge><feMergeNode in='d'/><feMergeNode in='l'/></feMerge></filter><rect width='160' height='160' filter='url(%23g)'/></svg>");
+}
+.giee-grain-navy {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g' x='0' y='0' width='1' height='1' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' seed='11' stitchTiles='stitch' result='t'/><feColorMatrix in='t' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4 0 0 0 2.4' result='d0'/><feComponentTransfer in='d0' result='d'><feFuncA type='discrete' tableValues='0 0.1'/></feComponentTransfer><feColorMatrix in='t' type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 4 0 0 0 -1.6' result='l0'/><feComponentTransfer in='l0' result='l'><feFuncA type='discrete' tableValues='0 0.088'/></feComponentTransfer><feMerge><feMergeNode in='d'/><feMergeNode in='l'/></feMerge></filter><rect width='160' height='160' filter='url(%23g)'/></svg>");
+}
+
+/* GIEE v3: once GieeNavbar's scroll morph is running it draws the hero panel
+   itself, so the static in-page panels step aside. */
+.giee-morph [data-giee-panel="desktop"] {
+  visibility: hidden;
+}
+.giee-morph [data-giee-panel="phone"] {
+  background-color: transparent;
+}

@@ -1,8 +1,10 @@
 {
   "site": {
-    "title": "Sustainable Progress Equality Collective",
-    "ogTitle": "Sustainable Progress and Equality Collective",
-    "ogDescription": "Ayudamos a las personas a aprender habilidades, desarrollar carreras y convertirse en líderes de un impacto social sostenible."
+    "title": "Sustainable Progress & Equality Collective",
+    "shortName": "SPEC",
+    "homeTitle": "SPEC | Sustainable Progress & Equality Collective",
+    "ogTitle": "Sustainable Progress & Equality Collective",
+    "ogDescription": "Un colectivo comunitario que ayuda a aprender habilidades, construir una carrera y crear impacto social sostenible con mentoría e investigación comprometida."
   },
   "nav": {
     "contact": "Contacto",

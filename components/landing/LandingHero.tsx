@@ -14,11 +14,12 @@ export default function LandingHero() {
       <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
         <div className="flex-shrink-0">
           <Image
-            src="/spec-logo.svg"
+            src="/spec-logo.png"
             alt={t('hero.logoAlt')}
             width={240}
             height={300}
             className="w-40 md:w-52 lg:w-64"
+            sizes="(min-width: 1024px) 256px, (min-width: 768px) 208px, 160px"
             priority
           />
         </div>

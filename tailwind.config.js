@@ -56,6 +56,25 @@ module.exports = {
           accent: '#1B7A4E', // = Growth Emerald Green (subtitle / callout color)
           white: '#FFFFFF',
           black: '#0A0A0A',
+          // v3 redesign (2026) — "Swiss pebbles". Navy ground, cream type,
+          // six continent colours carried by the glass pieces.
+          navy: '#111322', // ink, navy panels, primary buttons
+          cream: '#F1ECDB', // type on navy; top of the page ground
+          ground: '#FAF8F1', // page background
+          'ink-2': '#3F4152', // secondary copy on cream
+          'ink-3': '#45475A', // tertiary copy
+          muted: '#55576A', // captions, helper text (≥ 6:1 on ground)
+          rule: '#D5D3CC', // hairlines between rows and cells
+          field: '#EFEDE6', // form panel
+          'field-line': '#CFCDC6', // input borders
+          error: '#B3261E',
+          warm: '#2A1F08', // body copy on the orange belief cards
+          orange: '#F1A73E',
+          'orange-2': '#F8CE86',
+          'orange-3': '#FCE9C6',
+          royal: '#2F4AF4', // focus ring on cream
+          'navy-muted': '#A9B1DC', // footer labels on navy
+          'navy-dim': '#B4BADF', // footer fine print on navy
         }
       },
       fontFamily: {
@@ -68,7 +87,14 @@ module.exports = {
         // Primary titles & identity headers: high-contrast serif (deep blue).
         'giee-serif': ['Georgia', 'Times New Roman', 'serif'],
         // Subtitles, callouts, body & taglines: balanced, highly readable sans-serif.
-        'giee-sans': ['Arial', 'Helvetica', 'sans-serif']
+        'giee-sans': ['Arial', 'Helvetica', 'sans-serif'],
+        // v3 redesign: Overused Grotesk (SIL OFL), self-hosted via next/font in
+        // components/gieeFont.ts. The variable is set by GieeLayout.
+        giee: ['var(--font-giee)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+      },
+      transitionTimingFunction: {
+        // GIEE v3: the soft "settle" curve used for hovers and reveals.
+        giee: 'cubic-bezier(.16,1,.3,1)',
       },
       lineHeight: {
         'tight-heading': '1.1',

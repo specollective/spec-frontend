@@ -1,0 +1,10 @@
+# https://specollective.org/robots.txt
+#
+# Incubating sections (e.g. /giee) stay crawlable on purpose: they carry a
+# noindex tag, and crawlers must be able to fetch a page to see it.
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /glqf/
+
+Sitemap: https://specollective.org/sitemap.xml
