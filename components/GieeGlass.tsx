@@ -3,11 +3,11 @@
 //
 // The compositions are drawn on fixed design boards (1440 px desktop, 390 px
 // phone). <ScaledBoard> keeps that geometry intact and scales the whole board
-// to the width it is given, using only CSS (no resize listeners, no layout
-// shift on hydration): `tan(atan2(100cqw, <board width>))` is the unitless
-// ratio between the container's width and the board's.
+// to the width it is given. Native CSS division supplies the scale; older
+// browsers use a measured ratio. Avoid tan(atan2(...)): WebKit can evaluate
+// the nested angle incorrectly and enlarge a 1440px board to 2332px.
 
-import type { CSSProperties, ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 import {
   CTA_DESKTOP_BACK,
   CTA_DESKTOP_FRONT,
@@ -239,6 +239,23 @@ export function ScaledBoard({
   children: ReactNode;
 }) {
   const big = lg ?? { width, height };
+  const boardRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (typeof CSS !== "undefined" && CSS.supports?.("scale", "calc(100px / 100px)")) return;
+    const board = boardRef.current;
+    if (!board) return;
+    const measure = (containerWidth: number) => {
+      if (!containerWidth) return;
+      board.style.setProperty("--board-scale", `${containerWidth / width}`);
+      board.style.setProperty("--large-board-scale", `${containerWidth / big.width}`);
+    };
+    measure(board.getBoundingClientRect().width);
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(([entry]) => measure(entry.contentRect.width));
+    observer.observe(board);
+    return () => observer.disconnect();
+  }, [width, big.width]);
+
   const vars = {
     "--bw": `${width}px`,
     "--bh": `${height}px`,
@@ -250,12 +267,13 @@ export function ScaledBoard({
   } as CSSProperties;
   return (
     <div
+      ref={boardRef}
       className={`relative w-full overflow-hidden lg:overflow-visible [aspect-ratio:var(--ar)] lg:[aspect-ratio:var(--lar)] ${className}`}
       style={vars}
     >
       <div
-        // Unitless container-width / board-width ratio, in pure CSS.
-        className="absolute left-0 top-0 h-[var(--bh)] w-[var(--bw)] origin-top-left [scale:tan(atan2(100cqw,var(--bw)))] lg:h-[var(--lbh)] lg:w-[var(--lbw)] lg:[scale:tan(atan2(100cqw,var(--lbw)))]"
+        // The measured variables are only needed without CSS typed division.
+        className="absolute left-0 top-0 h-[var(--bh)] w-[var(--bw)] origin-top-left [scale:var(--board-scale,calc(100cqw/var(--bw)))] lg:h-[var(--lbh)] lg:w-[var(--lbw)] lg:[scale:var(--large-board-scale,calc(100cqw/var(--lbw)))]"
       >
         {children}
       </div>
